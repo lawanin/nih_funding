@@ -1,0 +1,1421 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  <head>
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-5b3271f6ac34c6e7a74",applicationID:"980487817"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1211.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<link rel="canonical" href="https://www.siumed.edu/departments" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {background: #0779bf} div#sliding-popup.eu-cookie-withdraw-wrapper { background: transparent; } #sliding-popup h1, #sliding-popup h2, #sliding-popup h3, #sliding-popup p, #sliding-popup label, #sliding-popup div, .eu-cookie-compliance-more-button, .eu-cookie-compliance-secondary-button, .eu-cookie-withdraw-tab { color: #ffffff;} .eu-cookie-withdraw-tab { border-color: #ffffff;}</style>
+<link rel="shortcut icon" href="/themes/custom/siu/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="https://www.siumed.edu/departments" />
+<script src="/sites/default/files/google_tag/siu/google_tag.script.js?r0ntbk" defer></script>
+
+    <title>Academic Departments | SIU School of Medicine</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_kx8WT4gaYkWQgV7sWSRpOfLUAOs1HpXBRdUNu-gj5Gc.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_zT3pyMfOqRUePr-KLcur1Bo1LAl3ZiIp7lEtHteX9U8.css" />
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+
+  </head>
+  <body class="path-not-frontpage page-node-type-landing-page siu_domain_edu">
+    <div class="page">
+      <noscript aria-hidden="true"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC5MJQC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+
+
+
+
+<div  class="layout-container">
+      <div class="pre-header">
+      <div aria-label="pre-header" class="pre-header__inner">
+                <a href="#main-content" class="visually-hidden focusable skip-link">
+          Skip to main content
+        </a>
+
+        
+
+
+<div  class="pre-header-inner">
+  <div  class="pre-header-inner__wrapper">
+                <div class="preheader__alert">
+                <div  id="block-views-block-alerts-alertblock" class="block views-element-container views-blockalerts-alertblock">
+    
+        
+          <div><div class="view view-alerts view-id-alerts view-display-id-alertblock js-view-dom-id-eea5af39c036a3e4d1dd539f3e5c73a408eec2cd5886ef10cf35d5ac8bd810e1">
+  
+
+  
+  
+  
+
+  <div class="results">
+    
+      </div>
+  
+
+  
+  
+
+  
+  
+</div>
+</div>
+
+      </div>
+
+            </div>
+                        <div class="preheader__logo">
+              
+  
+
+
+<div class="logo-img">
+      
+<a
+   class="logo-link logo-link--"
+    href="/"
+>
+          
+
+  
+<img
+   class="logo__image logo__image--"
+      src="/themes/custom/siu/images/Logo_edu.png"
+      alt="SIU School of Medicine Logo"
+    />
+      </a>
+  </div>
+            </div>
+                          <div class="preheader__domainmenu">
+                <nav aria-labelledby="block-domainmenu-menu" id="block-domainmenu" class="menu-blockdomain-menu">
+            
+  <h2 class="visually-hidden" id="block-domainmenu-menu">Domain Menu</h2>
+  
+
+        
+
+
+
+    
+                          
+        
+<ul  class="inline-menu">
+                      
+
+<li  class="inline-menu__item">
+      
+<a
+   class="inline-menu__link"
+    href="https://www.siumed.org"
+>
+      Patient Care
+  </a>
+      </li>
+                    
+
+<li  class="inline-menu__item">
+      
+<a
+   class="inline-menu__link"
+    href="https://www.siumed.edu"
+>
+      School of Medicine
+  </a>
+      </li>
+              </ul>
+  
+
+  </nav>
+
+              </div>
+              <div class="preheader__secondarymenu">
+                
+                <nav aria-labelledby="block-mainmenuedusecondary-menu" id="block-mainmenuedusecondary" class="menu-blockmain-menu-edu-secondary">
+            
+  <h2 class="visually-hidden" id="block-mainmenuedusecondary-menu">Main Menu Edu Secondary</h2>
+  
+
+        
+
+
+
+    
+                          
+        
+<ul  class="inline-menu">
+                      
+
+<li  class="inline-menu__item">
+      
+<a
+   class="inline-menu__link"
+    href="/faculty"
+>
+      faculty
+  </a>
+      </li>
+                    
+
+<li  class="inline-menu__item">
+      
+<a
+   class="inline-menu__link"
+    href="http://thehive.siumed.edu"
+>
+      intranet
+  </a>
+      </li>
+                    
+
+<li  class="inline-menu__item">
+      
+<a
+   class="inline-menu__link"
+    href="/lib"
+>
+      library
+  </a>
+      </li>
+                    
+
+<li  class="inline-menu__item">
+      
+<a
+   class="inline-menu__link"
+    href="/news-events"
+>
+      news & events
+  </a>
+      </li>
+                    
+
+<li  class="inline-menu__item">
+      
+<a
+   class="inline-menu__link"
+    href="https://forwardfunder.siumed.edu/"
+>
+      donate
+  </a>
+      </li>
+                    
+
+<li  class="inline-menu__item">
+      
+<a
+   class="inline-menu__link"
+    href="/careers"
+>
+      careers
+  </a>
+      </li>
+              </ul>
+  
+
+  </nav>
+
+              </div>
+              <div class="preheader__iama">
+                <nav aria-labelledby="block-iama-menu" id="block-iama" class="menu-blocki-am-a-">
+      
+  <a href="#"  id="block-iama-menu">I am a...</a>
+  
+
+        
+
+
+
+    
+                          
+        
+<ul  class="inline-menu">
+                      
+
+<li  class="inline-menu__item">
+      
+<a
+   class="inline-menu__link"
+    href="https://www.siumed.org"
+>
+      Patient
+  </a>
+      </li>
+                    
+
+<li  class="inline-menu__item">
+      
+<a
+   class="inline-menu__link"
+    href="/im-donor"
+>
+      Donor or Friend
+  </a>
+      </li>
+                    
+
+<li  class="inline-menu__item">
+      
+<a
+   class="inline-menu__link"
+    href="/prospective-employees"
+>
+      Prospective Employee
+  </a>
+      </li>
+                    
+
+<li  class="inline-menu__item">
+      
+<a
+   class="inline-menu__link"
+    href="/i-am-prospective-student"
+>
+      Student/Prospective Student
+  </a>
+      </li>
+                    
+
+<li  class="inline-menu__item">
+      
+<a
+   class="inline-menu__link"
+    href="/im-resident-or-fellow"
+>
+      Resident or Fellow
+  </a>
+      </li>
+                    
+
+<li  class="inline-menu__item">
+      
+<a
+   class="inline-menu__link"
+    href="/im-alumni-0"
+>
+      Alumni
+  </a>
+      </li>
+              </ul>
+  
+
+  </nav>
+
+              </div>
+                        </div>
+</div>
+      </div>
+    </div>
+              
+
+
+
+
+
+
+<header  class="header">
+  <div  class="header__pre-inner">
+    <div  class="header__inner">
+                    <div class="header__menu">
+        
+        <nav aria-labelledby="block-mainmenuedu-menu" id="block-mainmenuedu" class="menu-blockmain-menu-edu">
+            
+  <h2 class="visually-hidden" id="block-mainmenuedu-menu">Main Menu Edu</h2>
+  
+
+        
+
+
+<nav aria-label="main-menu">
+  <a href="#" id="toggle-expand" class="toggle-expand">
+    <span class="toggle-expand__open">
+      
+
+
+<svg  class="toggle-expand__icon toggle-expand__icon--"
+
+  
+  
+  >
+      <use xlink:href="/themes/custom/siu/dist/icons.svg#menu"></use>
+</svg>
+      <span class="toggle-expand__text">Main Menu</span>
+    </span>
+    <span class="toggle-expand__close">
+      <span class="toggle-expand__text">Close</span>
+    </span>
+  </a>
+  <div id="main-nav" class="main-nav">
+    <div class="main-menu-back-wrapper">
+      <a href="#" id="main-menu-back">Main Menu</a>
+    </div>
+    
+
+
+
+    
+                          
+        
+<ul  class="main-menu">
+                      
+
+<li  class="main-menu__item">
+      
+<a
+   class="main-menu__link"
+    href="/degree-programs"
+>
+      Degree Programs
+  </a>
+      </li>
+                    
+
+<li  class="main-menu__item">
+      
+<a
+   class="main-menu__link"
+    href="/research"
+>
+      Research
+  </a>
+      </li>
+                      
+
+<li  class="main-menu__item main-menu__item--active">
+      
+<a
+   class="main-menu__link main-menu__link--active"
+    href="/departments"
+>
+      Academic & Clinical Departments
+  </a>
+      </li>
+                    
+
+<li  class="main-menu__item">
+      
+<a
+   class="main-menu__link"
+    href="/centers-institutes"
+>
+      Centers & Institutes
+  </a>
+      </li>
+                      
+
+<li  class="main-menu__item main-menu__item--with-sub">
+      
+<a
+   class="main-menu__link main-menu__link--with-sub"
+    href="/community-programs"
+>
+      Community Programs
+  </a>
+          <span class="expand-sub"></span>
+          
+                                    
+        
+<ul  class="main-menu main-menu--sub main-menu--sub-1">
+                        
+
+<li  class="main-menu__item main-menu__item--sub main-menu__item--sub-1">
+      
+<a
+   class="main-menu__link main-menu__link--sub main-menu__link--sub-1"
+    href="/external-relations"
+>
+      External Relations
+  </a>
+      </li>
+                      
+
+<li  class="main-menu__item main-menu__item--sub main-menu__item--sub-1">
+      
+<a
+   class="main-menu__link main-menu__link--sub main-menu__link--sub-1"
+    href="/fcm"
+>
+      Family and Community Medicine
+  </a>
+      </li>
+                      
+
+<li  class="main-menu__item main-menu__item--sub main-menu__item--sub-1">
+      
+<a
+   class="main-menu__link main-menu__link--sub main-menu__link--sub-1"
+    href="/communitycare"
+>
+      Office of Community Care
+  </a>
+      </li>
+                      
+
+<li  class="main-menu__item main-menu__item--sub main-menu__item--sub-1">
+      
+<a
+   class="main-menu__link main-menu__link--sub main-menu__link--sub-1"
+    href="/popscipolicy"
+>
+      Population Science and Policy
+  </a>
+      </li>
+                      
+
+<li  class="main-menu__item main-menu__item--sub main-menu__item--sub-1">
+      
+<a
+   class="main-menu__link main-menu__link--sub main-menu__link--sub-1"
+    href="/orp/crhssd"
+>
+      Rural Health and Social Service Development
+  </a>
+      </li>
+              </ul>
+  
+      </li>
+                      
+
+<li  class="main-menu__item main-menu__item--with-sub">
+      
+<a
+   class="main-menu__link main-menu__link--with-sub"
+    href="/about-us"
+>
+      About Us
+  </a>
+          <span class="expand-sub"></span>
+          
+                                    
+        
+<ul  class="main-menu main-menu--sub main-menu--sub-1">
+                        
+
+<li  class="main-menu__item main-menu__item--sub main-menu__item--sub-1">
+      
+<a
+   class="main-menu__link main-menu__link--sub main-menu__link--sub-1"
+    href="/administrative-offices"
+>
+      Administrative offices
+  </a>
+      </li>
+                      
+
+<li  class="main-menu__item main-menu__item--sub main-menu__item--sub-1">
+      
+<a
+   class="main-menu__link main-menu__link--sub main-menu__link--sub-1"
+    href="/careers"
+>
+      Careers
+  </a>
+      </li>
+                        
+
+<li  class="main-menu__item main-menu__item--sub main-menu__item--sub-1 main-menu__item--with-sub">
+      
+<a
+   class="main-menu__link main-menu__link--sub main-menu__link--sub-1 main-menu__link--with-sub"
+    href="/why-siu"
+>
+      Why SIU School of Medicine
+  </a>
+          <span class="expand-sub"></span>
+          
+                          
+        
+<ul  class="main-menu main-menu--sub main-menu--sub-1 main-menu--sub-2">
+                        
+
+<li  class="main-menu__item main-menu__item--sub main-menu__item--sub-2">
+      
+<a
+   class="main-menu__link main-menu__link--sub main-menu__link--sub-2"
+    href="/strategic-plan"
+>
+      Strategic plan
+  </a>
+      </li>
+                      
+
+<li  class="main-menu__item main-menu__item--sub main-menu__item--sub-2">
+      
+<a
+   class="main-menu__link main-menu__link--sub main-menu__link--sub-2"
+    href="/model-medical-education.html"
+>
+      A Model for Medical Education
+  </a>
+      </li>
+                      
+
+<li  class="main-menu__item main-menu__item--sub main-menu__item--sub-2">
+      
+<a
+   class="main-menu__link main-menu__link--sub main-menu__link--sub-2"
+    href="/facts-and-figures"
+>
+      Facts and figures
+  </a>
+      </li>
+                      
+
+<li  class="main-menu__item main-menu__item--sub main-menu__item--sub-2">
+      
+<a
+   class="main-menu__link main-menu__link--sub main-menu__link--sub-2"
+    href="/mc/maps.html"
+>
+      Our campuses
+  </a>
+      </li>
+              </ul>
+  
+      </li>
+                        
+
+<li  class="main-menu__item main-menu__item--sub main-menu__item--sub-1 main-menu__item--with-sub">
+      
+<a
+   class="main-menu__link main-menu__link--sub main-menu__link--sub-1 main-menu__link--with-sub"
+    href="/history"
+>
+      History
+  </a>
+          <span class="expand-sub"></span>
+          
+                          
+        
+<ul  class="main-menu main-menu--sub main-menu--sub-1 main-menu--sub-2">
+                        
+
+<li  class="main-menu__item main-menu__item--sub main-menu__item--sub-2">
+      
+<a
+   class="main-menu__link main-menu__link--sub main-menu__link--sub-2"
+    href="/alumniaffairs/siu-school-medicine-50-amazing-alumni.html"
+>
+      Notable alumni
+  </a>
+      </li>
+                      
+
+<li  class="main-menu__item main-menu__item--sub main-menu__item--sub-2">
+      
+<a
+   class="main-menu__link main-menu__link--sub main-menu__link--sub-2"
+    href="/about/points-pride"
+>
+      Points of pride
+  </a>
+      </li>
+                      
+
+<li  class="main-menu__item main-menu__item--sub main-menu__item--sub-2">
+      
+<a
+   class="main-menu__link main-menu__link--sub main-menu__link--sub-2"
+    href="/timeline.html"
+>
+      Timeline
+  </a>
+      </li>
+              </ul>
+  
+      </li>
+                        
+
+<li  class="main-menu__item main-menu__item--sub main-menu__item--sub-1 main-menu__item--with-sub">
+      
+<a
+   class="main-menu__link main-menu__link--sub main-menu__link--sub-1 main-menu__link--with-sub"
+    href="/welcome-dean-and-provost-dr-jerry-kruse"
+>
+      Leadership
+  </a>
+          <span class="expand-sub"></span>
+          
+                          
+        
+<ul  class="main-menu main-menu--sub main-menu--sub-1 main-menu--sub-2">
+                        
+
+<li  class="main-menu__item main-menu__item--sub main-menu__item--sub-2">
+      
+<a
+   class="main-menu__link main-menu__link--sub main-menu__link--sub-2"
+    href="/siu-healthcare-board-of-directors.html"
+>
+      SIU Medicine Board of Directors
+  </a>
+      </li>
+                      
+
+<li  class="main-menu__item main-menu__item--sub main-menu__item--sub-2">
+      
+<a
+   class="main-menu__link main-menu__link--sub main-menu__link--sub-2"
+    href="/siu-school-medicine-leadership.html"
+>
+      SIU School of Medicine Leadership
+  </a>
+      </li>
+              </ul>
+  
+      </li>
+                      
+
+<li  class="main-menu__item main-menu__item--sub main-menu__item--sub-1">
+      
+<a
+   class="main-menu__link main-menu__link--sub main-menu__link--sub-1"
+    href="/news-events"
+>
+      News and Events
+  </a>
+      </li>
+              </ul>
+  
+      </li>
+              </ul>
+  
+  </div>
+</nav>
+
+  </nav>
+
+        
+      </div>
+                  <div class="header__search">
+        <form action="/search" method="get" class="search-block-form" accept-charset="UTF-8">
+    <div class="text-buttons">
+    <div class="form-item js-form-item form-type-search js-form-type-search form-item-keys js-form-item-keys form-no-label form-group">
+      <label for="edit-keys" class="visually-hidden">Search</label>
+      <input title="Search" aria-label="Search" class="form-search form-control" placeholder="How can we help you?" type="search" id="edit-keys" name="keyword" value="" size="15" maxlength="128" data-toggle="tooltip" data-original-title="Enter the terms you wish to search for.">
+    </div>
+    <input type="reset" value="Reset">
+    <input class="button form-submit form-item__submit" type="submit" value="Search">
+  </div>
+</form>
+      </div>
+      <div class="header__search_toggle">
+        <a href="#" id="toggle-search">
+          <span class="toggle-search__open active">
+            <span class="toggle-search__text sr-only">Search Site</span>
+          </span>
+          <span class="toggle-search__close">
+            <span class="material-icons">close</span>
+            <span class="toggle-search__text sr-only">Close</span>
+          </span>
+        </a>
+      </div>
+
+          </div>
+  </div>
+</header>
+
+  
+  
+
+                  <div class="pre-content">
+        <div aria-label="pre-content" class="pre-content__inner">
+                        <div>
+        <div  id="block-breadcrumbs-3" class="block system-breadcrumb-block">
+    
+        
+          
+
+  <nav aria-labelledby='system-breadcrumb'>
+    <h2  class="visually-hidden" id='system-breadcrumb'>Breadcrumb</h2>
+    <ol  class="breadcrumb">
+          <li  class="breadcrumb__item">
+                  <a  class="breadcrumb__link" href="/">Home</a>
+              </li>
+          <li  class="breadcrumb__item">
+                  Academic Departments
+              </li>
+        </ol>
+  </nav>
+
+      </div>
+<div data-drupal-messages-fallback class="hidden"></div>
+
+    </div>
+  
+        </div>
+      </div>
+            <div  class="main">
+    <a id="main-content" tabindex="-1"></a>        <main  class="main-content">
+                        <div>
+      
+<div  id="block-mainpagecontent" class="block system-main-block">
+      
+<article  about="/departments" class="node">
+
+  
+    
+
+  
+  <div>
+    
+  <div class="section-no-padding section-full-width layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div  class="block short-banner inline-blockshort-banner block-short-banner">
+          
+    
+<div  class="content-top">
+  <div  class="content-top__wrapper content-top__wrapper--gradient-purple">
+    <div class="hero">
+      <div class="hero-bg" style="background-image: url('/sites/default/files/2021-04/Hex%20Pattern_Purple_0.jpg')">
+        <div class="hero-image">
+          
+<div  class="info-image info-image--">
+  <div  class="info-image__content info-image__content--">
+
+                      
+
+  
+<picture
+   class="image image--"
+>
+      
+<img
+   class="image image--"
+      src="/sites/default/files/styles/short_banner/public/2021-06/Family%20Med%20Surgical%20skills%20lab-6733.JPG?h=6ee5ace0&amp;itok=0wmDA74i"
+      alt="Family medicine Surgical Skills Lab Woman "
+    />
+</picture>
+          
+  </div>
+</div>
+        </div>
+        <div  class="content-top__content-outer">
+          <div  class="content-top__content">
+            <div  class="content-top__content-inner">
+              <h1 class="title">
+            <div class="field-heading field field--name-field-heading field--type-string field--label-hidden field__item">Academic Departments</div>
+      </h1>
+              <div  class="content-top__content-info">
+                
+            <div class="field-subheading field field--name-field-subheading field--type-string-long field--label-hidden field__item">Explore our wide array of clinical, academic and basic science academic departments.</div>
+      
+                                                  <div  class="content-link content-link--">
+                    
+
+
+  <a href="/faculty"  class="button button--secondary">
+    <span>
+              Search faculty
+          </span>
+    <span class="material-icons" aria-hidden="true"></span>
+  </a>
+                  </div>
+                              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--twocol-section layout--twocol-section--67-33">
+    <div class="layout__region-wrapper">
+              <div  class="layout__region layout__region--first">
+          
+<div  class="block extra-padding-right inline-blockaccordion block-accordion">
+  
+      <h2 class="title">Clinical Departments</h2>
+    
+  
+<div class="accordion" id="accordion5bad7235-4407-4987-9bfe-7fde9a55677e">
+      
+<div class="card">
+  <div class="card-header" id="heading5bad7235-4407-4987-9bfe-7fde9a55677e-0">
+    <h3 class="mb-0">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse5bad7235-4407-4987-9bfe-7fde9a55677e-0" aria-expanded="false" aria-controls="collapse5bad7235-4407-4987-9bfe-7fde9a55677e-0">
+        <span class="material-icons add" aria-hidden="true">add</span>
+        <span class="material-icons remove" aria-hidden="true">remove</span>
+        <span>
+            <div class="field-heading field field--name-field-heading field--type-string field--label-hidden field__item">Emergency Medicine</div>
+      </span>
+      </button>
+    </h3>
+  </div>
+
+  <div id="collapse5bad7235-4407-4987-9bfe-7fde9a55677e-0" class="collapse" aria-labelledby="heading5bad7235-4407-4987-9bfe-7fde9a55677e-0" data-parent="#accordion5bad7235-4407-4987-9bfe-7fde9a55677e">
+    <div class="card-body">
+      
+
+            <div class="field-body field field--name-field-body field--type-text-long field--label-hidden"><ul class="list-styled"><li><a href="/em">Emergency Medicine</a></li>
+	<li>Emergency Medicine Education</li>
+	<li>Emergency Medical Services</li>
+	<li>Pediatric Emergency Medicine</li>
+	<li>Ultrasound</li>
+</ul></div>
+      
+    </div>
+  </div>
+</div>
+      
+<div class="card">
+  <div class="card-header" id="heading5bad7235-4407-4987-9bfe-7fde9a55677e-1">
+    <h3 class="mb-0">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse5bad7235-4407-4987-9bfe-7fde9a55677e-1" aria-expanded="false" aria-controls="collapse5bad7235-4407-4987-9bfe-7fde9a55677e-1">
+        <span class="material-icons add" aria-hidden="true">add</span>
+        <span class="material-icons remove" aria-hidden="true">remove</span>
+        <span>
+            <div class="field-heading field field--name-field-heading field--type-string field--label-hidden field__item">Family Medicine</div>
+      </span>
+      </button>
+    </h3>
+  </div>
+
+  <div id="collapse5bad7235-4407-4987-9bfe-7fde9a55677e-1" class="collapse" aria-labelledby="heading5bad7235-4407-4987-9bfe-7fde9a55677e-1" data-parent="#accordion5bad7235-4407-4987-9bfe-7fde9a55677e">
+    <div class="card-body">
+      
+
+            <div class="field-body field field--name-field-body field--type-text-long field--label-hidden"><ul class="list-styled"><li><a href="/fcm">Family Medicine</a></li>
+</ul></div>
+      
+    </div>
+  </div>
+</div>
+      
+<div class="card">
+  <div class="card-header" id="heading5bad7235-4407-4987-9bfe-7fde9a55677e-2">
+    <h3 class="mb-0">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse5bad7235-4407-4987-9bfe-7fde9a55677e-2" aria-expanded="false" aria-controls="collapse5bad7235-4407-4987-9bfe-7fde9a55677e-2">
+        <span class="material-icons add" aria-hidden="true">add</span>
+        <span class="material-icons remove" aria-hidden="true">remove</span>
+        <span>
+            <div class="field-heading field field--name-field-heading field--type-string field--label-hidden field__item">Internal Medicine</div>
+      </span>
+      </button>
+    </h3>
+  </div>
+
+  <div id="collapse5bad7235-4407-4987-9bfe-7fde9a55677e-2" class="collapse" aria-labelledby="heading5bad7235-4407-4987-9bfe-7fde9a55677e-2" data-parent="#accordion5bad7235-4407-4987-9bfe-7fde9a55677e">
+    <div class="card-body">
+      
+
+            <div class="field-body field field--name-field-body field--type-text-long field--label-hidden"><ul class="list-styled"><li><a href="/im">Internal Medicine</a></li>
+	<li><a href="/im/cardio">Cardiology</a></li>
+	<li><a href="im/dermatology">Dermatology</a></li>
+	<li><a href="/im/endocrinology">Endocrinology</a></li>
+	<li><a href="/im/gi">Gastroenterology</a></li>
+	<li><a href="/im/general">General Internal Medicine</a></li>
+	<li><a href="/im/id">Infectious Diseases</a></li>
+	<li><a href="/im/pulmonary">Pulmonary and Critical Care</a></li>
+	<li><a href="/im/rheumatology">Rheumatology</a></li>
+</ul></div>
+      
+    </div>
+  </div>
+</div>
+      
+<div class="card">
+  <div class="card-header" id="heading5bad7235-4407-4987-9bfe-7fde9a55677e-3">
+    <h3 class="mb-0">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse5bad7235-4407-4987-9bfe-7fde9a55677e-3" aria-expanded="false" aria-controls="collapse5bad7235-4407-4987-9bfe-7fde9a55677e-3">
+        <span class="material-icons add" aria-hidden="true">add</span>
+        <span class="material-icons remove" aria-hidden="true">remove</span>
+        <span>
+            <div class="field-heading field field--name-field-heading field--type-string field--label-hidden field__item">Neurology</div>
+      </span>
+      </button>
+    </h3>
+  </div>
+
+  <div id="collapse5bad7235-4407-4987-9bfe-7fde9a55677e-3" class="collapse" aria-labelledby="heading5bad7235-4407-4987-9bfe-7fde9a55677e-3" data-parent="#accordion5bad7235-4407-4987-9bfe-7fde9a55677e">
+    <div class="card-body">
+      
+
+            <div class="field-body field field--name-field-body field--type-text-long field--label-hidden"><ul class="list-styled"><li><a href="/neuro">Neurology</a></li>
+</ul></div>
+      
+    </div>
+  </div>
+</div>
+      
+<div class="card">
+  <div class="card-header" id="heading5bad7235-4407-4987-9bfe-7fde9a55677e-4">
+    <h3 class="mb-0">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse5bad7235-4407-4987-9bfe-7fde9a55677e-4" aria-expanded="false" aria-controls="collapse5bad7235-4407-4987-9bfe-7fde9a55677e-4">
+        <span class="material-icons add" aria-hidden="true">add</span>
+        <span class="material-icons remove" aria-hidden="true">remove</span>
+        <span>
+            <div class="field-heading field field--name-field-heading field--type-string field--label-hidden field__item">Obstetrics and Gynecology</div>
+      </span>
+      </button>
+    </h3>
+  </div>
+
+  <div id="collapse5bad7235-4407-4987-9bfe-7fde9a55677e-4" class="collapse" aria-labelledby="heading5bad7235-4407-4987-9bfe-7fde9a55677e-4" data-parent="#accordion5bad7235-4407-4987-9bfe-7fde9a55677e">
+    <div class="card-body">
+      
+
+            <div class="field-body field field--name-field-body field--type-text-long field--label-hidden"><ul class="list-styled"><li><a href="/obgyn">Obstetrics and Gynecology</a></li>
+	<li><a href="/obgyn/general-obstetrics-and-gynecology">General Obstetrics and Gynecology</a></li>
+</ul></div>
+      
+    </div>
+  </div>
+</div>
+      
+<div class="card">
+  <div class="card-header" id="heading5bad7235-4407-4987-9bfe-7fde9a55677e-5">
+    <h3 class="mb-0">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse5bad7235-4407-4987-9bfe-7fde9a55677e-5" aria-expanded="false" aria-controls="collapse5bad7235-4407-4987-9bfe-7fde9a55677e-5">
+        <span class="material-icons add" aria-hidden="true">add</span>
+        <span class="material-icons remove" aria-hidden="true">remove</span>
+        <span>
+            <div class="field-heading field field--name-field-heading field--type-string field--label-hidden field__item">Otolaryngology</div>
+      </span>
+      </button>
+    </h3>
+  </div>
+
+  <div id="collapse5bad7235-4407-4987-9bfe-7fde9a55677e-5" class="collapse" aria-labelledby="heading5bad7235-4407-4987-9bfe-7fde9a55677e-5" data-parent="#accordion5bad7235-4407-4987-9bfe-7fde9a55677e">
+    <div class="card-body">
+      
+
+            <div class="field-body field field--name-field-body field--type-text-long field--label-hidden"><ul class="list-styled"><li><a href="/ent">Otolaryngology, Head and Neck Surgery</a></li>
+</ul></div>
+      
+    </div>
+  </div>
+</div>
+      
+<div class="card">
+  <div class="card-header" id="heading5bad7235-4407-4987-9bfe-7fde9a55677e-6">
+    <h3 class="mb-0">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse5bad7235-4407-4987-9bfe-7fde9a55677e-6" aria-expanded="false" aria-controls="collapse5bad7235-4407-4987-9bfe-7fde9a55677e-6">
+        <span class="material-icons add" aria-hidden="true">add</span>
+        <span class="material-icons remove" aria-hidden="true">remove</span>
+        <span>
+            <div class="field-heading field field--name-field-heading field--type-string field--label-hidden field__item">Pediatrics</div>
+      </span>
+      </button>
+    </h3>
+  </div>
+
+  <div id="collapse5bad7235-4407-4987-9bfe-7fde9a55677e-6" class="collapse" aria-labelledby="heading5bad7235-4407-4987-9bfe-7fde9a55677e-6" data-parent="#accordion5bad7235-4407-4987-9bfe-7fde9a55677e">
+    <div class="card-body">
+      
+
+            <div class="field-body field field--name-field-body field--type-text-long field--label-hidden"><ul class="list-styled"><li><a href="/peds">Pediatrics Home</a></li>
+	<li><a href="/peds/pediatric-cardiology">Cardiology </a></li>
+	<li><a href="/peds/pediatric-critical-care-medicine">Critical Care </a></li>
+	<li><a href="/peds/developmentalbehavioral-pediatric-medicine">Developmental/Behavioral Medicine </a></li>
+	<li><a href="/peds/endocrinology">Endocrinology </a></li>
+	<li><a href="/peds/pediatric-gastroenterology">Gastroenterology </a></li>
+	<li><a href="/peds/pediatric-genetics">Genetics </a></li>
+	<li><a href="/peds/pediatric-hematology-oncology">Hematology/Oncology </a></li>
+	<li><a href="/peds/pediatric-hospital-medicine">Hospital Medicine </a></li>
+	<li><a href="/peds/pediatric-infectious-diseases">Infectious Diseases </a></li>
+	<li><a href="/peds/neonatology">Neonatology </a></li>
+	<li><a href="/peds/pediatric-nephrology">Nephrology </a></li>
+	<li><a href="/peds/pediatric-neurology">Neurology </a></li>
+	<li><a href="/peds/pediatric-primary-care">Primary Care </a></li>
+	<li><a href="/peds/pediatric-pulmonology">Pulmonology </a></li>
+</ul></div>
+      
+    </div>
+  </div>
+</div>
+      
+<div class="card">
+  <div class="card-header" id="heading5bad7235-4407-4987-9bfe-7fde9a55677e-7">
+    <h3 class="mb-0">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse5bad7235-4407-4987-9bfe-7fde9a55677e-7" aria-expanded="false" aria-controls="collapse5bad7235-4407-4987-9bfe-7fde9a55677e-7">
+        <span class="material-icons add" aria-hidden="true">add</span>
+        <span class="material-icons remove" aria-hidden="true">remove</span>
+        <span>
+            <div class="field-heading field field--name-field-heading field--type-string field--label-hidden field__item">Psychiatry</div>
+      </span>
+      </button>
+    </h3>
+  </div>
+
+  <div id="collapse5bad7235-4407-4987-9bfe-7fde9a55677e-7" class="collapse" aria-labelledby="heading5bad7235-4407-4987-9bfe-7fde9a55677e-7" data-parent="#accordion5bad7235-4407-4987-9bfe-7fde9a55677e">
+    <div class="card-body">
+      
+
+            <div class="field-body field field--name-field-body field--type-text-long field--label-hidden"><ul class="list-styled"><li><a href="/psych">Psychiatry</a></li>
+	<li><a href="/psych/adult-psychiatry.html">Adult Psychiatry</a></li>
+	<li><a href="/psych/child-psychiatry.html">Child Psychiatry</a></li>
+	<li><a href="/psych/medicine-psychiatry.html">Medicine Psychiatry</a></li>
+</ul></div>
+      
+    </div>
+  </div>
+</div>
+      
+<div class="card">
+  <div class="card-header" id="heading5bad7235-4407-4987-9bfe-7fde9a55677e-8">
+    <h3 class="mb-0">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse5bad7235-4407-4987-9bfe-7fde9a55677e-8" aria-expanded="false" aria-controls="collapse5bad7235-4407-4987-9bfe-7fde9a55677e-8">
+        <span class="material-icons add" aria-hidden="true">add</span>
+        <span class="material-icons remove" aria-hidden="true">remove</span>
+        <span>
+            <div class="field-heading field field--name-field-heading field--type-string field--label-hidden field__item">Surgery</div>
+      </span>
+      </button>
+    </h3>
+  </div>
+
+  <div id="collapse5bad7235-4407-4987-9bfe-7fde9a55677e-8" class="collapse" aria-labelledby="heading5bad7235-4407-4987-9bfe-7fde9a55677e-8" data-parent="#accordion5bad7235-4407-4987-9bfe-7fde9a55677e">
+    <div class="card-body">
+      
+
+            <div class="field-body field field--name-field-body field--type-text-long field--label-hidden"><ul class="list-styled"><li><a href="/surgery">Surgery</a></li>
+	<li><a href="/surgery/cardiothoracic">Cardiothoracic Surgery</a></li>
+	<li><a href="/surgery/general">General Surgery</a></li>
+	<li><a href="/surgery/neuro">Neurosurgery</a></li>
+	<li><a href="/surgery/ortho">Orthopedic Surgery</a></li>
+	<li><a href="/institute-plastic-surgery">Plastic Surgery</a></li>
+	<li><a href="/surgery/urology">Urology</a></li>
+	<li><a href="/surgery/vascular">Vascular Surgery</a></li>
+</ul></div>
+      
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+        </div>
+      
+              <div  class="layout__region layout__region--second">
+          
+<div  class="block inline-blocktext block-text">
+    
+      <h2 class="title">Basic Science Departments</h2>
+    
+      
+
+            <div class="field-body field field--name-field-body field--type-text-long field--label-hidden"><ul class="list-styled"><li><a href="/anatomy">Anatomy</a></li>
+	<li><a href="https://biochem.siu.edu/">Biochemistry</a></li>
+	<li><a href="/dme">Medical Education</a></li>
+	<li><a href="/medhum">Medical Humanities</a></li>
+	<li><a href="/mmi">Medical Microbology, Immunology and Cell Biology</a></li>
+	<li><a href="/pathology">Pathology</a></li>
+	<li><a href="/pharm">Pharmacology</a></li>
+	<li><a href="https://physiology.siu.edu/">Physiology</a></li>
+	<li><a href="/popscipolicy">Population Science and Policy</a></li>
+	<li><a href="/adr">Research</a></li>
+</ul></div>
+      
+  </div>
+
+        </div>
+          </div>
+  </div>
+
+  </div>
+
+</article>
+
+
+  </div>
+
+    </div>
+  
+      </main>
+  </div>
+          
+    
+                
+    
+
+
+<footer  class="footer">
+  <div  class="footer__footer-top">
+    <div  class="footer__inner">
+                </div>
+    
+
+<div id="modal-browser" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        	<p>This browser is no longer supported and some key features will not work. We strongly recommend using Edge, Chrome 70+, Safari 5.x+ and Firefox 5.x+.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+  <div  class="footer__footer-bottom">
+  <div  class="footer__inner">
+    <div  class="footer__logo_footer">
+              
+  
+
+
+<div class="logo-img">
+      
+<a
+   class="logo-link logo-link--"
+    href="/"
+>
+          
+
+  
+<img
+   class="logo__image logo__image--"
+      src="/themes/custom/siu/images/siu-hexagon-footer-edu.png"
+      alt="SIU School of Medicine Logo"
+    />
+      </a>
+  </div>
+            <div class="copyright">© 2021 SIU Board of Trustees all rights reserved</div>
+    </div>
+            <nav aria-labelledby="block-footermenuresourcesedu-menu" id="block-footermenuresourcesedu" class="menu-blockfooter-menu---resources-org-">
+      
+  <h2 id="block-footermenuresourcesedu-menu">Legal</h2>
+  
+
+        
+
+
+
+    
+                          
+        
+<ul  class="inline-menu">
+                      
+
+<li  class="inline-menu__item">
+      
+<a
+   class="inline-menu__link"
+    href="/hr/policies/aa-eoe-diversity.html"
+>
+      Equal Opportunity Employer
+  </a>
+      </li>
+                    
+
+<li  class="inline-menu__item">
+      
+<a
+   class="inline-menu__link"
+    href="/nondiscrimination-statement.html"
+>
+      Nondiscrimination Statement
+  </a>
+      </li>
+                    
+
+<li  class="inline-menu__item">
+      
+<a
+   class="inline-menu__link"
+    href="/privacy.html"
+>
+      Privacy Policy
+  </a>
+      </li>
+                    
+
+<li  class="inline-menu__item">
+      
+<a
+   class="inline-menu__link"
+    href="/mc/media-relations.html"
+>
+      FOIA
+  </a>
+      </li>
+              </ul>
+  
+
+  </nav>
+
+                  <nav aria-labelledby="block-footermenuaboutusedu-menu" id="block-footermenuaboutusedu" class="menu-blockfooter-menu---about-us-edu-">
+      
+  <h2 id="block-footermenuaboutusedu-menu">About Us</h2>
+  
+
+        
+
+
+
+    
+                          
+        
+<ul  class="inline-menu">
+                      
+
+<li  class="inline-menu__item">
+      
+<a
+   class="inline-menu__link"
+    href="/about-us"
+>
+      About Us
+  </a>
+      </li>
+                    
+
+<li  class="inline-menu__item">
+      
+<a
+   class="inline-menu__link"
+    href="/directory"
+>
+      Directory
+  </a>
+      </li>
+                    
+
+<li  class="inline-menu__item">
+      
+<a
+   class="inline-menu__link"
+    href="/contact-us"
+>
+      Contact 
+  </a>
+      </li>
+                    
+
+<li  class="inline-menu__item">
+      
+<a
+   class="inline-menu__link"
+    href="http://my.siumed.edu/"
+>
+      My SIU
+  </a>
+      </li>
+                    
+
+<li  class="inline-menu__item">
+      
+<a
+   class="inline-menu__link"
+    href="https://www.siumed.org/"
+>
+      SIU Medicine
+  </a>
+      </li>
+                    
+
+<li  class="inline-menu__item">
+      
+<a
+   class="inline-menu__link"
+    href="http://www.siuc.edu/"
+>
+      Southern Illinois University Carbondale
+  </a>
+      </li>
+                    
+
+<li  class="inline-menu__item">
+      
+<a
+   class="inline-menu__link"
+    href="http://www.siue.edu/"
+>
+      Southern Illinois University Edwardsville
+  </a>
+      </li>
+                    
+
+<li  class="inline-menu__item">
+      
+<a
+   class="inline-menu__link"
+    href="http://www.siu.edu/"
+>
+      Southern Illinois University System
+  </a>
+      </li>
+              </ul>
+  
+
+  </nav>
+
+                  
+          <div  class="footer__footer-inline-menu footer__footer-inline-menu--social">
+                    
+    <h2>Social</h2>
+  
+<ul  class="social-menu social-menu--">
+                
+<li  class="social-menu__item social-menu__item--">
+              
+<a
+   class="social-menu__link social-menu__link--"
+    href="https://www.facebook.com/siumed.edu"
+>
+                  <div class="ico-social-footer facebook"></div>
+                <span>Facebook</span>
+              </a>
+          </li>
+              
+<li  class="social-menu__item social-menu__item--">
+              
+<a
+   class="social-menu__link social-menu__link--"
+    href="https://twitter.com/siusom"
+>
+                  <div class="ico-social-footer twitter"></div>
+                <span>Twitter</span>
+              </a>
+          </li>
+              
+<li  class="social-menu__item social-menu__item--">
+              
+<a
+   class="social-menu__link social-menu__link--"
+    href="https://www.youtube.com/user/SIUSOMandHC"
+>
+                  <div class="ico-social-footer youtube"></div>
+                <span>Youtube</span>
+              </a>
+          </li>
+              
+<li  class="social-menu__item social-menu__item--">
+              
+<a
+   class="social-menu__link social-menu__link--"
+    href="https://www.instagram.com/siu_medicine"
+>
+                  <div class="ico-social-footer instagram"></div>
+                <span>Instagram</span>
+              </a>
+          </li>
+          </ul>
+          </div>
+  </div>
+  </div>
+</footer>
+  </div>
+
+  </div>
+
+      
+    </div>
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/159076","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"core\/html5shiv,eu_cookie_compliance\/eu_cookie_compliance_default,layout_builder\/twocol_section,layout_discovery\/onecol,siu\/browser-detect,siu\/global,siu\/layout-builder,siu\/main-menu,siu\/mmenu,siu\/site-footer,siu\/site-header,siu\/site-header-search,siu\/sprite,siu_citystate\/drupal.siu_citystate,system\/base,views\/views.module","theme":"siu","theme_token":null},"ajaxTrustedUrl":[],"eu_cookie_compliance":{"cookie_policy_version":"1.0.0","popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":false,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv role=\u0022alertdialog\u0022 aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EBy clicking the accept button, you agree to us doing so.\u003C\/p\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003EMore info\u003C\/button\u003E\n      \n              \u003Cdiv class=\u0022decline-btn\u0022\u003E\n          \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-secondary-button\u0022\u003ENo thanks\u003C\/button\u003E\n        \u003C\/div\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-default-button\u0022\u003EAccept\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv role=\u0022alertdialog\u0022 aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003EMore info\u003C\/button\u003E\n      \n              \u003Cdiv class=\u0022decline-btn\u0022\u003E\n          \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-secondary-button\u0022\u003ENo thanks\u003C\/button\u003E\n        \u003C\/div\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-default-button\u0022\u003EAccept\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":768,"popup_html_agreed":false,"popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"\/","popup_link_new_window":true,"popup_position":false,"fixed_top_position":true,"popup_language":"en","store_consent":false,"better_support_for_screen_readers":true,"cookie_name":"","reload_page":false,"domain":"","domain_all_sites":false,"popup_eu_only_js":false,"cookie_lifetime":100,"cookie_session":0,"set_cookie_session_zero_on_disagree":0,"disagree_do_not_show_popup":false,"method":"opt_in","automatic_cookies_removal":true,"allowed_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv role=\u0022alertdialog\u0022 aria-labelledby=\u0022popup-text\u0022 class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button\u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","withdraw_enabled":false,"reload_options":0,"reload_routes_list":"","withdraw_button_on_info_popup":false,"cookie_categories":[],"cookie_categories_details":[],"enable_save_preferences_button":true,"containing_element":"body","settings_tab_enabled":false},"user":{"uid":0,"permissionsHash":"a652fea042305c993d2a508993cab4911e00fa7f9f4d554d5ff0eb61cff7d582"}}</script>
+<script src="/sites/default/files/js/js_aTAOP24oZ8a7j-FY4CTLCn-BnOcfIW0G0VUgD5aRLzE.js"></script>
+<script src="/modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.js?v=1.9" defer></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-5b3271f6ac34c6e7a74","applicationID":"980487817","transactionName":"Y1RbYEJYX0EEAhdeXFoeeFdEUF5cSiURQkNVXWVaX11UbiYODUNBW11VUUJlf10BBDVeVkNyVlpES15eCQQRGg1CWFxD","queueTime":0,"applicationTime":1114,"atts":"TxNYFgpCTE8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

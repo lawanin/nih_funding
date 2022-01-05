@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8 no-js" lang="en-US"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 no-js" lang="en-US"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"50c08683e1",applicationID:"261436544"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+	<link rel="dns-prefetch" href="https://ajax.googleapis.com">
+    <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/mercer/assets/fonts/390D70_0_0.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/mercer/assets/fonts/390D70_1_0.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/mercer/assets/fonts/390D70_2_0.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/mercer/assets/fonts/390D70_3_0.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/mercer/assets/fonts/crimson-text-v8-latin-regular.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff" href="/wp-content/themes/mercer/assets/fonts/ikes4.woff" crossorigin>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f76800">
+    <meta name="msapplication-TileColor" content="#3f3f41">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NMLQ2X');</script>
+    <!-- End Google Tag Manager -->
+
+    <title>Biomedical Sciences Research | Mercer School of Medicine</title>
+
+<!-- The SEO Framework by Sybre Waaijer -->
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Biomedical Sciences Research | Mercer School of Medicine" />
+<meta property="og:url" content="https://medicine.mercer.edu/research/biomedical-sciences-research/" />
+<meta property="og:site_name" content="Mercer School of Medicine" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Biomedical Sciences Research | Mercer School of Medicine" />
+<link rel="canonical" href="https://medicine.mercer.edu/research/biomedical-sciences-research/" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://medicine.mercer.edu/","name":"Mercer School of Medicine"}},{"@type":"ListItem","position":2,"item":{"@id":"https://medicine.mercer.edu/research/","name":"Research"}},{"@type":"ListItem","position":3,"item":{"@id":"https://medicine.mercer.edu/research/biomedical-sciences-research/","name":"Biomedical Sciences Research"}}]}</script>
+<!-- / The SEO Framework by Sybre Waaijer | 4.98ms meta | 0.41ms boot -->
+
+<link rel='dns-prefetch' href='//polyfill.io' />
+<link rel='dns-prefetch' href='//medicine.mercer.edu' />
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Mercer School of Medicine &raquo; Feed" href="https://medicine.mercer.edu/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Mercer School of Medicine &raquo; Comments Feed" href="https://medicine.mercer.edu/comments/feed/" />
+<link rel='stylesheet' id='sb_instagram_styles-css'  href='https://medicine.mercer.edu/wp-content/plugins/instagram-feed/css/sbi-styles.min.css?ver=2.9.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='mercer-style-css'  href='https://medicine.mercer.edu/wp-content/themes/mercer/style.css?ver=1634054093' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='https://medicine.mercer.edu/wp-content/themes/mercer-child/style.css?ver=1634054093' type='text/css' media='all' />
+<script type='text/javascript' src='https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver&#038;ver=5.8.1' id='intersection-obs-polyfill-js'></script>
+<script type='text/javascript' src='https://medicine.mercer.edu/wp-content/themes/mercer/assets/js/yall.min.js?ver=1634054093' id='yall-js'></script>
+<script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js' id='jquery-js'></script>
+<script type='text/javascript' src='https://medicine.mercer.edu/wp-content/themes/mercer/assets/js/hdr.min.js?ver=1634054093' id='header-js-js'></script>
+<!-- OG: 2.9.2 -->
+<meta property="og:description" content="Biomedical Sciences Research" /><meta property="og:type" content="article" /><meta property="og:locale" content="en_US" /><meta property="og:site_name" content="Mercer School of Medicine" /><meta property="og:title" content="Biomedical Sciences Research" /><meta property="og:url" content="https://medicine.mercer.edu/research/biomedical-sciences-research/" /><meta property="og:updated_time" content="2020-01-16T15:55:23-05:00" /><meta property="article:published_time" content="2020-01-14T16:17:32+00:00" /><meta property="article:modified_time" content="2020-01-16T15:55:23+00:00" /><meta property="article:author" content="https://medicine.mercer.edu/author/matthewsmith/" /><meta property="twitter:partner" content="ogwp" /><meta property="twitter:card" content="summary" /><meta property="twitter:title" content="Biomedical Sciences Research" /><meta property="twitter:description" content="Biomedical Sciences Research" /><meta property="twitter:url" content="https://medicine.mercer.edu/research/biomedical-sciences-research/" /><meta property="profile:first_name" content="Matthew" /><meta property="profile:last_name" content="Smith" /><meta property="profile:username" content="Matthew Smith" /><!-- /OG -->
+<link rel="https://api.w.org/" href="https://medicine.mercer.edu/wp-json/" /><link rel="alternate" type="application/json" href="https://medicine.mercer.edu/wp-json/wp/v2/pages/952" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://medicine.mercer.edu/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://medicine.mercer.edu/wp-includes/wlwmanifest.xml" /> 
+<link rel="alternate" type="application/json+oembed" href="https://medicine.mercer.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmedicine.mercer.edu%2Fresearch%2Fbiomedical-sciences-research%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://medicine.mercer.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmedicine.mercer.edu%2Fresearch%2Fbiomedical-sciences-research%2F&#038;format=xml" />
+<style type="text/css">.broken_link, a.broken_link {
+	text-decoration: line-through;
+}</style></head>
+<body class="page-template page-template-page-templates page-template-interior page-template-page-templatesinterior-php page page-id-952 page-parent page-child parent-pageid-212 not-home page-biomedical-sciences-research secondary-menu-active">
+        <script>document.addEventListener("DOMContentLoaded",function(){yall({idleLoadTimeout:0,threshold:250});});</script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMLQ2X"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    
+    <div id="mcu-alert" class="website-alert severe" role="alert" aria-live="assertive" aria-hidden="true">
+    <div class="content-wrap">
+        <p id="mcu-alert-title" class="alert-title"></p>
+        <p id="mcu-alert-text" class="alert-text"></p>
+
+        <div id="mcu-alert-link-wrap" class="link-wrap link-wrap-hidden">
+            <a id="mcu-alert-link" class="alert-link" href=""></a>
+        </div>
+    </div>
+    <button id="mcu-close-alert" class="close-alert" title="Close alert"><span class="ikes-cross" aria-hidden="true"></span> <span class="sr-only">Close the alert banner.</span></button>
+</div>
+    <a class="skip-content" href="#primary-wrap" title="Skip to main content of page" tabindex="0">Skip to Content</a>
+            <a class="skip-content" href="#tier3-nav-button" title="Skip to main content of page" tabindex="0">Skip to Mercer School of Medicine Menu</a>
+        <a class="skip-content" href="#primary-nav-button" title="Skip to primary menu" tabindex="0">Skip to Mercer Menu</a>
+
+    <div id="main">
+        <header id="header" role="banner">
+            <div class="header-first">
+                <div class="site-title">
+                    <a href="https://www.mercer.edu/">
+                        <svg class="header-logo" aria-labelledby="header-title" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 49.533">
+                            <title id="header-title">Mercer School of Medicine</title>
+                            <desc>Mercer University logo displaying the words "Mercer University" in large white font on a dark background, all underlined in orange</desc>
+                            <defs><style>.a {fill: #f76800;} .b {fill: #fff;}</style></defs>
+                            <g>
+                                <path class="a" d="M0,49.53H260v-2H0Z" transform="translate(0 0)"/>
+                                <g>
+                                    <path class="b" d="M97.15,31.39c3.17-.06,5.74-.12,8.49-.12,2.39.06,6.4.12,11.47.12.06-.18.42.3.61-.6.11-1.91.53-3.64.71-5.85.06-.41-.84-1.19-.84,0-1,4.78-3.94,5.25-9.44,5.31-4.19-.06-4.6-.41-4.6-3.7V17.49h4.18c3.41,0,4.55,0,4.73,2.15a.57.57,0,0,0,.6.53.55.55,0,0,0,.53-.53c-.06-1.49,0-2.09,0-3.16,0-.84-.06-1.37,0-2.87-.18-1.07-1.13-.6-1.13-.12.12,2.27-1.62,2.81-5.62,2.87-.78-.06-2.39-.06-3.29-.12V5h3.16c6.1,0,8.61.47,8.61,4.41.06.66,1,.42,1,0,.06-2.09-.12-2.74-.12-4.41a11.53,11.53,0,0,0,0-1.44c-4.79.18-9.15.18-11.48.12s-4.43,0-7.18-.12a.66.66,0,0,0,0,1.31c1.92-.06,2.69.78,2.75,3V26.21c-.06,3-.23,4.23-2.87,4.3-.9-.06-.77.95-.3.89Z" transform="translate(0 0)"/>
+                                    <path class="b" d="M133.56,4.37a12.24,12.24,0,0,0-4.67-.9c-1.85.06-3.94.36-6.33.3a31.54,31.54,0,0,1-3.89-.12c-.36.12-.66,1.2.12,1.31,2,0,2.75.42,2.75,2.75V27c0,2.92-.12,3.16-2.45,3.46-1,.12-1,1,0,1,2,0,2.87-.06,4.18,0,1.14-.06,2.45-.06,4.43,0,.66,0,1.13-.89,0-1-2.69-.12-2.81-1.26-2.87-4.3V18.45a24.35,24.35,0,0,1,4.18.3c.54.24,1,1.37,1.73,2.74l3.59,5.85c2,3.34,4.31,4.53,7.77,4.59.72-.06.42-.06,1.32-.12.71,0,.47-.95,0-.83-3-.06-4.55-2-6.34-5.43L132.36,18a7.24,7.24,0,0,0,5.44-6.86,7,7,0,0,0-4.24-6.74l-1.08,1.9a6.14,6.14,0,0,1,2.09,5.25c.06,3.76-2.15,5.73-6.33,5.73a22.37,22.37,0,0,1-3.47-.3V5c1.13-.06,2.57-.11,3.17-.11a6.79,6.79,0,0,1,4.48,1.36Z" transform="translate(0 0)"/>
+                                    <path class="b" d="M73.4,42.2a.6.6,0,0,1-.52-.3L55.78,7.41,55.66,35c.06,3.61,1.54,5.55,4.3,5.61h0a.81.81,0,0,1,.69.78.46.46,0,0,1-.16.38A1,1,0,0,1,60,42c-3.23-.12-4.81-.12-5.86-.12H48.25a.5.5,0,0,1-.38-.15.51.51,0,0,1-.11-.43.6.6,0,0,1,.52-.57h.08c3,0,3.74-1.25,4.3-3.88.39-1.76.47-6.45.58-12.39,0-.42,0-.84,0-1.26v-.25c0-2.05,0-4.43,0-6.52v-.85c0-4.3,0-8,0-8.08,0-2.07-.19-3.65-.9-4.63s-1.89-1.37-4-1.4c-.57,0-.77-.4-.76-.7A.76.76,0,0,1,48.36,0l1.37,0C51,.1,52,.13,53.27.13a4,4,0,0,0,.49,0c.45,0,1.13,0,2.25-.1h.12l.28,0L57,0h.14a.62.62,0,0,1,.58.43l17,35L89.44.61l0-.08h0A.74.74,0,0,1,90.15,0c1,0,1.84,0,2.66.07s1.39.05,2.06.05c.49,0,1,0,1.48,0,1.21,0,2.53,0,4.14-.15.4,0,.59.24.59.47a.4.4,0,0,1-.36.42h0a.46.46,0,0,1-.21-.05c-4.4.79-5.08,2.18-5.14,6.56a3.57,3.57,0,0,1,0,1.13L96,32.89c0,5.31,1.31,7.58,4.39,7.58h.21c.68,0,.91.36.9.67a.85.85,0,0,1-.9.76c-2.56-.1-4.67-.14-6.25-.14-.63,0-1.18,0-1.64,0s-.87,0-1.3,0c-.9,0-1.78,0-3.39.09l-.66,0h0l-.65,0a.6.6,0,0,1-.65-.55v0a.53.53,0,0,1,.16-.38.74.74,0,0,1,.49-.18c1.62,0,2.62-.37,3.26-1.12s.93-1.91.93-3.77L90.39,3.36,74.49,41.6l-.06.1c-.09.17-.26.5-.54.5H73.4Zm67.21-.06h-.3l-2.51-6.45c-.35-.65-.59-1-1.32-1v-.42l.71.05a7,7,0,0,1,.73.07q.72,0,1.44-.12v.42h-.2c-.37,0-.58.14-.64.42a.79.79,0,0,0,.12.3l2.15,5.31,2.15-5.13a2,2,0,0,0,0-.6.17.17,0,0,0,0-.18c-.06-.09-.22-.12-.58-.12v-.42l.57.06.57.06a7.35,7.35,0,0,0,1.14-.12v.42c-.73,0-.91.39-1.14,1l-2.87,6.44Zm31.39,0h0c-.64-.07-1.33-.2-1.85-.3V39.93h.3a1.87,1.87,0,0,0,1.85,1.73h.1a1.5,1.5,0,0,0,1.46-1.54h0c0-1-.69-1.27-1.73-1.73-1.23-.56-2.1-1-2-2.15a1.86,1.86,0,0,1,.5-1.38,2.51,2.51,0,0,1,1.77-.77,11.16,11.16,0,0,1,1.14.16h.07a6.2,6.2,0,0,0,.82.12,3.63,3.63,0,0,0,0,1.14,1.42,1.42,0,0,0,0,.71H174c0-1.1-.57-1.67-1.73-1.73a1.52,1.52,0,0,0-1.05.52,1.12,1.12,0,0,0-.27.8,1.15,1.15,0,0,0,.6,1.13,9.48,9.48,0,0,0,1.1.56h.05l0,0h.07a6.43,6.43,0,0,1,.79.39,1.83,1.83,0,0,1,1,1.73,2.21,2.21,0,0,1-.54,1.67,2.82,2.82,0,0,1-2,.79Zm-64.27-.06c-1.81-.07-2.93-1.29-3-3.29V35.51a.86.86,0,0,0-.12-.68.69.69,0,0,0-.52-.16h-.2s0,0,0,0h0a.14.14,0,0,0-.08,0v-.42l.62.05h.09c.26,0,.49,0,.72.06a10,10,0,0,0,1.06-.09h0l.23,0v.41c-.8,0-.84.34-.84,1.32v3.28c0,1.42.76,2.27,2,2.27H108a2.23,2.23,0,0,0,1.63-.63,3,3,0,0,0,.7-2.23V37.24c0-1.41,0-2.1-.24-2.4a.67.67,0,0,0-.49-.17h-.11v-.41l.48.05h0a4,4,0,0,1,.5.06,7.35,7.35,0,0,0,1.14-.12v.42c-.66,0-.72.3-.72,1.14v2c0,.08,0,.16,0,.25v0a5.15,5.15,0,0,1-.59,2.69A3.22,3.22,0,0,1,107.73,42.08Zm16.2-.13h-.42l-5.14-6.44a16.62,16.62,0,0,1-.18,1.73c0,1.4.08,2.48.1,2.93v.14c0,.34,0,.54,0,.63.12.47.29.6.84.6v.3l-.57,0-.57,0-.57,0-.57,0v-.3c.59-.06.78-.29.84-1v0c0-.47.07-2.22.12-5.11,0-.54-.17-.72-.79-.72h-.35v-.42l.47.05h0a4.51,4.51,0,0,1,.53.07,4.51,4.51,0,0,1,.72-.12l5,6.14V39a28.6,28.6,0,0,0-.12-3.7c-.06-.5-.32-.6-.71-.6v-.42a5.3,5.3,0,0,0,.56.07c.17,0,.36,0,.57,0a8.08,8.08,0,0,0,.86-.08h.06l.22,0v.42h0a.67.67,0,0,0-.83.83c0,.44-.12,2.39-.12,6.45Zm42.51,0h-.72c-.85,0-1.29-.3-1.85-1.31l-1-1.55h0c-.18-.35-.3-.59-.42-.59a1,1,0,0,0-.39-.07l-.44,0v2c0,.84.06,1.13.71,1.13h.12v.3l-.65,0a6.12,6.12,0,0,1-.66,0q-.33,0-.72,0t-.72,0v-.3h0a.82.82,0,0,0,.67-.19c.15-.15.19-.43.16-.94V35.51a.91.91,0,0,0-.12-.7.58.58,0,0,0-.43-.15h-.17a0,0,0,0,0,0,0h0a.13.13,0,0,0-.09,0v-.42a11,11,0,0,1,1.14.12,8.22,8.22,0,0,0,1-.06h.05c.23,0,.46,0,.69-.05h.16a2.9,2.9,0,0,1,1.16.24l-.15.2.15-.2A1.73,1.73,0,0,1,165,36.23a1.61,1.61,0,0,1-1.35,1.84h-.2l1.14,2.15c.46.86.76,1.43,1.85,1.43V42Zm-4.9-7.27V38l.36,0,.35,0h.17a1.64,1.64,0,0,0,1.23-.43A1.49,1.49,0,0,0,164,36.4a1.69,1.69,0,0,0-.54-1.37,1.84,1.84,0,0,0-1.11-.36h-.8Zm19.79,7.18-.66,0-.72,0-.72,0v-.3h.12a.75.75,0,0,0,.56-.17c.15-.16.2-.45.16-1V35.51a.91.91,0,0,0-.12-.7.54.54,0,0,0-.43-.14h-.17a0,0,0,0,0,0,0h0l-.09,0v-.41l.72.05h.11l.61.06c.34,0,.67,0,1-.08h.12l.19,0v.42c-.8,0-.83.34-.83,1.31V40.4c0,.84.06,1.13.71,1.13H182v.3a6.18,6.18,0,0,1-.65,0Zm-49.74,0-.72,0-.66,0-.66,0v-.3h0c.65,0,.83-.25.83-1.14V35.51c0-.61-.16-.84-.57-.84h-.15a.1.1,0,0,0-.08,0,0,0,0,0,0,0,0h0v-.41l.63.05h0c.22,0,.43,0,.64.06a8.4,8.4,0,0,0,1-.07h.07l.36,0v.42h0a.89.89,0,0,0-.68.18c-.17.18-.18.51-.14,1.13V40.4c0,.51,0,.8.12,1a.79.79,0,0,0,.59.16h.12v.3q-.33,0-.72,0Zm69.4,0-.65,0-.66,0-.66,0h.18v-.3c.6,0,.78-.25.84-1.14V39.09l-2.15-3.87a1.17,1.17,0,0,0-1-.72v-.3c.22,0,.44,0,.65,0l.67.07c.44,0,.88-.06,1.31-.12v.3c-.4.07-.6.2-.6.42s0,.24.12.3l1.73,3.16,1.56-3.16a1.34,1.34,0,0,1,.07-.18h0a.19.19,0,0,0,0-.1c0-.24-.17-.3-.71-.42v-.3c.14,0,.31,0,.52,0h.05a3.43,3.43,0,0,1,.56.07l1-.12v.3a1.13,1.13,0,0,0-1,.71l-2,3.58V40.4c0,.84.07,1.13.84,1.13v.3q-.33,0-.66,0Zm-10.87,0-.72,0-.72,0-.72,0v-.3h0a1.11,1.11,0,0,0,.79-.2,1.3,1.3,0,0,0,.22-.93V34.68h-.72c-1.38,0-1.8.34-1.85,1.55h-.3v-2h6.57v2h-.3c-.06-1.36-.5-1.49-1.85-1.55h-.72v5.77c.06.79.08,1.08,1,1.08v.3q-.3,0-.72,0Zm-35.34,0h-5.32v-.3h0a.9.9,0,0,0,.67-.19c.14-.16.19-.43.16-1V35.51a.91.91,0,0,0-.13-.7.52.52,0,0,0-.43-.14h-.16s0,0,0,0h0l-.07,0h0v-.42c.3,0,.65,0,1.06.06s.74,0,1.09.06h.24c.88,0,1.77,0,2.63-.12a.27.27,0,0,1,0,.3,13.65,13.65,0,0,1,.12,1.55h-.3c-.06-1.13-.62-1.32-1.85-1.32h-1.2v2.87H152c.63,0,1.12,0,1.32-.24a.6.6,0,0,0,.12-.48s0,0,0,0,0-.06,0-.1h.3a2.91,2.91,0,0,1,0,1,2.86,2.86,0,0,1,0,1h-.3a.73.73,0,0,0-.16-.53,1.06,1.06,0,0,0-.77-.2h-.39a.4.4,0,0,0-.21,0,6,6,0,0,0-.62,0V40.4c0,.45,0,.7.11.84s.49.17,1,.17c1.61,0,2.15-.11,2.45-1.43h.24v.12h0v0c-.1.53-.21,1.19-.27,1.69ZM152.64,31.4h-.32a15.06,15.06,0,0,1-10.09-3.67,12.54,12.54,0,0,1-3.1-4.25A13.48,13.48,0,0,1,138,17.92a15.13,15.13,0,0,1,4.07-10.6,13.85,13.85,0,0,1,4.63-3.15A15.77,15.77,0,0,1,152.63,3a44,44,0,0,1,10.76,1.55,13.84,13.84,0,0,1-.06,1.82c0,.46-.06.94-.06,1.34V9h0a.45.45,0,0,1-.35.31c-.13,0-.25-.1-.37-.3-2.76-3.57-5.17-4.72-9.92-4.72h-.12a10.92,10.92,0,0,0-7.8,3.21,12.56,12.56,0,0,0-3.44,9.08c-.06,7.57,5.16,13.54,11.9,13.6,4.24-.06,8.06-2.36,11.36-6.86V26.5A14.26,14.26,0,0,1,159.34,30,17.93,17.93,0,0,1,152.64,31.4Z" transform="translate(0 0)"/>
+                                    <path class="b" d="M164.59,31.39c3.17-.06,5.68-.12,8.49-.12,2.33.06,6.33.12,11.47.12.06-.18.42.3.6-.6.06-1.91.48-3.64.6-5.85.18-.41-.71-1.19-.71,0-1,4.78-4,5.25-9.63,5.31-4.06-.06-4.48-.41-4.42-3.7V17.49h4.18c3.41,0,4.49,0,4.73,2.15a.57.57,0,0,0,1.13,0,27.76,27.76,0,0,1,0-3.16,22.9,22.9,0,0,1,0-2.87c-.18-1.07-1.13-.6-1.13-.12.11,2.27-1.68,2.81-5.62,2.87-.78-.06-2.4-.06-3.29-.12V5h3.16c6,0,8.55.47,8.61,4.41.06.66,1,.42,1,0,0-2.09-.12-2.74-.12-4.41V3.59c-4.85.18-9.21.18-11.48.12s-4.48,0-7.3-.12c-.53-.06-.83,1.2,0,1.32,2-.06,2.75.77,2.75,3V26.21c.06,3-.12,4.23-2.75,4.3-.95-.06-.77.95-.3.89Z" transform="translate(0 0)"/>
+                                    <path class="b" d="M200.22,4.07a13.23,13.23,0,0,0-3.95-.6c-1.91.06-4,.36-6.46.3a28.6,28.6,0,0,1-3.7-.12c-.42.12-.72,1.19.12,1.31,2,0,2.69.42,2.75,2.75V27c0,2.92-.12,3.16-2.57,3.46-.9.12-.9,1,.12,1,2,0,2.87-.06,4,0s2.51-.06,4.6,0c.66,0,1.08-.89,0-1-2.75-.12-2.87-1.26-2.87-4.3V18.45a24.54,24.54,0,0,1,4.19.3c.47.24.9,1.37,1.73,2.74l3.59,5.85c2,3.34,4.24,4.54,7.77,4.6.72-.06.42-.06,1.31-.12.66,0,.48-1,0-.84-3-.06-4.54-2-6.45-5.43L199.79,18a7.31,7.31,0,0,0,5.44-6.86c-.12-3.52-1.79-6-5-7l-.83,1.85C201.11,7,202,8.9,202,11.53c0,3.76-2.22,5.73-6.34,5.73a25.26,25.26,0,0,1-3.47-.3V5c1.08-.06,2.57-.11,3.17-.11a7.45,7.45,0,0,1,4,1Z" transform="translate(0 0)"/>
+                                </g>
+                            </g>
+                        </svg>
+                        <span class="screen-reader-text">Mercer University</span>
+                    </a>
+                </div>
+
+                <div class="header-right-wrap">
+                    <nav id="header-menu-wrap">
+                        <span class="screen-reader-text">
+                            Secondary Menu
+                        </span>
+                        <ul id="menu-header-menu" class="header-menu"><li id="menu-item-5925" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5925"><a href="https://www.mercer.edu/academics/program-finder/">Programs</a></li>
+<li id="menu-item-5923" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5923"><a href="https://www.mercer.edu/admissions/">Admissions</a></li>
+<li id="menu-item-5924" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5924"><a href="https://www.mercer.edu/give/">Give</a></li>
+</ul>                    </nav>
+
+                    <button type="button" id="search-open-button" aria-haspopup="true" aria-expanded="false">
+                        <span class="screen-reader-text">
+                            Site Search
+                        </span>
+                        <span class="ikes-search-alt"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="header-info">
+                                <nav id="primary-nav" role="navigation">
+                    <button type="button" href="#primary-menu" id="primary-nav-button" class="primary-menu-toggle" aria-haspopup="true" aria-expanded="false">
+                        <span class="screen-reader-text">
+                            Primary Menu
+                        </span>
+                        <span class="nav-button-icon"></span>
+                    </button>
+                    <div id="primary-menu-wrap">
+                        <div class="inner-container">
+                            <div class="menu-proper">
+                                <ul id="primary-menu" class="primary-menu"><li id="menu-item-332" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-332"><a href="https://www.mercer.edu/academics/">Academics</a>
+<ul class="sub-menu">
+	<li id="menu-item-340" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-340"><a href="https://www.mercer.edu/academics/program-finder/">Program Finder</a></li>
+	<li id="menu-item-341" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-341"><a href="https://www.mercer.edu/academics/residential-undergraduate-program/">Residential Undergraduate Program</a></li>
+	<li id="menu-item-6576" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6576"><a href="https://www.mercer.edu/academics/bachelors-degrees-for-working-adults/">Degrees for Working Adults</a></li>
+	<li id="menu-item-347" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-347"><a href="https://www.mercer.edu/academics/graduate-professional-study/">Graduate and Professional Study</a></li>
+	<li id="menu-item-351" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-351"><a href="https://www.mercer.edu/academics/online-distance-learning/">Online Programs and Distance Learning</a></li>
+	<li id="menu-item-339" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-339"><a href="https://www.mercer.edu/academics/schools-colleges/">Schools and Colleges</a></li>
+	<li id="menu-item-1291" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1291"><a href="https://www.mercerabroad.com/">Study Abroad</a></li>
+	<li id="menu-item-355" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-355"><a href="https://www.mercer.edu/academics/centers-and-institutes/">Academic Centers and Institutes</a></li>
+	<li id="menu-item-4943" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4943"><a href="https://www.mupress.org/">Mercer University Press</a></li>
+	<li id="menu-item-1292" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1292"><a href="http://registrar.mercer.edu/">Office of the Registrar</a></li>
+	<li id="menu-item-353" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-353"><a href="https://www.mercer.edu/academics/libraries/">Libraries</a></li>
+	<li id="menu-item-1294" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1294"><a href="http://provost.mercer.edu/">Office of the Provost</a></li>
+</ul>
+</li>
+<li id="menu-item-333" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-333"><a href="https://www.mercer.edu/admissions/">Admissions</a>
+<ul class="sub-menu">
+	<li id="menu-item-428" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-428"><a href="https://undergrad.mercer.edu">Residential Undergraduate Admissions</a></li>
+	<li id="menu-item-429" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-429"><a href="https://mercerforyou.com/">Working Adults Undergraduate Admissions</a></li>
+	<li id="menu-item-364" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-364"><a href="https://www.mercer.edu/admissions/graduate-professional/">Graduate and Professional Admissions</a></li>
+	<li id="menu-item-367" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-367"><a href="https://www.mercer.edu/admissions/online-programs-admission/">Online Programs Admissions</a></li>
+	<li id="menu-item-366" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-366"><a href="https://www.mercer.edu/admissions/certificate-non-degree-programs/">Certificate and Non-Degree Programs</a></li>
+	<li id="menu-item-368" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-368"><a href="https://www.mercer.edu/admissions/military/">Military Alliance</a></li>
+	<li id="menu-item-430" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-430"><a href="http://financialaid.mercer.edu/">Financial Planning</a></li>
+	<li id="menu-item-8587" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8587"><a href="https://www.mercer.edu/mercer-next/">Mercer Next</a></li>
+</ul>
+</li>
+<li id="menu-item-337" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-337"><a href="https://www.mercer.edu/life-at-mercer/">Life at Mercer</a>
+<ul class="sub-menu">
+	<li id="menu-item-372" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-372"><a href="https://www.mercer.edu/life-at-mercer/activities-organizations/">Activities and Organizations</a></li>
+	<li id="menu-item-373" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-373"><a href="https://www.mercer.edu/life-at-mercer/diversity-and-inclusion/">Diversity and Inclusion</a></li>
+	<li id="menu-item-374" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-374"><a href="https://www.mercer.edu/life-at-mercer/health-safety/">Health and Safety</a></li>
+	<li id="menu-item-375" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-375"><a href="https://www.mercer.edu/life-at-mercer/sports-and-recreation/">Sports and Recreation</a></li>
+	<li id="menu-item-377" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-377"><a href="https://www.mercer.edu/life-at-mercer/life-in-macon/">Life in Macon</a></li>
+	<li id="menu-item-379" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-379"><a href="https://www.mercer.edu/life-at-mercer/life-in-atlanta/">Life in Atlanta</a></li>
+	<li id="menu-item-376" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-376"><a href="https://www.mercer.edu/life-at-mercer/life-in-savannah/">Life in Savannah</a></li>
+	<li id="menu-item-378" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-378"><a href="https://www.mercer.edu/life-at-mercer/life-in-columbus/">Life in Columbus</a></li>
+	<li id="menu-item-380" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-380"><a href="https://www.mercer.edu/life-at-mercer/housing-dining/">Housing and Dining</a></li>
+</ul>
+</li>
+<li id="menu-item-331" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-331"><a href="https://www.mercer.edu/about-mercer/">About Mercer</a>
+<ul class="sub-menu">
+	<li id="menu-item-381" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-381"><a href="https://www.mercer.edu/about-mercer/mission-and-vision/">Mission and Vision</a></li>
+	<li id="menu-item-382" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-382"><a href="https://www.mercer.edu/about-mercer/traditions/">Traditions</a></li>
+	<li id="menu-item-383" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-383"><a href="https://www.mercer.edu/about-mercer/history/">History</a></li>
+	<li id="menu-item-384" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-384"><a href="https://www.mercer.edu/about-mercer/facts-and-figures/">Facts and Figures</a></li>
+	<li id="menu-item-386" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-386"><a href="https://www.mercer.edu/about-mercer/office-of-the-president/">Office of the President</a></li>
+	<li id="menu-item-387" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-387"><a href="https://www.mercer.edu/about-mercer/office-of-the-chancellor/">Office of the Chancellor</a></li>
+	<li id="menu-item-390" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-390"><a href="https://www.mercer.edu/about-mercer/deans/">Deans</a></li>
+	<li id="menu-item-391" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-391"><a href="https://www.mercer.edu/about-mercer/awards-recognitions/">Awards and Recognitions</a></li>
+	<li id="menu-item-392" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-392"><a href="https://www.mercer.edu/about-mercer/locations/">Locations</a></li>
+	<li id="menu-item-393" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-393"><a href="https://www.mercer.edu/about-mercer/notable-alumni/">Notable Alumni</a></li>
+	<li id="menu-item-394" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-394"><a href="https://www.mercer.edu/about-mercer/organizational-leadership/">Organizational Leadership</a></li>
+</ul>
+</li>
+<li id="menu-item-334" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-334"><a href="https://www.mercer.edu/discovery-and-innovation/">Discovery and Innovation</a>
+<ul class="sub-menu">
+	<li id="menu-item-6633" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6633"><a href="https://www.mercer.edu/discovery-and-innovation/research-that-reaches-out/">Research that Reaches Out</a></li>
+	<li id="menu-item-396" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-396"><a href="https://www.mercer.edu/discovery-and-innovation/undergraduate-research/">Undergraduate Research</a></li>
+	<li id="menu-item-397" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-397"><a href="https://www.mercer.edu/discovery-and-innovation/graduate-and-professional-research/">Graduate and Professional Research</a></li>
+	<li id="menu-item-399" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-399"><a href="https://www.mercer.edu/discovery-and-innovation/goldwater-scholars/">Goldwater Scholars</a></li>
+	<li id="menu-item-404" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-404"><a href="https://www.mercer.edu/discovery-and-innovation/bear-day/">BEAR Day</a></li>
+	<li id="menu-item-405" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-405"><a href="https://www.mercer.edu/discovery-and-innovation/atlanta-research-conference/">Atlanta Research Conference</a></li>
+	<li id="menu-item-5471" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5471"><a href="http://mic.mercer.edu/">Mercer Innovation Center</a></li>
+	<li id="menu-item-5472" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5472"><a href="https://arts.mercer.edu/">The Arts at Mercer</a></li>
+</ul>
+</li>
+<li id="menu-item-336" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-336"><a href="https://www.mercer.edu/global-impact/">Global Impact</a>
+<ul class="sub-menu">
+	<li id="menu-item-414" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-414"><a href="https://www.mercer.edu/global-impact/mercer-on-mission/">Mercer On Mission</a></li>
+	<li id="menu-item-415" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-415"><a href="https://www.mercer.edu/global-impact/strengthening-communities/">Strengthening Communities</a></li>
+	<li id="menu-item-5221" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5221"><a href="https://www.mercerabroad.com/">Study Abroad</a></li>
+	<li id="menu-item-420" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-420"><a href="https://www.mercer.edu/global-impact/international-students/">International Students</a></li>
+	<li id="menu-item-1339" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1339"><a href="https://www.mercer.edu/global-impact/eli/">English Language Institute</a></li>
+	<li id="menu-item-419" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-419"><a href="https://www.mercer.edu/global-impact/peace-corps/">Peace Corps</a></li>
+</ul>
+</li>
+<li id="menu-item-5476" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5476"><a href="https://www.mercer.edu/athletics/">Athletics</a></li>
+</ul>                            </div>
+                            <div class="menu-extras">
+                                <div class="header-menu-bring-in">
+                                    <h4>Info For</h4>
+                                    <ul id="header-menu-bring-in" class="header-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5925"><a href="https://www.mercer.edu/academics/program-finder/">Programs</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5923"><a href="https://www.mercer.edu/admissions/">Admissions</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5924"><a href="https://www.mercer.edu/give/">Give</a></li>
+</ul>                                </div>
+                                <div class="menu-quick-links">
+                                    <h4>Quick Links</h4>
+                                    <ul id="menu-header-quick-links" class="quick-links"><li id="menu-item-615" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-615"><a href="https://den.mercer.edu/news/">News</a></li>
+<li id="menu-item-614" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-614"><a href="https://events.mercer.edu/">Events</a></li>
+<li id="menu-item-9137" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9137"><a href="https://den.mercer.edu">The Den</a></li>
+<li id="menu-item-5211" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5211"><a href="http://alumni.mercer.edu/">Alumni</a></li>
+<li id="menu-item-7562" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7562"><a href="https://outlook.office.com/">Email</a></li>
+<li id="menu-item-7524" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7524"><a href="https://merceru.instructure.com/">Canvas</a></li>
+<li id="menu-item-616" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-616"><a href="https://my.mercer.edu">MyMercer</a></li>
+<li id="menu-item-617" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-617"><a href="http://alert.mercer.edu/">Mercer Alerts</a></li>
+<li id="menu-item-10111" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10111"><a href="https://www.youvisit.com/#/vte/?data-platform=v&#038;data-inst=62232">Virtual Tour</a></li>
+</ul>                                </div>
+                                <div class="menu-connect-with-us">
+                                    <h4>Connect With Us</h4>
+                                    <ul>
+ 	<li><a href="https://www.google.com/maps/place/1501+Mercer+University+Dr,+Macon,+GA+31207" target="_blank" rel="noopener">1501 Mercer University Drive
+Macon, GA 31207</a></li>
+ 	<li><a href="https://www.google.com/maps/place/3001+Mercer+University+Dr,+Atlanta,+GA+30341" target="_blank" rel="noopener">3001 Mercer University Drive
+Atlanta, GA 30341</a></li>
+ 	<li><a href="https://www.google.com/maps/place/Mercer+School+of+Medicine+Savannah+Campus,+1250+E+66th+St,+Savannah,+GA+31404" target="_blank" rel="noopener">1250 East 66th Street
+Savannah, GA 31404</a></li>
+ 	<li><a href="tel:18006372378">1-800-MERCER-U</a></li>
+</ul>
+                                    <div class="menu-social-links">
+                                        
+<div class="social-links">
+			<a target="_blank" href="https://www.facebook.com/MercerUniversity/" class="facebook-link" title="Like us on Facebook!">
+			<p class="sr-only">Open Facebook page in new window</p>
+			<span class="ikes-facebook" aria-hidden="true"></span>
+		</a>
+				<a target="_blank" href="https://twitter.com/MercerYou" class="twitter-link" title="Follow us on Twtter!">
+			<p class="sr-only">Open Twitter page in new window</p>
+			<span class="ikes-twitter" aria-hidden="true"></span>
+		</a>
+    			<a target="_blank" href="https://www.instagram.com/merceryou" class="instagram-link" title="Follow us on Instagram!">
+			<p class="sr-only">Open Instagram page in new window</p>
+			<span class="ikes-instagram" aria-hidden="true"></span>
+		</a>
+					<a target="_blank" href="http://www.youtube.com/user/MercerUniversity/" class="youtube-link" title="Follow our Youtube channel!"> 
+			<p class="sr-only">Open YouTube page in new window</p>
+			<span class="ikes-youtube" aria-hidden="true"></span>
+		</a>
+	</div>                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                                <div id="search-box" hidden aria-hidden="true">
+                    <div class="outer-container">
+                        <div class="container">
+                            <div class="search-tabs-wrapper tabs-wrapper">
+    <div class="tab-content-wrapper">
+        <div id="search-website" class="tab-content tab-current" role="tabpanel" aria-labelledby="tab_1">
+            <form autocomplete="off" role="search" method="get" class="search-form" action="https://search.mercer.edu/">
+                <div class="search-form-row">
+                    <label for="merc-web-search" class="screen-reader-text">Search the website</label>
+                    <input id="merc-web-search" type="search" class="search-field" placeholder="Search" value="" name="q">
+                    <button id="merc-web-btn" type="submit" class="search-button" value="Search">&rarr;</button>
+                </div>
+            </form>
+        </div>
+        <div id="search-directory" class="tab-content" role="tabpanel" aria-labelledby="tab_2">
+            <form autocomplete="off" role="search" method="post" class="search-form" action="https://directory.mercer.edu/">
+                <div class="search-form-row">
+                    <label for="merc-dir-search" class="screen-reader-text">Search directory</label>
+                    <input id="merc-dir-search" type="search" class="search-field" placeholder="Search" value="" name="txtSearch">
+                    <button id="merc-dir-btn" type="submit" class="search-button" value="Search">&rarr;</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="tab-menu-wrapper tabs">
+        <input type="checkbox" id="tab_1" class="tab-link tab-current" data-tab="search-website" role="tab" aria-selected="true" aria-controls="search-website" name="search-tab-group">
+        <label class="tab-link-label" for="tab_1"><span class='screen-reader-text'>Search the</span> Website</label>
+
+        <input type="checkbox" id="tab_2" class="tab-link" data-tab="search-directory" role="tab" aria-selected="false" aria-controls="search-directory" name="search-tab-group">
+        <label class="tab-link-label" for="tab_2"><span class='screen-reader-text'>Search the</span> Directory</label>
+    </div>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                            <nav id="tier3-nav">
+                    <div class="tier3-menu-toggle-wrap">
+                        <a class="tier3-menu-home-link" href="https://medicine.mercer.edu/">
+                            <span class="tier3-menu-home-link-text">
+                                <span class="sr-only">Go back to </span>
+                                Mercer School of Medicine                            </span>
+                        </a>
+                        <button type="button" href="#tier3-menu" id="tier3-nav-button" class="tier3-menu-toggle" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Mercer School of Medicine Menu Toggle</span>
+                            <span class="button-icon ikes-chevron-down"></span>
+                            <span class="button-icon ikes-chevron-up"></span>
+                        </button>
+                    </div>
+
+                    <div id="tier3-menu-wrap">
+                        <ul id="tier3-menu" class="menu two-tier"><li id="menu-item-10" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10"><a href="https://medicine.mercer.edu/about-the-school/">About the School</a>
+<ul class="sub-menu">
+	<li id="menu-item-28" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28"><a href="https://medicine.mercer.edu/about-the-school/message-from-the-dean/">Message from the Dean</a></li>
+	<li id="menu-item-31" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31"><a href="https://medicine.mercer.edu/about-the-school/vision-mission-and-values/">Vision, Mission and Values</a></li>
+	<li id="menu-item-2548" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2548"><a href="https://medicine.mercer.edu/about-the-school/strategic-plan/">Strategic Plan</a></li>
+	<li id="menu-item-16" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16"><a href="https://medicine.mercer.edu/about-the-school/lcme-accreditation/">LCME Accreditation</a></li>
+	<li id="menu-item-19" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19"><a href="https://medicine.mercer.edu/about-the-school/boards-of-governors/">Boards of Governors</a></li>
+	<li id="menu-item-2698" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2698"><a href="https://medicine.mercer.edu/about-the-school/leadership/">Leadership</a></li>
+	<li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a href="https://medicine.mercer.edu/about-the-school/academic-clinical-partners/">Academic Clinical Partners</a></li>
+	<li id="menu-item-1090" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1090"><a href="https://medicine.mercer.edu/about-the-school/news/">News</a></li>
+	<li id="menu-item-1847" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1847"><a href="https://medicine.mercer.edu/about-the-school/campus-locations/">Campus Locations</a></li>
+	<li id="menu-item-37" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-37"><a href="https://medicine.mercer.edu/about-the-school/contact-us/">Contact Us</a></li>
+</ul>
+</li>
+<li id="menu-item-1937" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1937"><a href="https://medicine.mercer.edu/admissions/">Admissions</a>
+<ul class="sub-menu">
+	<li id="menu-item-1933" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1933"><a href="https://medicine.mercer.edu/admissions/doctor-of-medicine/">Doctor of Medicine</a></li>
+	<li id="menu-item-172" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-172"><a href="https://medicine.mercer.edu/admissions/biomedical-sciences-ms/">Biomedical Sciences, M.S.</a></li>
+	<li id="menu-item-2263" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2263"><a href="https://medicine.mercer.edu/family-therapy-mft/">Family Therapy, M.F.T.</a></li>
+	<li id="menu-item-181" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-181"><a href="https://medicine.mercer.edu/admissions/preclinical-sciences-ms/">Preclinical Sciences, M.S.</a></li>
+	<li id="menu-item-163" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-163"><a href="https://medicine.mercer.edu/admissions/rural-health-sciences-phd/">Rural Health Sciences, Ph.D.</a></li>
+</ul>
+</li>
+<li id="menu-item-43" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-43"><a href="https://medicine.mercer.edu/academics/">Academics</a>
+<ul class="sub-menu">
+	<li id="menu-item-46" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-46"><a href="https://medicine.mercer.edu/academics/doctor-of-medicine/">Doctor of Medicine, M.D.</a></li>
+	<li id="menu-item-97" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-97"><a href="https://medicine.mercer.edu/academics/biomedical-sciences-ms/">Biomedical Sciences, M.S.</a></li>
+	<li id="menu-item-70" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-70"><a href="https://medicine.mercer.edu/academics/family-therapy-mft/">Family Therapy, M.F.T.</a></li>
+	<li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-109"><a href="https://medicine.mercer.edu/academics/preclinical-sciences-ms/">Preclinical Sciences, M.S.</a></li>
+	<li id="menu-item-85" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-85"><a href="https://medicine.mercer.edu/academics/rural-health-sciences-phd/">Rural Health Sciences, Ph.D.</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-430"><a href="https://med.mercer.edu/library/index.html">Library</a></li>
+</ul>
+</li>
+<li id="menu-item-190" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-190"><a href="https://medicine.mercer.edu/student-affairs-and-services/">Student Affairs and Services</a>
+<ul class="sub-menu">
+	<li id="menu-item-199" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-199"><a href="https://medicine.mercer.edu/student-affairs-and-services/career-counseling-and-residency-planning-program/">Career Counseling and Residency Planning Program</a></li>
+	<li id="menu-item-193" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-193"><a href="https://medicine.mercer.edu/student-affairs-and-services/diversity-and-inclusion/">Diversity and Inclusion</a></li>
+	<li id="menu-item-202" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-202"><a href="https://medicine.mercer.edu/student-affairs-and-services/financial-planning/">Financial Planning</a></li>
+	<li id="menu-item-208" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-208"><a href="https://medicine.mercer.edu/student-affairs-and-services/registrars-office/">Registrar’s Office</a></li>
+	<li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205"><a href="https://medicine.mercer.edu/student-affairs-and-services/student-handbook-and-policies/">Student Handbook and Policies</a></li>
+	<li id="menu-item-211" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-211"><a href="https://medicine.mercer.edu/student-affairs-and-services/student-wellness/">Student Wellness</a></li>
+	<li id="menu-item-2411" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2411"><a href="https://medicine.mercer.edu/student-affairs-and-services/events-and-ceremonies/">Events and Ceremonies</a></li>
+	<li id="menu-item-1780" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1780"><a href="https://medicine.mercer.edu/student-affairs-and-services/student-newsletter/">Student Newsletter</a></li>
+	<li id="menu-item-1393" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1393"><a href="https://medicine.mercer.edu/student-affairs-and-services/va-benefits/">VA Benefits</a></li>
+</ul>
+</li>
+<li id="menu-item-1633" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1633"><a href="https://medicine.mercer.edu/faculty/">Faculty</a>
+<ul class="sub-menu">
+	<li id="menu-item-1603" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1603"><a href="https://medicine.mercer.edu/faculty/directory/">Directory</a></li>
+	<li id="menu-item-618" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="https://medicine.mercer.edu/faculty/resources/">Resources</a></li>
+	<li id="menu-item-3020" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3020"><a href="https://medicine.mercer.edu/faculty/calendar/">Calendar</a></li>
+</ul>
+</li>
+<li id="menu-item-214" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-214"><a href="https://medicine.mercer.edu/research/">Research</a>
+<ul class="sub-menu">
+	<li id="menu-item-928" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-928"><a href="https://medicine.mercer.edu/research/office-of-research/">Office of Research</a></li>
+	<li id="menu-item-956" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-952 current_page_item menu-item-956"><a href="https://medicine.mercer.edu/research/biomedical-sciences-research/" aria-current="page">Biomedical Sciences Research</a></li>
+	<li id="menu-item-217" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-217"><a href="https://medicine.mercer.edu/research/clinical-research/">Clinical Research</a></li>
+	<li id="menu-item-961" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-961"><a href="https://medicine.mercer.edu/research/population-health-research/">Population Health Research</a></li>
+	<li id="menu-item-970" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-970"><a href="https://medicine.mercer.edu/research/student-research/">Student Research</a></li>
+	<li id="menu-item-974" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-974"><a href="https://medicine.mercer.edu/research/faculty-research-committee/">Faculty Research Committee</a></li>
+	<li id="menu-item-226" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-226"><a href="https://medicine.mercer.edu/research/poster-printing-service/">Poster Printing Service</a></li>
+	<li id="menu-item-979" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-979"><a href="https://medicine.mercer.edu/research/joint-research-conference/">Joint Research Conference</a></li>
+</ul>
+</li>
+<li id="menu-item-235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-235"><a href="https://medicine.mercer.edu/giving/">Giving</a></li>
+<li id="menu-item-1043" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1043"><a href="https://medicine.mercer.edu/clinical-practices/">Clinical Practices</a>
+<ul class="sub-menu">
+	<li id="menu-item-1045" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1045"><a href="https://www.mercermedicine.com">Mercer Medicine</a></li>
+	<li id="menu-item-3887" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3887"><a href="https://medicine.mercer.edu/mftc/">Mercer Family Therapy Center</a></li>
+</ul>
+</li>
+<li id="menu-item-988" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-988"><a href="https://medicine.mercer.edu/centers/">Centers</a>
+<ul class="sub-menu">
+	<li id="menu-item-993" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-993"><a href="https://medicine.mercer.edu/centers/center-for-rural-health-and-health-disparities/">Center for Rural Health and Health Disparities</a></li>
+	<li id="menu-item-994" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-994"><a href="http://www.georgiaruralhealth.org">Georgia Rural Health Innovation Center</a></li>
+</ul>
+</li>
+<li id="menu-item-3484" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3484"><a href="https://medicine.mercer.edu/columbus-expansion/">Columbus Expansion</a>
+<ul class="sub-menu">
+	<li id="menu-item-3485" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3485"><a href="https://medicine.mercer.edu/construction-updates/">Construction Updates</a></li>
+</ul>
+</li>
+<li id="menu-item-1736" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1736"><a href="https://medicine.mercer.edu/medical-minute/">Medical Minute</a></li>
+</ul>                    </div>
+                </nav>
+                <script>
+                    jQuery(document).ready(function() {
+                        MRNav.init({
+                            'mobile-start': 99999,
+                            'hover-disable': true,
+                            'nav-id': 'tier3-nav',
+                            'nav-button-id': 'tier3-nav-button',
+                            'menu-wrap-id': 'tier3-menu-wrap',
+                            'menu-id': 'tier3-menu',
+                            'overlay-id': 'mr-navigation-overlay',
+                        });
+                    });
+                </script>
+                        </header><main id="primary-wrap" class="primary_content_wrap" role="main">
+	                                <article id="post-952" class="page main-article post-952 type-page status-publish hentry">
+                <section class="hero hero-interior-page has-diamond ">
+    <div class="module-wrap">
+        <div class="outer-container">
+            <div class="container">
+                <div class="content-wrap">
+                    <h1 class="title">Biomedical Sciences Research</h1>
+                    
+                                    </div>
+            </div>
+        </div>
+
+        <div class="hero-bkgr-container" aria-hidden="true">
+            <div class="hero-bkgr-pattern dark-pattern"></div>
+        </div>
+    </div>
+</section>           
+                    <section class="interior-container outer-container">
+                        <div class="container">
+                            <aside id="post-952-sidebar-menu" class="interior-sidebar interior-sidebar-menu">
+                                <a class="skip-sidebar-link" href="#post-952-content" aria-label="Skip sidebar links & content">Skip sidebar</a>
+                                <nav id="interior-nav" class="sidebar-outer-container">
+    <button type="button" href="#interior-menu" id="interior-nav-button" class="interior-menu-toggle sidebar-toggle" aria-haspopup="true" aria-expanded="false">
+        Menu <span class="breadcrumb-divider" aria-hidden="true">//</span>
+    </button>
+    <h4 class="menu-breadcrumb-title">
+        <a href="https://medicine.mercer.edu/">Mercer School of Medicine </a>
+    </h4>
+    <div id="interior-menu-wrap" class="sidebar-inner-container">
+        <ul id="interior-menu" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10"><a href="https://medicine.mercer.edu/about-the-school/">About the School</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28"><a href="https://medicine.mercer.edu/about-the-school/message-from-the-dean/">Message from the Dean</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31"><a href="https://medicine.mercer.edu/about-the-school/vision-mission-and-values/">Vision, Mission and Values</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2548"><a href="https://medicine.mercer.edu/about-the-school/strategic-plan/">Strategic Plan</a>
+	<ul class="sub-menu">
+		<li id="menu-item-2552" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2552"><a href="https://medicine.mercer.edu/about-the-school/strategic-plan/goal-1/">Goal 1</a></li>
+		<li id="menu-item-2551" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2551"><a href="https://medicine.mercer.edu/about-the-school/strategic-plan/goal-2/">Goal 2</a></li>
+		<li id="menu-item-2550" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2550"><a href="https://medicine.mercer.edu/about-the-school/strategic-plan/goal-3/">Goal 3</a></li>
+		<li id="menu-item-2549" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2549"><a href="https://medicine.mercer.edu/about-the-school/strategic-plan/goal-4/">Goal 4</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16"><a href="https://medicine.mercer.edu/about-the-school/lcme-accreditation/">LCME Accreditation</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19"><a href="https://medicine.mercer.edu/about-the-school/boards-of-governors/">Boards of Governors</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2698"><a href="https://medicine.mercer.edu/about-the-school/leadership/">Leadership</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a href="https://medicine.mercer.edu/about-the-school/academic-clinical-partners/">Academic Clinical Partners</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1090"><a href="https://medicine.mercer.edu/about-the-school/news/">News</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1847"><a href="https://medicine.mercer.edu/about-the-school/campus-locations/">Campus Locations</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-37"><a href="https://medicine.mercer.edu/about-the-school/contact-us/">Contact Us</a>
+	<ul class="sub-menu">
+		<li id="menu-item-1871" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1871"><a href="https://medicine.mercer.edu/about-the-school/contact-us/campus-tour/">Tour Request</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1937"><a href="https://medicine.mercer.edu/admissions/">Admissions</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1933"><a href="https://medicine.mercer.edu/admissions/doctor-of-medicine/">Doctor of Medicine</a>
+	<ul class="sub-menu">
+		<li id="menu-item-130" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-130"><a href="https://medicine.mercer.edu/admissions/doctor-of-medicine/admissions-process/">Admissions Process</a></li>
+		<li id="menu-item-1878" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1878"><a href="https://medicine.mercer.edu/admissions/doctor-of-medicine/application-deadlines/">Application Deadlines</a></li>
+		<li id="menu-item-142" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-142"><a href="https://medicine.mercer.edu/admissions/doctor-of-medicine/alternate-path/">Alternate Path to Admission</a>
+		<ul class="sub-menu">
+			<li id="menu-item-145" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-145"><a href="https://medicine.mercer.edu/admissions/doctor-of-medicine/alternate-path/year-three-m-d-program-transfer-student-information/">Year Three M.D. Program Transfers</a></li>
+			<li id="menu-item-148" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-148"><a href="https://medicine.mercer.edu/admissions/doctor-of-medicine/alternate-path/special-consideration-program/">Special Consideration Program</a></li>
+			<li id="menu-item-151" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-151"><a href="https://medicine.mercer.edu/admissions/doctor-of-medicine/alternate-path/early-assurance-program/">Early Assurance Program</a></li>
+		</ul>
+</li>
+		<li id="menu-item-136" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-136"><a href="https://medicine.mercer.edu/admissions/doctor-of-medicine/interview-invitees/">Interview Invitation</a></li>
+		<li id="menu-item-139" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139"><a href="https://medicine.mercer.edu/admissions/doctor-of-medicine/accepted-students/">Next Steps for Accepted Students</a></li>
+		<li id="menu-item-49" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49"><a href="https://medicine.mercer.edu/admissions/doctor-of-medicine/technical-standards/">Technical Standards</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-172"><a href="https://medicine.mercer.edu/admissions/biomedical-sciences-ms/">Biomedical Sciences, M.S.</a>
+	<ul class="sub-menu">
+		<li id="menu-item-175" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-175"><a href="https://medicine.mercer.edu/admissions/biomedical-sciences-ms/admissions-requirements/">Admissions Requirements</a></li>
+		<li id="menu-item-178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-178"><a href="https://medicine.mercer.edu/admissions/biomedical-sciences-ms/faq/">FAQ</a></li>
+		<li id="menu-item-657" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-657"><a href="https://medicine.mercer.edu/admissions/biomedical-sciences-ms/scholarship-and-stipend/">Scholarship and Stipend</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2263"><a href="https://medicine.mercer.edu/family-therapy-mft/">Family Therapy, M.F.T.</a>
+	<ul class="sub-menu">
+		<li id="menu-item-157" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-157"><a href="https://medicine.mercer.edu/admissions/family-therapy-mft/admissions-requirements/">Admissions Requirements</a></li>
+		<li id="menu-item-2232" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2232"><a href="https://medicine.mercer.edu/admissions/family-therapy-mft/tuition-and-rates/">Tuition and Rates</a></li>
+		<li id="menu-item-160" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-160"><a href="https://medicine.mercer.edu/admissions/family-therapy-mft/faq/">FAQ</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-181"><a href="https://medicine.mercer.edu/admissions/preclinical-sciences-ms/">Preclinical Sciences, M.S.</a>
+	<ul class="sub-menu">
+		<li id="menu-item-184" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-184"><a href="https://medicine.mercer.edu/admissions/preclinical-sciences-ms/admissions-requirements/">Admissions Requirements</a></li>
+		<li id="menu-item-187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-187"><a href="https://medicine.mercer.edu/admissions/preclinical-sciences-ms/faq/">FAQ</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-163"><a href="https://medicine.mercer.edu/admissions/rural-health-sciences-phd/">Rural Health Sciences, Ph.D.</a>
+	<ul class="sub-menu">
+		<li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-166"><a href="https://medicine.mercer.edu/admissions/rural-health-sciences-phd/admissions-requirements/">Admissions Requirements</a></li>
+		<li id="menu-item-169" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-169"><a href="https://medicine.mercer.edu/admissions/rural-health-sciences-phd/faq/">FAQ</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-43"><a href="https://medicine.mercer.edu/academics/">Academics</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-46"><a href="https://medicine.mercer.edu/academics/doctor-of-medicine/">Doctor of Medicine, M.D.</a>
+	<ul class="sub-menu">
+		<li id="menu-item-52" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-52"><a href="https://medicine.mercer.edu/academics/doctor-of-medicine/special-programs/">Special Programs</a>
+		<ul class="sub-menu">
+			<li id="menu-item-55" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55"><a href="https://medicine.mercer.edu/academics/doctor-of-medicine/special-programs/nathan-deal-scholarship/">Nathan Deal Scholarship</a></li>
+			<li id="menu-item-58" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58"><a href="https://medicine.mercer.edu/academics/doctor-of-medicine/special-programs/primary-care-accelerated-track-program/">Primary Care Accelerated Track Program</a></li>
+		</ul>
+</li>
+		<li id="menu-item-61" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="https://medicine.mercer.edu/academics/doctor-of-medicine/year-i-and-ii-pbl/">Year I and II – PBL</a></li>
+		<li id="menu-item-64" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"><a href="https://medicine.mercer.edu/academics/doctor-of-medicine/year-i-and-ii-clinical-skills/">Year I and II – Clinical Skills</a></li>
+		<li id="menu-item-454" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-454"><a href="https://medicine.mercer.edu/academics/doctor-of-medicine/year-iii-clinical/">Year III – Clinical</a></li>
+		<li id="menu-item-453" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-453"><a href="https://medicine.mercer.edu/academics/doctor-of-medicine/year-iv-clinical/">Year IV – Clinical</a></li>
+		<li id="menu-item-67" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-67"><a href="https://medicine.mercer.edu/academics/doctor-of-medicine/academic-departments/">Academic Departments</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-97"><a href="https://medicine.mercer.edu/academics/biomedical-sciences-ms/">Biomedical Sciences, M.S.</a>
+	<ul class="sub-menu">
+		<li id="menu-item-103" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-103"><a href="https://medicine.mercer.edu/academics/biomedical-sciences-ms/message-from-the-program-director/">Message from the Program Director</a></li>
+		<li id="menu-item-106" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-106"><a href="https://medicine.mercer.edu/academics/biomedical-sciences-ms/academics-curriculum/">Academics Curriculum</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-70"><a href="https://medicine.mercer.edu/academics/family-therapy-mft/">Family Therapy, M.F.T.</a>
+	<ul class="sub-menu">
+		<li id="menu-item-73" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73"><a href="https://medicine.mercer.edu/academics/family-therapy-mft/program-mission-goals-and-outcomes/">Program Mission, Goals and Outcomes</a></li>
+		<li id="menu-item-3963" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3963"><a href="https://medicine.mercer.edu/academics/family-therapy-mft/diversity-and-inclusion/">Diversity and Inclusion</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-392"><a href="https://medicine.mercer.edu/academics/family-therapy-mft/accreditation/">Accreditation</a></li>
+		<li id="menu-item-76" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-76"><a href="https://medicine.mercer.edu/academics/family-therapy-mft/message-from-the-program-director/">Message from the Program Director</a></li>
+		<li id="menu-item-79" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-79"><a href="https://medicine.mercer.edu/academics/family-therapy-mft/academics-curriculum/">Academics Curriculum</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-109"><a href="https://medicine.mercer.edu/academics/preclinical-sciences-ms/">Preclinical Sciences, M.S.</a>
+	<ul class="sub-menu">
+		<li id="menu-item-115" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-115"><a href="https://medicine.mercer.edu/academics/preclinical-sciences-ms/message-from-the-program-director/">Message from the Program Director</a></li>
+		<li id="menu-item-118" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-118"><a href="https://medicine.mercer.edu/academics/preclinical-sciences-ms/academics-curriculum/">Academics Curriculum</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-85"><a href="https://medicine.mercer.edu/academics/rural-health-sciences-phd/">Rural Health Sciences, Ph.D.</a>
+	<ul class="sub-menu">
+		<li id="menu-item-91" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-91"><a href="https://medicine.mercer.edu/academics/rural-health-sciences-phd/message-from-the-program-director/">Message from the Program Directors</a></li>
+		<li id="menu-item-94" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-94"><a href="https://medicine.mercer.edu/academics/rural-health-sciences-phd/academics-curriculum/">Academics Curriculum</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-430"><a href="https://med.mercer.edu/library/index.html">Library</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-190"><a href="https://medicine.mercer.edu/student-affairs-and-services/">Student Affairs and Services</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-199"><a href="https://medicine.mercer.edu/student-affairs-and-services/career-counseling-and-residency-planning-program/">Career Counseling and Residency Planning Program</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-193"><a href="https://medicine.mercer.edu/student-affairs-and-services/diversity-and-inclusion/">Diversity and Inclusion</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-202"><a href="https://medicine.mercer.edu/student-affairs-and-services/financial-planning/">Financial Planning</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-208"><a href="https://medicine.mercer.edu/student-affairs-and-services/registrars-office/">Registrar’s Office</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205"><a href="https://medicine.mercer.edu/student-affairs-and-services/student-handbook-and-policies/">Student Handbook and Policies</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-211"><a href="https://medicine.mercer.edu/student-affairs-and-services/student-wellness/">Student Wellness</a>
+	<ul class="sub-menu">
+		<li id="menu-item-752" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-752"><a href="https://medicine.mercer.edu/student-affairs-and-services/student-wellness/aid-for-the-impaired-medical-student/">Aid for the Impaired Medical Student (AIMSS)</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2411"><a href="https://medicine.mercer.edu/student-affairs-and-services/events-and-ceremonies/">Events and Ceremonies</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1780"><a href="https://medicine.mercer.edu/student-affairs-and-services/student-newsletter/">Student Newsletter</a>
+	<ul class="sub-menu">
+		<li id="menu-item-1799" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1799"><a href="https://medicine.mercer.edu/student-affairs-and-services/student-newsletter/newsletter-submissions/">Newsletter Submissions</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1393"><a href="https://medicine.mercer.edu/student-affairs-and-services/va-benefits/">VA Benefits</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1633"><a href="https://medicine.mercer.edu/faculty/">Faculty</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1603"><a href="https://medicine.mercer.edu/faculty/directory/">Directory</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-618"><a href="https://medicine.mercer.edu/faculty/resources/">Resources</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3020"><a href="https://medicine.mercer.edu/faculty/calendar/">Calendar</a>
+	<ul class="sub-menu">
+		<li id="menu-item-3189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3189"><a href="https://medicine.mercer.edu/faculty/calendar/submit-an-event/">Submit An Event</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-214"><a href="https://medicine.mercer.edu/research/">Research</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-928"><a href="https://medicine.mercer.edu/research/office-of-research/">Office of Research</a>
+	<ul class="sub-menu">
+		<li id="menu-item-938" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-938"><a href="https://medicine.mercer.edu/research/office-of-research/proposal-preparation-and-routing-information/">Proposal Preparation and Routing Information</a></li>
+		<li id="menu-item-941" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-941"><a href="https://medicine.mercer.edu/research/office-of-research/grantwriting-services/">Grantwriting Services</a></li>
+		<li id="menu-item-945" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-945"><a href="https://medicine.mercer.edu/research/office-of-research/deans-research-advisory-council/">Dean’s Research Advisory Council</a></li>
+		<li id="menu-item-951" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-951"><a href="https://medicine.mercer.edu/research/office-of-research/research-awards/">Research Awards</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-952 current_page_item menu-item-956"><a href="https://medicine.mercer.edu/research/biomedical-sciences-research/" aria-current="page">Biomedical Sciences Research</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-217"><a href="https://medicine.mercer.edu/research/clinical-research/">Clinical Research</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-961"><a href="https://medicine.mercer.edu/research/population-health-research/">Population Health Research</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-970"><a href="https://medicine.mercer.edu/research/student-research/">Student Research</a>
+	<ul class="sub-menu">
+		<li id="menu-item-1668" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1668"><a href="https://medicine.mercer.edu/faq/">FAQ</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-974"><a href="https://medicine.mercer.edu/research/faculty-research-committee/">Faculty Research Committee</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-226"><a href="https://medicine.mercer.edu/research/poster-printing-service/">Poster Printing Service</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-979"><a href="https://medicine.mercer.edu/research/joint-research-conference/">Joint Research Conference</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-235"><a href="https://medicine.mercer.edu/giving/">Giving</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1043"><a href="https://medicine.mercer.edu/clinical-practices/">Clinical Practices</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1045"><a href="https://www.mercermedicine.com">Mercer Medicine</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3887"><a href="https://medicine.mercer.edu/mftc/">Mercer Family Therapy Center</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-988"><a href="https://medicine.mercer.edu/centers/">Centers</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-993"><a href="https://medicine.mercer.edu/centers/center-for-rural-health-and-health-disparities/">Center for Rural Health and Health Disparities</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-994"><a href="http://www.georgiaruralhealth.org">Georgia Rural Health Innovation Center</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3484"><a href="https://medicine.mercer.edu/columbus-expansion/">Columbus Expansion</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3485"><a href="https://medicine.mercer.edu/construction-updates/">Construction Updates</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1736"><a href="https://medicine.mercer.edu/medical-minute/">Medical Minute</a></li>
+</ul>    </div>
+</nav>
+<script>
+    jQuery(document).ready(function() {
+        MRIntNav.init({
+            'mobile-start': 860,
+            'nav-id': 'interior-nav',
+            'nav-button-id': 'interior-nav-button',
+            'menu-wrap-id': 'interior-menu-wrap',
+            'menu-id': 'interior-menu',
+            'overlay-id': 'mr-navigation-overlay',
+        });
+    });
+</script>                            </aside>
+                            <aside id="post-952-sidebar-info" class="interior-sidebar interior-sidebar-info">
+                                                            </aside>
+                            <div id="post-952-content" class="interior-content">
+                                
+<section class="breadcrumbs-section">
+    <div class="outer-container">
+        <div class="container">
+            <ul class="breadcrumbs">
+                <li class="breadcrumb">
+                    <a href="/" title="Go to the home page">Home</a>
+                </li>
+                                            <li class="breadcrumb">
+                                <a 
+                                href="https://medicine.mercer.edu/research/" 
+                                title="Go to Research">
+                                    Research                                </a>
+                            </li>
+                            
+                <li class="breadcrumb current-page">
+                    Biomedical Sciences Research                </li>
+            </ul>
+        </div>
+    </div>
+</section>    <section  class="module content standard-content rmv-topbot">
+        <div class="outer-container">
+            <div class="container">
+                                    <p>Biomedical Sciences research conducted by faculty on the Macon and Savannah campuses, where modern research facilities support work in molecular biology, biochemistry, cell biology and animal studies. Department of Biomedical Sciences faculty are involved in important translational research in the areas of oncology, endocrinology, cardiology, hematology, immunology, microbiology and neurology. Their work is funded by national and local agencies.</p>
+<p>In addition to involving M.D. students in their research, the School’s basic science labs are also the research homes for students in the M.S. in Biomedical Sciences and M.S. in Preclinical Sciences programs.</p>
+                            </div>
+        </div>
+    </section>
+                                </div>
+                        </div>
+                    </section>
+                    
+                    <div id="post-952-bottom" class="sidebar-bottom">
+                                            </div>
+                    
+                                </article>
+            </main>
+</div>
+<footer id="footer" role="contentinfo">
+    	<div class="footer-inner">     
+		<div class="footer-logo">
+            <svg class="header-logo" aria-labelledby="footer-title" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 49.533">
+                <title id="footer-title">Mercer University</title>
+                <desc>Mercer University logo displaying the words Mercer University in large white font on a dark background, all underlined in orange</desc>
+                <defs><style>.a {fill: #f76800;} .b {fill: #fff;}</style></defs>
+                <g>
+                    <path class="a" d="M0,49.53H260v-2H0Z" transform="translate(0 0)"/>
+                    <g>
+                        <path class="b" d="M97.15,31.39c3.17-.06,5.74-.12,8.49-.12,2.39.06,6.4.12,11.47.12.06-.18.42.3.61-.6.11-1.91.53-3.64.71-5.85.06-.41-.84-1.19-.84,0-1,4.78-3.94,5.25-9.44,5.31-4.19-.06-4.6-.41-4.6-3.7V17.49h4.18c3.41,0,4.55,0,4.73,2.15a.57.57,0,0,0,.6.53.55.55,0,0,0,.53-.53c-.06-1.49,0-2.09,0-3.16,0-.84-.06-1.37,0-2.87-.18-1.07-1.13-.6-1.13-.12.12,2.27-1.62,2.81-5.62,2.87-.78-.06-2.39-.06-3.29-.12V5h3.16c6.1,0,8.61.47,8.61,4.41.06.66,1,.42,1,0,.06-2.09-.12-2.74-.12-4.41a11.53,11.53,0,0,0,0-1.44c-4.79.18-9.15.18-11.48.12s-4.43,0-7.18-.12a.66.66,0,0,0,0,1.31c1.92-.06,2.69.78,2.75,3V26.21c-.06,3-.23,4.23-2.87,4.3-.9-.06-.77.95-.3.89Z" transform="translate(0 0)"/>
+                        <path class="b" d="M133.56,4.37a12.24,12.24,0,0,0-4.67-.9c-1.85.06-3.94.36-6.33.3a31.54,31.54,0,0,1-3.89-.12c-.36.12-.66,1.2.12,1.31,2,0,2.75.42,2.75,2.75V27c0,2.92-.12,3.16-2.45,3.46-1,.12-1,1,0,1,2,0,2.87-.06,4.18,0,1.14-.06,2.45-.06,4.43,0,.66,0,1.13-.89,0-1-2.69-.12-2.81-1.26-2.87-4.3V18.45a24.35,24.35,0,0,1,4.18.3c.54.24,1,1.37,1.73,2.74l3.59,5.85c2,3.34,4.31,4.53,7.77,4.59.72-.06.42-.06,1.32-.12.71,0,.47-.95,0-.83-3-.06-4.55-2-6.34-5.43L132.36,18a7.24,7.24,0,0,0,5.44-6.86,7,7,0,0,0-4.24-6.74l-1.08,1.9a6.14,6.14,0,0,1,2.09,5.25c.06,3.76-2.15,5.73-6.33,5.73a22.37,22.37,0,0,1-3.47-.3V5c1.13-.06,2.57-.11,3.17-.11a6.79,6.79,0,0,1,4.48,1.36Z" transform="translate(0 0)"/>
+                        <path class="b" d="M73.4,42.2a.6.6,0,0,1-.52-.3L55.78,7.41,55.66,35c.06,3.61,1.54,5.55,4.3,5.61h0a.81.81,0,0,1,.69.78.46.46,0,0,1-.16.38A1,1,0,0,1,60,42c-3.23-.12-4.81-.12-5.86-.12H48.25a.5.5,0,0,1-.38-.15.51.51,0,0,1-.11-.43.6.6,0,0,1,.52-.57h.08c3,0,3.74-1.25,4.3-3.88.39-1.76.47-6.45.58-12.39,0-.42,0-.84,0-1.26v-.25c0-2.05,0-4.43,0-6.52v-.85c0-4.3,0-8,0-8.08,0-2.07-.19-3.65-.9-4.63s-1.89-1.37-4-1.4c-.57,0-.77-.4-.76-.7A.76.76,0,0,1,48.36,0l1.37,0C51,.1,52,.13,53.27.13a4,4,0,0,0,.49,0c.45,0,1.13,0,2.25-.1h.12l.28,0L57,0h.14a.62.62,0,0,1,.58.43l17,35L89.44.61l0-.08h0A.74.74,0,0,1,90.15,0c1,0,1.84,0,2.66.07s1.39.05,2.06.05c.49,0,1,0,1.48,0,1.21,0,2.53,0,4.14-.15.4,0,.59.24.59.47a.4.4,0,0,1-.36.42h0a.46.46,0,0,1-.21-.05c-4.4.79-5.08,2.18-5.14,6.56a3.57,3.57,0,0,1,0,1.13L96,32.89c0,5.31,1.31,7.58,4.39,7.58h.21c.68,0,.91.36.9.67a.85.85,0,0,1-.9.76c-2.56-.1-4.67-.14-6.25-.14-.63,0-1.18,0-1.64,0s-.87,0-1.3,0c-.9,0-1.78,0-3.39.09l-.66,0h0l-.65,0a.6.6,0,0,1-.65-.55v0a.53.53,0,0,1,.16-.38.74.74,0,0,1,.49-.18c1.62,0,2.62-.37,3.26-1.12s.93-1.91.93-3.77L90.39,3.36,74.49,41.6l-.06.1c-.09.17-.26.5-.54.5H73.4Zm67.21-.06h-.3l-2.51-6.45c-.35-.65-.59-1-1.32-1v-.42l.71.05a7,7,0,0,1,.73.07q.72,0,1.44-.12v.42h-.2c-.37,0-.58.14-.64.42a.79.79,0,0,0,.12.3l2.15,5.31,2.15-5.13a2,2,0,0,0,0-.6.17.17,0,0,0,0-.18c-.06-.09-.22-.12-.58-.12v-.42l.57.06.57.06a7.35,7.35,0,0,0,1.14-.12v.42c-.73,0-.91.39-1.14,1l-2.87,6.44Zm31.39,0h0c-.64-.07-1.33-.2-1.85-.3V39.93h.3a1.87,1.87,0,0,0,1.85,1.73h.1a1.5,1.5,0,0,0,1.46-1.54h0c0-1-.69-1.27-1.73-1.73-1.23-.56-2.1-1-2-2.15a1.86,1.86,0,0,1,.5-1.38,2.51,2.51,0,0,1,1.77-.77,11.16,11.16,0,0,1,1.14.16h.07a6.2,6.2,0,0,0,.82.12,3.63,3.63,0,0,0,0,1.14,1.42,1.42,0,0,0,0,.71H174c0-1.1-.57-1.67-1.73-1.73a1.52,1.52,0,0,0-1.05.52,1.12,1.12,0,0,0-.27.8,1.15,1.15,0,0,0,.6,1.13,9.48,9.48,0,0,0,1.1.56h.05l0,0h.07a6.43,6.43,0,0,1,.79.39,1.83,1.83,0,0,1,1,1.73,2.21,2.21,0,0,1-.54,1.67,2.82,2.82,0,0,1-2,.79Zm-64.27-.06c-1.81-.07-2.93-1.29-3-3.29V35.51a.86.86,0,0,0-.12-.68.69.69,0,0,0-.52-.16h-.2s0,0,0,0h0a.14.14,0,0,0-.08,0v-.42l.62.05h.09c.26,0,.49,0,.72.06a10,10,0,0,0,1.06-.09h0l.23,0v.41c-.8,0-.84.34-.84,1.32v3.28c0,1.42.76,2.27,2,2.27H108a2.23,2.23,0,0,0,1.63-.63,3,3,0,0,0,.7-2.23V37.24c0-1.41,0-2.1-.24-2.4a.67.67,0,0,0-.49-.17h-.11v-.41l.48.05h0a4,4,0,0,1,.5.06,7.35,7.35,0,0,0,1.14-.12v.42c-.66,0-.72.3-.72,1.14v2c0,.08,0,.16,0,.25v0a5.15,5.15,0,0,1-.59,2.69A3.22,3.22,0,0,1,107.73,42.08Zm16.2-.13h-.42l-5.14-6.44a16.62,16.62,0,0,1-.18,1.73c0,1.4.08,2.48.1,2.93v.14c0,.34,0,.54,0,.63.12.47.29.6.84.6v.3l-.57,0-.57,0-.57,0-.57,0v-.3c.59-.06.78-.29.84-1v0c0-.47.07-2.22.12-5.11,0-.54-.17-.72-.79-.72h-.35v-.42l.47.05h0a4.51,4.51,0,0,1,.53.07,4.51,4.51,0,0,1,.72-.12l5,6.14V39a28.6,28.6,0,0,0-.12-3.7c-.06-.5-.32-.6-.71-.6v-.42a5.3,5.3,0,0,0,.56.07c.17,0,.36,0,.57,0a8.08,8.08,0,0,0,.86-.08h.06l.22,0v.42h0a.67.67,0,0,0-.83.83c0,.44-.12,2.39-.12,6.45Zm42.51,0h-.72c-.85,0-1.29-.3-1.85-1.31l-1-1.55h0c-.18-.35-.3-.59-.42-.59a1,1,0,0,0-.39-.07l-.44,0v2c0,.84.06,1.13.71,1.13h.12v.3l-.65,0a6.12,6.12,0,0,1-.66,0q-.33,0-.72,0t-.72,0v-.3h0a.82.82,0,0,0,.67-.19c.15-.15.19-.43.16-.94V35.51a.91.91,0,0,0-.12-.7.58.58,0,0,0-.43-.15h-.17a0,0,0,0,0,0,0h0a.13.13,0,0,0-.09,0v-.42a11,11,0,0,1,1.14.12,8.22,8.22,0,0,0,1-.06h.05c.23,0,.46,0,.69-.05h.16a2.9,2.9,0,0,1,1.16.24l-.15.2.15-.2A1.73,1.73,0,0,1,165,36.23a1.61,1.61,0,0,1-1.35,1.84h-.2l1.14,2.15c.46.86.76,1.43,1.85,1.43V42Zm-4.9-7.27V38l.36,0,.35,0h.17a1.64,1.64,0,0,0,1.23-.43A1.49,1.49,0,0,0,164,36.4a1.69,1.69,0,0,0-.54-1.37,1.84,1.84,0,0,0-1.11-.36h-.8Zm19.79,7.18-.66,0-.72,0-.72,0v-.3h.12a.75.75,0,0,0,.56-.17c.15-.16.2-.45.16-1V35.51a.91.91,0,0,0-.12-.7.54.54,0,0,0-.43-.14h-.17a0,0,0,0,0,0,0h0l-.09,0v-.41l.72.05h.11l.61.06c.34,0,.67,0,1-.08h.12l.19,0v.42c-.8,0-.83.34-.83,1.31V40.4c0,.84.06,1.13.71,1.13H182v.3a6.18,6.18,0,0,1-.65,0Zm-49.74,0-.72,0-.66,0-.66,0v-.3h0c.65,0,.83-.25.83-1.14V35.51c0-.61-.16-.84-.57-.84h-.15a.1.1,0,0,0-.08,0,0,0,0,0,0,0,0h0v-.41l.63.05h0c.22,0,.43,0,.64.06a8.4,8.4,0,0,0,1-.07h.07l.36,0v.42h0a.89.89,0,0,0-.68.18c-.17.18-.18.51-.14,1.13V40.4c0,.51,0,.8.12,1a.79.79,0,0,0,.59.16h.12v.3q-.33,0-.72,0Zm69.4,0-.65,0-.66,0-.66,0h.18v-.3c.6,0,.78-.25.84-1.14V39.09l-2.15-3.87a1.17,1.17,0,0,0-1-.72v-.3c.22,0,.44,0,.65,0l.67.07c.44,0,.88-.06,1.31-.12v.3c-.4.07-.6.2-.6.42s0,.24.12.3l1.73,3.16,1.56-3.16a1.34,1.34,0,0,1,.07-.18h0a.19.19,0,0,0,0-.1c0-.24-.17-.3-.71-.42v-.3c.14,0,.31,0,.52,0h.05a3.43,3.43,0,0,1,.56.07l1-.12v.3a1.13,1.13,0,0,0-1,.71l-2,3.58V40.4c0,.84.07,1.13.84,1.13v.3q-.33,0-.66,0Zm-10.87,0-.72,0-.72,0-.72,0v-.3h0a1.11,1.11,0,0,0,.79-.2,1.3,1.3,0,0,0,.22-.93V34.68h-.72c-1.38,0-1.8.34-1.85,1.55h-.3v-2h6.57v2h-.3c-.06-1.36-.5-1.49-1.85-1.55h-.72v5.77c.06.79.08,1.08,1,1.08v.3q-.3,0-.72,0Zm-35.34,0h-5.32v-.3h0a.9.9,0,0,0,.67-.19c.14-.16.19-.43.16-1V35.51a.91.91,0,0,0-.13-.7.52.52,0,0,0-.43-.14h-.16s0,0,0,0h0l-.07,0h0v-.42c.3,0,.65,0,1.06.06s.74,0,1.09.06h.24c.88,0,1.77,0,2.63-.12a.27.27,0,0,1,0,.3,13.65,13.65,0,0,1,.12,1.55h-.3c-.06-1.13-.62-1.32-1.85-1.32h-1.2v2.87H152c.63,0,1.12,0,1.32-.24a.6.6,0,0,0,.12-.48s0,0,0,0,0-.06,0-.1h.3a2.91,2.91,0,0,1,0,1,2.86,2.86,0,0,1,0,1h-.3a.73.73,0,0,0-.16-.53,1.06,1.06,0,0,0-.77-.2h-.39a.4.4,0,0,0-.21,0,6,6,0,0,0-.62,0V40.4c0,.45,0,.7.11.84s.49.17,1,.17c1.61,0,2.15-.11,2.45-1.43h.24v.12h0v0c-.1.53-.21,1.19-.27,1.69ZM152.64,31.4h-.32a15.06,15.06,0,0,1-10.09-3.67,12.54,12.54,0,0,1-3.1-4.25A13.48,13.48,0,0,1,138,17.92a15.13,15.13,0,0,1,4.07-10.6,13.85,13.85,0,0,1,4.63-3.15A15.77,15.77,0,0,1,152.63,3a44,44,0,0,1,10.76,1.55,13.84,13.84,0,0,1-.06,1.82c0,.46-.06.94-.06,1.34V9h0a.45.45,0,0,1-.35.31c-.13,0-.25-.1-.37-.3-2.76-3.57-5.17-4.72-9.92-4.72h-.12a10.92,10.92,0,0,0-7.8,3.21,12.56,12.56,0,0,0-3.44,9.08c-.06,7.57,5.16,13.54,11.9,13.6,4.24-.06,8.06-2.36,11.36-6.86V26.5A14.26,14.26,0,0,1,159.34,30,17.93,17.93,0,0,1,152.64,31.4Z" transform="translate(0 0)"/>
+                        <path class="b" d="M164.59,31.39c3.17-.06,5.68-.12,8.49-.12,2.33.06,6.33.12,11.47.12.06-.18.42.3.6-.6.06-1.91.48-3.64.6-5.85.18-.41-.71-1.19-.71,0-1,4.78-4,5.25-9.63,5.31-4.06-.06-4.48-.41-4.42-3.7V17.49h4.18c3.41,0,4.49,0,4.73,2.15a.57.57,0,0,0,1.13,0,27.76,27.76,0,0,1,0-3.16,22.9,22.9,0,0,1,0-2.87c-.18-1.07-1.13-.6-1.13-.12.11,2.27-1.68,2.81-5.62,2.87-.78-.06-2.4-.06-3.29-.12V5h3.16c6,0,8.55.47,8.61,4.41.06.66,1,.42,1,0,0-2.09-.12-2.74-.12-4.41V3.59c-4.85.18-9.21.18-11.48.12s-4.48,0-7.3-.12c-.53-.06-.83,1.2,0,1.32,2-.06,2.75.77,2.75,3V26.21c.06,3-.12,4.23-2.75,4.3-.95-.06-.77.95-.3.89Z" transform="translate(0 0)"/>
+                        <path class="b" d="M200.22,4.07a13.23,13.23,0,0,0-3.95-.6c-1.91.06-4,.36-6.46.3a28.6,28.6,0,0,1-3.7-.12c-.42.12-.72,1.19.12,1.31,2,0,2.69.42,2.75,2.75V27c0,2.92-.12,3.16-2.57,3.46-.9.12-.9,1,.12,1,2,0,2.87-.06,4,0s2.51-.06,4.6,0c.66,0,1.08-.89,0-1-2.75-.12-2.87-1.26-2.87-4.3V18.45a24.54,24.54,0,0,1,4.19.3c.47.24.9,1.37,1.73,2.74l3.59,5.85c2,3.34,4.24,4.54,7.77,4.6.72-.06.42-.06,1.31-.12.66,0,.48-1,0-.84-3-.06-4.54-2-6.45-5.43L199.79,18a7.31,7.31,0,0,0,5.44-6.86c-.12-3.52-1.79-6-5-7l-.83,1.85C201.11,7,202,8.9,202,11.53c0,3.76-2.22,5.73-6.34,5.73a25.26,25.26,0,0,1-3.47-.3V5c1.08-.06,2.57-.11,3.17-.11a7.45,7.45,0,0,1,4,1Z" transform="translate(0 0)"/>
+                    </g>
+                </g>
+            </svg>
+        </div>
+        <div class="footer-row">
+            <div class="footer-contact-us">
+                <h4>Contact Us</h4>
+                <ul>
+ 	<li><a href="https://www.google.com/maps/place/1501+Mercer+University+Dr,+Macon,+GA+31207" target="_blank" rel="noopener">1501 Mercer University Drive • Macon, GA 31207</a></li>
+ 	<li><a href="https://www.google.com/maps/place/3001+Mercer+University+Dr,+Atlanta,+GA+30341" target="_blank" rel="noopener">3001 Mercer University Drive • Atlanta, GA 30341</a></li>
+ 	<li><a href="https://www.google.com/maps/place/Mercer+School+of+Medicine+Savannah+Campus,+1250+E+66th+St,+Savannah,+GA+31404" target="_blank" rel="noopener">1250 East 66th Street • Savannah, GA 31404</a></li>
+ 	<li><a href="https://www.google.com/maps/place/33+W+11th+St,+Columbus,+GA+31901/data=!4m2!3m1!1s0x888ccdbb9b71ad35:0x2ddca71a73ed0ca0?sa=X&amp;ved=2ahUKEwjs8bS-rdnnAhWCmuAKHRTRCUsQ8gEwAHoECAsQAQ">33 West 11th Street • Columbus, GA 31901</a></li>
+ 	<li><a href="tel:18006372378">1-800-MERCER-U</a></li>
+</ul>            </div>
+
+            <div class="footer-quick-links">
+                <h4>Quick Links</h4>
+                <ul id="menu-footer-quick-links" class="quick-links"><li id="menu-item-1195" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1195"><a href="http://alert.mercer.edu/">Mercer Alerts</a></li>
+<li id="menu-item-1196" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1196"><a href="http://hr.mercer.edu">Employment</a></li>
+<li id="menu-item-1193" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1193"><a href="https://www.mercer.edu/academics/libraries/">Libraries</a></li>
+<li id="menu-item-7523" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7523"><a href="https://merceru.instructure.com/">Canvas</a></li>
+<li id="menu-item-1198" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1198"><a href="https://my.mercer.edu">MyMercer</a></li>
+<li id="menu-item-1194" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1194"><a href="https://www.mercer.edu/marketing-communications/">Marketing Communications</a></li>
+<li id="menu-item-1199" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1199"><a href="http://it.mercer.edu/">Information Technology</a></li>
+<li id="menu-item-7499" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7499"><a href="https://www.mercer.edu/contacts/">Contacts</a></li>
+<li id="menu-item-10110" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10110"><a href="https://www.youvisit.com/#/vte/?data-platform=v&#038;data-inst=62232">Virtual Tour</a></li>
+</ul>            </div>
+            
+            <div class="footer-social-links">
+                <h4>Connect With Us</h4>
+                
+<div class="social-links">
+			<a target="_blank" href="https://www.facebook.com/MercerUniversity/" class="facebook-link" title="Like us on Facebook!">
+			<p class="sr-only">Open Facebook page in new window</p>
+			<span class="ikes-facebook" aria-hidden="true"></span>
+		</a>
+				<a target="_blank" href="https://twitter.com/MercerYou" class="twitter-link" title="Follow us on Twtter!">
+			<p class="sr-only">Open Twitter page in new window</p>
+			<span class="ikes-twitter" aria-hidden="true"></span>
+		</a>
+    			<a target="_blank" href="https://www.instagram.com/merceryou" class="instagram-link" title="Follow us on Instagram!">
+			<p class="sr-only">Open Instagram page in new window</p>
+			<span class="ikes-instagram" aria-hidden="true"></span>
+		</a>
+					<a target="_blank" href="http://www.youtube.com/user/MercerUniversity/" class="youtube-link" title="Follow our Youtube channel!"> 
+			<p class="sr-only">Open YouTube page in new window</p>
+			<span class="ikes-youtube" aria-hidden="true"></span>
+		</a>
+	</div>            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <p class="left-copyright">&copy; 2021 Mercer University. All rights reserved.</p>
+        <div class="right-copyright">
+                            <ul class="footer-more-links">
+                                            <li>
+                            <a href="https://disclosure.mercer.edu/">Federal Disclosure</a>
+                        </li>
+                                                <li>
+                            <a href="http://access.mercer.edu">Accessibility</a>
+                        </li>
+                                                <li>
+                            <a href="https://secure.ethicspoint.com/domain/media/en/gui/62627/index.html">Fraud and Abuse Hotline</a>
+                        </li>
+                                                <li>
+                            <a href="https://mercer.edu/privacy-policy">Privacy Policy</a>
+                        </li>
+                                        </ul>
+                    </div>    
+	</div>
+    </footer>
+
+<span id="mr-navigation-overlay" title="Close navigation menu"></span>
+<!-- Instagram Feed JS -->
+<script type="text/javascript">
+var sbiajaxurl = "https://medicine.mercer.edu/wp-admin/admin-ajax.php";
+</script>
+<script type='text/javascript' src='https://medicine.mercer.edu/wp-content/themes/mercer/assets/js/ftr.min.js?ver=1634054093' id='footer-js-js'></script>
+<script type='text/javascript' id='alerts-js-js-extra'>
+/* <![CDATA[ */
+var alert_rest = {"rest_url":"https:\/\/wp.mercer.edu"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://medicine.mercer.edu/wp-content/themes/mercer/assets/js/mercer-alerts.min.js?ver=1634054093' id='alerts-js-js'></script>
+<script type='text/javascript' src='https://medicine.mercer.edu/wp-includes/js/wp-embed.min.js?ver=5.8.1' id='wp-embed-js'></script>
+<!-- 104,0.488,1634088538 --><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"50c08683e1","applicationID":"261436544","transactionName":"NAZUZRFRCxUHWkVRDg1Md1IXWQoISVBfTAQRCllD","queueTime":0,"applicationTime":493,"atts":"GEFXE1lLGBs=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

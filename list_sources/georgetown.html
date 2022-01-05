@@ -1,0 +1,894 @@
+
+
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+
+
+<head>
+
+  <title>
+          Medical Center Departments |
+    
+    Georgetown University Medical Center | Georgetown University
+  </title>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"c7c498a9f4",applicationID:"168860141"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="pingback" href="">
+
+  <link rel="apple-touch-icon" href="https://gumc.georgetown.edu/wp-content/themes/wp-theme-whnu/images/icons/apple-touch-icon.png">
+  <link rel="apple-touch-icon" href="https://gumc.georgetown.edu/wp-content/themes/wp-theme-whnu/images/icons/apple-touch-icon-152x152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="https://gumc.georgetown.edu/wp-content/themes/wp-theme-whnu/images/icons/apple-touch-icon-167x167.png" sizes="167x167">
+  <link rel="apple-touch-icon" href="https://gumc.georgetown.edu/wp-content/themes/wp-theme-whnu/images/icons/apple-touch-icon-180x180.png" sizes="180x180">
+  <link rel="icon" href="https://gumc.georgetown.edu/wp-content/themes/wp-theme-whnu/images/icons/icon-hires.png">
+  <link rel="icon" href="https://gumc.georgetown.edu/wp-content/themes/wp-theme-whnu/images/icons/icon-normal.png">
+
+  
+  <script>
+    (function(i, s, o, g, r, a, m) { i["GoogleAnalyticsObject"] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, "script", "//www.google-analytics.com/analytics.js", "ga");
+    ga('create', 'UA-15471953-1', 'auto', { 'name': 'master', 'cookieDomain': 'georgetown.edu', 'allowLinker': true });
+    ga('master.require', 'linker');
+    ga('master.linker:autoLink', ['georgetown.edu'], true);
+    ga('master.require', 'displayfeatures');
+    ga('master.send', 'pageview');
+  </script>
+
+  <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v17.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<link rel="canonical" href="https://gumc.georgetown.edu/departments/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Medical Center Departments - Georgetown University Medical Center" />
+	<meta property="og:description" content="Basic Science Biochemistry&nbsp;&amp;&nbsp;Molecular&nbsp;&amp;&nbsp;Cellular&nbsp;Biology Biology Biostatistics, Bioinformatics, and Biomathematics Cell Biology Human Science Microbiology &amp; Immunology Neuroscience Oncology Pathology Pharmacology and Physiology Radiation Medicine Clinical &amp; Health Studies Anesthesiology Emergency Medicine Family Medicine Health Systems Administration Human Science International Health Medicine Neurology Neurosurgery Nursing Obstetrics and Gynecology Ophthalmology Orthopedic Surgery Otolaryngology Pediatrics Physical Medicine and Rehabilitation [&hellip;]" />
+	<meta property="og:url" content="https://gumc.georgetown.edu/departments/" />
+	<meta property="og:site_name" content="Georgetown University Medical Center" />
+	<meta property="article:modified_time" content="2020-01-14T18:05:31+00:00" />
+	<meta property="og:image" content="https://gumc.georgetown.edu/wp-content/uploads/2019/01/med-dent-dusk.jpg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://live-guwordpress-gumc.pantheonsite.io/#website","url":"https://live-guwordpress-gumc.pantheonsite.io/","name":"Georgetown University Medical Center","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://live-guwordpress-gumc.pantheonsite.io/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://gumc.georgetown.edu/departments/#primaryimage","inLanguage":"en-US","url":"https://gumc.georgetown.edu/wp-content/uploads/2019/01/med-dent-dusk.jpg","contentUrl":"https://gumc.georgetown.edu/wp-content/uploads/2019/01/med-dent-dusk.jpg","width":1000,"height":352},{"@type":"WebPage","@id":"https://gumc.georgetown.edu/departments/#webpage","url":"https://gumc.georgetown.edu/departments/","name":"Medical Center Departments - Georgetown University Medical Center","isPartOf":{"@id":"https://live-guwordpress-gumc.pantheonsite.io/#website"},"primaryImageOfPage":{"@id":"https://gumc.georgetown.edu/departments/#primaryimage"},"datePublished":"2013-11-20T21:04:41+00:00","dateModified":"2020-01-14T18:05:31+00:00","breadcrumb":{"@id":"https://gumc.georgetown.edu/departments/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://gumc.georgetown.edu/departments/"]}]},{"@type":"BreadcrumbList","@id":"https://gumc.georgetown.edu/departments/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://live-guwordpress-gumc.pantheonsite.io/"},{"@type":"ListItem","position":2,"name":"Medical Center Departments"}]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//www.youtube.com' />
+<link rel='dns-prefetch' href='//gumc.georgetown.edu' />
+<link rel='dns-prefetch' href='//use.typekit.net' />
+<link rel='dns-prefetch' href='//s.w.org' />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/gumc.georgetown.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8.1"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://gumc.georgetown.edu/wp-includes/css/dist/block-library/style.min.css?ver=5.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='pantheon-google-map-block-css-css'  href='https://gumc.georgetown.edu/wp-content/plugins/embed-gutenberg-block-google-maps/assets/css/style.836e5da587e9ec9692c0.css?ver=1631841482' type='text/css' media='all' />
+<link rel='stylesheet' id='gu-custom-blocks-css'  href='https://gumc.georgetown.edu/wp-content/plugins/wp-plugin-custom-blocks/source/inc/../../build/css/gu-custom-blocks-frontend.css?ver=1631841483' type='text/css' media='all' />
+<link rel='stylesheet' id='gu-whnu-typekit-css'  href='https://use.typekit.net/dtf4tpd.css?ver=5.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='gu-whnu-screen-css'  href='https://gumc.georgetown.edu/wp-content/themes/wp-theme-whnu/build/screen.css?ver=1631841484' type='text/css' media='screen' />
+<link rel='stylesheet' id='gu-whnu-print-css'  href='https://gumc.georgetown.edu/wp-content/themes/wp-theme-whnu/build/print.css?ver=1631841484' type='text/css' media='print' />
+<script type='text/javascript' src='//www.youtube.com/iframe_api?ver=5.8.1' id='youtube-api-js'></script>
+<script type='text/javascript' src='https://gumc.georgetown.edu/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://gumc.georgetown.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://gumc.georgetown.edu/wp-content/plugins/wp-plugin-custom-blocks/source/inc/../../build/js/gu-custom-blocks-frontend.min.js?ver=1631841483' id='gu-custom-blocks-js'></script>
+<script type='text/javascript' src='https://gumc.georgetown.edu/wp-content/plugins/wp-plugin-gu-blocks/source/inc/../../build/js/gu-blocks-frontend.min.js?ver=1631841484' id='gu-prevgen-blocks-frontend-js'></script>
+<link rel="https://api.w.org/" href="https://gumc.georgetown.edu/wp-json/" /><link rel="alternate" type="application/json" href="https://gumc.georgetown.edu/wp-json/wp/v2/pages/2487" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://gumc.georgetown.edu/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://gumc.georgetown.edu/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8.1" />
+<link rel='shortlink' href='https://gumc.georgetown.edu/?p=2487' />
+<link rel="alternate" type="application/json+oembed" href="https://gumc.georgetown.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fgumc.georgetown.edu%2Fdepartments%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://gumc.georgetown.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fgumc.georgetown.edu%2Fdepartments%2F&#038;format=xml" />
+
+<!-- BEGIN ExactMetrics v5.3.7 Universal Analytics - https://exactmetrics.com/ -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-5233159-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- END ExactMetrics Universal Analytics -->
+
+
+</head>
+
+<body class="page-template-default page page-id-2487 wp-embed-responsive" >
+
+  <nav class="skip-links" aria-label="Skip links">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+    <a href="#site-menu" class="element-invisible element-focusable">Skip to main site menu</a>
+  </nav>
+
+  <div id="site-wrapper">
+    <div class="site-overlay"></div>
+
+    <div id="site-canvas">
+
+            
+
+<header class="site-header" aria-labelledby="university-name">
+    <div class="navbar-logo clearfix">
+    <div class="container">
+      <a href="http://www.georgetown.edu/" class="gu-logo" id="university-name" aria-label="Georgetown University.">
+        <img src="https://gumc.georgetown.edu/wp-content/themes/wp-theme-whnu/build/img/georgetown-2x.png" alt="Georgetown University." class="d-none d-lg-inline full-logo" />
+      </a>
+
+            
+          </div>
+  </div>
+
+    <div class="navbar-title container clearfix">
+
+        <a href="http://www.georgetown.edu/" class="gu-logo d-lg-none pull-md-left pull-sm-left pull-xs-left" aria-label="Georgetown University.">
+      <img src="https://gumc.georgetown.edu/wp-content/themes/wp-theme-whnu/build/img/georgetown-abbr-2x.png" width="40" height="28" alt="Georgetown University." />
+    </a>
+
+
+    
+    <div id="site-title">
+      <a href="https://gumc.georgetown.edu" class="site-name">
+
+                          Georgetown University Medical Center
+
+              </a>
+    </div>
+
+    
+    <div class="site-header-actions">
+      <a href="https://search.georgetown.edu" class="btn-icon search-icon" id="search-toggler" aria-controls="search-form" aria-expanded="false" aria-label="Open search form">
+        <span class="fas fa-search"></span>
+        <span class="gu-btn-text search-text">Search</a>
+      </a>
+      <a href="https://gumc.georgetown.edu/sitemap" class="navbar-toggler btn-icon menu-icon" id="site-menu" aria-controls="site-menu" aria-expanded="false" aria-label="Open main site navigation">
+        <span class="fas fa-bars"></span>
+        <span class="gu-btn-text menu-text">Menu</span>
+      </a>
+    </div>
+
+  </div>
+
+    
+<section id="search" aria-label="Search">
+  <div class="container">
+        <div class="search-arrow container d-none d-md-block">
+      <span class="fas fa-caret-up" aria-hidden="true"></span>
+    </div>
+
+    <form action="https://search.uis.georgetown.edu/search" method="GET">
+            <label for="search-input">
+        <span class="fas fa-search"></span>
+        <span class="sr-only">Search this site</span>
+      </label>
+
+      <input id="search-input" name="q" title="Enter search terms" placeholder="Search">
+
+            <input type="hidden" name="sitesearch" value="https://gumc.georgetown.edu">
+      <input type="hidden" name="client" value="default_frontend">
+      <input type="hidden" name="proxystylesheet" value="default_frontend">
+      <input type="hidden" name="output" value="xml_no_dtd">
+      <input type="hidden" name="getfields" value="description">
+
+            <a href="https://search.georgetown.edu" id="search-close" role="button">
+        <span>&times;</span>
+        <span class="sr-only">Close the search box</span>
+      </a>
+
+            <button id="search-submit">Search</button>
+    </form>
+  </div>
+</section>
+
+        
+          <div class="navbar-bottom">
+        <div class="container">
+          <nav class="menu" id="top-menu-links" aria-label="Top level navigation">
+            <ul id="menu-main-navigation" class="nav"><li class="nav-item nav-parent-item"><a href="https://gumc.georgetown.edu/about/" class="nav-link">About the Medical Center</a><button class="toggle-subnav element-invisible element-focusable" aria-haspopup="true" aria-expanded="false" aria-label="Toggle About the Medical Center sub-navigation">Toggle sub-navigation</button><ul class="sub-nav" aria-hidden="true" aria-expanded="false"><li class="nav-item trigger-subnav hide"><button class="close-subnav" aria-haspopup="true" aria-expanded="false">Close this sub-navigation</button></li><li class="nav-item nav-parent-item"><a href="https://gumc.georgetown.edu/welcome/" class="nav-link">Welcome from the Executive Vice President</a><button class="toggle-subnav element-invisible element-focusable" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Welcome from the Executive Vice President sub-navigation">Toggle sub-navigation</button></li><li class="nav-item"><a href="https://gumc.georgetown.edu/racial-justice-committee-for-change/" class="nav-link">Racial Justice Committee for Change</a></li><li class="nav-item nav-parent-item"><a href="https://gumc.georgetown.edu/areas-of-focus/" class="nav-link">Areas of Focus</a><button class="toggle-subnav element-invisible element-focusable" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Areas of Focus sub-navigation">Toggle sub-navigation</button></li><li class="nav-item"><a href="https://gumc.georgetown.edu/how-to-get-here/" class="nav-link">How to Get Here</a></li><li class="nav-item nav-current-item"><a href="https://gumc.georgetown.edu/departments/" class="nav-link">Medical Center Departments</a></li><li class="nav-item nav-parent-item"><a href="https://gumc.georgetown.edu/administration/" class="nav-link">Services & Administration</a><button class="toggle-subnav element-invisible element-focusable" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Services & Administration sub-navigation">Toggle sub-navigation</button></li><li class="nav-item"><a href="https://careers.georgetown.edu/" class="nav-link">Working at GUMC</a></li><li class="nav-item"><a href="https://gufaculty360.georgetown.edu" class="nav-link">Faculty Search</a></li><li class="nav-item"><a href="https://gumc.georgetown.edu/about/campus-ministry/" class="nav-link">Campus Ministry</a></li><li class="nav-item"><a href="https://gumc.georgetown.edu/contact-3/" class="nav-link">Contact Us</a></li></ul></li><li class="nav-item nav-parent-item"><a href="https://gumc.georgetown.edu/research-3/" class="nav-link">Research</a><button class="toggle-subnav element-invisible element-focusable" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Research sub-navigation">Toggle sub-navigation</button><ul class="sub-nav" aria-hidden="true" aria-expanded="false"><li class="nav-item trigger-subnav hide"><button class="close-subnav" aria-haspopup="true" aria-expanded="false">Close this sub-navigation</button></li><li class="nav-item"><a href="https://biomedicalresearch.georgetown.edu/" class="nav-link">Biomedical Research</a></li><li class="nav-item"><a href="https://lombardi.georgetown.edu/" class="nav-link">Georgetown Lombardi Comprehensive Cancer Center</a></li><li class="nav-item"><a href="https://osr.gumc.georgetown.edu/" class="nav-link">Office of Sponsored Research</a></li><li class="nav-item"><a href="https://biomedicalresearch.georgetown.edu/research-services/" class="nav-link">Research Services</a></li></ul></li><li class="nav-item nav-parent-item"><a href="https://gumc.georgetown.edu/education-3/" class="nav-link">Education</a><button class="toggle-subnav element-invisible element-focusable" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Education sub-navigation">Toggle sub-navigation</button><ul class="sub-nav" aria-hidden="true" aria-expanded="false"><li class="nav-item trigger-subnav hide"><button class="close-subnav" aria-haspopup="true" aria-expanded="false">Close this sub-navigation</button></li><li class="nav-item"><a href="https://biomedicalprograms.georgetown.edu" class="nav-link">Biomedical Graduate Education</a></li><li class="nav-item"><a href="https://dml.georgetown.edu" class="nav-link">Dahlgren Memorial Library</a></li><li class="nav-item"><a href="https://gufaculty360.georgetown.edu" class="nav-link">Faculty Search</a></li><li class="nav-item"><a href="https://som.georgetown.edu/" class="nav-link">School of Medicine</a></li><li class="nav-item"><a href="https://nhs.georgetown.edu" class="nav-link">School of Nursing & Health Studies</a></li></ul></li><li class="nav-item nav-parent-item"><a href="https://gumc.georgetown.edu/patient-care/" class="nav-link">Patient Care</a><button class="toggle-subnav element-invisible element-focusable" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Patient Care sub-navigation">Toggle sub-navigation</button><ul class="sub-nav" aria-hidden="true" aria-expanded="false"><li class="nav-item trigger-subnav hide"><button class="close-subnav" aria-haspopup="true" aria-expanded="false">Close this sub-navigation</button></li><li class="nav-item"><a href="https://lombardi.georgetown.edu/" class="nav-link">Georgetown Lombardi Comprehensive Cancer Center</a></li><li class="nav-item"><a href="https://www.medstargeorgetown.org/#q=" class="nav-link">MedStar Georgetown University Hospital</a></li></ul></li><li class="nav-item nav-parent-item"><a href="https://gumc.georgetown.edu/news-events/" class="nav-link">News &#038; Events</a><button class="toggle-subnav element-invisible element-focusable" aria-haspopup="true" aria-expanded="false" aria-label="Toggle News &#038; Events sub-navigation">Toggle sub-navigation</button><ul class="sub-nav" aria-hidden="true" aria-expanded="false"><li class="nav-item trigger-subnav hide"><button class="close-subnav" aria-haspopup="true" aria-expanded="false">Close this sub-navigation</button></li><li class="nav-item nav-parent-item"><a href="https://gumc.georgetown.edu/gumc-events/" class="nav-link">GUMC Events</a><button class="toggle-subnav element-invisible element-focusable" aria-haspopup="true" aria-expanded="false" aria-label="Toggle GUMC Events sub-navigation">Toggle sub-navigation</button></li><li class="nav-item"><a href="https://lombardi.georgetown.edu/news/lombardi_events/" class="nav-link">Georgetown Lombardi Events</a></li><li class="nav-item"><a href="https://som.georgetown.edu/events" class="nav-link">School of Medicine Events</a></li><li class="nav-item"><a href="https://gumc.georgetown.edu/releases/subject-matter-experts/" class="nav-link">Subject Matter Experts</a></li><li class="nav-item"><a href="https://gumc.georgetown.edu/update/" class="nav-link">GUMC Update</a></li><li class="nav-item"><a href="https://alumni.georgetown.edu/health-magazine" class="nav-link">Georgetown Health Magazine</a></li><li class="nav-item nav-parent-item"><a href="https://gumc.georgetown.edu/communications/" class="nav-link">Office of Communications</a><button class="toggle-subnav element-invisible element-focusable" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Office of Communications sub-navigation">Toggle sub-navigation</button></li></ul></li><li class="nav-item"><a href="https://gumc.georgetown.edu/giving-2/" class="nav-link highlight">Giving</a></li><li class="nav-item"><a href="https://gumc.georgetown.edu/health-sciences-strategy/" class="nav-link">HSSI Planning</a></li></ul>
+          </nav>
+        </div>
+      </div>
+      </header>
+
+
+<nav id="off-canvas" aria-label="Main site navigation. Press escape or select the close button to exit this navigation section.">
+
+    <div class="menu-close container">
+    <button class="menu-close-btn">
+      <span class="menu-close-text">Close</span>
+      <span class="menu-close-icon fas fa-times" aria-hidden="true"></span>
+    </button>
+  </div>
+
+    <div class="drawer">
+    <div class="menu" id="menu-links">
+      <ul id="menu-main-navigation-1" class="nav navbar-nav"><li class="menu-item-has-children nav-item"><a href="https://gumc.georgetown.edu/about/">About the Medical Center</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          
+<ul class="sub-menu">
+	<li class="menu-item-has-children nav-item"><a href="https://gumc.georgetown.edu/welcome/">Welcome from the Executive Vice President</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+	<li class="nav-item"><a href="https://gumc.georgetown.edu/racial-justice-committee-for-change/">Racial Justice Committee for Change</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+	<li class="menu-item-has-children nav-item"><a href="https://gumc.georgetown.edu/areas-of-focus/">Areas of Focus</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+	<li class="nav-item"><a href="https://gumc.georgetown.edu/how-to-get-here/">How to Get Here</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+	<li class="current-menu-item nav-item"><a href="https://gumc.georgetown.edu/departments/" aria-current="page">Medical Center Departments</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+	<li class="menu-item-has-children nav-item"><a href="https://gumc.georgetown.edu/administration/">Services &#038; Administration</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+	<li class="nav-item"><a href="https://careers.georgetown.edu/">Working at GUMC</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+	<li class="nav-item"><a href="https://gufaculty360.georgetown.edu">Faculty Search</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+	<li class="nav-item"><a href="https://gumc.georgetown.edu/about/campus-ministry/">Campus Ministry</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+	<li class="nav-item"><a href="https://gumc.georgetown.edu/contact-3/">Contact Us</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+</ul>
+</li>
+<li class="menu-item-has-children nav-item"><a href="https://gumc.georgetown.edu/research-3/">Research</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          
+<ul class="sub-menu">
+	<li class="nav-item"><a href="https://biomedicalresearch.georgetown.edu/">Biomedical Research</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+	<li class="nav-item"><a href="https://lombardi.georgetown.edu/">Georgetown Lombardi Comprehensive Cancer Center</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+	<li class="nav-item"><a href="https://osr.gumc.georgetown.edu/">Office of Sponsored Research</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+	<li class="nav-item"><a href="https://biomedicalresearch.georgetown.edu/research-services/">Research Services</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+</ul>
+</li>
+<li class="menu-item-has-children nav-item"><a href="https://gumc.georgetown.edu/education-3/">Education</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          
+<ul class="sub-menu">
+	<li class="nav-item"><a href="https://biomedicalprograms.georgetown.edu">Biomedical Graduate Education</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+	<li class="nav-item"><a href="https://dml.georgetown.edu">Dahlgren Memorial Library</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+	<li class="nav-item"><a href="https://gufaculty360.georgetown.edu">Faculty Search</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+	<li class="nav-item"><a href="https://som.georgetown.edu/">School of Medicine</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+	<li class="nav-item"><a href="https://nhs.georgetown.edu">School of Nursing &#038; Health Studies</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+</ul>
+</li>
+<li class="menu-item-has-children nav-item"><a href="https://gumc.georgetown.edu/patient-care/">Patient Care</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          
+<ul class="sub-menu">
+	<li class="nav-item"><a href="https://lombardi.georgetown.edu/">Georgetown Lombardi Comprehensive Cancer Center</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+	<li class="nav-item"><a href="https://www.medstargeorgetown.org/#q=">MedStar Georgetown University Hospital</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+</ul>
+</li>
+<li class="menu-item-has-children nav-item"><a href="https://gumc.georgetown.edu/news-events/">News &#038; Events</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          
+<ul class="sub-menu">
+	<li class="menu-item-has-children nav-item"><a href="https://gumc.georgetown.edu/gumc-events/">GUMC Events</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+	<li class="nav-item"><a href="https://lombardi.georgetown.edu/news/lombardi_events/">Georgetown Lombardi Events</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+	<li class="nav-item"><a href="https://som.georgetown.edu/events">School of Medicine Events</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+	<li class="nav-item"><a href="https://gumc.georgetown.edu/releases/subject-matter-experts/">Subject Matter Experts</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+	<li class="nav-item"><a href="https://gumc.georgetown.edu/update/">GUMC Update</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+	<li class="nav-item"><a href="https://alumni.georgetown.edu/health-magazine">Georgetown Health Magazine</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+	<li class="menu-item-has-children nav-item"><a href="https://gumc.georgetown.edu/communications/">Office of Communications</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+</ul>
+</li>
+<li class="nav-item"><a href="https://gumc.georgetown.edu/giving-2/">Giving</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+<li class="nav-item"><a href="https://gumc.georgetown.edu/health-sciences-strategy/">HSSI Planning</a>
+            <button class="menu-toggle">
+              <span class="closed">
+                <span class="far fa-plus-square"></span>
+                <span class="sr-only">Open sub-navigation</span>
+              </span>
+              <span class="opened">
+                <span class="far fa-minus-square"></span>
+                <span class="sr-only">Close sub-navigation</span>
+              </span>
+            </button>
+          </li>
+</ul>
+
+          </div>
+  </div>
+
+</nav>
+
+            <div class="page container" id="main-content">
+        <div class="row">
+                          <aside class="sidebar global col col-12 col-lg-3" aria-label="Site-wide side bar">
+      
+<nav class="menu-contextual" id="context-nav" aria-label="Contextual navigation">
+  <nav class="skip-links" aria-label="Contextual navigation skip links">
+    <a href="#primary-content" class="element-invisible element-focusable">Skip contextual nav and go to content</a>
+  </nav>
+
+  <a class="context-nav-link d-lg-none collapsed" href="#context-nav-links" aria-controls="context-nav-links" aria-expanded="false" data-toggle="collapse" aria-label="Navigate to a child page">
+    <span class="context-nav-to">Navigate to...</span>
+    <span class="fas fa-chevron-up" aria-hidden="true">&nbsp;</span>
+    <span class="fas fa-chevron-down" aria-hidden="true">&nbsp;</span>
+  </a>
+
+  <ul>
+    <li class="parent">
+            <a class="d-none d-lg-block" href="https://gumc.georgetown.edu/about/">About the Medical Center</a>
+
+            <ul class="collapse" id="context-nav-links" aria-expanded="false">
+
+                          <li>
+
+                                      <a href="https://gumc.georgetown.edu/welcome/">Welcome from the Executive Vice President</a>
+            
+          </li>
+                  <li>
+
+                                      <a href="https://gumc.georgetown.edu/racial-justice-committee-for-change/">Racial Justice Committee for Change</a>
+            
+          </li>
+                  <li>
+
+                                      <a href="https://gumc.georgetown.edu/areas-of-focus/">Areas of Focus</a>
+            
+          </li>
+                  <li>
+
+                                      <a href="https://gumc.georgetown.edu/how-to-get-here/">How to Get Here</a>
+            
+          </li>
+                  <li>
+
+                                                    <a href="https://gumc.georgetown.edu/departments/" class="active">Medical Center Departments</a>
+
+                            
+                        
+          </li>
+                  <li>
+
+                                      <a href="https://gumc.georgetown.edu/administration/">Services & Administration</a>
+            
+          </li>
+                  <li>
+
+                                      <a href="https://careers.georgetown.edu/">Working at GUMC</a>
+            
+          </li>
+                  <li>
+
+                                      <a href="https://gufaculty360.georgetown.edu">Faculty Search</a>
+            
+          </li>
+                  <li>
+
+                                      <a href="https://gumc.georgetown.edu/about/campus-ministry/">Campus Ministry</a>
+            
+          </li>
+                  <li>
+
+                                      <a href="https://gumc.georgetown.edu/contact-3/">Contact Us</a>
+            
+          </li>
+        
+      </ul>
+
+    </li>
+  </ul>
+
+</nav>
+
+    </aside>
+  
+                      <main class="l-main-page col col-12 with-sidebar col-lg-9" id="primary-content">
+
+        
+
+  <nav class="breadcrumb" aria-label="Page breadcrumb links">
+                            <a href="https://gumc.georgetown.edu">Home</a>
+        <span class="sep">&rtrif;</span>
+              <a href="https://gumc.georgetown.edu/about/">About the Medical Center</a>
+        <span class="sep">&rtrif;</span>
+      
+            Medical Center Departments
+
+      </nav>
+
+
+
+    <h1>Medical Center Departments</h1>
+
+        
+
+
+
+    
+<div class="wp-block-image"><figure class="aligncenter"><img loading="lazy" width="1000" height="352" src="https://gumc.georgetown.edu/wp-content/uploads/2019/01/med-dent-dusk.jpg" alt="The Med-Dent Building in the evening light" class="wp-image-4225" srcset="https://gumc.georgetown.edu/wp-content/uploads/2019/01/med-dent-dusk.jpg 1000w, https://gumc.georgetown.edu/wp-content/uploads/2019/01/med-dent-dusk-300x106.jpg 300w, https://gumc.georgetown.edu/wp-content/uploads/2019/01/med-dent-dusk-768x270.jpg 768w" sizes="(max-width: 1000px) 100vw, 1000px" /></figure></div>
+
+
+
+<div class="wp-block-columns has-2-columns">
+<div class="wp-block-column">
+<h2>Basic Science</h2>
+
+
+
+<ul><li><a href="https://bmcb.georgetown.edu/">Biochemistry&nbsp;&amp;&nbsp;Molecular&nbsp;&amp;&nbsp;Cellular&nbsp;Biology</a> </li><li><a href="https://biology.georgetown.edu/">Biology</a></li><li><a href="https://biostatistics.georgetown.edu/">Biostatistics, Bioinformatics, and Biomathematics</a>  </li><li><a href="https://bmcb.georgetown.edu/">Cell Biology</a> </li><li><a href="https://nhs.georgetown.edu/human-science-department">Human Science</a></li><li><a href="https://microbiology.georgetown.edu/">Microbiology &amp; Immunology </a></li><li><a href="https://neuro.georgetown.edu/">Neuroscience</a></li><li><a href="https://som.georgetown.edu/medicaleducation/departments/oncology-2/">Oncology </a></li><li><a href="https://pathology.georgetown.edu/">Pathology</a></li><li><a href="https://pharmacology.georgetown.edu/">Pharmacology and Physiology</a>  </li><li><a href="https://som.georgetown.edu/medicaleducation/departments/radiationmedicine">Radiation Medicine</a> </li></ul>
+</div>
+
+
+
+<div class="wp-block-column">
+<h2>Clinical &amp; Health Studies</h2>
+
+
+
+<ul><li><a href="https://anesthesiology.georgetown.edu/">Anesthesiology </a></li><li><a href="https://som.georgetown.edu/medicaleducation/departments/emergencymedicine">Emergency Medicine</a>  </li><li><a href="https://familymedicine.georgetown.edu/">Family Medicine</a> </li><li><a href="https://nhs.georgetown.edu/health-systems-administration-department">Health Systems Administration</a> </li><li><a href="https://nhs.georgetown.edu/human-science-department">Human Science</a></li><li><a href="https://nhs.georgetown.edu/international-health-department">International Health</a></li><li><a href="https://medicine.georgetown.edu/">Medicine </a></li><li><a href="https://neurology.georgetown.edu/">Neurology </a></li><li><a href="https://som.georgetown.edu/medicaleducation/curriculum/electives/departments/neurosurgery#_ga=2.146786484.1224327248.1547471957-1042707743.1520988926">Neurosurgery </a></li><li><a href="https://nhs.georgetown.edu/nursing-departments">Nursing</a></li><li><a href="https://som.georgetown.edu/medicaleducation/departments/obstetricsgynecology">Obstetrics and Gynecology</a> </li><li><a href="https://www.medstarhealth.org/education/affiliated-hospitals-2/medstar-washington-hospital-center/ophthalmology-residency/">Ophthalmology </a></li><li><a href="https://som.georgetown.edu/medicaleducation/departments/orthopaedicsurgery-2/">Orthopedic Surgery</a>  </li><li><a href="https://ent.georgetown.edu/">Otolaryngology </a></li><li><a href="https://pediatrics.georgetown.edu/">Pediatrics </a></li><li><a href="https://rehabmedicine.georgetown.edu/">Physical Medicine and Rehabilitation</a> </li><li><a href="https://som.georgetown.edu/medicaleducation/departments/plasticsurgery">Plastic Surgery</a> </li><li><a href="https://som.georgetown.edu/medicaleducation/departments/psychiatry">Psychiatry </a></li><li><a href="https://radiology.georgetown.edu/">Radiology </a></li><li><a href="https://som.georgetown.edu/medicaleducation/departments/surgery-2/">Surgery  </a></li><li><a href="https://www.medstarhealth.org/education/affiliated-hospitals-2/medstar-georgetown-university-hospital/urology-residency-program/">Urology  </a></li></ul>
+</div>
+</div>
+
+
+  </main>
+        </div>
+      </div>
+
+            
+<footer class="footer" aria-label="Site footer">
+
+  <div class="footer-information">
+    <div class="container">
+
+            <div class="footer-seal">
+        <img src="https://gumc.georgetown.edu/wp-content/themes/wp-theme-whnu/build/img/seal-sm-2x.png" class="img-responsive" alt="Georgetown University seal." width="128" height="250">
+      </div>
+
+            <div class="footer-contact">
+        
+
+<address itemscope itemtype="http://schema.org/CollegeOrUniversity">
+  <p itemprop="department">Georgetown University Medical Center</p>
+
+  <div itemprop="location" itemscope itemtype="http://schema.org/Place">
+    
+    <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+              <p itemprop="streetAddress">4000 Reservoir Road, NW</p>
+      
+      <p>
+                  <span itemprop="addressLocality">Washington,</span>
+        
+                  <span itemprop="addressRegion">D.C.</span>
+        
+                  <span itemprop="postalCode">20057</span>
+              </p>
+    </span>
+  </div>
+
+      <p itemprop="telephone">Phone: <a href="tel:+12026870100" aria-label="2 0 2. 6 8 7. 0 1 0 0.">(202) 687-0100</a></p>
+  
+  
+      <p itemprop="">Email: <a href="mailto:gumccomm@georgetown.edu">gumccomm@georgetown.edu</a></p>
+  </address>
+
+
+<div class="footer-utility">
+    
+
+<nav aria-label="Footer utility links">
+  <ul>
+        <li>
+      <a href="http://maps.georgetown.edu/">Maps</a>
+    </li>
+
+    <li>
+      <a href="https://www.georgetown.edu/copyright-information/">Copyright</a>
+    </li>
+
+    <li>
+      <a href="https://www.georgetown.edu/privacy-policy/">Privacy</a>
+    </li>
+
+    <li>
+      <a href="https://accessibility.georgetown.edu/">Accessibility</a>
+    </li>
+
+    <li>
+      <a href="https://gumc.georgetown.edu/sitemap">Full Site Menu</a>
+    </li>
+
+          </ul>
+</nav>
+</div>
+
+  <div class="social-links">
+    <ul class="connect icons">
+
+              <li>
+          <a href="https://twitter.com/gumedcenter">
+            <span class="fab fa-fw fa-twitter" aria-hidden="true"></span>
+            <span class="sr-only">twitter</span>
+          </a>
+        </li>
+              <li>
+          <a href="https://facebook.com/GUMCUpdate">
+            <span class="fab fa-fw fa-facebook" aria-hidden="true"></span>
+            <span class="sr-only">facebook</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+    </div>
+  </div>
+
+    <script type='text/javascript' src='https://gumc.georgetown.edu/wp-content/themes/wp-theme-whnu/build/scripts.min.js?ver=1631841484' id='gu-whnu-js-js'></script>
+<script type='text/javascript' src='https://gumc.georgetown.edu/wp-content/plugins/page-links-to/dist/new-tab.js?ver=3.3.5' id='page-links-to-js'></script>
+<script type='text/javascript' src='https://gumc.georgetown.edu/wp-includes/js/wp-embed.min.js?ver=5.8.1' id='wp-embed-js'></script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"c7c498a9f4","applicationID":"168860141","transactionName":"NQEGbUQAXUMCWhJQCwxLJVpCCFxeTFAIXQEa","queueTime":0,"applicationTime":271,"atts":"GUYFGwwaTk0=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+
+</html>

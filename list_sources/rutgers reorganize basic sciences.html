@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"eeec0c9b52",applicationID:"173457141"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<link rel="shortcut icon" href="https://rbhs-stratplan.rutgers.edu/profiles/ruprof/themes/scarlet/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+<meta name="description" content="A Task Force was convened in January 2015 by RBHS Chancellor Strom to examine the reorganization of basic sciences across Rutgers. The task force was asked to consider whether or not:" />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="https://rbhs-stratplan.rutgers.edu/reorganizing-basic-sciences" />
+<link rel="shortlink" href="https://rbhs-stratplan.rutgers.edu/node/139" />
+  <title>Reorganizing the Basic Sciences | Biomedical and Health Sciences Strategic Plan</title>
+  <link type="text/css" rel="stylesheet" href="https://rbhs-stratplan.rutgers.edu/sites/default/files/css/css_rEI_5cK_B9hB4So2yZUtr5weuEV3heuAllCDE6XsIkI.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://rbhs-stratplan.rutgers.edu/sites/default/files/css/css_GqCqCmGspWzZsDVTgkFoFb2eEt4xaByq4GFNcVi8QG4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://rbhs-stratplan.rutgers.edu/sites/default/files/css/css_lhZ2r95cVv6XPZeCq2neqJ2WkJfOx4FGwB5NFslhk94.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://rbhs-stratplan.rutgers.edu/sites/default/files/css/css_vqkjThqH1wpNL4i5ePElPhjypHJ8fuVeZ7NNjdUQvXc.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://rbhs-stratplan.rutgers.edu/sites/default/files/css/css_Erol5k9-IbfX7ic-CtZrPcMJXwUiCXnFhQsDZlg2CiU.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://rbhs-stratplan.rutgers.edu/sites/default/files/css/css_cPZ_0eHwEnhA9QeedHzFL6tw8TODBJveEwkzdckR-5Y.css" media="all" />
+  <script type="text/javascript" src="https://rbhs-stratplan.rutgers.edu/sites/default/files/js/js_yMSKTzBO0KmozyLwajzFOrrt_kto_9mtccAkb0rm7gc.js"></script>
+<script type="text/javascript" src="https://rbhs-stratplan.rutgers.edu/sites/default/files/js/js_Wpfmh9K-ZlI-7lU8nDuj4askEZEqooBt-7mriljsIMs.js"></script>
+<script type="text/javascript" src="https://rbhs-stratplan.rutgers.edu/sites/default/files/js/js_x3Y8gm0BsYFB4YGkWVDJ-Jl-5doiCKfU0tYhMbkzlXQ.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-870616-37", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://rbhs-stratplan.rutgers.edu/sites/default/files/js/js_RT2QWMmYnVqRm-W1A9a1_FpElyI3iUtaCUSR9NtgIjI.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"scarlet","theme_token":"HzRwgqmrelS-M3ITkLBqELtlHXYspSod8sTqKE72txM","js":{"misc\/jquery.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/ui\/jquery.ui.core.min.js":1,"misc\/ui\/jquery.ui.widget.min.js":1,"misc\/ui\/jquery.ui.button.min.js":1,"misc\/ui\/jquery.ui.mouse.min.js":1,"misc\/ui\/jquery.ui.draggable.min.js":1,"misc\/ui\/jquery.ui.position.min.js":1,"misc\/ui\/jquery.ui.resizable.min.js":1,"misc\/ui\/jquery.ui.dialog.min.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/contrib\/linkit\/js\/linkit.js":1,"misc\/progress.js":1,"sites\/all\/modules\/contrib\/linkit\/editors\/ckeditor\/linkitDialog.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"0":1,"profiles\/ruprof\/themes\/scarlet\/js\/base.js":1,"profiles\/ruprof\/themes\/scarlet\/js\/respond.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.messages.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.button.css":1,"misc\/ui\/jquery.ui.resizable.css":1,"misc\/ui\/jquery.ui.dialog.css":1,"sites\/all\/modules\/contrib\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/contrib\/node_embed\/plugins\/node_embed\/node_embed.css":1,"profiles\/ruprof\/themes\/scarlet\/css\/content_types\/page.css":1,"profiles\/ruprof\/themes\/scarlet\/css\/base.css":1,"public:\/\/css_injector\/css_injector_3.css":1}},"linkit":{"autocompletePath":"https:\/\/rbhs-stratplan.rutgers.edu\/linkit\/autocomplete\/___profile___?s=","dashboardPath":"\/linkit\/dashboard\/","currentInstance":{}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"}});
+//--><!]]>
+</script>
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-second page-node page-node- page-node-139 node-type-page" >
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    
+<div class="page">
+
+  <div class="region-wrapper clearfix sliver"><div class="region-inner">
+      <div class="region region-sliver">
+    <div id="block-platform-sliver-menu" class="block block-platform">
+
+    
+  <div class="content">
+    
+<div class="sliver-menu">
+  <span class="sliver-link rutgers"><a href="//www.rutgers.edu" title="Universitywide">Universitywide</a></span>
+  <span class="sliver-link nb"><a href="//newbrunswick.rutgers.edu" title="New Brunswick">New Brunswick</a></span>
+  <span class="sliver-link rbhs"><a href="http://rbhs.rutgers.edu" title="RBHS">RBHS</a></span>
+  <span class="sliver-link newark"><a href="//www.newark.rutgers.edu" title="Newark">Newark</a></span>
+  <span class="sliver-link camden"><a href="//www.camden.rutgers.edu" title="Camden">Camden</a></span>
+  <span class="sliver-link online"><a href="https://online.rutgers.edu" title="Online">Online</a></span>
+  <span class="sliver-link rutgershealth"><a href="http://www.rutgershealth.org" title="Rutgers Health">Rutgers Health</a></span>
+</div>
+  </div>
+</div>
+<div id="block-platform-menu-toggle" class="block block-platform">
+
+    
+  <div class="content">
+    <div class="menu-toggle"></div>  </div>
+</div>
+<div id="block-platform-rusearch" class="block block-platform">
+
+    
+  <div class="content">
+    
+<form action="https://search.rutgers.edu/web.html" method="GET" name="rusearch" id="rusearch">
+  <label for="rusearchbox" class="visuallyhidden">Search term</label>
+  <input alt="Search term" id="rusearchbox" name="q" size="15" type="text" value="SEARCH" />
+  <label for="rusearchselect" class="visuallyhidden">Select resource to search</label>
+  <select id="rusearchselect" onchange="RUSearchSubmitAlter(this.value)">
+    <option value="https://search.rutgers.edu/web.html">This site</option>
+    <option value="https://search.rutgers.edu/web.html">All sites</option>
+    <option value="https://search.rutgers.edu/people.html">People</option>
+    <option value="https://search.rutgers.edu/events.html">Events</option>
+    <option value="https://search.rutgers.edu/buildings.html">Buildings</option>
+    <option value="https://search.rutgers.edu/rbhs-search.html">RBHS</option>
+  </select>
+  <label for="rusearchbutton" class="visuallyhidden">Search submit</label>
+  <input alt="Submit" id="rusearchbutton" type="submit" value="SEARCH" />
+</form>
+  </div>
+</div>
+  </div>
+  </div></div><!-- /sliver -->
+
+  <div class="region-wrapper clearfix masthead menu-singleheight"><div class="region-inner">
+    <a class="logo" href="/">Rutgers University</a>
+          <a class="site-name" href="/" title="Biomedical and Health Sciences Strategic Plan">Biomedical and Health Sciences Strategic Plan</a>
+          <div class="region region-masthead">
+    <div id="block-menu-block-1" class="block block-menu-block">
+
+    
+  <div class="content">
+    <div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-1 center">
+  <ul class="menu"><li class="first leaf menu-mlid-379"><a href="/" title="">Home</a></li>
+<li class="expanded active-trail menu-mlid-437"><a href="/plan/rbhs-strategic-plan" class="active-trail">The Plan</a><ul class="menu"><li class="first leaf menu-mlid-438"><a href="/plan/key-strategic-plan-initiatives">Key Strategic Plan Initiatives</a></li>
+<li class="leaf menu-mlid-517"><a href="/plan/aspiration-and-identity">Aspiration and Identity</a></li>
+<li class="last leaf has-children active-trail menu-mlid-687"><a href="/plan/strategic-plan-archive" class="active-trail">Strategic Plan Archive</a></li>
+</ul></li>
+<li class="expanded menu-mlid-383"><a href="/resources/rbhs-strategic-plan-resources" title="">Resources</a><ul class="menu"><li class="first leaf menu-mlid-530"><a href="/resources/survey-results">Survey Results</a></li>
+<li class="leaf menu-mlid-440"><a href="/future-us-health-delivery-system-speaker-series">Future of the U.S. Health Delivery System Speaker Series</a></li>
+<li class="last leaf menu-mlid-468"><a href="/resources/potential-signature-program-working-group-analyses">Potential Signature Program Working Group Analyses</a></li>
+</ul></li>
+<li class="last leaf menu-mlid-384"><a href="/contact-us" title="">Contact Us</a></li>
+</ul></div>
+  </div>
+</div>
+  </div>
+  </div></div><!-- /header -->
+
+  
+  <div class="region-wrapper clearfix main-content"><div class="region-inner">
+    <a id="main-content"></a>
+        <div class="main-content-nest">
+                  
+      
+        <div class="region region-content">
+    <h1 class="title page-title">Reorganizing the Basic Sciences </h1><div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-139" class="node node-page clearfix" about="/reorganizing-basic-sciences" typeof="sioc:Item foaf:Document">
+
+  
+      <span property="dc:title" content="Reorganizing the Basic Sciences " class="rdf-meta element-hidden"></span>
+  
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>A Task Force was convened in January 2015 by RBHS Chancellor Strom to examine the reorganization of basic sciences across Rutgers. The task force was asked to consider whether or not:</p>
+<ul>
+<li>(matching) basic science departments at New Jersey Medical School (NJMS) and Robert Wood Johnson Medical School (RWJMS) should be merged with one another</li>
+<li>there is agreement in principle that redundancy could be reduced, resources conserved, and reputation enhanced by reorganizing basic life sciences between the units of RBHS and Rutgers</li>
+<li>medical school faculty who are no longer bringing in large research grants should teach undergraduate courses at Rutgers and if RU faculty should teach in the medical school to reduce the need to hire more faculty</li>
+<li>medical school faculty should be partitioned between just two departments, one being medical education and the other being laboratory research</li>
+<li>RWJMS should work with Rutgers School of Arts and Sciences (SAS) to build strength in genetics rather than create a new RWJMS genetics department from scratch</li>
+<li>basic science departments in the schools of pharmacy, public health, and/or nursing should be considered for merger and, if so, how</li>
+</ul>
+<h2>Consideration of Reorganization</h2>
+<p><strong>Should (matching) basic science departments at NJMS and RWJMS be merged with one another?</strong></p>
+<p>The number of departments in both medical schools was reduced significantly just a few years ago. NJMS went from five basic science departments to three. Similarly, RWJMS merged five basic science departments into three. The potential benefits of these reorganizations are only beginning to be observed, as the inevitable disruptive effects of these changes on faculty morale and productivity diminish with time and with the formation of new collaborations and interactions. The Academic Unit Organization Committee (AUOC) is exploring ways to enhance synergies across departmental lines through institutes and centers that would support both research faculty in clinical and basic sciences. There are limitations in the effectiveness of merging basic science departments between the two medical schools. The departments are intellectual centers, rather than service providers, that benefit from sharing of ideas that occurs best in a localized setting with critical mass. In particular, the physical distance between the two medical schools makes it important to have positions of authority at both schools. One basic science department chair would be spread too thinly to effectively manage two such physically separated units and to support the unique intellectual and research foci at each. As a result, one or both units would likely suffer.</p>
+<p><strong>Do we agree in principle that redundancy could be reduced, resources conserved, and reputation enhanced by reorganizing basic life sciences between the units of RBHS and Rutgers?</strong></p>
+<p>Yes. There are many opportunities to reorganize the basic (life) sciences between RWJMS/Rutgers-NB and within Rutgers-NB. Opportunities for collaboration between Rutgers-NB and RWJMS/RBHS exist but may not require reorganization/merging of departments. It seems that certain apparent “redundancies” actually reflect issues with naming and not duplication of mission. The same or similar names may be attached to multiple different departments for historic reasons, however the actual research focus of these similarly named departments is often quite different. A renaming of certain departments, and potentially even some schools, could more effectively broadcast the unique mission of these different units. Efforts to reduce redundancy within and between RBHS and RU-NB should not be counter-productive and compromise ongoing focus and strengths of units. PhD students could better connect across campuses without merging programs by allowing students to take courses from other schools and graduate programs. The concept of centers/institutes could be an effective tool for drawing together research faculty with common interests. As in the Cancer Institute of New Jersey (CINJ), this could act as a catalyst for more competitive multi-investigator grants and increased visibility for potential fund raising efforts.</p>
+<p><strong>Should medical school faculty who are no longer bringing in large research grants teach undergraduate courses at Rutgers and should RU faculty teach in the medical school to reduce the need to hire more faculty?</strong></p>
+<p>This could be a useful resource and win-win for the medical school and Rutgers departments. In particular, this approach could be helpful if a Rutgers department is short-staffed or if faculty members go on sabbatical. However, Rutgers departments will have appropriate concerns about having longer term teaching done by faculty who they don’t have control over. One option might be for unfunded medical school faculty members to transfer to Rutgers-NB. This option should be reserved for faculty members with a track record as capable and responsible educators as well as having an interest in doing so. Clearly, the potential new home departments at legacy Rutgers will need to be comfortable with the transferring faculty as well, and a process for such transfers will need to be developed. Potential challenges in implementation include finding RU-NB departments with a need for teaching staff and determining the salary support levels of transferred faculty (e.g. same as the part- time lecturers (PTL) or instructor salaries). There will be a need to determine how this will work within the context of responsibility center management (RCM) budgeting.</p>
+<p><strong>Should medical school faculty be partitioned between just two departments, one being medical education and the other being laboratory research?</strong></p>
+<p>We support creating a department of medical education as it has become increasingly important to have educators who are expert in the science of education and would also enhance the quality of medical education. This does not have to be a large department, but would have a dedicated faculty devoted to education of medical students. This could also free up time for productive research faculty. The two medical schools are separately accredited and should not share a department of medical education at this point. There may be moves towards consolidation on campuses. A single laboratory research department may not be a suitable structure. This approach has worked best at newly forming medical schools but has the potential to be highly disruptive of productive faculty research programs and negatively affect retention of successful, funded faculty at schools with well-established departments and faculty teaching and research structures. It may instead be better to locally merge departments as has been done recently on both campuses, and to provide additional research environments and collaborative opportunities for faculty increasingly through centers and institutes.</p>
+<p><strong>Should RWJMS work with Rutgers SAS to build strength in genetics rather than create a new RWJMS genetics department from scratch?</strong></p>
+<p>Yes. RWJMS should take advantage of the geographic proximity to the Rutgers SAS Department of Genetics to acquire strength in genetics. Including NJMS in this model is likely not viable. However, certain kinds of less geographically bound support could also be provided to NJMS. How might this goal be achieved? RWJMS faculty could contribute to teaching in the RU Department of Genetics, which could in return offer access to equipment and services. Also, research faculty from both institutions could participate in centers and institutes. Again, RCM issues need to be clarified for this model.</p>
+<p><strong>How do the schools of pharmacy, public health, and/or nursing fit in?</strong></p>
+<p>In terms of education, the Ernest Mario School of Pharmacy (EMSOP) has worked with RWJMS to be more interactive, such as creating a new PharmD-MD program. NJMS is in discussion with EMSOP to create a similar PharmD-MD program. Other opportunities between the medical, pharmacy, public health, and nursing schools, such as creating undergraduate programs in pharmaceutical-medical sciences should be explored.</p>
+<h2>Recommendation</h2>
+<ul>
+<li>The Task Force recommends that reorganization of basic sciences be put on hold.  </li>
+</ul>
+<h2>Task Force Members </h2>
+<ul>
+<li>A.-N. Tony Kong, PhD (Chair), Department of Pharmaceutics, Ernest Mario School of Pharmacy</li>
+<li>Raymond Birge, PhD, Department of Biochemistry and Molecular Biology, New Jersey Medical School</li>
+<li>Linda Brzustowicz, MD, Department of Genetics, RU-NB School of Arts and Sciences</li>
+<li>Marc Gartenberg, PhD, Department of Biochemistry and Molecular Biology, Robert Wood Johnson Medical School</li>
+<li>William Gause, PhD, Department of Medicine, New Jersey Medical School; Institute for Infectious and Inflammatory Diseases</li>
+<li>Joachim Kohn, PhD, Department of Chemistry and Chemical Biology, RU-NB School of Arts and Sciences</li>
+<li>Arnold Rabson, MD, Department of Pediatrics, Department of Pharmacology, Department of Pathology and Laboratory Medicine, Robert Wood Johnson Medical School; The Child Health Institute of New Jersey</li>
+<li>Maria Soto-Greene, MD, Department of Medicine, New Jersey Medical School</li>
+<li>Lily Young, PhD, Department of Environmental Microbiology, School of Environmental and Biological Sciences</li>
+</ul>
+</div></div></div>  </div>
+
+  
+  
+</div>
+  </div>
+</div>
+  </div>
+
+          </div>
+    <!-- /main-content-nest -->
+              <div class="region region-sidebar-second sidebar">
+    <div id="block-menu-block-2" class="block block-menu-block">
+
+    <h2><a href="/plan/rbhs-strategic-plan" class="active-trail">The Plan</a></h2>
+  
+  <div class="content">
+    <div class="menu-block-wrapper menu-block-2 menu-name-main-menu parent-mlid-0 menu-level-2 center">
+  <ul class="menu"><li class="first leaf menu-mlid-438"><a href="/plan/key-strategic-plan-initiatives">Key Strategic Plan Initiatives</a></li>
+<li class="leaf menu-mlid-517"><a href="/plan/aspiration-and-identity">Aspiration and Identity</a></li>
+<li class="last expanded active-trail menu-mlid-687"><a href="/plan/strategic-plan-archive" class="active-trail">Strategic Plan Archive</a><ul class="menu"><li class="first expanded active-trail menu-mlid-515"><a href="/implementation/rbhs-strategic-plan-implementation" class="active-trail">Implementation</a><ul class="menu"><li class="first expanded active-trail menu-mlid-527"><a href="/implementation/progress-implementing-rbhs-strategic-plan-initiatives" class="active-trail">Progress in Implementing the RBHS Strategic Plan Initiatives</a><ul class="menu"><li class="first collapsed menu-mlid-518"><a href="/implementation/signature-programs-progress-and-achievements">Signature Programs: Progress and Achievements</a></li>
+<li class="collapsed menu-mlid-519"><a href="/implementation/complementary-programs-progress-and-achievements">Complementary Programs: Progress and Achievements</a></li>
+<li class="collapsed menu-mlid-522"><a href="/implementation/educational-initiatives-progress-and-achievements">Educational Initiatives: Progress and Achievements</a></li>
+<li class="collapsed menu-mlid-521"><a href="/implementation/clinical-initiatives-progress-and-achievements">Clinical Initiatives: Progress and Achievements</a></li>
+<li class="leaf menu-mlid-520"><a href="/implementation/community-service-activities-progress-and-achievements">Community Service Activities: Progress and Achievements</a></li>
+<li class="expanded active-trail menu-mlid-524"><a href="/implementation/integration-among-schools-and-across-rutgers-progress-and-achievements" class="active-trail">Integration among Schools and Across Rutgers: Progress and Achievements</a><ul class="menu"><li class="first leaf menu-mlid-642"><a href="/designing-multi-professional-faculty-practice-future">Designing the Multi-Professional Faculty Practice of the Future</a></li>
+<li class="last leaf active-trail active menu-mlid-673"><a href="/reorganizing-basic-sciences" class="active-trail active">Reorganizing the Basic Sciences</a></li>
+</ul></li>
+<li class="collapsed menu-mlid-525"><a href="/implementation/other-enabling-structures-progress-and-achievements">Other Enabling Structures: Progress and Achievements</a></li>
+<li class="last collapsed menu-mlid-526"><a href="/implementation/financial-and-development-strategies-progress-and-achievements">Financial and Development Strategies: Progress and Achievements</a></li>
+</ul></li>
+<li class="leaf menu-mlid-386"><a href="/implementation/steering-committee">Steering Committee</a></li>
+<li class="last leaf menu-mlid-597"><a href="/implementation/rbhs-strategic-plan-speaker-series">RBHS Strategic Plan Speaker Series</a></li>
+</ul></li>
+<li class="last collapsed menu-mlid-516"><a href="/plan-background/about-strategic-planning-process" title="">Plan Background </a></li>
+</ul></li>
+</ul></div>
+  </div>
+</div>
+  </div>
+        <!-- /sidebar_second -->
+    
+      </div></div><!-- /main-content -->
+
+      <div class="region-wrapper clearfix bottom"><div class="region-inner">
+        <div class="region region-bottom">
+    <div id="block-platform-site-footer" class="block block-platform">
+
+    
+  <div class="content">
+    <p>If you have questions or concerns, please <a href="/contact-us">contact us</a>.</p>
+  </div>
+</div>
+  </div>
+    </div></div><!-- /bottom -->
+  
+  
+      <div class="region-wrapper clearfix footer-second"><div class="region-inner">
+        <div class="region region-footer-second">
+    <div id="block-platform-university-footer" class="block block-platform">
+
+    
+  <div class="content">
+    <p>
+Rutgers is an equal access/equal opportunity institution. Individuals with disabilities are encouraged to direct suggestions, comments, or complaints concerning any accessibility issues with Rutgers websites to <a href="mailto:accessibility@rutgers.edu">accessibility@rutgers.edu</a> or complete the <a href="https://it.rutgers.edu/it-accessibility-initiative/barrierform/" rel="nofollow" target="_blank">Report Accessibility Barrier / Provide Feedback</a> form.<br>
+<a rel="nofollow" target="_blank" href="https://dmca.copyright.gov/osp/publish/history.html?search=rutgers&amp;id=940ad7160beceddad62f8fdcfab24002">Copyright ©2021</a>, <a href="https://www.rutgers.edu" rel="nofollow" target="_blank">Rutgers, The State University of New Jersey.</a> All rights reserved. 
+</p>
+  </div>
+</div>
+  </div>
+    </div></div><!-- /footer_Second -->
+  
+</div><!-- /page -->
+  
+  <div id="respSize"></div><!-- helper for JS/media query switching-->
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"eeec0c9b52","applicationID":"173457141","transactionName":"Z1xXY0cCXRIFVhVeVl4WdFRBClwPS1sOU1xvSVRQUDxFCAFC","queueTime":0,"applicationTime":169,"atts":"SxtUFQ8YThw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

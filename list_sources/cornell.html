@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8 no-js"  lang="en" dir="ltr"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9 ie8 no-js"  lang="en" dir="ltr"> <![endif]-->
+<!--[if gt IE 8]><!--> <html  lang="en" dir="ltr"> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"8123a404fc",applicationID:"29048835"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<link rel="shortcut icon" href="https://research.weill.cornell.edu/sites/all/themes/wcmc_research/favicon.ico" />
+<meta name="description" content="Weill Cornell Medicine DepartmentsAnesthesiologyThe Department of Anesthesiology is committed to innovation in perioperative clinical care to maximize the quality and efficiency in anesthesia, pain and critical care, along with discovery and translation of novel therapies and healthcare delivery models. The department’s mission is to advance scientific research and education" />
+<meta name="generator" content="Drupal 7 (https://www.drupal.org)" />
+<link rel="canonical" href="https://research.weill.cornell.edu/about-us/academic-units/departments" />
+<link rel="shortlink" href="https://research.weill.cornell.edu/node/134" />
+    <title>Departments | Research | Weill Cornell Medicine</title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/profiles/wcmc/themes/wcm_brand_base/favicons/apple-touch-icon-57x57.png?v=2">
+    <link rel="apple-touch-icon" sizes="60x60" href="/profiles/wcmc/themes/wcm_brand_base/favicons/apple-touch-icon-60x60.png?v=2">
+    <link rel="apple-touch-icon" sizes="72x72" href="/profiles/wcmc/themes/wcm_brand_base/favicons/apple-touch-icon-72x72.png?v=2">
+    <link rel="apple-touch-icon" sizes="76x76" href="/profiles/wcmc/themes/wcm_brand_base/favicons/apple-touch-icon-76x76.png?v=2">
+    <link rel="apple-touch-icon" sizes="114x114" href="/profiles/wcmc/themes/wcm_brand_base/favicons/apple-touch-icon-114x114.png?v=2">
+    <link rel="apple-touch-icon" sizes="120x120" href="/profiles/wcmc/themes/wcm_brand_base/favicons/apple-touch-icon-120x120.png?v=2">
+    <link rel="apple-touch-icon" sizes="144x144" href="/profiles/wcmc/themes/wcm_brand_base/favicons/apple-touch-icon-144x144.png?v=2">
+    <link rel="apple-touch-icon" sizes="152x152" href="/profiles/wcmc/themes/wcm_brand_base/favicons/apple-touch-icon-152x152.png?v=2">
+    <link rel="apple-touch-icon" sizes="180x180" href="/profiles/wcmc/themes/wcm_brand_base/favicons/apple-touch-icon-180x180.png?v=2">
+    <link rel="icon" type="image/png" href="/profiles/wcmc/themes/wcm_brand_base/favicons/favicon-32x32.png?v=2" sizes="32x32">
+    <link rel="icon" type="image/png" href="/profiles/wcmc/themes/wcm_brand_base/favicons/favicon-194x194.png?v=2" sizes="194x194">
+    <link rel="icon" type="image/png" href="/profiles/wcmc/themes/wcm_brand_base/favicons/favicon-96x96.png?v=2" sizes="96x96">
+    <link rel="icon" type="image/png" href="/profiles/wcmc/themes/wcm_brand_base/favicons/android-chrome-192x192.png?v=2" sizes="192x192">
+    <link rel="icon" type="image/png" href="/profiles/wcmc/themes/wcm_brand_base/favicons/favicon-16x16.png?v=2" sizes="16x16">
+    <link rel="manifest" href="/profiles/wcmc/themes/wcm_brand_base/favicons/manifest.json?v=2">
+    <link rel="mask-icon" href="/profiles/wcmc/themes/wcm_brand_base/favicons/safari-pinned-tab.svg?v=2" color="#b31b1b">
+    <link rel="shortcut icon" href="/profiles/wcmc/themes/wcm_brand_base/favicons/favicon.ico?v=2">
+    <meta name="apple-mobile-web-app-title" content="Weill Cornell Medicine">
+    <meta name="application-name" content="Weill Cornell Medicine">
+    <meta name="msapplication-TileColor" content="#b31b1b">
+    <meta name="msapplication-TileImage" content="/profiles/wcmc/themes/wcm_brand_base/favicons/mstile-144x144.png?v=2">
+    <meta name="msapplication-config" content="/profiles/wcmc/themes/wcm_brand_base/favicons/browserconfig.xml?v=2">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- http://t.co/dKP3o1e -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://research.weill.cornell.edu/sites/default/files/css/css_kShW4RPmRstZ3SpIC-ZvVGNFVAi0WEMuCnI0ZkYIaFw.css" />
+<link rel="stylesheet" href="https://research.weill.cornell.edu/sites/default/files/css/css_CNaERK7jH6T-p5SEEQioyVOsK_nn8VvpOCV5R3e75ms.css" />
+<link rel="stylesheet" href="https://research.weill.cornell.edu/sites/default/files/css/css_vzkhtGX_p__Z4_rYmz_SYVx0nFfR9HfJNsQ_8xNcAZI.css" />
+<link rel="stylesheet" href="https://research.weill.cornell.edu/sites/default/files/css/css_lmijD9ywt3CEP6CzxdcO_LaQ5Z-c4shqHvwpCqo_cNY.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700,700italic" />
+<link rel="stylesheet" href="https://research.weill.cornell.edu/sites/default/files/css/css_R5nOx0MV6mjGwrXV36PvT0CXXLNFlfcUheNf4zW1Ed8.css" />
+<link rel="stylesheet" href="https://research.weill.cornell.edu/sites/default/files/css/css_PxsPpITToy8ZnO0bJDA1TEC6bbFpGTfSWr2ZP8LuFYo.css" />
+    <script src="https://research.weill.cornell.edu/sites/default/files/js/js_zS-CmNFGyegtLYJmqFRpxQvvQrfPIFrOMq_3T3C8sZE.js"></script>
+<script src="https://research.weill.cornell.edu/sites/default/files/js/js_yHmT8ivyAv8ihTsCjpFgyMRXsWdYt8dI519SpCJooZk.js"></script>
+<script src="https://research.weill.cornell.edu/sites/default/files/js/js_Skkuun_mQtnG1e_a60XA5Kp1gcCH5rU2w0_HFRP_Sms.js"></script>
+<script src="https://research.weill.cornell.edu/sites/default/files/js/js_J3zg9f3adbNfUv13vXc4Lxwa20sCnQMWD9m5OVnheaQ.js"></script>
+<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-33652763-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");</script>
+<script src="https://research.weill.cornell.edu/sites/default/files/js/js_GNWhD4w9gqk5lCHgwKeN5dsjI6ORaNo-Ic5dzSLR-E8.js"></script>
+<script src="https://research.weill.cornell.edu/sites/default/files/js/js_AsL67yM3mvJ-1oAji1giwxvkuApPLut_I2r7Cjf0Udc.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"wcmc_research","theme_token":"Fcyhh8n0GY1djgLUNz4hGeb7i5zGgZIg5ID1ZSqHj7k","js":{"profiles\/wcmc\/modules\/custom\/wcmc_fieldable_panes\/js\/wcmc_modal.js":1,"profiles\/wcmc\/modules\/panopoly\/panopoly\/panopoly_widgets\/panopoly-widgets.js":1,"profiles\/wcmc\/modules\/panopoly\/panopoly\/panopoly_widgets\/panopoly-widgets-spotlight.js":1,"profiles\/wcmc\/modules\/custom\/wcm_accessibility\/js\/wcm-accessibility.js":1,"profiles\/wcmc\/themes\/wcm_brand_base\/js\/headroom.min.js":1,"profiles\/wcmc\/themes\/wcm_brand_base\/js\/wcm-pin-header.js":1,"profiles\/wcmc\/themes\/wcm_brand_base\/js\/wcm-external-links.js":1,"profiles\/wcmc\/themes\/wcm_brand_base\/js\/jquery.lockfixed-revB.js":1,"profiles\/wcmc\/themes\/wcm_brand_base\/images\/cta_icons\/svgxuse.min.js":1,"\/\/siteimproveanalytics.com\/js\/siteanalyze_26716.js":1,"sites\/all\/themes\/wcmc_research\/js\/min\/stellar-min.js":1,"sites\/all\/themes\/wcmc_research\/js\/wcmc_research.js":1,"profiles\/wcmc\/modules\/panopoly\/contrib\/jquery_update\/replace\/jquery\/1.7\/jquery.min.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"profiles\/wcmc\/modules\/panopoly\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.core.min.js":1,"profiles\/wcmc\/modules\/panopoly\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.widget.min.js":1,"profiles\/wcmc\/modules\/panopoly\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.tabs.min.js":1,"profiles\/wcmc\/modules\/panopoly\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.accordion.min.js":1,"profiles\/wcmc\/modules\/panopoly\/contrib\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"profiles\/wcmc\/modules\/custom\/wcmc_fieldable_panes\/js\/fancybox\/jquery.fancybox.pack.js":1,"profiles\/wcmc\/modules\/custom\/wcmc_fieldable_panes\/js\/fancybox\/helpers\/jquery.fancybox-buttons.js":1,"profiles\/wcmc\/modules\/custom\/wcm_slide_nav\/js\/simplebar.min.js":1,"profiles\/wcmc\/modules\/custom\/wcm_slide_nav\/js\/wcm-slide-nav.js":1,"profiles\/wcmc\/modules\/panopoly\/panopoly\/panopoly_images\/panopoly-images.js":1,"profiles\/wcmc\/modules\/panopoly\/panopoly\/panopoly_admin\/panopoly-admin.js":1,"profiles\/wcmc\/modules\/panopoly\/panopoly\/panopoly_magic\/panopoly-magic.js":1,"profiles\/wcmc\/modules\/panopoly\/panopoly\/panopoly_theme\/js\/panopoly-accordion.js":1,"profiles\/wcmc\/modules\/custom\/wcmc_banner_receiver\/js\/wcmc_banner_receiver.js":1,"profiles\/wcmc\/modules\/panopoly\/contrib\/caption_filter\/js\/caption-filter.js":1,"profiles\/wcmc\/libraries\/jquery.imagesloaded\/jquery.imagesloaded.min.js":1,"profiles\/wcmc\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/modules\/Contrib\/improved_multi_select\/improved_multi_select.js":1,"profiles\/wcmc\/themes\/wcm_brand_base\/js\/bootstrap.min.js":1,"profiles\/wcmc\/themes\/wcm_brand_base\/js\/select2\/select2.min.js":1,"profiles\/wcmc\/themes\/wcm_brand_base\/js\/wcm-brand-base-script.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.accordion.css":1,"profiles\/wcmc\/modules\/custom\/wcmc_fieldable_panes\/js\/fancybox\/jquery.fancybox.css":1,"profiles\/wcmc\/modules\/custom\/wcmc_fieldable_panes\/js\/fancybox\/helpers\/jquery.fancybox-buttons.css":1,"profiles\/wcmc\/modules\/custom\/wcm_slide_nav\/css\/simplebar.css":1,"profiles\/wcmc\/modules\/custom\/wcm_slide_nav\/css\/wcm-slide-nav.css":1,"sites\/all\/modules\/Contrib\/calendar\/css\/calendar_multiday.css":1,"profiles\/wcmc\/modules\/panopoly\/contrib\/date\/date_api\/date.css":1,"profiles\/wcmc\/modules\/panopoly\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"profiles\/wcmc\/modules\/panopoly\/panopoly\/panopoly_admin\/panopoly-admin-navbar.css":1,"profiles\/wcmc\/modules\/panopoly\/panopoly\/panopoly_core\/css\/panopoly-dropbutton.css":1,"profiles\/wcmc\/modules\/panopoly\/panopoly\/panopoly_magic\/css\/panopoly-magic.css":1,"profiles\/wcmc\/modules\/panopoly\/panopoly\/panopoly_theme\/css\/panopoly-featured.css":1,"profiles\/wcmc\/modules\/panopoly\/panopoly\/panopoly_theme\/css\/panopoly-accordian.css":1,"profiles\/wcmc\/modules\/panopoly\/panopoly\/panopoly_theme\/css\/panopoly-layouts.css":1,"profiles\/wcmc\/modules\/panopoly\/panopoly\/panopoly_widgets\/panopoly-widgets.css":1,"profiles\/wcmc\/modules\/panopoly\/panopoly\/panopoly_widgets\/panopoly-widgets-spotlight.css":1,"profiles\/wcmc\/modules\/panopoly\/panopoly\/panopoly_wysiwyg\/panopoly-wysiwyg.css":1,"profiles\/wcmc\/modules\/panopoly\/contrib\/radix_layouts\/radix_layouts.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"profiles\/wcmc\/modules\/custom\/wcmc_carousel\/css\/wcmc_carousel.css":1,"profiles\/wcmc\/modules\/custom\/wcmc_fieldable_panes\/css\/wcmc_headshot.css":1,"profiles\/wcmc\/modules\/custom\/wcm_elasticsearch\/css\/wcm-elasticsearch.css":1,"profiles\/wcmc\/modules\/panopoly\/contrib\/views\/css\/views.css":1,"profiles\/wcmc\/modules\/custom\/panopoly_override\/css\/panopoly-override.css":1,"profiles\/wcmc\/modules\/panopoly\/contrib\/caption_filter\/caption-filter.css":1,"profiles\/wcmc\/modules\/panopoly\/contrib\/ctools\/css\/ctools.css":1,"profiles\/wcmc\/modules\/panopoly\/contrib\/panels\/css\/panels.css":1,"profiles\/wcmc\/themes\/wcm_brand_base\/layouts\/wcmc_hero_threecol\/wcmc_hero_threecol.css":1,"sites\/all\/modules\/Contrib\/improved_multi_select\/improved_multi_select.css":1,"https:\/\/fonts.googleapis.com\/css?family=Open+Sans:400,300,300italic,400italic,700,700italic":1,"profiles\/wcmc\/themes\/wcm_brand_base\/css\/wcm_brand_base.css":1,"sites\/all\/themes\/wcmc_research\/css\/wcmc_research.css":1,"profiles\/wcmc\/modules\/panopoly\/panopoly\/panopoly_images\/panopoly-images.css":1}},"CToolsModal":{"modalSize":{"type":"scale","width":".9","height":".9","addWidth":0,"addHeight":0,"contentRight":25,"contentBottom":75},"modalOptions":{"opacity":".55","background-color":"#FFF"},"animationSpeed":"fast","modalTheme":"CToolsModalDialog","throbberTheme":"CToolsModalThrobber"},"panopoly_magic":{"pane_add_preview_mode":"automatic"},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"improved_multi_select":{"selectors":["#edit-field-submission-discipline-und","#edit-field-submission-eligibilitytype-und"],"isblacklist":0,"filtertype":"partial","orderable":0,"groupresetfilter":0,"buttontext_add":"\u003E","buttontext_addall":"\u00bb","buttontext_del":"\u003C","buttontext_delall":"\u00ab","buttontext_moveup":"Move up","buttontext_movedown":"Move down"},"urlIsAjaxTrusted":{"\/about-us\/academic-units\/departments":true}});</script>
+  </head>
+  <body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-134 node-type-panopoly-page node-promoted region-content no-navbar no-js" >
+    <div id="skip-link">
+      <a href="#site-main">Skip to main content</a>
+    </div>
+        <header id="pinned-header">
+  
+<div class="region-header">
+      <div id="block-block-1" class="block block-block">
+
+    
+  <div class="content">
+    <div id="block-wcmc-banner">
+<div class="wcmc-banner wcmc-banner--local" style="background:#f7f7f7;color:#000;border-bottom:1px solid #dddddd">
+<div class="wcmc-banner__wrap">
+<div class="wcmc-banner__indicator" style="color:#aaa"><span class="ss-info"></span></div>
+<div class="wcmc-banner__message" style="font-size:16px;line-height:1.25em">
+For COVID-19 vaccine updates, please review <a href="https://weillcornell.org/coronavirus-covid-19/covid-19-vaccine-information?utm_source=wcmedu&utm_medium=banner&utm_campaign=covid19">our information guide</a>. For patient eligibility and scheduling availability, please visit <a href="https://vaccinetogetherny.org/Pages/default.aspx?utm_source=wcmorg&utm_medium=banner&utm_campaign=covid19">VaccineTogetherNY.org</a>.
+</div>
+</div>
+</div>
+</div>  </div>
+</div>
+  </div>  <div class="wcm-search"><div class="container"><form class="global-search" action="/about-us/academic-units/departments" method="post" id="wcm-elasticsearch-blocks-widget-radios" accept-charset="UTF-8" role="search"><span class="search-button-span"><input class="search-button form-submit btn btn-default btn-primary" type="submit" id="edit-submit--2" name="op" value="Perform search" /><svg class="cta-icon cta-icon-search"><use xlink:href="/profiles/wcmc/themes/wcm_brand_base/images/cta_icons/symbol-defs.svg#cta-icon-search"></use></svg></span><span><div class="form-item form-type-textfield form-item-search-keys form-group">
+  <label class="element-invisible" for="edit-search-keys--2">Enter the terms you wish to search for. </label>
+ <input placeholder="Enter Search Term..." class="global-search-input form-control form-text" role="searchbox" type="text" id="edit-search-keys--2" name="search_keys" value="" size="25" maxlength="128" />
+</div>
+</span><fieldset><legend class="sr-only">Select Search Option</legend><div id="edit-search-type--2" class="form-radios"><div class="form-item form-type-radio form-item-search-type radio">
+  <label for="edit-search-type-pages"><input type="radio" id="edit-search-type-pages" name="search_type" value="pages" checked="checked" class="form-radio" />This Site </label>
+</div>
+<div class="form-item form-type-radio form-item-search-type radio">
+  <label for="edit-search-type-all-sites"><input type="radio" id="edit-search-type-all-sites" name="search_type" value="all_sites" class="form-radio" />All WCM Sites </label>
+</div>
+<div class="form-item form-type-radio form-item-search-type radio">
+  <label for="edit-search-type-people"><input type="radio" id="edit-search-type-people" name="search_type" value="people" class="form-radio" />Directory </label>
+</div>
+</div></fieldset><input type="hidden" name="form_build_id" value="form-86kdNBxsBy0NPzKjq7H-ef3hNab_3h510gBRbsEuLkY" />
+<input type="hidden" name="form_id" value="wcm_elasticsearch_blocks_widget_radios" />
+</form></div></div>
+    <div class="brand__nav">
+    <div class="wrap">
+      <div
+        class="main-menu-toggle"
+        tabindex="0"
+        aria-label="Open navigation"
+        aria-controls="slide-out-nav"
+        aria-pressed="false">Menu</div>
+
+      <div class="wcm-sm-white">
+        <a href="https://weill.cornell.edu/">
+          <img src="/profiles/wcmc/themes/wcm_brand_base/images/WCM_logo_white.png" alt="Weill Cornell Medicine">
+        </a>
+      </div>
+
+      <ul class="wcm-global-links">
+              <li class="first"><a href="https://weillcornell.org">Care</a></li>
+               <li><a href="https://research.weill.cornell.edu">Discover</a></li>
+        <li class="last"><a href="https://weill.cornell.edu/education">Teach</a></li>
+      </ul>
+
+      <div class="wcm-global-links--secondary-actions">
+                <div class="wayfinder dropdown">
+          <button class="dropdown-toggle" type="button" id="visitor-wayfinder" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            I am interested in...
+            <span class="selection-arrow"></span>
+          </button>
+          <h2 class="element-invisible">Wayfinder menu</h2><ul class="dropdown-menu dropdown-menu-right" aria-labelledby="visitor-wayfinder"><li class="menu-4730 first"><a href="https://jcto.weill.cornell.edu/" title="">Clinical Trials</a></li>
+<li class="menu-4733"><a href="https://research.weill.cornell.edu/integrity-compliance/research-support/animal-research/institutional-animal-care-use-committee-iacuc" title="">IACUC</a></li>
+<li class="menu-4732"><a href="https://research.weill.cornell.edu/integrity-compliance/research-support/human-research/institutional-review-board-irb" title="">IRB</a></li>
+<li class="menu-4731 last"><a href="https://ctscweb.weill.cornell.edu/" title="">Translational Research</a></li>
+</ul>        </div>
+        
+        <div class="search-trigger" tabindex="0">
+          <span role="button" aria-label="Reveal search bar" class="search-trigger-button search-trigger-button--find">
+            <svg class="cta-icon cta-icon-search">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/profiles/wcmc/themes/wcm_brand_base/images/cta_icons/symbol-defs.svg#cta-icon-search"></use>
+            </svg>
+          </span>
+          <span role="button" aria-label="Hide search bar" class="search-trigger-button search-trigger-button--close">
+            <svg class="cta-icon cta-icon-close">
+              <use xlink:href="/profiles/wcmc/themes/wcm_brand_base/images/cta_icons/symbol-defs.svg#cta-icon-close"></use>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div id="page">
+  <div class="brand">
+  <div class="brand__lockup">
+    <div class="container">
+              <a class="wcm-site-title" href="/">Research</a>
+          </div>
+  </div>
+</div>
+  <nav id="slide-out-nav" aria-label="Slide out navigation">
+  <div class="slide-out-nav__help">Explore this Website</div>
+      <div class="wayfinder wayfinder--sm dropdown">
+      <button class="dropdown-toggle" type="button" id="visitor-wayfinder--sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        I am interested in...
+        <span class="selection-arrow"></span>
+      </button>
+      <h2 class="element-invisible">Wayfinder menu</h2><ul class="dropdown-menu dropdown-menu-right" aria-labelledby="visitor-wayfinder--sm"><li class="menu-4730 first"><a href="https://jcto.weill.cornell.edu/" title="">Clinical Trials</a></li>
+<li class="menu-4733"><a href="https://research.weill.cornell.edu/integrity-compliance/research-support/animal-research/institutional-animal-care-use-committee-iacuc" title="">IACUC</a></li>
+<li class="menu-4732"><a href="https://research.weill.cornell.edu/integrity-compliance/research-support/human-research/institutional-review-board-irb" title="">IRB</a></li>
+<li class="menu-4731 last"><a href="https://ctscweb.weill.cornell.edu/" title="">Translational Research</a></li>
+</ul>    </div>
+    <div id="slide-nav">
+<ul class="menu"><li class="level-1 home"><a href="/">Home</a></li><li class="first active-trail menu-mlid-1140 level-1" data-level="1"><a href="/about-us" title="WCM researchers achieve world pre-eminence by excelling in research discoveries, scholarship, and creativity." class="active-trail active-trail active-trail has-child">About Us</a><button class="slide-nav-toggle" aria-expanded="false"><span class="element-invisible">Toggle About Us menu options</span></button><ul class="collapse menu menu--level-2"><li class="first menu-mlid-1728 level-2" data-level="2"><a href="/about-us/leadership">Leadership</a></li>
+<li class="menu-mlid-1650 level-2" data-level="2"><a href="/about-us/news-updates" title="Find the latest news and updates from WCM Research Administration.">News &amp; Updates</a></li>
+<li class="menu-mlid-4660 level-2" data-level="2"><a href="https://weill.cornell.edu/faculty" title="">Faculty Directory</a></li>
+<li class="menu-mlid-4710 level-2" data-level="2"><a href="/about-us/achievements">Achievements</a></li>
+<li class="menu-mlid-4659 level-2" data-level="2"><a href="/about-us/calendar">Calendar</a></li>
+<li class="menu-mlid-4661 level-2" data-level="2"><a href="https://gradschool.weill.cornell.edu/" title="">Graduate Education</a></li>
+<li class="last menu-mlid-4757 level-2" data-level="2"><a href="/diversity">Diversity in Research</a></li>
+</ul></li>
+<li class="menu-mlid-4662 level-1" data-level="1"><a href="/wcm-investigators" class="has-child">For WCM Investigators</a><button class="slide-nav-toggle" aria-expanded="false"><span class="element-invisible">Toggle For WCM Investigators menu options</span></button><ul class="collapse menu menu--level-2"><li class="first menu-mlid-4664 level-2" data-level="2"><a href="/wcm-investigators/funding-opportunities" class="has-child">Funding Opportunities</a><button class="slide-nav-toggle" aria-expanded="false"><span class="element-invisible">Toggle Funding Opportunities menu options</span></button><ul class="collapse menu menu--level-3"><li class="first menu-mlid-4713 level-3" data-level="3"><a href="https://www.grantforward.com/index" title="">GrantForward</a></li>
+<li class="last menu-mlid-4712 level-3" data-level="3"><a href="/wcm-investigators/funding-opportunities/limited-submission-grant-process">Limited Submission Grant Process</a></li>
+</ul></li>
+<li class="menu-mlid-4665 level-2" data-level="2"><a href="/wcm-investigators/writing-submitting-grant-proposal" class="has-child">Writing &amp; Submitting a Grant Proposal</a><button class="slide-nav-toggle" aria-expanded="false"><span class="element-invisible">Toggle Writing & Submitting a Grant Proposal menu options</span></button><ul class="collapse menu menu--level-3"><li class="first menu-mlid-1676 level-3" data-level="3"><a href="/wcm-investigators/writing-submitting-grant-proposal/weill-research-gateway">Weill Research Gateway</a></li>
+<li class="last menu-mlid-3898 level-3" data-level="3"><a href="/wcm-investigators/writing-submitting-grant-proposal/office-sponsored-research-administration-osra" class="has-child">Office of Sponsored Research Administration (OSRA)</a><button class="slide-nav-toggle" aria-expanded="false"><span class="element-invisible">Toggle Office of Sponsored Research Administration (OSRA) menu options</span></button><ul class="collapse menu menu--level-4"><li class="first menu-mlid-4666 level-4" data-level="4"><a href="/wcm-investigators/writing-submitting-grant-proposal/office-sponsored-research-administration-osra-1">Institutional Information</a></li>
+<li class="menu-mlid-4669 level-4" data-level="4"><a href="/wcm-investigators/writing-submitting-grant-proposal/office-sponsored-research-administration-osra-2">Indirect Costs &amp; Fringe Benefit Rates</a></li>
+<li class="menu-mlid-4752 level-4" data-level="4"><a href="/wcm-investigators/writing-submitting-grant-proposal/office-sponsored-research-administration-osra-4">COVID-19 Grant Related Updates</a></li>
+<li class="menu-mlid-4750 level-4" data-level="4"><a href="/grant-services">Grant Services</a></li>
+<li class="menu-mlid-4748 level-4" data-level="4"><a href="/wcm-investigators/writing-submitting-grant-proposal/office-sponsored-research-administration-osra-0">Grant Transfer Process</a></li>
+<li class="menu-mlid-4749 level-4" data-level="4"><a href="/osra-contracts">OSRA Contracts</a></li>
+<li class="last menu-mlid-4756 level-4" data-level="4"><a href="/wcm-investigators/writing-submitting-grant-proposal/office-sponsored-research-administration-osra-5">OSRA Organizational Chart</a></li>
+</ul></li>
+</ul></li>
+<li class="menu-mlid-4667 level-2" data-level="2"><a href="/wcm-investigators/research-concierge" class="has-child">Research Concierge</a><button class="slide-nav-toggle" aria-expanded="false"><span class="element-invisible">Toggle Research Concierge menu options</span></button><ul class="collapse menu menu--level-3"><li class="first menu-mlid-1669 level-3" data-level="3"><a href="/wcm-investigators/research-concierge/establish-research-website">Establish a Research Website</a></li>
+<li class="menu-mlid-1667 level-3" data-level="3"><a href="/wcm-investigators/research-concierge/set-vivo">Set up VIVO</a></li>
+<li class="menu-mlid-2350 level-3" data-level="3"><a href="/wcm-investigators/research-concierge/research-visibility-dashboard" class="restricted">Research Visibility Dashboard</a></li>
+<li class="menu-mlid-1674 level-3" data-level="3"><a href="/wcm-investigators/research-concierge/reagent-equipment-data-sharing" class="restricted">Reagent, Equipment &amp; Data Sharing</a></li>
+<li class="last menu-mlid-4740 level-3" data-level="3"><a href="/wcm-investigators/research-concierge/wcm-supply-center">WCM Supply Center</a></li>
+</ul></li>
+<li class="menu-mlid-4668 level-2" data-level="2"><a href="/wcm-investigators/professional-development-mentoring" class="has-child">Professional Development &amp; Mentoring</a><button class="slide-nav-toggle" aria-expanded="false"><span class="element-invisible">Toggle Professional Development & Mentoring menu options</span></button><ul class="collapse menu menu--level-3"><li class="first menu-mlid-4670 level-3" data-level="3"><a href="/wcm-investigators/professional-development-mentoring/education-training-research-administration-etra">Education &amp; Training in Research Administration (ETRA)</a></li>
+<li class="menu-mlid-3257 level-3" data-level="3"><a href="/wcm-investigators/professional-development-mentoring/e2ra-course">E2RA Course</a></li>
+<li class="menu-mlid-1691 level-3" data-level="3"><a href="/wcm-investigators/professional-development-mentoring/rapid">R.A.P.I.D</a></li>
+<li class="menu-mlid-4671 level-3" data-level="3"><a href="https://faculty.weill.cornell.edu/faculty-development" title="">Faculty Mentoring</a></li>
+<li class="menu-mlid-4672 level-3" data-level="3"><a href="/wcm-investigators/professional-development-mentoring/diversity-inclusion">Diversity &amp; Inclusion</a></li>
+<li class="last menu-mlid-4673 level-3" data-level="3"><a href="/wcm-investigators/professional-development-mentoring/tri-institutional-collaboration-network-tcn">Tri-Institutional Collaboration Network (TCN)</a></li>
+</ul></li>
+<li class="menu-mlid-4745 level-2" data-level="2"><a href="/wcm-investigators/clinical-research">Clinical Research</a></li>
+<li class="last menu-mlid-4746 level-2" data-level="2"><a href="/wcm-investigators/research-awards-and-grant-writing-resources">Research Awards and Grant Writing Resources</a></li>
+</ul></li>
+<li class="menu-mlid-1652 level-1" data-level="1"><a href="https://research.weill.cornell.edu/core-facilities" title="Each of the WCM Core Facilities provide the resources and equipment necessary for our research community, enabling them to make important advances in diagnosing and treating human diseases." class="has-child">Core Facilities</a><button class="slide-nav-toggle" aria-expanded="false"><span class="element-invisible">Toggle Core Facilities menu options</span></button><ul class="collapse menu menu--level-2"><li class="first menu-mlid-4674 level-2" data-level="2"><a href="https://abc.med.cornell.edu/" title="">Applied Bioinformatics</a></li>
+<li class="menu-mlid-4675 level-2" data-level="2"><a href="http://pre.weill.cornell.edu/cbic/" title="">Citigroup Biomedical Imaging</a></li>
+<li class="menu-mlid-4676 level-2" data-level="2"><a href="http://epicore.med.cornell.edu/" title="">Epigenomics</a></li>
+<li class="menu-mlid-4677 level-2" data-level="2"><a href="/core-facilities/flow-cytometry">Flow Cytometry</a></li>
+<li class="menu-mlid-4678 level-2" data-level="2"><a href="/core-facilities/genomics-resources-core-facility">Genomics</a></li>
+<li class="menu-mlid-4679 level-2" data-level="2"><a href="/core-facilities/institutional-biorepository">Institutional Biorepository</a></li>
+<li class="menu-mlid-4680 level-2" data-level="2"><a href="https://mpc.weill.cornell.edu/" title="">Metabolic Phenotyping</a></li>
+<li class="menu-mlid-4681 level-2" data-level="2"><a href="https://www.microbiome.weill.cornell.edu/" title="">Microbiome Sequencing</a></li>
+<li class="menu-mlid-4682 level-2" data-level="2"><a href="https://weillcornellmicroscopy.org/" title="">Microscopy &amp; Image Analysis</a></li>
+<li class="menu-mlid-4683 level-2" data-level="2"><a href="/core-facilities/nuclear-magnetic-resonance-nmr">Nuclear Magnetic Resonance (NMR)</a></li>
+<li class="menu-mlid-4685 level-2" data-level="2"><a href="https://wcmc.corefacilities.org/service_center/show_external/3474" title="">Proteomics &amp; Metabolomics</a></li>
+<li class="last menu-mlid-4686 level-2" data-level="2"><a href="/core-facilities/visual-function">Visual Function</a></li>
+</ul></li>
+<li class="menu-mlid-4332 level-1" data-level="1"><a href="/integrity-compliance" class="has-child">Integrity &amp; Compliance</a><button class="slide-nav-toggle" aria-expanded="false"><span class="element-invisible">Toggle Integrity & Compliance menu options</span></button><ul class="collapse menu menu--level-2"><li class="first menu-mlid-4687 level-2" data-level="2"><a href="/integrity-compliance/human-subjects-research" class="has-child">Human Subjects Research</a><button class="slide-nav-toggle" aria-expanded="false"><span class="element-invisible">Toggle Human Subjects Research menu options</span></button><ul class="collapse menu menu--level-3"><li class="first menu-mlid-4765 level-3" data-level="3"><a href="/integrity-compliance/human-subjects-research/institutional-review-board-irb" class="has-child">Institutional Review Board (IRB)</a><button class="slide-nav-toggle" aria-expanded="false"><span class="element-invisible">Toggle Institutional Review Board (IRB) menu options</span></button><ul class="collapse menu menu--level-4"><li class="first last menu-mlid-4860 level-4" data-level="4"><a href="/weill-cornell-medicine-qatar-institutional-review-board-wcm-q-irb">Weill Cornell Medicine-Qatar Institutional Review Board (WCM-Q IRB)</a></li>
+</ul></li>
+<li class="menu-mlid-4764 level-3" data-level="3"><a href="/integrity-compliance/human-subjects-research/data-and-safety-monitoring-committee-dsmc">Data and Safety Monitoring Committee (DSMC)</a></li>
+<li class="menu-mlid-4762 level-3" data-level="3"><a href="/integrity-compliance/human-subjects-research/clinicaltrialsgov">ClinicalTrials.gov</a></li>
+<li class="menu-mlid-4763 level-3" data-level="3"><a href="/integrity-compliance/human-subjects-research/human-research-routine-review-education-program">Human Research Routine Review &amp; Education Program</a></li>
+<li class="menu-mlid-4508 level-3" data-level="3"><a href="/integrity-compliance/human-subjects-research/human-embryonic-stem-cell-research">Human Embryonic Stem Cell Research</a></li>
+<li class="menu-mlid-4337 level-3" data-level="3"><a href="/integrity-compliance/human-subjects-research/radiation-safety-committee-rsc" class="restricted has-child">Radiation Safety Committee (RSC)</a><button class="slide-nav-toggle" aria-expanded="false"><span class="element-invisible">Toggle Radiation Safety Committee (RSC) menu options</span></button><ul class="collapse menu menu--level-4"><li class="first menu-mlid-4338 level-4" data-level="4"><a href="/integrity-compliance/human-subjects-research/radiation-safety-committee-rsc/human-research-radiation">Human Research Radiation Safety</a></li>
+<li class="menu-mlid-4339 level-4" data-level="4"><a href="/integrity-compliance/research-support/human-research/radiation-safety-committee-rsc/laboratory">Laboratory Research Radiation Safety</a></li>
+<li class="last menu-mlid-4340 level-4" data-level="4"><a href="/research-compliance/safety-committees/radiation-safety-committee-rsc/rsc-forms-resources" class="restricted">RSC Forms &amp; Resources</a></li>
+</ul></li>
+<li class="menu-mlid-4700 level-3" data-level="3"><a href="/integrity-compliance/human-subjects-research/institutional-biosafety-committee-ibc" class="has-child">Institutional Biosafety Committee (IBC)</a><button class="slide-nav-toggle" aria-expanded="false"><span class="element-invisible">Toggle Institutional Biosafety Committee (IBC) menu options</span></button><ul class="collapse menu menu--level-4"><li class="first last menu-mlid-4747 level-4" data-level="4"><a href="/integrity-compliance/human-subjects-research/institutional-biosafety-committee-ibc/ibc-forms">IBC Forms &amp; Policies</a></li>
+</ul></li>
+<li class="menu-mlid-4507 level-3" data-level="3"><a href="https://research.weill.cornell.edu/weill-cornell-medicine-qatar-institutional-review-board-wcm-q-irb" title="">WCM-Qatar IRB</a></li>
+<li class="menu-mlid-4514 level-3" data-level="3"><a href="/integrity-compliance/ethical-conduct-research/hipaa-research">HIPAA in Research</a></li>
+<li class="last menu-mlid-4452 level-3" data-level="3"><a href="/integrity-compliance/human-subjects-research/radioactive-drug-research-committee-rdrc" class="has-child">Radioactive Drug Research Committee (RDRC)</a><button class="slide-nav-toggle" aria-expanded="false"><span class="element-invisible">Toggle Radioactive Drug Research Committee (RDRC) menu options</span></button><ul class="collapse menu menu--level-4"><li class="first last menu-mlid-4520 level-4" data-level="4"><a href="/integrity-compliance/human-subjects-research/radioactive-drug-research-committee-rdrc#approval" title="">Research Requiring RDRC Approval</a></li>
+</ul></li>
+</ul></li>
+<li class="menu-mlid-4692 level-2" data-level="2"><a href="/integrity-compliance/animal-research" class="has-child">Animal Research</a><button class="slide-nav-toggle" aria-expanded="false"><span class="element-invisible">Toggle Animal Research menu options</span></button><ul class="collapse menu menu--level-3"><li class="first menu-mlid-4496 level-3" data-level="3"><a href="https://research.weill.cornell.edu/iacuc" title="" class="restricted">Institutional Animal Care &amp; Use Committee (IACUC)</a></li>
+<li class="last menu-mlid-4523 level-3" data-level="3"><a href="/integrity-compliance/animal-research/research-animal-resource-center-rarc" class="restricted has-child">Research Animal Resource Center (RARC)</a><button class="slide-nav-toggle" aria-expanded="false"><span class="element-invisible">Toggle Research Animal Resource Center (RARC) menu options</span></button><ul class="collapse menu menu--level-4"><li class="first menu-mlid-4524 level-4" data-level="4"><a href="/integrity-compliance/research-support/animal-research/research-animal-resource-center-rarc/administration-finance-information-systems" class="restricted">Administration, Finance &amp; Information Systems</a></li>
+<li class="menu-mlid-4868 level-4" data-level="4"><a href="/integrity-compliance/animal-research/research-animal-resource-center-rarc/animal-health-emergency">Animal Health Emergency</a></li>
+<li class="menu-mlid-4525 level-4" data-level="4"><a href="/integrity-compliance/research-support/animal-research/research-animal-resource-center-rarc-2" class="restricted">Applications &amp; Additional Resources</a></li>
+<li class="menu-mlid-4526 level-4" data-level="4"><a href="/integrity-compliance/animal-research/research-animal-resource-center-rarc/aquatic-systems-services" class="restricted">Aquatic Systems &amp; Services</a></li>
+<li class="menu-mlid-4527 level-4" data-level="4"><a href="/integrity-compliance/research-support/animal-research/research-animal-resource-center-rarc-0" class="restricted">Biosecurity</a></li>
+<li class="menu-mlid-4528 level-4" data-level="4"><a href="/rarccmg" class="restricted">Colony Management Group</a></li>
+<li class="menu-mlid-4530 level-4" data-level="4"><a href="/integrity-compliance/animal-research/research-animal-resource-center-rarc/education-quality" class="restricted">Education &amp; Quality Assurance</a></li>
+<li class="menu-mlid-4531 level-4" data-level="4"><a href="/integrity-compliance/research-support/animal-research/research-animal-resource-center-rarc/enccompass" class="restricted">EnCCoMPass</a></li>
+<li class="menu-mlid-4532 level-4" data-level="4"><a href="/integrity-compliance/research-support/animal-research/research-animal-resource-center-rarc/facilities" class="restricted">Facilities</a></li>
+<li class="menu-mlid-4867 level-4" data-level="4"><a href="/integrity-compliance/animal-research/research-animal-resource-center-rarc/facility-emergencies">Facility Emergencies</a></li>
+<li class="menu-mlid-4543 level-4" data-level="4"><a href="/integrity-compliance/research-support/animal-research/research-animal-resource-center-rarc/forms" class="restricted">Forms</a></li>
+<li class="menu-mlid-4866 level-4" data-level="4"><a href="/integrity-compliance/animal-research/research-animal-resource-center-rarc/forms">Forms</a></li>
+<li class="menu-mlid-4535 level-4" data-level="4"><a href="/integrity-compliance/research-support/animal-research/research-animal-resource-center-rarc/genetically-modified-animal-gma-phenotyping" class="restricted">Genetically Modified Animal (GMA) Phenotyping</a></li>
+<li class="menu-mlid-4536 level-4" data-level="4"><a href="/integrity-compliance/research-support/animal-research/research-animal-resource-center-rarc-1" class="restricted">Gnotobiotics</a></li>
+<li class="menu-mlid-4862 level-4" data-level="4"><a href="/integrity-compliance/animal-research/research-animal-resource-center-rarc/grant-and-publication">Grant and Publication Support</a></li>
+<li class="menu-mlid-4537 level-4" data-level="4"><a href="/integrity-compliance/research-support/animal-research/research-animal-resource-center-rarc-5" class="restricted">Guidelines and Policies</a></li>
+<li class="menu-mlid-4538 level-4" data-level="4"><a href="/integrity-compliance/research-support/animal-research/research-animal-resource-center-rarc/husbandry" class="restricted">Husbandry &amp; Operations</a></li>
+<li class="menu-mlid-4769 level-4" data-level="4"><a href="/integrity-compliance/animal-research/research-animal-resource-center-rarc/investigator-training">Investigator Training Webinar Series</a></li>
+<li class="menu-mlid-4865 level-4" data-level="4"><a href="/integrity-compliance/animal-research/research-animal-resource-center-rarc/laboratory-comparative">Laboratory of Comparative Pathology (LCP)</a></li>
+<li class="menu-mlid-4864 level-4" data-level="4"><a href="/integrity-compliance/animal-research/research-animal-resource-center-rarc/logistics">Logistics</a></li>
+<li class="menu-mlid-4541 level-4" data-level="4"><a href="/integrity-compliance/animal-research/research-animal-resource-center-rarc/new-animal-user-onboarding" class="restricted">New Animal User Onboarding</a></li>
+<li class="last menu-mlid-4542 level-4" data-level="4"><a href="/integrity-compliance/research-support/animal-research/research-animal-resource-center-rarc-3" class="restricted">Veterinary Services</a></li>
+</ul></li>
+</ul></li>
+<li class="menu-mlid-4495 level-2" data-level="2"><a href="https://research.weill.cornell.edu/conflict-interest-office" title="">Conflict of Interest Office</a></li>
+<li class="menu-mlid-4693 level-2" data-level="2"><a href="https://research.weill.cornell.edu/research-integrity-office-rio" title="" class="has-child">Research Integrity Office</a><button class="slide-nav-toggle" aria-expanded="false"><span class="element-invisible">Toggle Research Integrity Office menu options</span></button><ul class="collapse menu menu--level-3"><li class="first last menu-mlid-4497 level-3" data-level="3"><a href="/integrity-compliance/ethical-conduct-research/responsible-conduct-research-course">Responsible Conduct of Research Course</a></li>
+</ul></li>
+<li class="menu-mlid-4859 level-2" data-level="2"><a href="/conflict-interest-office">Conflicts of Interest</a></li>
+<li class="menu-mlid-4861 level-2" data-level="2"><a href="/integrity-compliance/conduct-of-research">Ethical Conduct of Research</a></li>
+<li class="last menu-mlid-4858 level-2" data-level="2"><a href="/export-controls">Export Controls</a></li>
+</ul></li>
+<li class="last menu-mlid-4708 level-1" data-level="1"><a href="/collaboration-commercialization" class="has-child">Collaboration &amp; Commercialization</a><button class="slide-nav-toggle" aria-expanded="false"><span class="element-invisible">Toggle Collaboration & Commercialization menu options</span></button><ul class="collapse menu menu--level-2"><li class="first menu-mlid-4714 level-2" data-level="2"><a href="/collaboration-commercialization/collaborative-agreements">Collaborative Agreements</a></li>
+<li class="menu-mlid-1671 level-2" data-level="2"><a href="/collaboration-commercialization/find-collaborator">Find a Collaborator</a></li>
+<li class="menu-mlid-4715 level-2" data-level="2"><a href="https://academicintegration.cornell.edu/" title="">Intercampus Collaborations</a></li>
+<li class="menu-mlid-4716 level-2" data-level="2"><a href="/collaboration-commercialization/entrepreneurial-hub">Entrepreneurial Hub</a></li>
+<li class="menu-mlid-4717 level-2" data-level="2"><a href="https://give.weill.cornell.edu/ways-give" title="">Support Our Science</a></li>
+<li class="last menu-mlid-4718 level-2" data-level="2"><a href="/collaboration-commercialization/biopharmaceutical-alliance-agreements">Biopharmaceutical Alliance Agreements</a></li>
+</ul></li>
+</ul></div>  <ul class="wcm-global-links--sm">
+    <li><a href="https://weill.cornell.edu">Weill Cornell Medicine</a></li>
+    <li><a href="https://weillcornell.org">Care</a></li>
+    <li><a href="https://research.weill.cornell.edu">Discover</a></li>
+    <li><a href="https://weill.cornell.edu/education">Teach</a></li>
+  </ul>
+</nav>
+
+<nav class="main-nav" aria-label="Primary">
+  <div class="container">
+    <div id="main-nav">
+<ul class="menu"><li class="level-1 home"><a href="/">Home</a></li><li class="first has-children active-trail menu-mlid-1140 level-1"><a href="/about-us" title="WCM researchers achieve world pre-eminence by excelling in research discoveries, scholarship, and creativity." class="active-trail active-trail active-trail">About Us</a></li>
+<li class="has-children menu-mlid-4662 level-1"><a href="/wcm-investigators">For WCM Investigators</a></li>
+<li class="has-children menu-mlid-1652 level-1"><a href="https://research.weill.cornell.edu/core-facilities" title="Each of the WCM Core Facilities provide the resources and equipment necessary for our research community, enabling them to make important advances in diagnosing and treating human diseases.">Core Facilities</a></li>
+<li class="has-children menu-mlid-4332 level-1"><a href="/integrity-compliance">Integrity &amp; Compliance</a></li>
+<li class="last has-children menu-mlid-4708 level-1"><a href="/collaboration-commercialization">Collaboration &amp; Commercialization</a></li>
+</ul></div>  </div>
+</nav>
+
+  <nav id="bc-nav" aria-label="Breadcrumb">
+    <div class="container">
+      <ul class="breadcrumb-nav">
+        <li><span><a href="/">Home</a></span></li><li><span><a href="/about-us">About Us</a></span></li><li><button class="dropdown-toggle" type="button" id="bc-explore-second_level" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <span class="bc-toggle-explore">Explore</span>
+          </button>
+<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="bc-explore-second_level"><li class="first menu-mlid-1728 level-2"><a href="/about-us/leadership">Leadership</a></li>
+<li class="menu-mlid-1650 level-2"><a href="/about-us/news-updates" title="Find the latest news and updates from WCM Research Administration.">News &amp; Updates</a></li>
+<li class="menu-mlid-4660 level-2"><a href="https://weill.cornell.edu/faculty" title="">Faculty Directory</a></li>
+<li class="menu-mlid-4710 level-2"><a href="/about-us/achievements">Achievements</a></li>
+<li class="menu-mlid-4659 level-2"><a href="/about-us/calendar">Calendar</a></li>
+<li class="menu-mlid-4661 level-2"><a href="https://gradschool.weill.cornell.edu/" title="">Graduate Education</a></li>
+<li class="last menu-mlid-4757 level-2"><a href="/diversity">Diversity in Research</a></li>
+</ul></li>      </ul>
+    </div>
+  </nav>
+
+  <div id="site-main" class="site-main">
+    <div class="container">
+                            </div>
+    
+  
+  <div class="panel-hero-3col" >
+  <div class="container">
+          <div class="row">
+        <div class="hero-section col-xs-12">
+          <div class="panel-pane pane-entity-field pane-node-field-featured-image" >
+  
+      
+  
+    <figure class="hero-image">
+        <img src="https://research.weill.cornell.edu/sites/default/files/pages/departments_0.jpg" width="937" height="243" alt="Departments" />      </figure>
+
+
+  
+  </div>
+<div class="panel-pane pane-node-title" >
+  
+      
+  
+  <h1>Departments</h1>
+
+  
+  </div>
+        </div>
+      </div>
+            <div class="row">
+      <div id="main-content" class="main-content col-md-9" role="main">
+                <div class="main-content__body">    
+          <div class="panel-pane pane-entity-field pane-node-body" >
+  
+      
+  
+  <div class="">
+        <h2>Weill Cornell Medicine Departments</h2><h5><a href="https://anesthesiology.weill.cornell.edu/">Anesthesiology</a></h5><p>The Department of Anesthesiology is committed to innovation in perioperative clinical care to maximize the quality and efficiency in anesthesia, pain and critical care, along with discovery and translation of novel therapies and healthcare delivery models. The department’s mission is to advance scientific research and education related to anesthesia, and to improve patient care through basic research in collaboration with leaders in the field.</p><h5><a href="http://www.cornellbiochem.org/">Biochemistry</a></h5><p>The Department of Biochemistry has produced many notable research achievements throughout the years, including those from a Noble Prize winning researcher. The long-standing department continues to hold a high standard in the delivery of a 21st century basic science curriculum to the students and in their promotion of outstanding research.</p><h5><a href="https://brainandmind.weill.cornell.edu/">BMRI: Feil Family Brain and Mind Research Institute</a><span style="text-decoration:underline"><br></span></h5><p>BMRI research focuses on the brain and its diseases. Clinical trials and bench-to-bedside investigations enhance current treatments and aim to bridge the current gap in translational medicine.</p><h5><a href="https://ctsurgery.weillcornell.org/">Cardiothoracic Surgery</a></h5><p>The Department of Cardiothoracic Surgery uses clinical trials to evaluate the effectiveness of new treatments for those affected by heart, lungs and esophageal disease. The research conducted in the department fall under the umbrella of three main sections: 1) <a href="https://ctsurgery.weillcornell.org/research/current-clinical-trials">Clinical Trials</a>, 2) <a href="https://ctsurgery.weillcornell.org/research/laragh-method">The Laragh Method</a>, and 3) <a href="https://ctsurgery.weillcornell.org/research/neuberger-berman-lung-cancer-research-center">The Neuberger Berman Lung Cancer Research Center</a>.</p><h5><a href="http://www.cornellcelldevbiology.com/">Cell and Developmental Biology</a></h5><p>The Department of Cell and Developmental Biology has been in existence for over two centuries and is involved in cutting-edge research that reflects the disparate challenges that confront biomedical science today. The faculty present unique opportunities for postdoctoral fellows and graduate trainees to develop an integrated approach to questions in cell and developmental biology.</p><h5><a href="http://www.cornelldermatology.org/">Dermatology</a></h5><p>The Department of Dermatology research program increases our understanding of the physiology and pathophysiology of the skin and, most importantly, develops basic and clinical information leading to the development of new and improved treatments for diseases of the skin.</p><h5><a href="https://geneticmedicine.weill.cornell.edu/">Genetic Medicine</a></h5><p>The Department of Genetic Medicine houses faculty with a diverse and internationally recognized expertise in both gene and stem cell therapies. The research program includes an extensive network of laboratories and collaborators that extend from upstate NY to the Middle East and parts of Europe.</p><h5><a href="http://hpr.weill.cornell.edu/">Healthcare Policy &amp; Research</a></h5><p>The purpose of Weill Cornell’s Department of Healthcare Policy &amp; Research’s main objective is to maximize the value of the delivery of healthcare through evidence-based research and evaluation. The faculty conducts research to improve the delivery of health care in the United States and across the globe through an extensive collaborative network. </p><h5><a href="https://microbiology.weill.cornell.edu/">Microbiology and Immunology</a></h5><p>The Department of Microbiology and Immunology is comprised of a collegial community of microbiologists, virologists, immunologists, molecular biologists and chemical biologists, united by a focus on the hosts’ interaction with foreign genomes. The department provides a robust training environment for its postdoctoral fellows, graduate students  and medical students.</p><h5><a href="https://medicine.weill.cornell.edu/">Medicine</a></h5><h5><a href="https://weillcornellbrainandspine.org/">Neurological Surgery</a></h5><p>The Department of Neurosurgery is comprised of faculty who are committed to bridging the distance from the lab bench to the patient bedside through its clinical trials, laboratory research, and nationally recognized specialized training courses, fellowships and residency programs. The department is home to the Weill Cornell Brain and Spine Center --  one of the country’s premier providers of minimally invasive surgery for the brain and spine in adults and children.</p><h5><a href="https://neurology.weill.cornell.edu/">Neurology</a></h5><p>In addition to providing compassionate and personalized patient care, the Weill Cornell’s Department of Neurology clinicians are committed to advancing the field of neurology through clinical and basic science research. is consistently ranked among the nation’s best providers of neurological care. Educational programs for fellows, residents, and medical students prepare trainees for productive and fulfilling careers in neurology.</p><h5><a href="https://obgyn.weillcornell.org/">Obstetrics and Gynecology</a></h5><p>The Department of Obstetrics and Gynecology has a long tradition of providing excellence to patients and families and meeting the unique and changing medical needs of women. In close partnership with the <a href="https://ctscweb.weill.cornell.edu/">Clinical and Translational Science Center</a> at Weill Cornell Medicine, the department faculty explores and makes discoveries through basic science and clinical trial activities.</p><h5><a href="http://weillcornelleye.org/">Ophthalmology</a></h5><p>The Department of Ophthalmology is home to the <a href="http://www.weillcornelleye.org/research/dyson_institute.html">Margaret M. Dyson Vision Research Institute</a> on of the top 20 NIH funded ophthalmic research institutes in the United States. In addition to offering state-of-the-art patient care, surgical interventions, and educational training to a broad range of students, the department maintains an active portfolio of clinical trials.</p><h5><a href="https://weillcornell.org/services/orthopedic-surgery">Orthopaedic Surgery</a></h5><p>The Department of Orthopaedic Surgery is one of the highest ranking in the country. The department's mission is to provide outstanding patient care with compassion and concern for each patient and it is comprised of physician leaders responsible for many health-restoring medical breakthroughs and advances.</p><h5><a href="http://www.cornellent.org/">Otolaryngology - Head and Neck Surgery</a></h5><p>The Department of Otolaryngology offers the full spectrum of modern head and neck clinical care as well as clinical and basic science research inquiries from a nationally recognized expert faculty. </p><h5><a href="https://pathology.weill.cornell.edu/">Pathology and Laboratory Medicine</a></h5><p>The Department of Pathology and Laboratory Medicine is both a clinical and basic science department, providing an optimal perspective for true translational research that bridges patient care with biomedical research. The department engages in cutting-edge research with the goal of improving the care of patients. </p><h5><a href="https://pediatrics.weill.cornell.edu/">Pediatrics</a></h5><p>The Department of Pediatrics is committed to offering quality care for patients and families, along with an unparalleled educational experience for students, residents and fellows. The department brings together basic science research and clinical investigations in medicine for the advancement of patient care, education and training.</p><h5><a href="http://www.cornellpharmacology.org/">Pharmacology</a></h5><p>The Department of Pharmacology carries out research activities that cover broad areas including cancer pharmacology, cardiovascular pharmacology, toxicology and translational research. The research activities of the faculty are directed at understanding how drugs and chemicals modify biological systems.</p><h5><a href="http://physiology.med.cornell.edu/">Physiology and Biophysics</a></h5><p>The Department of Physiology and Biophysics utilizes modern research techniques to examine how biological processes–from molecules to organisms–perform their functions.</p><h5><a href="https://psychiatry.weill.cornell.edu/">Psychiatry</a></h5><p>The Department Psychiatry is one of the largest and most prestigious in the country, with a long history of leadership in clinical care, training and research in psychiatric disorders. Current research studies test and develop new medications and forms of psychotherapy, as well as introduce new methods of imaging techniques to research science.</p><h5><a href="https://radiology.weill.cornell.edu/">Radiology</a></h5><p>The Department of Radiology has a long storied history as one of the premier clinical departments of radiology in the country. Additionally, the Department has a robust and successful research program that spans the entire continuum including fundamental research (basic and applied sciences), translational research, clinical research, and health services research.</p><h5><a href="https://radiationoncology.weillcornell.org/">Radiation Oncology</a></h5><p>The Department of Radiation Oncology is comprised of gifted faculty and highly accomplished researchers who offer a unique combination of unparalleled resources to patient care, research and education. The department is dedicated to the development of new and better treatments for cancer and is engaged in a broad spectrum of research.</p><h5><a href="https://rehabmed.weill.cornell.edu/">Rehabilitation Medicine</a></h5><p>The Division of Rehabilitation Medicine has an active clinical research program established to advance the science of rehabilitation. Major research areas include the application of technology and other treatments to enhance stroke rehabilitation, and improve outcomes in management of back pain and related disorders. The division provides exceptional training and has an expansive clinical faculty practice.</p><h5><a href="https://surgery.weill.cornell.edu/">Surgery</a></h5><p>The Department of Surgery is one of the top surgery programs in the world with a clinical expertise enhanced by extensive and innovative research programs focused on the development of important new techniques and therapies that promote better outcomes and can improve the quality of life for patients following surgery.  </p><h5><a href="https://ctsurgery.weillcornell.org/surgical-services/thoracic-surgery">Thoracic Surgery</a></h5><p>The Thoracic Surgery Department is dedicated to providing the highest quality and advanced care to patients with diseases of the lung, trachea, esophagus, chest wall and mediastinum.</p><h5><a href="https://urology.weillcornell.org/">Urology</a></h5><p>The Department of Urology is internationally known for its contributions to scientific advances in the prevention, diagnosis and treatment of urological diseases. The department’s dynamic clinical and research environment and collaborative network of physician-scientists and clinicians promotes the department’s mission to provide unequalled urologic care.</p><p></p><h2>Medicine</h2><p>The Joan and Sanford I. Weill Department of Medicine is comprised of an extraordinarily talented and internationally recognized faculty.  The department’s overall goal is to carry out the medical school’s tripartite mission to deliver exceptional patient care, research, and education/training. The Department of Medicine’s physician-scientists are innovators and entrepreneurs working in state-of-the-art research laboratories and utilizing innovative techniques and methodology to develop groundbreaking discoveries.</p><h4><span style="text-decoration:underline"><a href="https://medicine.weill.cornell.edu/divisions-programs">Divisions of Medicine</a></span></h4><p>The Department of Medicine is comprised of 17 divisions, centers and programs staffed by some of the world’s finest physicians and scientists, supporting our interdependent missions in patient care, discovery and teaching. The following list highlights those divisions within the Department of Medicine conducting clinical, basic and/or translational research. Weill Medicine is committed to facing the new challenges of academic medicine. Our department explores an ever-changing world of translational research to open the door to life-saving therapies.</p><p><a href="https://cardiology.weillcornell.org/">Cardiology</a></p><p>The Maurice R. and Corinne P. Greenberg Division of Cardiology aims to be at the forefront of scientific and technological developments that are revolutionizing cardiology and translating those findings to the clinical bedside.</p><p><a href="https://globalhealth.weill.cornell.edu/">Center for Global Health</a></p><p>The Center for Global Health has developed long-standing international partnerships across the globe that provides wide-ranging service, training, and research activities to develop innovations and improve health among the world’s poor. </p><p><a href="https://medicine.weill.cornell.edu/divisions-programs/clinical-epidemiology-evaluative-sciences-research">Clinical Epidemiology and Evaluative Sciences Research</a></p><p>The CEESR Division draws upon the experience of many experts, from qualitative and quantitative research methodology to clinical epidemiology to health education.</p><p><a href="https://medicine.weill.cornell.edu/divisions-programs/emergency-medicine">Emergency Medicine</a></p><p>The Division of Emergency Medicine provides state-of-the-art emergency care to all patients and teaches residents how to provide that care.</p><p><a href="https://medicine.weill.cornell.edu/divisions-programs/endocrinology-diabetes-metabolism">Endocrinology, Diabetes and Metabolism</a></p><p>The Division of Endocrinology, Diabetes and Metabolism is dedicated to providing quality care to patients with endocrine and metabolic disorders, conducting promising research applying the latest scientific and medical advances for the prevention, detection and treatment of patients with endocrine diseases and, and also in the training of highly motivated and dedicated physicians. </p><p><a href="https://medicine.weill.cornell.edu/divisions-programs/gastroenterology-hepatology">Gastroenterology &amp; Hepatology</a></p><p><span>The Division of Gastroenterology &amp; Hepatology has a wide range of active basic science, translational research, clinical research studies and clinical trials research focused on gastrointestinal and hepatic conditions and disorders. The Division is also home to the world class, multidisciplinary </span><a href="http://www.hepccenter.org/">Center for the Study of Hepatitis C</a><span>. </span></p><p><a href="https://medicine.weill.cornell.edu/divisions-programs/general-internal-medicine">General Internal Medicine (WCIMA)</a></p><p>The WCIMA services include preventive health care, treatment of acute and chronic illness and the coordination of care for a diverse population of adult patients those with complex diseases and chronic illnesses.</p><p><a href="https://geriatrics-palliative.weill.cornell.edu/">Geriatric and Palliative Medicine</a></p><p>The mission of the Division of Geriatric and Palliative Medicine is to improve the quality of life for older people through high quality clinical care, teaching, training and scientific research.</p><p><a href="https://medicine.weill.cornell.edu/divisions-programs/hematology-medical-oncology">Hematology/Medical Oncology</a></p><p>The Division of Hematology and Medical Oncology offers comprehensive care in diagnosing and treating patients with cancer and non-malignant blood disorders. The research studies of the Division focuses on testing new therapies in patients with cancer and blood diseases and to understand the molecular basis of human blood diseases and cancer.</p><p><a href="https://medicine.weill.cornell.edu/divisions-programs/immunology">Immunology</a></p><p>The Division of Immunology is focused on engaging in both basic and clinical research aimed to translate decades of the advances in the field aimed at discovering new therapies and treatments for immunological disorders. The Division faculty are committed to providing the best education and training to students as well as exposure to cutting-edge research.</p><p><a href="https://medicine.weill.cornell.edu/divisions-programs/infectious-diseases">Infectious Diseases</a></p><p>The Division of Infectious Diseases designs and conducts cutting-edge research, provides outstanding clinical care, and its internationally recognized physician-scientists provide the highest quality education and training in infectious diseases.</p><p><a href="https://medicine.weill.cornell.edu/divisions-programs/medical-ethics">Medical Ethics</a></p><p>The Division of Medical Ethics investigates topics in the ethical practice of medicine and works to elucidate and clarify the aspects of research studies that make them ethical. The faculty engage in research initiatives that explore a wide range of topics both in the practice of medicine and in medical research and shares their knowledge with physicians, students and researchers to fulfill a standard of ethical care.</p><p><a href="https://medicine.weill.cornell.edu/divisions-programs/nephrology-hypertension">Nephrology &amp; Hypertension</a></p><p>The Division of Nephrology &amp; Hypertension is a leader in translational research initiatives that help better understand diseases affecting the kidney and renal systems, and alternative non-invasive ways to detect allograft dysfunction. The division is home to the nationally recognized Hypertension Center devoted exclusively to patients with disorders of blood pressure and circulation.</p><p><a href="https://medicine.weill.cornell.edu/divisions-programs/public-health-programs">Public Health Programs</a></p><p>The Division of Public Health is involved in a variety of ongoing basic science and clinical research projects involving epidemiology, substance abuse, PTSD treatment, suicide prevention, HCV treatment in drug users, and understanding immunity in opioid users. The division is home to several centers of excellence that encompass a wide range of expertise in research and patient care.</p><p><a href="https://medicine.weill.cornell.edu/divisions-programs/pulmonary-critical-care-medicine">Pulmonary and Critical Care Medicine</a></p><p>The Division of Pulmonary and Critical Care conducts research focused on understanding the genetic basis of human disease, understanding the function of the human genome, and modulating the genetic repertoire to treat human disorders, including gene therapy. The divisions overarching mission encompasses activities in clinical care, research in genetic medicine, and education.</p><p><a href="http://www.weillcornellmedicine.com/clinical_practices_and_divisions/rheumatology/">Rheumatology</a></p><p>The Division of Rheumatology is widely recognized for its contributions to research defining the underlying mechanisms of autoimmune and musculoskeletal conditions and is comprised of internationally recognized clinically-based rheumatologists and physician-scientists who carry out cutting edge basic, translational and clinical investigational research.</p><p></p><p></p>  </div>
+  
+  </div>
+        </div>
+      </div>
+      <div class="information-column col-md-3">
+        <div class="information-sidebar">
+          <div class="panel-pane pane-fieldable-panels-pane pane-uuid-dff7abe9-1a7a-46fc-b7ad-420f008e6ce6 pane-bundle-text" >
+  
+      
+  
+  <div class="fieldable-panels-pane">
+    <div class="field-basic-text-text">
+        <ul><li><a href="/core-facilities" class="gotobtns core"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/profiles/wcmc/themes/wcmc_bootstrap/images/cta_icons/symbol-defs.svg#cta-icon-labs"></use></svg>Core Facilities</a></li><li><a href="/about-us/faculty-and-postdoctoral-trainees/faculty" class="gotobtns resfac"><svg class="cta-icon cta-icon-directory"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/profiles/wcmc/themes/wcmc_bootstrap/images/cta_icons/symbol-defs.svg#cta-icon-directory"></use></svg>Research Faculty</a></li><li><a href="#" class="gotobtns trigger howto"><svg class="cta-icon cta-icon-directory"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/profiles/wcmc/themes/wcmc_bootstrap/images/cta_icons/symbol-defs.svg#cta-icon-help"></use></svg>How To</a><ul class="toggle"><li><a href="/wcm-investigators/research-concierge/establish-research-website">Establish a Research Website</a></li><li><a href="/collaboration-commercialization/find-collaborator">Find a Collaborator</a></li><li><a href="/wcm-investigators/research-concierge/reagent-equipment-data-sharing">Reagent, Equipment & Data Sharing</a></li><li><a href="/wcm-investigators/research-concierge/set-vivo">Set up VIVO</a></li><li><a href="/resources-tools/how/submit-grant">Submit a Grant</a></li></ul></li></ul>  </div></div>
+
+  
+  </div>
+<div class="panel-pane pane-wcmc-contact-pane" >
+  
+      
+  
+  
+ <div class="contact-info">
+ <!--  <h3 class="pane-title">Contact Us</h3> -->
+   <p>
+   <span class="site-name">Office of the Research Dean</span>
+   <span class="site-affiliation">Weill Cornell Medicine</span>
+   <span class="address">1300 York Ave.</span>
+   <span class="city-state">New York, NY 10065</span>
+       <a href="mailto:ResearchDean@med.cornell.edu">ResearchDean@med.cornell.edu</a>
+      </p>
+ </div>
+
+
+
+
+
+  
+  </div>
+          <div class="jump-to-top scrollup"><a href="#page"><span>Jump To Top</span></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <footer class="page-footer">
+
+  <div class="footer-contact">
+    <div class="container">
+      <div class="footer-contact__map-link"><a href="https://www.google.com/maps/place/1300+York+Ave,+New+York,+NY+10065/@40.7646883,-73.9569202,16.81z/data=!4m2!3m1!1s0x89c258c3c1e">Our Location</a></div>
+      <div class="footer-contact__site-name"><a href="/">Research</a></div>
+      <div class="footer-contact__contact-us"><a href="/about-us/administrative-directory">Contact Us</a></div>
+      <ul class="footer-contact__social-links">
+                                      </ul>
+    </div>
+  </div>
+
+    <div class="footer-site">
+      <div class="container">
+        <div class="footer-address">
+          <div class="footer-address__address">
+            1300 York Ave.<br>
+            New York, NY 10065<br>
+                       </div>
+          <div class='login'>
+          <a class='button' href='/saml_login?ReturnTo=https://research.weill.cornell.edu/about-us/academic-units/departments/'>Employee Login</a>        </div>
+        </div>
+                  <nav class="footer-nav" aria-label="Footer">
+            
+  <div id="block-menu-block-1" class="block block-menu-block">
+
+    
+  <div class="content">
+    
+<ul class="menu clearfix"><li class="first active-trail menu-mlid-1140 level-1"><a href="/about-us" title="WCM researchers achieve world pre-eminence by excelling in research discoveries, scholarship, and creativity." class="active-trail">About Us</a><ul class="menu clearfix"><li class="first menu-mlid-1728 level-2"><a href="/about-us/leadership">Leadership</a></li>
+<li class="menu-mlid-1650 level-2"><a href="/about-us/news-updates" title="Find the latest news and updates from WCM Research Administration.">News &amp; Updates</a></li>
+<li class="menu-mlid-4660 level-2"><a href="https://weill.cornell.edu/faculty" title="">Faculty Directory</a></li>
+<li class="menu-mlid-4710 level-2"><a href="/about-us/achievements">Achievements</a></li>
+<li class="menu-mlid-4659 level-2"><a href="/about-us/calendar">Calendar</a></li>
+<li class="menu-mlid-4661 level-2"><a href="https://gradschool.weill.cornell.edu/" title="">Graduate Education</a></li>
+<li class="last menu-mlid-4757 level-2"><a href="/diversity">Diversity in Research</a></li>
+</ul></li>
+<li class="menu-mlid-4662 level-1"><a href="/wcm-investigators">For WCM Investigators</a><ul class="menu clearfix"><li class="first menu-mlid-4664 level-2"><a href="/wcm-investigators/funding-opportunities">Funding Opportunities</a><ul class="menu clearfix"><li class="first menu-mlid-4713 level-3"><a href="https://www.grantforward.com/index" title="">GrantForward</a></li>
+<li class="last menu-mlid-4712 level-3"><a href="/wcm-investigators/funding-opportunities/limited-submission-grant-process">Limited Submission Grant Process</a></li>
+</ul></li>
+<li class="menu-mlid-4665 level-2"><a href="/wcm-investigators/writing-submitting-grant-proposal">Writing &amp; Submitting a Grant Proposal</a><ul class="menu clearfix"><li class="first menu-mlid-1676 level-3"><a href="/wcm-investigators/writing-submitting-grant-proposal/weill-research-gateway">Weill Research Gateway</a></li>
+<li class="last menu-mlid-3898 level-3"><a href="/wcm-investigators/writing-submitting-grant-proposal/office-sponsored-research-administration-osra">Office of Sponsored Research Administration (OSRA)</a><ul class="menu clearfix"><li class="first menu-mlid-4666 level-4"><a href="/wcm-investigators/writing-submitting-grant-proposal/office-sponsored-research-administration-osra-1">Institutional Information</a></li>
+<li class="menu-mlid-4669 level-4"><a href="/wcm-investigators/writing-submitting-grant-proposal/office-sponsored-research-administration-osra-2">Indirect Costs &amp; Fringe Benefit Rates</a></li>
+<li class="menu-mlid-4752 level-4"><a href="/wcm-investigators/writing-submitting-grant-proposal/office-sponsored-research-administration-osra-4">COVID-19 Grant Related Updates</a></li>
+<li class="menu-mlid-4750 level-4"><a href="/grant-services">Grant Services</a></li>
+<li class="menu-mlid-4748 level-4"><a href="/wcm-investigators/writing-submitting-grant-proposal/office-sponsored-research-administration-osra-0">Grant Transfer Process</a></li>
+<li class="menu-mlid-4749 level-4"><a href="/osra-contracts">OSRA Contracts</a></li>
+<li class="last menu-mlid-4756 level-4"><a href="/wcm-investigators/writing-submitting-grant-proposal/office-sponsored-research-administration-osra-5">OSRA Organizational Chart</a></li>
+</ul></li>
+</ul></li>
+<li class="menu-mlid-4667 level-2"><a href="/wcm-investigators/research-concierge">Research Concierge</a><ul class="menu clearfix"><li class="first menu-mlid-1669 level-3"><a href="/wcm-investigators/research-concierge/establish-research-website">Establish a Research Website</a></li>
+<li class="menu-mlid-1667 level-3"><a href="/wcm-investigators/research-concierge/set-vivo">Set up VIVO</a></li>
+<li class="menu-mlid-2350 level-3"><a href="/wcm-investigators/research-concierge/research-visibility-dashboard" class="restricted">Research Visibility Dashboard</a></li>
+<li class="menu-mlid-1674 level-3"><a href="/wcm-investigators/research-concierge/reagent-equipment-data-sharing" class="restricted">Reagent, Equipment &amp; Data Sharing</a></li>
+<li class="last menu-mlid-4740 level-3"><a href="/wcm-investigators/research-concierge/wcm-supply-center">WCM Supply Center</a></li>
+</ul></li>
+<li class="menu-mlid-4668 level-2"><a href="/wcm-investigators/professional-development-mentoring">Professional Development &amp; Mentoring</a><ul class="menu clearfix"><li class="first menu-mlid-4670 level-3"><a href="/wcm-investigators/professional-development-mentoring/education-training-research-administration-etra">Education &amp; Training in Research Administration (ETRA)</a></li>
+<li class="menu-mlid-3257 level-3"><a href="/wcm-investigators/professional-development-mentoring/e2ra-course">E2RA Course</a></li>
+<li class="menu-mlid-1691 level-3"><a href="/wcm-investigators/professional-development-mentoring/rapid">R.A.P.I.D</a></li>
+<li class="menu-mlid-4671 level-3"><a href="https://faculty.weill.cornell.edu/faculty-development" title="">Faculty Mentoring</a></li>
+<li class="menu-mlid-4672 level-3"><a href="/wcm-investigators/professional-development-mentoring/diversity-inclusion">Diversity &amp; Inclusion</a></li>
+<li class="last menu-mlid-4673 level-3"><a href="/wcm-investigators/professional-development-mentoring/tri-institutional-collaboration-network-tcn">Tri-Institutional Collaboration Network (TCN)</a></li>
+</ul></li>
+<li class="menu-mlid-4745 level-2"><a href="/wcm-investigators/clinical-research">Clinical Research</a></li>
+<li class="last menu-mlid-4746 level-2"><a href="/wcm-investigators/research-awards-and-grant-writing-resources">Research Awards and Grant Writing Resources</a></li>
+</ul></li>
+<li class="menu-mlid-1652 level-1"><a href="https://research.weill.cornell.edu/core-facilities" title="Each of the WCM Core Facilities provide the resources and equipment necessary for our research community, enabling them to make important advances in diagnosing and treating human diseases.">Core Facilities</a><ul class="menu clearfix"><li class="first menu-mlid-4674 level-2"><a href="https://abc.med.cornell.edu/" title="">Applied Bioinformatics</a></li>
+<li class="menu-mlid-4675 level-2"><a href="http://pre.weill.cornell.edu/cbic/" title="">Citigroup Biomedical Imaging</a></li>
+<li class="menu-mlid-4676 level-2"><a href="http://epicore.med.cornell.edu/" title="">Epigenomics</a></li>
+<li class="menu-mlid-4677 level-2"><a href="/core-facilities/flow-cytometry">Flow Cytometry</a></li>
+<li class="menu-mlid-4678 level-2"><a href="/core-facilities/genomics-resources-core-facility">Genomics</a></li>
+<li class="menu-mlid-4679 level-2"><a href="/core-facilities/institutional-biorepository">Institutional Biorepository</a></li>
+<li class="menu-mlid-4680 level-2"><a href="https://mpc.weill.cornell.edu/" title="">Metabolic Phenotyping</a></li>
+<li class="menu-mlid-4681 level-2"><a href="https://www.microbiome.weill.cornell.edu/" title="">Microbiome Sequencing</a></li>
+<li class="menu-mlid-4682 level-2"><a href="https://weillcornellmicroscopy.org/" title="">Microscopy &amp; Image Analysis</a></li>
+<li class="menu-mlid-4683 level-2"><a href="/core-facilities/nuclear-magnetic-resonance-nmr">Nuclear Magnetic Resonance (NMR)</a></li>
+<li class="menu-mlid-4685 level-2"><a href="https://wcmc.corefacilities.org/service_center/show_external/3474" title="">Proteomics &amp; Metabolomics</a></li>
+<li class="last menu-mlid-4686 level-2"><a href="/core-facilities/visual-function">Visual Function</a></li>
+</ul></li>
+<li class="menu-mlid-4332 level-1"><a href="/integrity-compliance">Integrity &amp; Compliance</a><ul class="menu clearfix"><li class="first menu-mlid-4687 level-2"><a href="/integrity-compliance/human-subjects-research">Human Subjects Research</a><ul class="menu clearfix"><li class="first menu-mlid-4765 level-3"><a href="/integrity-compliance/human-subjects-research/institutional-review-board-irb">Institutional Review Board (IRB)</a><ul class="menu clearfix"><li class="first last menu-mlid-4860 level-4"><a href="/weill-cornell-medicine-qatar-institutional-review-board-wcm-q-irb">Weill Cornell Medicine-Qatar Institutional Review Board (WCM-Q IRB)</a></li>
+</ul></li>
+<li class="menu-mlid-4764 level-3"><a href="/integrity-compliance/human-subjects-research/data-and-safety-monitoring-committee-dsmc">Data and Safety Monitoring Committee (DSMC)</a></li>
+<li class="menu-mlid-4762 level-3"><a href="/integrity-compliance/human-subjects-research/clinicaltrialsgov">ClinicalTrials.gov</a></li>
+<li class="menu-mlid-4763 level-3"><a href="/integrity-compliance/human-subjects-research/human-research-routine-review-education-program">Human Research Routine Review &amp; Education Program</a></li>
+<li class="menu-mlid-4508 level-3"><a href="/integrity-compliance/human-subjects-research/human-embryonic-stem-cell-research">Human Embryonic Stem Cell Research</a></li>
+<li class="menu-mlid-4337 level-3"><a href="/integrity-compliance/human-subjects-research/radiation-safety-committee-rsc" class="restricted">Radiation Safety Committee (RSC)</a><ul class="menu clearfix"><li class="first menu-mlid-4338 level-4"><a href="/integrity-compliance/human-subjects-research/radiation-safety-committee-rsc/human-research-radiation">Human Research Radiation Safety</a></li>
+<li class="menu-mlid-4339 level-4"><a href="/integrity-compliance/research-support/human-research/radiation-safety-committee-rsc/laboratory">Laboratory Research Radiation Safety</a></li>
+<li class="last menu-mlid-4340 level-4"><a href="/research-compliance/safety-committees/radiation-safety-committee-rsc/rsc-forms-resources" class="restricted">RSC Forms &amp; Resources</a></li>
+</ul></li>
+<li class="menu-mlid-4700 level-3"><a href="/integrity-compliance/human-subjects-research/institutional-biosafety-committee-ibc">Institutional Biosafety Committee (IBC)</a><ul class="menu clearfix"><li class="first last menu-mlid-4747 level-4"><a href="/integrity-compliance/human-subjects-research/institutional-biosafety-committee-ibc/ibc-forms">IBC Forms &amp; Policies</a></li>
+</ul></li>
+<li class="menu-mlid-4507 level-3"><a href="https://research.weill.cornell.edu/weill-cornell-medicine-qatar-institutional-review-board-wcm-q-irb" title="">WCM-Qatar IRB</a></li>
+<li class="menu-mlid-4514 level-3"><a href="/integrity-compliance/ethical-conduct-research/hipaa-research">HIPAA in Research</a></li>
+<li class="last menu-mlid-4452 level-3"><a href="/integrity-compliance/human-subjects-research/radioactive-drug-research-committee-rdrc">Radioactive Drug Research Committee (RDRC)</a><ul class="menu clearfix"><li class="first last menu-mlid-4520 level-4"><a href="/integrity-compliance/human-subjects-research/radioactive-drug-research-committee-rdrc#approval" title="">Research Requiring RDRC Approval</a></li>
+</ul></li>
+</ul></li>
+<li class="menu-mlid-4692 level-2"><a href="/integrity-compliance/animal-research">Animal Research</a><ul class="menu clearfix"><li class="first menu-mlid-4496 level-3"><a href="https://research.weill.cornell.edu/iacuc" title="" class="restricted">Institutional Animal Care &amp; Use Committee (IACUC)</a></li>
+<li class="last menu-mlid-4523 level-3"><a href="/integrity-compliance/animal-research/research-animal-resource-center-rarc" class="restricted">Research Animal Resource Center (RARC)</a><ul class="menu clearfix"><li class="first menu-mlid-4524 level-4"><a href="/integrity-compliance/research-support/animal-research/research-animal-resource-center-rarc/administration-finance-information-systems" class="restricted">Administration, Finance &amp; Information Systems</a></li>
+<li class="menu-mlid-4868 level-4"><a href="/integrity-compliance/animal-research/research-animal-resource-center-rarc/animal-health-emergency">Animal Health Emergency</a></li>
+<li class="menu-mlid-4525 level-4"><a href="/integrity-compliance/research-support/animal-research/research-animal-resource-center-rarc-2" class="restricted">Applications &amp; Additional Resources</a></li>
+<li class="menu-mlid-4526 level-4"><a href="/integrity-compliance/animal-research/research-animal-resource-center-rarc/aquatic-systems-services" class="restricted">Aquatic Systems &amp; Services</a></li>
+<li class="menu-mlid-4527 level-4"><a href="/integrity-compliance/research-support/animal-research/research-animal-resource-center-rarc-0" class="restricted">Biosecurity</a></li>
+<li class="menu-mlid-4528 level-4"><a href="/rarccmg" class="restricted">Colony Management Group</a></li>
+<li class="menu-mlid-4530 level-4"><a href="/integrity-compliance/animal-research/research-animal-resource-center-rarc/education-quality" class="restricted">Education &amp; Quality Assurance</a></li>
+<li class="menu-mlid-4531 level-4"><a href="/integrity-compliance/research-support/animal-research/research-animal-resource-center-rarc/enccompass" class="restricted">EnCCoMPass</a></li>
+<li class="menu-mlid-4532 level-4"><a href="/integrity-compliance/research-support/animal-research/research-animal-resource-center-rarc/facilities" class="restricted">Facilities</a></li>
+<li class="menu-mlid-4867 level-4"><a href="/integrity-compliance/animal-research/research-animal-resource-center-rarc/facility-emergencies">Facility Emergencies</a></li>
+<li class="menu-mlid-4543 level-4"><a href="/integrity-compliance/research-support/animal-research/research-animal-resource-center-rarc/forms" class="restricted">Forms</a></li>
+<li class="menu-mlid-4866 level-4"><a href="/integrity-compliance/animal-research/research-animal-resource-center-rarc/forms">Forms</a></li>
+<li class="menu-mlid-4535 level-4"><a href="/integrity-compliance/research-support/animal-research/research-animal-resource-center-rarc/genetically-modified-animal-gma-phenotyping" class="restricted">Genetically Modified Animal (GMA) Phenotyping</a></li>
+<li class="menu-mlid-4536 level-4"><a href="/integrity-compliance/research-support/animal-research/research-animal-resource-center-rarc-1" class="restricted">Gnotobiotics</a></li>
+<li class="menu-mlid-4862 level-4"><a href="/integrity-compliance/animal-research/research-animal-resource-center-rarc/grant-and-publication">Grant and Publication Support</a></li>
+<li class="menu-mlid-4537 level-4"><a href="/integrity-compliance/research-support/animal-research/research-animal-resource-center-rarc-5" class="restricted">Guidelines and Policies</a></li>
+<li class="menu-mlid-4538 level-4"><a href="/integrity-compliance/research-support/animal-research/research-animal-resource-center-rarc/husbandry" class="restricted">Husbandry &amp; Operations</a></li>
+<li class="menu-mlid-4769 level-4"><a href="/integrity-compliance/animal-research/research-animal-resource-center-rarc/investigator-training">Investigator Training Webinar Series</a></li>
+<li class="menu-mlid-4865 level-4"><a href="/integrity-compliance/animal-research/research-animal-resource-center-rarc/laboratory-comparative">Laboratory of Comparative Pathology (LCP)</a></li>
+<li class="menu-mlid-4864 level-4"><a href="/integrity-compliance/animal-research/research-animal-resource-center-rarc/logistics">Logistics</a></li>
+<li class="menu-mlid-4541 level-4"><a href="/integrity-compliance/animal-research/research-animal-resource-center-rarc/new-animal-user-onboarding" class="restricted">New Animal User Onboarding</a></li>
+<li class="last menu-mlid-4542 level-4"><a href="/integrity-compliance/research-support/animal-research/research-animal-resource-center-rarc-3" class="restricted">Veterinary Services</a></li>
+</ul></li>
+</ul></li>
+<li class="menu-mlid-4495 level-2"><a href="https://research.weill.cornell.edu/conflict-interest-office" title="">Conflict of Interest Office</a></li>
+<li class="menu-mlid-4693 level-2"><a href="https://research.weill.cornell.edu/research-integrity-office-rio" title="">Research Integrity Office</a><ul class="menu clearfix"><li class="first last menu-mlid-4497 level-3"><a href="/integrity-compliance/ethical-conduct-research/responsible-conduct-research-course">Responsible Conduct of Research Course</a></li>
+</ul></li>
+<li class="menu-mlid-4859 level-2"><a href="/conflict-interest-office">Conflicts of Interest</a></li>
+<li class="menu-mlid-4861 level-2"><a href="/integrity-compliance/conduct-of-research">Ethical Conduct of Research</a></li>
+<li class="last menu-mlid-4858 level-2"><a href="/export-controls">Export Controls</a></li>
+</ul></li>
+<li class="last menu-mlid-4708 level-1"><a href="/collaboration-commercialization">Collaboration &amp; Commercialization</a><ul class="menu clearfix"><li class="first menu-mlid-4714 level-2"><a href="/collaboration-commercialization/collaborative-agreements">Collaborative Agreements</a></li>
+<li class="menu-mlid-1671 level-2"><a href="/collaboration-commercialization/find-collaborator">Find a Collaborator</a></li>
+<li class="menu-mlid-4715 level-2"><a href="https://academicintegration.cornell.edu/" title="">Intercampus Collaborations</a></li>
+<li class="menu-mlid-4716 level-2"><a href="/collaboration-commercialization/entrepreneurial-hub">Entrepreneurial Hub</a></li>
+<li class="menu-mlid-4717 level-2"><a href="https://give.weill.cornell.edu/ways-give" title="">Support Our Science</a></li>
+<li class="last menu-mlid-4718 level-2"><a href="/collaboration-commercialization/biopharmaceutical-alliance-agreements">Biopharmaceutical Alliance Agreements</a></li>
+</ul></li>
+</ul>  </div>
+</div>
+          </nav>
+        
+        <div class="footer-statement">
+          <div class="footer-statement__emblem"></div>
+          <div class="footer-statement__statement">
+              <strong>Care. Discover. Teach.</strong> With a legacy of putting patients first, Weill Cornell Medicine is committed to providing exemplary and individualized clinical care, making groundbreaking biomedical discoveries, and educating generations of exceptional doctors and scientists.
+          </div>
+        </div>
+          <div class="footer-partnership">
+            <a href="https://weill.cornell.edu/" class="footer-partnership__wcm">Weill Cornell Medicine</a>
+            <a href="https://nyp.org/" class="footer-partnership__nyp">NewYork - Presbyterian</a>
+          </div>
+
+          <div class="footer-links">
+            <div class="footer-links__copyright">&copy; Weill Cornell Medicine.</div>
+            <nav class="footer-links__menu navigation" aria-label="Global Footer">
+              <ul>
+                <li><a aria-label="View the privacy policy for WCM sites" href="https://weill.cornell.edu/legal/" title="">Privacy & Legal</a></li>
+                <li><a aria-label="Go to the WCM Careers site" href="https://weill.cornell.edu/careers" title="">Careers</a></li>
+                <li><a aria-label="Go to the WCM Ways to Give site" href="https://give.weill.cornell.edu" title="">Giving</a></li>
+                <li><a aria-label="Go to the WCM Directory Search" href="https://directory.weill.cornell.edu/" title="">Directory</a></li>
+                <li><a aria-label="Request an accessibility accommodation" href="https://weill.cornell.edu/accessibility" title="">Web Accessibility Assistance</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+    </div>
+
+  </footer>
+  <div id="slide-nav-overlay"></div>
+</div>
+    <script src="https://research.weill.cornell.edu/sites/default/files/js/js_Y2LxC1dyhyOaafX8fC5m_rG-6w0-GUmYnAdhvdtlNRc.js"></script>
+<script src="https://research.weill.cornell.edu/sites/default/files/js/js_xeWURimRrYezXAJr2L-TQ3i3U_JykQ9pNyUrXLAxrZ4.js"></script>
+<script defer="defer" src="//siteimproveanalytics.com/js/siteanalyze_26716.js"></script>
+<script src="https://research.weill.cornell.edu/sites/default/files/js/js_6VPgJxIca7GR2VtDV0nocFjHRyVZod6R2Wt6m3POt2Q.js"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"8123a404fc","applicationID":"29048835","transactionName":"NVVbYhMHXkEFBhALDQwfeFUVD19cSxUFBQc9XVhYAAFVQDsLCwYHPUZQUxY5QFMDAA==","queueTime":0,"applicationTime":268,"atts":"GRJYFFsdTU8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

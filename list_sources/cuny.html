@@ -1,0 +1,2198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  <head>
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-83581f4fb59b51cbeb7",applicationID:"254978615"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1211.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-1802734-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");</script>
+<meta name="geo.placename" content="The City College of New York" />
+<meta name="geo.position" content="40.8200471,-73.9492724," />
+<meta name="geo.region" content="US-NY" />
+<meta name="icbm" content="40.8200471,-73.9492724," />
+<link rel="canonical" href="https://www.ccny.cuny.edu/csom/deptsandoffices" />
+<meta http-equiv="content-language" content="en-us" />
+<meta name="robots" content="index, follow" />
+<meta name="generator" content="Drupal 8" />
+<meta name="dcterms.title" content="List of Departments &amp; Offices" />
+<meta name="dcterms.creator" content="The City College of New York" />
+<meta name="dcterms.publisher" content="The City College of New York" />
+<meta name="dcterms.date" content="20150704T091541Z" />
+<meta name="dcterms.type" content="text" />
+<meta name="dcterms.format" content="text/html" />
+<meta name="dcterms.language" content="en-us" />
+<meta property="og:site_name" content="The City College of New York" />
+<meta property="og:type" content="text" />
+<meta property="og:url" content="https://www.ccny.cuny.edu/csom/deptsandoffices" />
+<meta property="og:title" content="List of Departments &amp; Offices" />
+<meta property="og:updated_time" content="20210909T165121Z" />
+<meta property="place:location:latitude" content="40.8200471" />
+<meta property="place:location:longitude" content="-73.9492724" />
+<meta property="og:street_address" content="160 Convent Avenue" />
+<meta property="og:locality" content="New York" />
+<meta property="og:region" content="NY" />
+<meta property="og:postal_code" content="10031" />
+<meta property="og:country_name" content="United States" />
+<meta property="og:phone_number" content="212-650-7000" />
+<meta property="og:locale" content="en_us" />
+<meta property="article:publisher" content="https://www.facebook.com/TheCityCollegeofNewYork/" />
+<meta property="article:published_time" content="20150704T091541Z" />
+<meta property="article:modified_time" content="20210909T165121Z" />
+<meta name="twitter:site" content="@CityCollegeNY" />
+<meta name="twitter:title" content="List of Departments &amp; Offices" />
+<meta name="twitter:site:id" content="21900832" />
+<meta name="twitter:url" content="https://www.ccny.cuny.edu/csom/deptsandoffices" />
+<script>!function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '384876909864134'); fbq('track', 'PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=384876909864134&ev=PageView&noscript=1"/></noscript><meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="/themes/custom/ccny_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="https://www.ccny.cuny.edu/csom/deptsandoffices" />
+
+    <title>List of Departments &amp; Offices | The City College of New York</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_AYfBs7PHtU_tm_j4UWERns7pDI7_I72zMoniZweZJcY.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_77tSsqjv4EDqlKvaL1cRE9CaKTR9gdHqgI26g8FzphE.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_Ixj0SbS3D8zyP-zc0hM3JGzNR-lRkVb-uhMFhoJSUvQ.css" />
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+<script src="/sites/default/files/asset_injector/js/google_analytics_tracking_code-e4c3fb1e75022f764873562995556857.js?r1p2qc"></script>
+<script src="/sites/default/files/asset_injector/js/google_tag-a1b0d67320ceee24110a9c1463e07cb9.js?r1p2qc"></script>
+<script src="/sites/default/files/asset_injector/js/mixpanel_tracking_code-aefdd7c200d77d3ac8ff1dedb34aa7eb.js?r1p2qc"></script>
+
+  </head>
+  <body>
+        <a href="#main-content" class="visually-hidden focusable">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div>
+
+  <header role="banner">
+      <div>
+    
+<div id="block-alerts">
+  
+    
+      
+
+
+<div class="alert full-width yellow">
+  <div class="alert__inner">
+    <div class="alert__icon-container">
+			<img src="/themes/custom/ccny_theme/dist/assets/alert-yellow.svg" alt="Alert" class="alert__icon" / >
+	    </div>
+    <div class="alert__text"></div>
+  </div>
+</div>
+  </div>
+
+
+
+
+
+<div class="nav-wrapper full-width">
+  <nav class="nav nav--mobile" id="topnavmobile">
+    <div class="nav__side-menu-container">
+      <div class="nav__side-menu-title-container">
+        <img src="/themes/custom/ccny_theme/dist/assets/logo-mobile.svg" class="nav__side-menu-title nav__title" alt="CCNY logo" title="CCNY logo" />
+      </div>
+                      <div class="nav__submenu" data-target="About">
+          <div class="nav__submenu-title-container ">
+                        <h4 class="nav__submenu-title">About</h4>
+                        <div class="nav__submenu-expand-dots" data-target="1" data-url="/about">
+              <img src="/themes/custom/ccny_theme/dist/assets/ellipsis.svg" alt="Ellipsis" title="Ellipsis">
+            </div>
+          </div>
+        </div>
+                <div class="nav__submenu-inner-container" data-menu-id="1">
+                <h4 class="nav__submenu-title">About</h4>
+                <button class="nav__submenu-back-button" data-target="1" title="Back">< Back</button>
+                    <h4 class="nav__submenu-subtitle">The College</h4>
+          <div class="nav__submenu-inner">
+                          <a href="/node/2474" class="nav__submenu-link-item" title="Overview">Overview</a>
+                          <a href="/about/mission" class="nav__submenu-link-item" title="Mission, Vision &amp; History">Mission, Vision &amp; History</a>
+                          <a href="/giving" class="nav__submenu-link-item" title="Giving">Giving</a>
+                          <a href="/about/offices-services" class="nav__submenu-link-item" title="Offices and Services">Offices and Services</a>
+                          <a href="/about/administration" class="nav__submenu-link-item" title="Administration">Administration</a>
+                          <a href="/about/policies" class="nav__submenu-link-item" title="City College and CUNY Policies">City College and CUNY Policies</a>
+                          <a href="/people" class="nav__submenu-link-item" title="Directory">Directory</a>
+                      </div>
+                    <h4 class="nav__submenu-subtitle">The Campus</h4>
+          <div class="nav__submenu-inner">
+                          <a href="/about/campusmap" class="nav__submenu-link-item" title="Campus Map &amp; Directions">Campus Map &amp; Directions</a>
+                          <a href="/news/ccny-in-the-news" class="nav__submenu-link-item" title="CCNY in the News">CCNY in the News</a>
+                          <a href="/about/gettingthere" class="nav__submenu-link-item" title="Shuttle Bus Service">Shuttle Bus Service</a>
+                          <a href="https://www.ccny.cuny.edu/communications/media-kit" class="nav__submenu-link-item" title="Media Kit">Media Kit</a>
+                          <a href="/admissions/campus-tours" class="nav__submenu-link-item" title="Schedule a Tour">Schedule a Tour</a>
+                      </div>
+                  </div>
+                              <div class="nav__submenu" data-target="Academics">
+          <div class="nav__submenu-title-container ">
+                        <h4 class="nav__submenu-title">Academics</h4>
+                        <div class="nav__submenu-expand-dots" data-target="2" data-url="/node/2463">
+              <img src="/themes/custom/ccny_theme/dist/assets/ellipsis.svg" alt="Ellipsis" title="Ellipsis">
+            </div>
+          </div>
+        </div>
+                <div class="nav__submenu-inner-container" data-menu-id="2">
+                <h4 class="nav__submenu-title">Academics</h4>
+                <button class="nav__submenu-back-button" data-target="2" title="Back">< Back</button>
+                    <h4 class="nav__submenu-subtitle">Schools &amp; Divisions</h4>
+          <div class="nav__submenu-inner">
+                          <a href="/node/2525" class="nav__submenu-link-item" title="The Bernard and Anne Spitzer School of Architecture">The Bernard and Anne Spitzer School of Architecture</a>
+                          <a href="/node/1170" class="nav__submenu-link-item" title="CUNY School of Medicine">CUNY School of Medicine</a>
+                          <a href="/node/2361" class="nav__submenu-link-item" title="Colin Powell School for Civic and Global Leadership">Colin Powell School for Civic and Global Leadership</a>
+                          <a href="/node/2300" class="nav__submenu-link-item" title="School of Education">School of Education</a>
+                          <a href="/node/2136" class="nav__submenu-link-item" title="The Grove School of Engineering">The Grove School of Engineering</a>
+                          <a href="/node/2120" class="nav__submenu-link-item" title="Division of Humanities and the Arts">Division of Humanities and the Arts</a>
+                          <a href="/node/2336" class="nav__submenu-link-item" title="Division of Interdisciplinary Studies at Center for Worker Education (CWE)">Division of Interdisciplinary Studies at Center for Worker Education (CWE)</a>
+                          <a href="/node/1205" class="nav__submenu-link-item" title="Division of Science">Division of Science</a>
+                      </div>
+                    <h4 class="nav__submenu-subtitle">Lifetime &amp; Experiential Learning</h4>
+          <div class="nav__submenu-inner">
+                          <a href="/admissions/gradstep-1choosingprogram" class="nav__submenu-link-item" title="Graduate Studies Overview">Graduate Studies Overview</a>
+                          <a href="/node/2344" class="nav__submenu-link-item" title="Continuing &amp; Professional Studies">Continuing &amp; Professional Studies</a>
+                          <a href="/studyabroad" class="nav__submenu-link-item" title="International Studies &amp; Study Abroad">International Studies &amp; Study Abroad</a>
+                          <a href="/cwe/quest-a-lifetime-of-learning" class="nav__submenu-link-item" title="Quest: Lifelong Learning">Quest: Lifelong Learning</a>
+                      </div>
+                    <h4 class="nav__submenu-subtitle">Academic Planning</h4>
+          <div class="nav__submenu-inner">
+                          <a href="/registrar" class="nav__submenu-link-item" title="Registrar">Registrar</a>
+                          <a href="/academics/areas-of-study" class="nav__submenu-link-item" title="Areas of Study">Areas of Study</a>
+                          <a href="/gened/general-education" class="nav__submenu-link-item" title="General Education Curriculum">General Education Curriculum</a>
+                          <a href="https://www.ccny.cuny.edu/registrar/academic-calendar" class="nav__submenu-link-item" title="Academic Calendar">Academic Calendar</a>
+                          <a href="/library" class="nav__submenu-link-item" title="Library">Library</a>
+                          <a href="/registrar/bulletins" class="nav__submenu-link-item" title="Courses / Bulletins">Courses / Bulletins</a>
+                          <a href="/academicaffairs" class="nav__submenu-link-item" title="Academic Affairs">Academic Affairs</a>
+                      </div>
+                  </div>
+                              <div class="nav__submenu" data-target="Admissions">
+          <div class="nav__submenu-title-container ">
+                        <h4 class="nav__submenu-title">Admissions</h4>
+                        <div class="nav__submenu-expand-dots" data-target="3" data-url="/node/2503">
+              <img src="/themes/custom/ccny_theme/dist/assets/ellipsis.svg" alt="Ellipsis" title="Ellipsis">
+            </div>
+          </div>
+        </div>
+                <div class="nav__submenu-inner-container" data-menu-id="3">
+                <h4 class="nav__submenu-title">Admissions</h4>
+                <button class="nav__submenu-back-button" data-target="3" title="Back">< Back</button>
+                    <h4 class="nav__submenu-subtitle">Information For</h4>
+          <div class="nav__submenu-inner">
+                          <a href="https://www.ccny.cuny.edu/admissions" class="nav__submenu-link-item" title="Admissions Overview">Admissions Overview</a>
+                          <a href="/admissions/freshman-students" class="nav__submenu-link-item" title="Freshman Students">Freshman Students</a>
+                          <a href="/admissions/transfer-students" class="nav__submenu-link-item" title="Transfer/Second Degree Students">Transfer/Second Degree Students</a>
+                          <a href="/admissions/graduate-studies" class="nav__submenu-link-item" title="Graduate Students">Graduate Students</a>
+                          <a href="/admissions/returning-college" class="nav__submenu-link-item" title="Returning to College">Returning to College</a>
+                          <a href="/admissions/non-degreevisiting-studentsseniors" class="nav__submenu-link-item" title="Visiting Students/Non-Degree">Visiting Students/Non-Degree</a>
+                          <a href="/cps" class="nav__submenu-link-item" title="Continuing Education">Continuing Education</a>
+                      </div>
+                    <h4 class="nav__submenu-subtitle">Explore</h4>
+          <div class="nav__submenu-inner">
+                          <a href="/admissions/explore-ccny" class="nav__submenu-link-item" title="Explore CCNY">Explore CCNY</a>
+                          <a href="/academics/areas-of-study" class="nav__submenu-link-item" title="Areas of Study">Areas of Study</a>
+                          <a href="https://cunyccny.askadmissions.net/Vip/Default.aspx" class="nav__submenu-link-item" title="MyCity VIP Portal">MyCity VIP Portal</a>
+                      </div>
+                    <h4 class="nav__submenu-subtitle">Visit Our Campus</h4>
+          <div class="nav__submenu-inner">
+                          <a href="/admissions/campus-tours" class="nav__submenu-link-item" title="Campus Tours">Campus Tours</a>
+                          <a href="/admissions/information-sessions" class="nav__submenu-link-item" title="Information Sessions">Information Sessions</a>
+                          <a href="/admissions/voh" class="nav__submenu-link-item" title="Virtual Open House">Virtual Open House</a>
+                      </div>
+                    <h4 class="nav__submenu-subtitle">Related Links</h4>
+          <div class="nav__submenu-inner">
+                          <a href="/financialaid" class="nav__submenu-link-item" title="Financial Aid">Financial Aid</a>
+                          <a href="/bursar/tuition-and-fee-information" class="nav__submenu-link-item" title="Tuition and Fees">Tuition and Fees</a>
+                          <a href="http://ccnytowers.com/" class="nav__submenu-link-item" title="Campus Housing">Campus Housing</a>
+                          <a href="/node/841" class="nav__submenu-link-item" title="Veterans">Veterans</a>
+                          <a href="/isss" class="nav__submenu-link-item" title="International Students">International Students</a>
+                          <a href="/honors" class="nav__submenu-link-item" title="Honors Programs">Honors Programs</a>
+                      </div>
+                  </div>
+                              <div class="nav__submenu" data-target="Student Affairs">
+          <div class="nav__submenu-title-container ">
+                        <h4 class="nav__submenu-title">Student Affairs</h4>
+                        <div class="nav__submenu-expand-dots" data-target="4" data-url="/node/911">
+              <img src="/themes/custom/ccny_theme/dist/assets/ellipsis.svg" alt="Ellipsis" title="Ellipsis">
+            </div>
+          </div>
+        </div>
+                <div class="nav__submenu-inner-container" data-menu-id="4">
+                <h4 class="nav__submenu-title">Student Affairs</h4>
+                <button class="nav__submenu-back-button" data-target="4" title="Back">< Back</button>
+                    <h4 class="nav__submenu-subtitle">Campus Life</h4>
+          <div class="nav__submenu-inner">
+                          <a href="/studentlife" class="nav__submenu-link-item" title="Student Life">Student Life</a>
+                          <a href="http://www.ccnyathletics.com/" class="nav__submenu-link-item" title="Athletics">Athletics</a>
+                          <a href="/node/2458" class="nav__submenu-link-item" title="Activities">Activities</a>
+                          <a href="/towers" class="nav__submenu-link-item" title="Student Housing">Student Housing</a>
+                      </div>
+                    <h4 class="nav__submenu-subtitle">Student Services</h4>
+          <div class="nav__submenu-inner">
+                          <a href="/studentaffairs" class="nav__submenu-link-item" title="Student Affairs">Student Affairs</a>
+                          <a href="/health-wellness" class="nav__submenu-link-item" title="Health &amp; Wellness">Health &amp; Wellness</a>
+                          <a href="/node/2460" class="nav__submenu-link-item" title="The AccessAbility Center/Student Disability Services">The AccessAbility Center/Student Disability Services</a>
+                          <a href="https://www.ccny.cuny.edu/health-and-safety-services" class="nav__submenu-link-item" title="Safety Services">Safety Services</a>
+                      </div>
+                  </div>
+                              <div class="nav__submenu" data-target="Research">
+          <div class="nav__submenu-title-container last">
+                        <h4 class="nav__submenu-title">Research</h4>
+                        <div class="nav__submenu-expand-dots" data-target="5" data-url="/node/1230">
+              <img src="/themes/custom/ccny_theme/dist/assets/ellipsis.svg" alt="Ellipsis" title="Ellipsis">
+            </div>
+          </div>
+        </div>
+                <div class="nav__submenu-inner-container" data-menu-id="5">
+                <h4 class="nav__submenu-title">Research</h4>
+                <button class="nav__submenu-back-button" data-target="5" title="Back">< Back</button>
+                    <h4 class="nav__submenu-subtitle">Research Overview</h4>
+          <div class="nav__submenu-inner">
+                          <a href="/research" class="nav__submenu-link-item" title="Research Overview">Research Overview</a>
+                          <a href="/research/rce" class="nav__submenu-link-item" title="Research Compliance &amp; Ethics">Research Compliance &amp; Ethics</a>
+                          <a href="/research/centersandinstitutes" class="nav__submenu-link-item" title="Centers and Institutes">Centers and Institutes</a>
+                          <a href="/research/gsp" class="nav__submenu-link-item" title="Grants &amp; Sponsored Programs">Grants &amp; Sponsored Programs</a>
+                          <a href="/library" class="nav__submenu-link-item" title="Library">Library</a>
+                          <a href="/research/research-reopening" class="nav__submenu-link-item" title="Research Reopening">Research Reopening</a>
+                          <a href="/research/research-seminars-2020-2021" class="nav__submenu-link-item" title="Research Seminars">Research Seminars</a>
+                      </div>
+                    <h4 class="nav__submenu-subtitle">Faculty Expert List</h4>
+          <div class="nav__submenu-inner">
+                          <a href="/iac/experts-list" class="nav__submenu-link-item" title="By Area of Expertise">By Area of Expertise</a>
+                          <a href="/people" class="nav__submenu-link-item" title="View All Faculty &amp; Staff">View All Faculty &amp; Staff</a>
+                      </div>
+                  </div>
+                    <div class="nav__search-and-login-container">
+        <div class="nav__submenu nav__submenu-search">
+                  
+
+<div class="search-bar">
+  						<script>
+			(function() {
+				var cx = '014746752855948625780:lxfo3hmicfk';
+				var gcse = document.createElement('script');
+				gcse.type = 'text/javascript';
+				gcse.async = true;
+				gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+				'//www.google.com/cse/cse.js?cx=' + cx;
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(gcse, s);
+			})();
+			</script>
+        <gcse:searchbox-only resultsUrl="/search-results" queryParameterName="search" enableAutocomplete="true"></gcse:searchbox-only>
+					<script>
+			setTimeout(function(){
+			document.getElementById("gsc-i-id1").setAttribute("aria-label","Search");
+			document.getElementById("gsc-i-id2").setAttribute("aria-label","Search");
+			}, 2000);
+		</script>
+      </div>
+  
+          </div>
+
+        <div class="nav-submenu nav__submenu-login">
+          <div class="nav__submenu-title-container nav__submenu-login-title-container last">
+            <a class="nav__submenu-title nav__login-link-title" href="/login">Login</a>
+            <div class="nav__submenu-expand-login-links">
+              <img src="/themes/custom/ccny_theme/dist/assets/ellipsis.svg" alt="Ellipsis" title="Ellipsis">
+            </div>
+          </div>
+
+          <div class="nav__submenu-login-links-list">
+                                        <div class="nav__submenu-inner">
+                                                    <h4 class="nav__submenu-title">CUNY Related Links</h4>
+                                                                    <ul>
+                                      <li class="nav__submenu-login-links-list-item">
+                      <a class="nav__submenu-link-item nav__submenu-login-links-list__link" href="https://home.cunyfirst.cuny.edu/oam/Portal_Login1.html" title="CUNYfirst">
+                        CUNYfirst
+                      </a>
+                    </li>
+                                      <li class="nav__submenu-login-links-list-item">
+                      <a class="nav__submenu-link-item nav__submenu-login-links-list__link" href="https://cunyportal.cuny.edu/cpr/authenticate/portal_login.jsp" title="CUNY Portal">
+                        CUNY Portal
+                      </a>
+                    </li>
+                                      <li class="nav__submenu-login-links-list-item">
+                      <a class="nav__submenu-link-item nav__submenu-login-links-list__link" href="https://portal.ccny.cuny.edu/depts/oit/cuny_loaner/login.php" title="Loaner Devices">
+                        Loaner Devices
+                      </a>
+                    </li>
+                                    </ul>
+                              </div>
+                            <div class="nav__submenu-inner">
+                                                    <h4 class="nav__submenu-title">Faculty &amp; Staff</h4>
+                                                                    <ul>
+                                      <li class="nav__submenu-login-links-list-item">
+                      <a class="nav__submenu-link-item nav__submenu-login-links-list__link" href="https://webmail.ccny.cuny.edu/owa/" title="Faculty / Staff E-Mail">
+                        Faculty / Staff E-Mail
+                      </a>
+                    </li>
+                                      <li class="nav__submenu-login-links-list-item">
+                      <a class="nav__submenu-link-item nav__submenu-login-links-list__link" href="https://reset.ccny.cuny.edu/" title="Password Reset">
+                        Password Reset
+                      </a>
+                    </li>
+                                      <li class="nav__submenu-login-links-list-item">
+                      <a class="nav__submenu-link-item nav__submenu-login-links-list__link" href="https://bbhosted.cuny.edu" title="Blackboard">
+                        Blackboard
+                      </a>
+                    </li>
+                                      <li class="nav__submenu-login-links-list-item">
+                      <a class="nav__submenu-link-item nav__submenu-login-links-list__link" href="/saml/login" title="Content Editor">
+                        Content Editor
+                      </a>
+                    </li>
+                                      <li class="nav__submenu-login-links-list-item">
+                      <a class="nav__submenu-link-item nav__submenu-login-links-list__link" href="/research/cayuse" title="Grants Management System">
+                        Grants Management System
+                      </a>
+                    </li>
+                                      <li class="nav__submenu-login-links-list-item">
+                      <a class="nav__submenu-link-item nav__submenu-login-links-list__link" href="https://portal.ccny.cuny.edu/depts/oit/rosterpics/" title="Visual Course Roster">
+                        Visual Course Roster
+                      </a>
+                    </li>
+                                      <li class="nav__submenu-login-links-list-item">
+                      <a class="nav__submenu-link-item nav__submenu-login-links-list__link" href="https://www.adm.ccny.cuny.edu/" title="Work Orders">
+                        Work Orders
+                      </a>
+                    </li>
+                                      <li class="nav__submenu-login-links-list-item">
+                      <a class="nav__submenu-link-item nav__submenu-login-links-list__link" href="https://portal.ccny.cuny.edu/depts/hr/timesheet/signin.php" title="Employee Timesheets">
+                        Employee Timesheets
+                      </a>
+                    </li>
+                                    </ul>
+                              </div>
+                            <div class="nav__submenu-inner">
+                                                    <h4 class="nav__submenu-title">Students</h4>
+                                                                    <ul>
+                                      <li class="nav__submenu-login-links-list-item">
+                      <a class="nav__submenu-link-item nav__submenu-login-links-list__link" href="https://citymail.ccny.cuny.edu/" title="Student E-Mail">
+                        Student E-Mail
+                      </a>
+                    </li>
+                                      <li class="nav__submenu-login-links-list-item">
+                      <a class="nav__submenu-link-item nav__submenu-login-links-list__link" href="https://reset.ccny.cuny.edu/" title="Password Reset">
+                        Password Reset
+                      </a>
+                    </li>
+                                      <li class="nav__submenu-login-links-list-item">
+                      <a class="nav__submenu-link-item nav__submenu-login-links-list__link" href="https://cunyccny.askadmissions.net/Vip/Default.aspx" title="MyCity">
+                        MyCity
+                      </a>
+                    </li>
+                                      <li class="nav__submenu-login-links-list-item">
+                      <a class="nav__submenu-link-item nav__submenu-login-links-list__link" href="https://ssologin.cuny.edu/cuny.html?resource_url=https%3A//degreeworks.cuny.edu%252F" title="Degreeworks / FACTS">
+                        Degreeworks / FACTS
+                      </a>
+                    </li>
+                                      <li class="nav__submenu-login-links-list-item">
+                      <a class="nav__submenu-link-item nav__submenu-login-links-list__link" href="https://epermit.cuny.edu/" title="E-Permit">
+                        E-Permit
+                      </a>
+                    </li>
+                                      <li class="nav__submenu-login-links-list-item">
+                      <a class="nav__submenu-link-item nav__submenu-login-links-list__link" href="http://central.ccny.cuny.edu" title="City Central">
+                        City Central
+                      </a>
+                    </li>
+                                      <li class="nav__submenu-login-links-list-item">
+                      <a class="nav__submenu-link-item nav__submenu-login-links-list__link" href="https://bbhosted.cuny.edu" title="Blackboard">
+                        Blackboard
+                      </a>
+                    </li>
+                                    </ul>
+                              </div>
+                                    </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav__search-icon-container" tabindex="0">
+      <img src="/themes/custom/ccny_theme/dist/assets/search.svg" class="nav__search-icon" alt="Search Icon" title="Search Icon" />
+      <span class="nav__search-label">search</span>
+    </div>
+    <a href="/" class="nav__title">
+      <img src="/themes/custom/ccny_theme/dist/assets/logo-mobile.svg" alt="CCNY logo" title="CCNY Logo" />
+    </a>
+    <div class="nav__menu-icon-container">
+      <img src="/themes/custom/ccny_theme/dist/assets/hamburger.svg" class="nav__menu-icon" alt="Menu Icon" title="Menu Icon" />
+      <span class="nav__menu-label">menu</span>
+    </div>
+    <button class="nav__mobile-close-button">
+      <img src="/themes/custom/ccny_theme/dist/assets/close-icon--white.svg" alt="Close" title="Close" />
+      Close
+    </button>
+  </nav>
+</div>
+
+  <div class="nav-wrapper full-width">
+  <div class="nav__submenu-container--desktop inner-container">
+                <div class="nav__submenu" data-target="About">
+                  <div class="nav__submenu-inner">
+                        <h4 class="nav__submenu-title">The College</h4>
+                        <ul>
+                              <li><a href="/node/2474" class="nav__submenu-link-item" title="Overview">Overview</a></li>
+                              <li><a href="/about/mission" class="nav__submenu-link-item" title="Mission, Vision &amp; History">Mission, Vision &amp; History</a></li>
+                              <li><a href="/giving" class="nav__submenu-link-item" title="Giving">Giving</a></li>
+                              <li><a href="/about/offices-services" class="nav__submenu-link-item" title="Offices and Services">Offices and Services</a></li>
+                              <li><a href="/about/administration" class="nav__submenu-link-item" title="Administration">Administration</a></li>
+                              <li><a href="/about/policies" class="nav__submenu-link-item" title="City College and CUNY Policies">City College and CUNY Policies</a></li>
+                              <li><a href="/people" class="nav__submenu-link-item" title="Directory">Directory</a></li>
+                          </ul>
+          </div>
+                  <div class="nav__submenu-inner">
+                        <h4 class="nav__submenu-title">The Campus</h4>
+                        <ul>
+                              <li><a href="/about/campusmap" class="nav__submenu-link-item" title="Campus Map &amp; Directions">Campus Map &amp; Directions</a></li>
+                              <li><a href="/news/ccny-in-the-news" class="nav__submenu-link-item" title="CCNY in the News">CCNY in the News</a></li>
+                              <li><a href="/about/gettingthere" class="nav__submenu-link-item" title="Shuttle Bus Service">Shuttle Bus Service</a></li>
+                              <li><a href="https://www.ccny.cuny.edu/communications/media-kit" class="nav__submenu-link-item" title="Media Kit">Media Kit</a></li>
+                              <li><a href="/admissions/campus-tours" class="nav__submenu-link-item" title="Schedule a Tour">Schedule a Tour</a></li>
+                          </ul>
+          </div>
+                <button class="nav__submenu-close-button">
+          <img src="/themes/custom/ccny_theme/dist/assets/close-icon.svg" alt="Close Submenu" title="Close Submenu" />
+        </button>
+      </div>
+                      <div class="nav__submenu" data-target="Academics">
+                  <div class="nav__submenu-inner">
+                        <h4 class="nav__submenu-title">Schools &amp; Divisions</h4>
+                        <ul>
+                              <li><a href="/node/2525" class="nav__submenu-link-item" title="The Bernard and Anne Spitzer School of Architecture">The Bernard and Anne Spitzer School of Architecture</a></li>
+                              <li><a href="/node/1170" class="nav__submenu-link-item" title="CUNY School of Medicine">CUNY School of Medicine</a></li>
+                              <li><a href="/node/2361" class="nav__submenu-link-item" title="Colin Powell School for Civic and Global Leadership">Colin Powell School for Civic and Global Leadership</a></li>
+                              <li><a href="/node/2300" class="nav__submenu-link-item" title="School of Education">School of Education</a></li>
+                              <li><a href="/node/2136" class="nav__submenu-link-item" title="The Grove School of Engineering">The Grove School of Engineering</a></li>
+                              <li><a href="/node/2120" class="nav__submenu-link-item" title="Division of Humanities and the Arts">Division of Humanities and the Arts</a></li>
+                              <li><a href="/node/2336" class="nav__submenu-link-item" title="Division of Interdisciplinary Studies at Center for Worker Education (CWE)">Division of Interdisciplinary Studies at Center for Worker Education (CWE)</a></li>
+                              <li><a href="/node/1205" class="nav__submenu-link-item" title="Division of Science">Division of Science</a></li>
+                          </ul>
+          </div>
+                  <div class="nav__submenu-inner">
+                        <h4 class="nav__submenu-title">Lifetime &amp; Experiential Learning</h4>
+                        <ul>
+                              <li><a href="/admissions/gradstep-1choosingprogram" class="nav__submenu-link-item" title="Graduate Studies Overview">Graduate Studies Overview</a></li>
+                              <li><a href="/node/2344" class="nav__submenu-link-item" title="Continuing &amp; Professional Studies">Continuing &amp; Professional Studies</a></li>
+                              <li><a href="/studyabroad" class="nav__submenu-link-item" title="International Studies &amp; Study Abroad">International Studies &amp; Study Abroad</a></li>
+                              <li><a href="/cwe/quest-a-lifetime-of-learning" class="nav__submenu-link-item" title="Quest: Lifelong Learning">Quest: Lifelong Learning</a></li>
+                          </ul>
+          </div>
+                  <div class="nav__submenu-inner">
+                        <h4 class="nav__submenu-title">Academic Planning</h4>
+                        <ul>
+                              <li><a href="/registrar" class="nav__submenu-link-item" title="Registrar">Registrar</a></li>
+                              <li><a href="/academics/areas-of-study" class="nav__submenu-link-item" title="Areas of Study">Areas of Study</a></li>
+                              <li><a href="/gened/general-education" class="nav__submenu-link-item" title="General Education Curriculum">General Education Curriculum</a></li>
+                              <li><a href="https://www.ccny.cuny.edu/registrar/academic-calendar" class="nav__submenu-link-item" title="Academic Calendar">Academic Calendar</a></li>
+                              <li><a href="/library" class="nav__submenu-link-item" title="Library">Library</a></li>
+                              <li><a href="/registrar/bulletins" class="nav__submenu-link-item" title="Courses / Bulletins">Courses / Bulletins</a></li>
+                              <li><a href="/academicaffairs" class="nav__submenu-link-item" title="Academic Affairs">Academic Affairs</a></li>
+                          </ul>
+          </div>
+                <button class="nav__submenu-close-button">
+          <img src="/themes/custom/ccny_theme/dist/assets/close-icon.svg" alt="Close Submenu" title="Close Submenu" />
+        </button>
+      </div>
+                      <div class="nav__submenu" data-target="Admissions">
+                  <div class="nav__submenu-inner">
+                        <h4 class="nav__submenu-title">Information For</h4>
+                        <ul>
+                              <li><a href="https://www.ccny.cuny.edu/admissions" class="nav__submenu-link-item" title="Admissions Overview">Admissions Overview</a></li>
+                              <li><a href="/admissions/freshman-students" class="nav__submenu-link-item" title="Freshman Students">Freshman Students</a></li>
+                              <li><a href="/admissions/transfer-students" class="nav__submenu-link-item" title="Transfer/Second Degree Students">Transfer/Second Degree Students</a></li>
+                              <li><a href="/admissions/graduate-studies" class="nav__submenu-link-item" title="Graduate Students">Graduate Students</a></li>
+                              <li><a href="/admissions/returning-college" class="nav__submenu-link-item" title="Returning to College">Returning to College</a></li>
+                              <li><a href="/admissions/non-degreevisiting-studentsseniors" class="nav__submenu-link-item" title="Visiting Students/Non-Degree">Visiting Students/Non-Degree</a></li>
+                              <li><a href="/cps" class="nav__submenu-link-item" title="Continuing Education">Continuing Education</a></li>
+                          </ul>
+          </div>
+                  <div class="nav__submenu-inner">
+                        <h4 class="nav__submenu-title">Explore</h4>
+                        <ul>
+                              <li><a href="/admissions/explore-ccny" class="nav__submenu-link-item" title="Explore CCNY">Explore CCNY</a></li>
+                              <li><a href="/academics/areas-of-study" class="nav__submenu-link-item" title="Areas of Study">Areas of Study</a></li>
+                              <li><a href="https://cunyccny.askadmissions.net/Vip/Default.aspx" class="nav__submenu-link-item" title="MyCity VIP Portal">MyCity VIP Portal</a></li>
+                          </ul>
+          </div>
+                  <div class="nav__submenu-inner">
+                        <h4 class="nav__submenu-title">Visit Our Campus</h4>
+                        <ul>
+                              <li><a href="/admissions/campus-tours" class="nav__submenu-link-item" title="Campus Tours">Campus Tours</a></li>
+                              <li><a href="/admissions/information-sessions" class="nav__submenu-link-item" title="Information Sessions">Information Sessions</a></li>
+                              <li><a href="/admissions/voh" class="nav__submenu-link-item" title="Virtual Open House">Virtual Open House</a></li>
+                          </ul>
+          </div>
+                  <div class="nav__submenu-inner">
+                        <h4 class="nav__submenu-title">Related Links</h4>
+                        <ul>
+                              <li><a href="/financialaid" class="nav__submenu-link-item" title="Financial Aid">Financial Aid</a></li>
+                              <li><a href="/bursar/tuition-and-fee-information" class="nav__submenu-link-item" title="Tuition and Fees">Tuition and Fees</a></li>
+                              <li><a href="http://ccnytowers.com/" class="nav__submenu-link-item" title="Campus Housing">Campus Housing</a></li>
+                              <li><a href="/node/841" class="nav__submenu-link-item" title="Veterans">Veterans</a></li>
+                              <li><a href="/isss" class="nav__submenu-link-item" title="International Students">International Students</a></li>
+                              <li><a href="/honors" class="nav__submenu-link-item" title="Honors Programs">Honors Programs</a></li>
+                          </ul>
+          </div>
+                <button class="nav__submenu-close-button">
+          <img src="/themes/custom/ccny_theme/dist/assets/close-icon.svg" alt="Close Submenu" title="Close Submenu" />
+        </button>
+      </div>
+                      <div class="nav__submenu" data-target="Student Affairs">
+                  <div class="nav__submenu-inner">
+                        <h4 class="nav__submenu-title">Campus Life</h4>
+                        <ul>
+                              <li><a href="/studentlife" class="nav__submenu-link-item" title="Student Life">Student Life</a></li>
+                              <li><a href="http://www.ccnyathletics.com/" class="nav__submenu-link-item" title="Athletics">Athletics</a></li>
+                              <li><a href="/node/2458" class="nav__submenu-link-item" title="Activities">Activities</a></li>
+                              <li><a href="/towers" class="nav__submenu-link-item" title="Student Housing">Student Housing</a></li>
+                          </ul>
+          </div>
+                  <div class="nav__submenu-inner">
+                        <h4 class="nav__submenu-title">Student Services</h4>
+                        <ul>
+                              <li><a href="/studentaffairs" class="nav__submenu-link-item" title="Student Affairs">Student Affairs</a></li>
+                              <li><a href="/health-wellness" class="nav__submenu-link-item" title="Health &amp; Wellness">Health &amp; Wellness</a></li>
+                              <li><a href="/node/2460" class="nav__submenu-link-item" title="The AccessAbility Center/Student Disability Services">The AccessAbility Center/Student Disability Services</a></li>
+                              <li><a href="https://www.ccny.cuny.edu/health-and-safety-services" class="nav__submenu-link-item" title="Safety Services">Safety Services</a></li>
+                          </ul>
+          </div>
+                <button class="nav__submenu-close-button">
+          <img src="/themes/custom/ccny_theme/dist/assets/close-icon.svg" alt="Close Submenu" title="Close Submenu" />
+        </button>
+      </div>
+                      <div class="nav__submenu" data-target="Research">
+                  <div class="nav__submenu-inner">
+                        <h4 class="nav__submenu-title">Research Overview</h4>
+                        <ul>
+                              <li><a href="/research" class="nav__submenu-link-item" title="Research Overview">Research Overview</a></li>
+                              <li><a href="/research/rce" class="nav__submenu-link-item" title="Research Compliance &amp; Ethics">Research Compliance &amp; Ethics</a></li>
+                              <li><a href="/research/centersandinstitutes" class="nav__submenu-link-item" title="Centers and Institutes">Centers and Institutes</a></li>
+                              <li><a href="/research/gsp" class="nav__submenu-link-item" title="Grants &amp; Sponsored Programs">Grants &amp; Sponsored Programs</a></li>
+                              <li><a href="/library" class="nav__submenu-link-item" title="Library">Library</a></li>
+                              <li><a href="/research/research-reopening" class="nav__submenu-link-item" title="Research Reopening">Research Reopening</a></li>
+                              <li><a href="/research/research-seminars-2020-2021" class="nav__submenu-link-item" title="Research Seminars">Research Seminars</a></li>
+                          </ul>
+          </div>
+                  <div class="nav__submenu-inner">
+                        <h4 class="nav__submenu-title">Faculty Expert List</h4>
+                        <ul>
+                              <li><a href="/iac/experts-list" class="nav__submenu-link-item" title="By Area of Expertise">By Area of Expertise</a></li>
+                              <li><a href="/people" class="nav__submenu-link-item" title="View All Faculty &amp; Staff">View All Faculty &amp; Staff</a></li>
+                          </ul>
+          </div>
+                <button class="nav__submenu-close-button">
+          <img src="/themes/custom/ccny_theme/dist/assets/close-icon.svg" alt="Close Submenu" title="Close Submenu" />
+        </button>
+      </div>
+          
+    <div class="nav__submenu nav__submenu-search">
+          
+
+<div class="search-bar">
+  						<script>
+			(function() {
+				var cx = '014746752855948625780:lxfo3hmicfk';
+				var gcse = document.createElement('script');
+				gcse.type = 'text/javascript';
+				gcse.async = true;
+				gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+				'//www.google.com/cse/cse.js?cx=' + cx;
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(gcse, s);
+			})();
+			</script>
+        <gcse:searchbox-only resultsUrl="/search-results" queryParameterName="search" enableAutocomplete="true"></gcse:searchbox-only>
+					<script>
+			setTimeout(function(){
+			document.getElementById("gsc-i-id1").setAttribute("aria-label","Search");
+			document.getElementById("gsc-i-id2").setAttribute("aria-label","Search");
+			}, 2000);
+		</script>
+      </div>
+        <button class="nav__submenu-close-button">
+        <img src="/themes/custom/ccny_theme/dist/assets/close-icon.svg" alt="Close Submenu" title="Close Submenu" />
+      </button>
+    </div>
+
+    <div class="nav__submenu nav__submenu-login">
+                        <div class="nav__submenu-inner">
+                        <h4 class="nav__submenu-title">CUNY Related Links</h4>
+                        <ul>
+                          <li><a href="https://home.cunyfirst.cuny.edu/oam/Portal_Login1.html" class="nav__submenu-link-item" title="CUNYfirst">CUNYfirst</a></li>
+                          <li><a href="https://cunyportal.cuny.edu/cpr/authenticate/portal_login.jsp" class="nav__submenu-link-item" title="CUNY Portal">CUNY Portal</a></li>
+                          <li><a href="https://portal.ccny.cuny.edu/depts/oit/cuny_loaner/login.php" class="nav__submenu-link-item" title="Loaner Devices">Loaner Devices</a></li>
+                        </ul>
+          </div>
+                                <div class="nav__submenu-inner">
+                        <h4 class="nav__submenu-title">Faculty &amp; Staff</h4>
+                        <ul>
+                          <li><a href="https://webmail.ccny.cuny.edu/owa/" class="nav__submenu-link-item" title="Faculty / Staff E-Mail">Faculty / Staff E-Mail</a></li>
+                          <li><a href="https://reset.ccny.cuny.edu/" class="nav__submenu-link-item" title="Password Reset">Password Reset</a></li>
+                          <li><a href="https://bbhosted.cuny.edu" class="nav__submenu-link-item" title="Blackboard">Blackboard</a></li>
+                          <li><a href="/saml/login" class="nav__submenu-link-item" title="Content Editor">Content Editor</a></li>
+                          <li><a href="/research/cayuse" class="nav__submenu-link-item" title="Grants Management System">Grants Management System</a></li>
+                          <li><a href="https://portal.ccny.cuny.edu/depts/oit/rosterpics/" class="nav__submenu-link-item" title="Visual Course Roster">Visual Course Roster</a></li>
+                          <li><a href="https://www.adm.ccny.cuny.edu/" class="nav__submenu-link-item" title="Work Orders">Work Orders</a></li>
+                          <li><a href="https://portal.ccny.cuny.edu/depts/hr/timesheet/signin.php" class="nav__submenu-link-item" title="Employee Timesheets">Employee Timesheets</a></li>
+                        </ul>
+          </div>
+                                <div class="nav__submenu-inner">
+                        <h4 class="nav__submenu-title">Students</h4>
+                        <ul>
+                          <li><a href="https://citymail.ccny.cuny.edu/" class="nav__submenu-link-item" title="Student E-Mail">Student E-Mail</a></li>
+                          <li><a href="https://reset.ccny.cuny.edu/" class="nav__submenu-link-item" title="Password Reset">Password Reset</a></li>
+                          <li><a href="https://cunyccny.askadmissions.net/Vip/Default.aspx" class="nav__submenu-link-item" title="MyCity">MyCity</a></li>
+                          <li><a href="https://ssologin.cuny.edu/cuny.html?resource_url=https%3A//degreeworks.cuny.edu%252F" class="nav__submenu-link-item" title="Degreeworks / FACTS">Degreeworks / FACTS</a></li>
+                          <li><a href="https://epermit.cuny.edu/" class="nav__submenu-link-item" title="E-Permit">E-Permit</a></li>
+                          <li><a href="http://central.ccny.cuny.edu" class="nav__submenu-link-item" title="City Central">City Central</a></li>
+                          <li><a href="https://bbhosted.cuny.edu" class="nav__submenu-link-item" title="Blackboard">Blackboard</a></li>
+                        </ul>
+          </div>
+                    <button class="nav__submenu-close-button">
+        <img src="/themes/custom/ccny_theme/dist/assets/close-icon.svg" alt="Close Submenu" title="Close Submenu" />
+      </button>
+    </div>
+  </div>
+
+  <nav class="nav nav--desktop" id="topnav">
+    <div class="nav__inner">
+      <a href="/" class="nav__title">
+        <img src="/themes/custom/ccny_theme/dist/assets/logo-desktop.svg" alt="CCNY logo" title="CCNY logo" />
+      </a>
+      <div class="nav__menu-container">
+        <div class="nav__search-and-login-container">
+          <div class="nav__search-icon-container" tabindex="0">
+            <img src="/themes/custom/ccny_theme/dist/assets/search.svg" class="nav__search-icon" alt="Search Icon" title="Search Icon" />
+            <span class="nav__search-label">search</span>
+          </div>
+          <a class="nav__login-link" href="">Login</a>
+        </div>
+        <div class="nav__menu-list-container">
+          <ul class="nav__menu-list">
+                        <li class="nav__menu-list-item">
+              <button data-url="/about" class="nav__menu-list-item-button" data-target="About" title="About">About</button>
+            </li>
+                        <li class="nav__menu-list-item">
+              <button data-url="/node/2463" class="nav__menu-list-item-button" data-target="Academics" title="Academics">Academics</button>
+            </li>
+                        <li class="nav__menu-list-item">
+              <button data-url="/node/2503" class="nav__menu-list-item-button" data-target="Admissions" title="Admissions">Admissions</button>
+            </li>
+                        <li class="nav__menu-list-item">
+              <button data-url="/node/911" class="nav__menu-list-item-button" data-target="Student Affairs" title="Student Affairs">Student Affairs</button>
+            </li>
+                        <li class="nav__menu-list-item">
+              <button data-url="/node/1230" class="nav__menu-list-item-button" data-target="Research" title="Research">Research</button>
+            </li>
+                      </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+ </div>
+
+
+
+<div class="group-menu__container" id="subsite_menu">
+	<div id="group-menu_ccny-head" style="display:none">
+	<a href="/" class="nav__title">
+        <img src="/themes/custom/ccny_theme/dist/assets/logo-desktop.svg" alt="The City College of New York" title="The City College of New York">
+    </a>
+	</div>
+  <div class="group-menu__inner inner-container">
+    	<div class="full-width subtitle">
+		<div class="inner-container">
+			<h4 class="group-menu__subtitle">CUNY School of Medicine</h4>
+		</div>
+	</div>
+  
+    <div class="group-menu__menu-container">
+          
+
+
+
+<nav class="subnav full-width" id="subnav">
+  <div class="inner-container">
+        <ul class="subnav__ul subnav__ul--top-level">
+              <li class="subnav__li subnav__li--top-level">
+          <a href="/csom" class="has-carat" title="Home">Home</a>
+                                <ul class="subnav__ul subnav__ul--second-level">
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="https://www.ccny.cuny.edu/csom/about-us" class="has-carat" title="About Us">About Us</a>
+                                                        <ul class="subnav__ul subnav__ul--third-level">
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="https://www.ccny.cuny.edu/csom/governance-plan-0" title="Governance Plan">Governance Plan</a>
+                        </li>
+                                          </ul>
+                                                    </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/mission" class="" title="Mission ">Mission </a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/deans-message" class="" title="Dean&#039;s  Message">Dean&#039;s  Message</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="https://www.ccny.cuny.edu/csom/csom-leadership-1" class="" title="CSOM Leadership">CSOM Leadership</a>
+                                                                      </li>
+                          </ul>
+                            </li>
+              <li class="subnav__li subnav__li--top-level">
+          <a href="/csom/support-us" class="" title="Support Us">Support Us</a>
+                                      </li>
+              <li class="subnav__li subnav__li--top-level">
+          <a href="https://www.ccny.cuny.edu/csom/sophie-davis-biomedical-education-program-admission" class="has-carat" title="Admissions ">Admissions </a>
+                                <ul class="subnav__ul subnav__ul--second-level">
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="https://www.ccny.cuny.edu/csom/sophie-davis-biomedical-education-program-admission" class="" title="BS/MD Program ">BS/MD Program </a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="https://www.ccny.cuny.edu/csom/apply" class="" title="BS/MD Application">BS/MD Application</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/admissions" class="has-carat" title="Pipeline Initiatives">Pipeline Initiatives</a>
+                                                        <ul class="subnav__ul subnav__ul--third-level">
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="https://www.ccny.cuny.edu/health-professions-recruitment-and-exposure-program-hprep" title="HPREP">HPREP</a>
+                        </li>
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="https://www.ccny.cuny.edu/csom/sophie-davis-health-professions-mentorship-program-hpmp" title="Sophie Davis Health Professions Mentorship Program (HPMP)">Sophie Davis Health Professions Mentorship Program (HPMP)</a>
+                        </li>
+                                          </ul>
+                                                    </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/cuny-school-medicine" class="has-carat" title="Curriculum Overview">Curriculum Overview</a>
+                                                        <ul class="subnav__ul subnav__ul--third-level">
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="/csom/competencies" title="Competencies">Competencies</a>
+                        </li>
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="https://www.ccny.cuny.edu/sites/default/files/2020-01/CurriuclumMap2019%20updatesv2.pdf" title="Curriculum Map ">Curriculum Map </a>
+                        </li>
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="https://www.ccny.cuny.edu/csom/bachelor-science-curriculum" title="BS Curriculum">BS Curriculum</a>
+                        </li>
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="https://www.ccny.cuny.edu/csom/medical-school-curriculum" title="MD Curriculum">MD Curriculum</a>
+                        </li>
+                                          </ul>
+                                                    </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="https://ccny.zoom.us/meeting/register/tZYsd-uhqDouHNJSUAiCl8QqL5er_PEAfmuU" class="" title="Open House Registration ">Open House Registration </a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/technical-standards-3" class="" title="Technical Standards Policy">Technical Standards Policy</a>
+                                                                      </li>
+                          </ul>
+                            </li>
+              <li class="subnav__li subnav__li--top-level">
+          <a href="/csom/physician-assistant-program" class="has-carat" title="PA PROGRAM">PA PROGRAM</a>
+                                <ul class="subnav__ul subnav__ul--second-level">
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/history-and-mission#overlay-context=csom" class="" title="History and Mission">History and Mission</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/pa-program-goals#overlay-context=csom" class="" title="PA Program Goals &amp; Achievements">PA Program Goals &amp; Achievements</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/curriculum-of-physician-assistant-program" class="" title="Curriculum">Curriculum</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/pa-pipeline" class="" title="PA Pipeline">PA Pipeline</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/pa-program-admissions-procedure" class="" title="PA Program Admissions Procedure">PA Program Admissions Procedure</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/application-and-materials" class="" title="Application">Application</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/caspa" class="" title="CASPA">CASPA</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="https://www.ccny.cuny.edu/csom/pa-program-standards-capacity" class="" title="Technical Standards">Technical Standards</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/foreign-medical-graduates" class="" title="Foreign Medical Graduates">Foreign Medical Graduates</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/pa-program-requirements" class="" title="Prerequisites &amp; Requirements">Prerequisites &amp; Requirements</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/pa-program-admissions" class="" title="P.A. Program Admission ">P.A. Program Admission </a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/pa-program-tuition-and-fees" class="" title="Tuition &amp; Fees">Tuition &amp; Fees</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/frequently-asked-questions-0" class="" title="Frequently Asked Questions">Frequently Asked Questions</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/accreditation-and-credentials" class="" title="Accreditation and Credentials">Accreditation and Credentials</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/paprogramfacultyand-staff" class="" title="Faculty and Staff">Faculty and Staff</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/criminal-background-checks-and-drug-testing" class="" title="Criminal Background Checks and Drug Testing">Criminal Background Checks and Drug Testing</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/cuny-school-medicine-physician-assistant-program" class="" title="Student Society">Student Society</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="https://www.ccny.cuny.edu/sites/default/files/2021-06/PA%20ProgramReport6.9.2021.pdf" class="" title="NCCPA Pass Rate">NCCPA Pass Rate</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/physician-assistant-program-manuals" class="" title="Student Manuals">Student Manuals</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="https://www.ccny.cuny.edu/csom/attrition" class="" title="Attrition ">Attrition </a>
+                                                                      </li>
+                          </ul>
+                            </li>
+              <li class="subnav__li subnav__li--top-level">
+          <a href="/nolink" class="has-carat" title="STUDENTS">STUDENTS</a>
+                                <ul class="subnav__ul subnav__ul--second-level">
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/faculty-and-student-handbook" class="" title="Student Handbook ">Student Handbook </a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/cuny-school-medicine-office-registrar" class="has-carat" title="The CUNY School of Medicine | Office of Registrar">The CUNY School of Medicine | Office of Registrar</a>
+                                                        <ul class="subnav__ul subnav__ul--third-level">
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="/csom/competencies" title="Competencies">Competencies</a>
+                        </li>
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="/csom/maintenance-matriculation-0" title="Maintenance of Matriculation - PA Program ">Maintenance of Matriculation - PA Program </a>
+                        </li>
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="/csom/student-rights-concerning-education-records-0" title="Students Rights (FERPA)">Students Rights (FERPA)</a>
+                        </li>
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="/csom/student-request-forms" title="Student Request Forms">Student Request Forms</a>
+                        </li>
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="https://www.cuny.edu/about/administration/offices/registrar/transcripts/" title="Transcript  Request ">Transcript  Request </a>
+                        </li>
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="https://www.ccny.cuny.edu/csom/academic-calendars" title="CSOM Acad Calendar">CSOM Acad Calendar</a>
+                        </li>
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="/csom/registration-information" title="Registration Information">Registration Information</a>
+                        </li>
+                                          </ul>
+                                                    </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="https://www.ccny.cuny.edu/csom/financial-aid-0" class="has-carat" title="The CUNY School of Medicine |Office of  Financial Aid">The CUNY School of Medicine |Office of  Financial Aid</a>
+                                                        <ul class="subnav__ul subnav__ul--third-level">
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="/csom/cost-attendance" title="Cost of Attendance">Cost of Attendance</a>
+                        </li>
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="/csom/scholarships" title="Scholarships">Scholarships</a>
+                        </li>
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="/csom/forms" title="Forms">Forms</a>
+                        </li>
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="/csom/other-resources" title="Other Resources">Other Resources</a>
+                        </li>
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="https://www.ccny.cuny.edu/financial-aid-podcast" title="Financial Aid Podcast">Financial Aid Podcast</a>
+                        </li>
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="/csom/federal-finance-options-0" title="Federal Finance Options">Federal Finance Options</a>
+                        </li>
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="/csom/newsletter-0" title="Newsletter">Newsletter</a>
+                        </li>
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="https://www.ccny.cuny.edu/csom/best-ways-contact-us" title="Best Ways to Contact Us">Best Ways to Contact Us</a>
+                        </li>
+                                          </ul>
+                                                    </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="https://www.ccny.cuny.edu/csom/affairs" class="has-carat" title="Student Affairs">Student Affairs</a>
+                                                        <ul class="subnav__ul subnav__ul--third-level">
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="/csom/life" title="Student Life">Student Life</a>
+                        </li>
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="https://www.ccny.cuny.edu/csom/career-advising" title="Career Advising ">Career Advising </a>
+                        </li>
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="/csom/mistreatment-policy" title="Mistreatment Reporting ">Mistreatment Reporting </a>
+                        </li>
+                                          </ul>
+                                                    </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="https://www.ccny.cuny.edu/sites/default/files/2021-09/Counseling%20brochure%202021.pdf" class="" title="Counseling Office ">Counseling Office </a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/2021-graduate-medical-education-residency-placements" class="" title="Residency Placements">Residency Placements</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="" class="has-carat" title="AccessAbility Center ">AccessAbility Center </a>
+                                                        <ul class="subnav__ul subnav__ul--third-level">
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="/csom/accessability-centerstudent-disability-services" title="AccessAbility ">AccessAbility </a>
+                        </li>
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="/csom/procedure-obtaining-clinical-accommodations" title="Procedure for obtaining clinical accommodations">Procedure for obtaining clinical accommodations</a>
+                        </li>
+                                          </ul>
+                                                    </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="https://www.ccny.cuny.edu/csom/lrc-0" class="" title="LRC ">LRC </a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="https://sophiedavis.libguides.com/medicallibrary" class="" title="CSOM Medical Library">CSOM Medical Library</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/policies" class="" title="Policies">Policies</a>
+                                                                      </li>
+                          </ul>
+                            </li>
+              <li class="subnav__li subnav__li--top-level">
+          <a href="/csom/office-research-0" class="has-carat" title="Research ">Research </a>
+                                <ul class="subnav__ul subnav__ul--second-level">
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="https://www.ccny.cuny.edu/research/research-reopening" class="" title="Research Reopening ">Research Reopening </a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="https://www.ccny.cuny.edu/cuny-wide-funding-opportunities" class="" title="Funding Opportunities">Funding Opportunities</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="https://www.ccny.cuny.edu/csom/whats-new" class="" title="What&#039;s New">What&#039;s New</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="https://www.ccny.cuny.edu/csom/resources" class="" title="Resources">Resources</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="https://www.ccny.cuny.edu/csom/medical-student-research-opportunities" class="" title="Student Research Opportunities">Student Research Opportunities</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="https://www.gc.cuny.edu/Page-Elements/Academics-Research-Centers-Initiatives/Doctoral-Programs/Biology" class="" title="Graduate Student Forum">Graduate Student Forum</a>
+                                                                      </li>
+                          </ul>
+                            </li>
+              <li class="subnav__li subnav__li--top-level">
+          <a href="" class="has-carat" title="FACULTY &amp; STAFF">FACULTY &amp; STAFF</a>
+                                <ul class="subnav__ul subnav__ul--second-level">
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/sites/default/files/csom/upload/CSOMFacultyHandbook_rev11-01-2018.pdf" class="" title="Faculty Handbook">Faculty Handbook</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/people/270" class="" title="Profiles - Faculty &amp; Staff">Profiles - Faculty &amp; Staff</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="https://www.ccny.cuny.edu/csom/deptsandoffices" class="" title="Departments &amp; Offices">Departments &amp; Offices</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="http://www.adm.ccny.cuny.edu/V2/Directory/Default.cfm" class="" title="Directory">Directory</a>
+                                                                      </li>
+                          </ul>
+                            </li>
+              <li class="subnav__li subnav__li--top-level">
+          <a href="/csom/news" class="has-carat" title="News &amp; Events">News &amp; Events</a>
+                                <ul class="subnav__ul subnav__ul--second-level">
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="/csom/events" class="" title="CSOM Calendar">CSOM Calendar</a>
+                                                                      </li>
+                              <li class="subnav__li subnav__li--second-level">
+                  <a href="https://www.ccny.cuny.edu/csom/remote-match-day-celebration" class="has-carat" title="CSOM News ">CSOM News </a>
+                                                        <ul class="subnav__ul subnav__ul--third-level">
+                                              <li class="subnav__li subnav__li--third-level">
+                          <a href="/csom/sophies-corner" title="Sophie&#039;s Corner">Sophie&#039;s Corner</a>
+                        </li>
+                                          </ul>
+                                                    </li>
+                          </ul>
+                            </li>
+          </ul>
+      </div>
+</nav>
+
+<div class="subnav-wrapper--mobile full-width" id="subnavmobile">
+  <nav class="nav subnav--mobile nav--mobile">
+    <div class="nav__side-menu-container sticky">
+      <div class="nav__side-menu-title-container">
+                <h4 class="nav__submenu-title--main nav__submenu-title">
+          CUNY School of Medicine
+        </h4>
+              </div>
+      <div class="nav__submenu-items">
+                            <div class="nav__submenu" data-target="Home">
+            <div class="nav__submenu-title-container">
+                            <h4 class="nav__submenu-title right-border">
+                                  <a href="/csom" title="Home">Home</a>
+                              </h4>
+                                                        <div class="nav__submenu-expand-dots" data-target="1" data-url="/csom">
+                <img src="/themes/custom/ccny_theme/dist/assets/ellipsis.svg" alt="Ellipsis" title="Ellipsis" />
+              </div>
+                          </div>
+          </div>
+                      <div class="nav__submenu-inner-container" data-menu-id="1">
+                        <h4 class="nav__submenu-title">
+              Home
+            </h4>
+                        <button class="nav__submenu-back-button" data-target="1" title="Back">< Back</button>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="https://www.ccny.cuny.edu/csom/about-us" title="About Us">About Us</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                                  <a href="https://www.ccny.cuny.edu/csom/governance-plan-0" class="nav__submenu-link-item" title="Governance Plan">Governance Plan</a>
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/mission" title="Mission ">Mission </a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/deans-message" title="Dean&#039;s  Message">Dean&#039;s  Message</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="https://www.ccny.cuny.edu/csom/csom-leadership-1" title="CSOM Leadership">CSOM Leadership</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                          </div>
+                                      <div class="nav__submenu" data-target="Support Us">
+            <div class="nav__submenu-title-container">
+                            <h4 class="nav__submenu-title">
+                                  <a href="/csom/support-us" title="Support Us">Support Us</a>
+                              </h4>
+                                                      </div>
+          </div>
+                                      <div class="nav__submenu" data-target="Admissions ">
+            <div class="nav__submenu-title-container">
+                            <h4 class="nav__submenu-title right-border">
+                                  <a href="https://www.ccny.cuny.edu/csom/sophie-davis-biomedical-education-program-admission" title="Admissions ">Admissions </a>
+                              </h4>
+                                                        <div class="nav__submenu-expand-dots" data-target="3" data-url="https://www.ccny.cuny.edu/csom/sophie-davis-biomedical-education-program-admission">
+                <img src="/themes/custom/ccny_theme/dist/assets/ellipsis.svg" alt="Ellipsis" title="Ellipsis" />
+              </div>
+                          </div>
+          </div>
+                      <div class="nav__submenu-inner-container" data-menu-id="3">
+                        <h4 class="nav__submenu-title">
+              Admissions 
+            </h4>
+                        <button class="nav__submenu-back-button" data-target="3" title="Back">< Back</button>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="https://www.ccny.cuny.edu/csom/sophie-davis-biomedical-education-program-admission" title="BS/MD Program ">BS/MD Program </a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="https://www.ccny.cuny.edu/csom/apply" title="BS/MD Application">BS/MD Application</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/admissions" title="Pipeline Initiatives">Pipeline Initiatives</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                                  <a href="https://www.ccny.cuny.edu/health-professions-recruitment-and-exposure-program-hprep" class="nav__submenu-link-item" title="HPREP">HPREP</a>
+                                  <a href="https://www.ccny.cuny.edu/csom/sophie-davis-health-professions-mentorship-program-hpmp" class="nav__submenu-link-item" title="Sophie Davis Health Professions Mentorship Program (HPMP)">Sophie Davis Health Professions Mentorship Program (HPMP)</a>
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/cuny-school-medicine" title="Curriculum Overview">Curriculum Overview</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                                  <a href="/csom/competencies" class="nav__submenu-link-item" title="Competencies">Competencies</a>
+                                  <a href="https://www.ccny.cuny.edu/sites/default/files/2020-01/CurriuclumMap2019%20updatesv2.pdf" class="nav__submenu-link-item" title="Curriculum Map ">Curriculum Map </a>
+                                  <a href="https://www.ccny.cuny.edu/csom/bachelor-science-curriculum" class="nav__submenu-link-item" title="BS Curriculum">BS Curriculum</a>
+                                  <a href="https://www.ccny.cuny.edu/csom/medical-school-curriculum" class="nav__submenu-link-item" title="MD Curriculum">MD Curriculum</a>
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="https://ccny.zoom.us/meeting/register/tZYsd-uhqDouHNJSUAiCl8QqL5er_PEAfmuU" title="Open House Registration ">Open House Registration </a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/technical-standards-3" title="Technical Standards Policy">Technical Standards Policy</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                          </div>
+                                      <div class="nav__submenu" data-target="PA PROGRAM">
+            <div class="nav__submenu-title-container">
+                            <h4 class="nav__submenu-title right-border">
+                                  <a href="/csom/physician-assistant-program" title="PA PROGRAM">PA PROGRAM</a>
+                              </h4>
+                                                        <div class="nav__submenu-expand-dots" data-target="4" data-url="/csom/physician-assistant-program">
+                <img src="/themes/custom/ccny_theme/dist/assets/ellipsis.svg" alt="Ellipsis" title="Ellipsis" />
+              </div>
+                          </div>
+          </div>
+                      <div class="nav__submenu-inner-container" data-menu-id="4">
+                        <h4 class="nav__submenu-title">
+              PA PROGRAM
+            </h4>
+                        <button class="nav__submenu-back-button" data-target="4" title="Back">< Back</button>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/history-and-mission#overlay-context=csom" title="History and Mission">History and Mission</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/pa-program-goals#overlay-context=csom" title="PA Program Goals &amp; Achievements">PA Program Goals &amp; Achievements</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/curriculum-of-physician-assistant-program" title="Curriculum">Curriculum</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/pa-pipeline" title="PA Pipeline">PA Pipeline</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/pa-program-admissions-procedure" title="PA Program Admissions Procedure">PA Program Admissions Procedure</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/application-and-materials" title="Application">Application</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/caspa" title="CASPA">CASPA</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="https://www.ccny.cuny.edu/csom/pa-program-standards-capacity" title="Technical Standards">Technical Standards</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/foreign-medical-graduates" title="Foreign Medical Graduates">Foreign Medical Graduates</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/pa-program-requirements" title="Prerequisites &amp; Requirements">Prerequisites &amp; Requirements</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/pa-program-admissions" title="P.A. Program Admission ">P.A. Program Admission </a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/pa-program-tuition-and-fees" title="Tuition &amp; Fees">Tuition &amp; Fees</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/frequently-asked-questions-0" title="Frequently Asked Questions">Frequently Asked Questions</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/accreditation-and-credentials" title="Accreditation and Credentials">Accreditation and Credentials</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/paprogramfacultyand-staff" title="Faculty and Staff">Faculty and Staff</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/criminal-background-checks-and-drug-testing" title="Criminal Background Checks and Drug Testing">Criminal Background Checks and Drug Testing</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/cuny-school-medicine-physician-assistant-program" title="Student Society">Student Society</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="https://www.ccny.cuny.edu/sites/default/files/2021-06/PA%20ProgramReport6.9.2021.pdf" title="NCCPA Pass Rate">NCCPA Pass Rate</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/physician-assistant-program-manuals" title="Student Manuals">Student Manuals</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="https://www.ccny.cuny.edu/csom/attrition" title="Attrition ">Attrition </a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                          </div>
+                                      <div class="nav__submenu" data-target="STUDENTS">
+            <div class="nav__submenu-title-container">
+                            <h4 class="nav__submenu-title right-border">
+                                  <a href="/nolink" title="STUDENTS">STUDENTS</a>
+                              </h4>
+                                                        <div class="nav__submenu-expand-dots" data-target="5" data-url="/nolink">
+                <img src="/themes/custom/ccny_theme/dist/assets/ellipsis.svg" alt="Ellipsis" title="Ellipsis" />
+              </div>
+                          </div>
+          </div>
+                      <div class="nav__submenu-inner-container" data-menu-id="5">
+                        <h4 class="nav__submenu-title">
+              STUDENTS
+            </h4>
+                        <button class="nav__submenu-back-button" data-target="5" title="Back">< Back</button>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/faculty-and-student-handbook" title="Student Handbook ">Student Handbook </a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/cuny-school-medicine-office-registrar" title="The CUNY School of Medicine | Office of Registrar">The CUNY School of Medicine | Office of Registrar</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                                  <a href="/csom/competencies" class="nav__submenu-link-item" title="Competencies">Competencies</a>
+                                  <a href="/csom/maintenance-matriculation-0" class="nav__submenu-link-item" title="Maintenance of Matriculation - PA Program ">Maintenance of Matriculation - PA Program </a>
+                                  <a href="/csom/student-rights-concerning-education-records-0" class="nav__submenu-link-item" title="Students Rights (FERPA)">Students Rights (FERPA)</a>
+                                  <a href="/csom/student-request-forms" class="nav__submenu-link-item" title="Student Request Forms">Student Request Forms</a>
+                                  <a href="https://www.cuny.edu/about/administration/offices/registrar/transcripts/" class="nav__submenu-link-item" title="Transcript  Request ">Transcript  Request </a>
+                                  <a href="https://www.ccny.cuny.edu/csom/academic-calendars" class="nav__submenu-link-item" title="CSOM Acad Calendar">CSOM Acad Calendar</a>
+                                  <a href="/csom/registration-information" class="nav__submenu-link-item" title="Registration Information">Registration Information</a>
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="https://www.ccny.cuny.edu/csom/financial-aid-0" title="The CUNY School of Medicine |Office of  Financial Aid">The CUNY School of Medicine |Office of  Financial Aid</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                                  <a href="/csom/cost-attendance" class="nav__submenu-link-item" title="Cost of Attendance">Cost of Attendance</a>
+                                  <a href="/csom/scholarships" class="nav__submenu-link-item" title="Scholarships">Scholarships</a>
+                                  <a href="/csom/forms" class="nav__submenu-link-item" title="Forms">Forms</a>
+                                  <a href="/csom/other-resources" class="nav__submenu-link-item" title="Other Resources">Other Resources</a>
+                                  <a href="https://www.ccny.cuny.edu/financial-aid-podcast" class="nav__submenu-link-item" title="Financial Aid Podcast">Financial Aid Podcast</a>
+                                  <a href="/csom/federal-finance-options-0" class="nav__submenu-link-item" title="Federal Finance Options">Federal Finance Options</a>
+                                  <a href="/csom/newsletter-0" class="nav__submenu-link-item" title="Newsletter">Newsletter</a>
+                                  <a href="https://www.ccny.cuny.edu/csom/best-ways-contact-us" class="nav__submenu-link-item" title="Best Ways to Contact Us">Best Ways to Contact Us</a>
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="https://www.ccny.cuny.edu/csom/affairs" title="Student Affairs">Student Affairs</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                                  <a href="/csom/life" class="nav__submenu-link-item" title="Student Life">Student Life</a>
+                                  <a href="https://www.ccny.cuny.edu/csom/career-advising" class="nav__submenu-link-item" title="Career Advising ">Career Advising </a>
+                                  <a href="/csom/mistreatment-policy" class="nav__submenu-link-item" title="Mistreatment Reporting ">Mistreatment Reporting </a>
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="https://www.ccny.cuny.edu/sites/default/files/2021-09/Counseling%20brochure%202021.pdf" title="Counseling Office ">Counseling Office </a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/2021-graduate-medical-education-residency-placements" title="Residency Placements">Residency Placements</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  AccessAbility Center 
+                              </h4>
+              <div class="nav__submenu-inner">
+                                  <a href="/csom/accessability-centerstudent-disability-services" class="nav__submenu-link-item" title="AccessAbility ">AccessAbility </a>
+                                  <a href="/csom/procedure-obtaining-clinical-accommodations" class="nav__submenu-link-item" title="Procedure for obtaining clinical accommodations">Procedure for obtaining clinical accommodations</a>
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="https://www.ccny.cuny.edu/csom/lrc-0" title="LRC ">LRC </a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="https://sophiedavis.libguides.com/medicallibrary" title="CSOM Medical Library">CSOM Medical Library</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/policies" title="Policies">Policies</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                          </div>
+                                      <div class="nav__submenu" data-target="Research ">
+            <div class="nav__submenu-title-container">
+                            <h4 class="nav__submenu-title right-border">
+                                  <a href="/csom/office-research-0" title="Research ">Research </a>
+                              </h4>
+                                                        <div class="nav__submenu-expand-dots" data-target="6" data-url="/csom/office-research-0">
+                <img src="/themes/custom/ccny_theme/dist/assets/ellipsis.svg" alt="Ellipsis" title="Ellipsis" />
+              </div>
+                          </div>
+          </div>
+                      <div class="nav__submenu-inner-container" data-menu-id="6">
+                        <h4 class="nav__submenu-title">
+              Research 
+            </h4>
+                        <button class="nav__submenu-back-button" data-target="6" title="Back">< Back</button>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="https://www.ccny.cuny.edu/research/research-reopening" title="Research Reopening ">Research Reopening </a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="https://www.ccny.cuny.edu/cuny-wide-funding-opportunities" title="Funding Opportunities">Funding Opportunities</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="https://www.ccny.cuny.edu/csom/whats-new" title="What&#039;s New">What&#039;s New</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="https://www.ccny.cuny.edu/csom/resources" title="Resources">Resources</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="https://www.ccny.cuny.edu/csom/medical-student-research-opportunities" title="Student Research Opportunities">Student Research Opportunities</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="https://www.gc.cuny.edu/Page-Elements/Academics-Research-Centers-Initiatives/Doctoral-Programs/Biology" title="Graduate Student Forum">Graduate Student Forum</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                          </div>
+                                      <div class="nav__submenu" data-target="FACULTY &amp; STAFF">
+            <div class="nav__submenu-title-container">
+                            <h4 class="nav__submenu-title right-border">
+                                  FACULTY &amp; STAFF
+                              </h4>
+                                                        <div class="nav__submenu-expand-dots" data-target="7" data-url="">
+                <img src="/themes/custom/ccny_theme/dist/assets/ellipsis.svg" alt="Ellipsis" title="Ellipsis" />
+              </div>
+                          </div>
+          </div>
+                      <div class="nav__submenu-inner-container" data-menu-id="7">
+                        <h4 class="nav__submenu-title">
+              FACULTY &amp; STAFF
+            </h4>
+                        <button class="nav__submenu-back-button" data-target="7" title="Back">< Back</button>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/sites/default/files/csom/upload/CSOMFacultyHandbook_rev11-01-2018.pdf" title="Faculty Handbook">Faculty Handbook</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/people/270" title="Profiles - Faculty &amp; Staff">Profiles - Faculty &amp; Staff</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="https://www.ccny.cuny.edu/csom/deptsandoffices" title="Departments &amp; Offices">Departments &amp; Offices</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="http://www.adm.ccny.cuny.edu/V2/Directory/Default.cfm" title="Directory">Directory</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                          </div>
+                                      <div class="nav__submenu" data-target="News &amp; Events">
+            <div class="nav__submenu-title-container last">
+                            <h4 class="nav__submenu-title right-border">
+                                  <a href="/csom/news" title="News &amp; Events">News &amp; Events</a>
+                              </h4>
+                                                        <div class="nav__submenu-expand-dots" data-target="8" data-url="/csom/news">
+                <img src="/themes/custom/ccny_theme/dist/assets/ellipsis.svg" alt="Ellipsis" title="Ellipsis" />
+              </div>
+                          </div>
+          </div>
+                      <div class="nav__submenu-inner-container" data-menu-id="8">
+                        <h4 class="nav__submenu-title">
+              News &amp; Events
+            </h4>
+                        <button class="nav__submenu-back-button" data-target="8" title="Back">< Back</button>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="/csom/events" title="CSOM Calendar">CSOM Calendar</a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                              </div>
+                            <h4 class="nav__submenu-subtitle">
+                                  <a href="https://www.ccny.cuny.edu/csom/remote-match-day-celebration" title="CSOM News ">CSOM News </a>
+                              </h4>
+              <div class="nav__submenu-inner">
+                                  <a href="/csom/sophies-corner" class="nav__submenu-link-item" title="Sophie&#039;s Corner">Sophie&#039;s Corner</a>
+                              </div>
+                          </div>
+                        </div>
+    </div>
+    <div class="nav__menu-icon-container">
+      <span class="nav__menu-label">school menu</span>
+      <svg class="nav__menu-icon" viewBox="0 0 19 20" xmlns="http://www.w3.org/2000/svg"><title>menu icon</title><path d="M1.5 2h16m-16 8h16m-16 8h16" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <button class="nav__mobile-close-button">
+      <img src="/themes/custom/ccny_theme/dist/assets/close-icon--white.svg" alt="Close" title="Close" />
+      Close
+    </button>
+  </nav>
+</div>
+      </div>
+  </div>
+</div>
+
+  </div>
+
+  </header>
+
+  
+  
+
+  
+
+  
+
+  
+
+<main role="main" class="interior-page full">
+  <a id="main-content" tabindex="-1"></a>
+
+      <div class="interior-page__heading">
+          <div class="interior-page__page-title page-title-block ">
+        <h1 class="page-title">List of Departments &amp; Offices</h1>
+      </div>
+    
+        </div>
+  
+  <div class="layout-content-md__container page-container full">
+    <div class="layout-content-md">
+            <div>
+    <div data-drupal-messages-fallback class="hidden"></div><div id="block-ccny-theme-content">
+  
+    
+      
+<article role="article" about="/csom/deptsandoffices" typeof="schema:WebPage">
+  <div class="layout-content--inner__wrapper white-bg">
+    <div>
+  
+    
+        
+
+<div class="breadcrumbs">
+  <div class="breadcrumbs__inner">
+                  <span class="breadcrumbs__carat"><</span>        <a href="/" class="breadcrumbs__breadcrumb ">Home</a>
+                  <span class="breadcrumbs__slash">/</span>
+                              <a href="/csom" class="breadcrumbs__breadcrumb ">CUNY School of Medicine</a>
+                  <span class="breadcrumbs__slash">/</span>
+                              <a href="" class="breadcrumbs__breadcrumb active">List of Departments &amp; Offices</a>
+                    </div>
+</div>
+
+  </div>
+
+    <div class="layout-content--inner">
+
+      <div class="content--container--wrapper">
+
+        
+        
+                
+                          <div class="content--container__full">
+            
+
+      
+
+
+  <div class="body-paragraph paragraph">
+
+      <h3> </h3>
+
+<div data-entity-embed-display="view_mode:media.original" data-entity-id="14049" data-entity-type="media" data-entity-uuid="d81ab85a-d39c-499c-a213-ad922a006824" data-langcode="en" class="embedded-entity">
+
+
+        <img src="/sites/default/files/CCNY_CSOM_mark_left%20%28002%29_2.jpg" width="2130" height="301" typeof="foaf:Image" />
+
+
+  
+</div>
+
+
+<p class="page-title"><strong>Due to the Cornonavirus (COVID-19) outbreak the CUNY School of Medicine Faculty and Staff  are working remotely and can assist you via email. If you have questions please contact our departments below and we will get back to you as soon as possible.</strong></p>
+
+<p><u><strong>Academic Departments and Programs</strong></u></p>
+
+<p><a href="https://www.ccny.cuny.edu/csom/introtomedphydiagprog">Clinical Medicine Department</a></p>
+
+<p><a href="https://www.ccny.cuny.edu/csom/communityhealthandsocialmedicinedept">Community Health and Social Medicine Department </a></p>
+
+<p><a href="https://www.ccny.cuny.edu/sophiedavis/physicianassistantprogram">Physician Assistant Program </a></p>
+
+<p><a href="https://www.ccny.cuny.edu/csom/molcellandbiomed">Molecular, Cellular &amp; Biomedical Sciences Department </a></p>
+
+<p><a href="https://www.ccny.cuny.edu/csom/medical-education-and-academic-affairs">Medical Education &amp; Academic Affairs </a></p>
+
+<p><strong><u>CSOM Administration Offices</u></strong></p>
+
+<p><a href="https://www.ccny.cuny.edu/csom/deansofficestaff">Office of the Dean</a></p>
+
+<p><a href="https://www.ccny.cuny.edu/csom/adminofficestaff#overlay-context=csom/admissionsofficestaff">Office of Administration </a></p>
+
+<p><a href="https://www.ccny.cuny.edu/csom/admissionsofficestaff">Office of Admissions </a></p>
+
+<p><a href="https://www.ccny.cuny.edu/csom/financial-aid-0">Office of Financial Aid</a></p>
+
+<p><a href="https://www.ccny.cuny.edu/csom/office-student-affairs-staff#overlay-context=csom/bs-md-program-description">Office of Student Affairs </a></p>
+
+<p><a href="https://www.ccny.cuny.edu/csom/cuny-school-medicine-office-registrar">Office of Registrar</a></p>
+
+<p><a href="https://www.ccny.cuny.edu/csom/office-research-0">Office of Research</a></p>
+
+<p> </p>
+
+  </div>
+
+  
+          </div>
+          <div class="add-this--container__full social-share-sidebar__row">
+            
+
+
+<div class="social-share-sidebar">
+  <div class="social-share-sidebar__inner">
+    <div class="addthis_toolbox">
+    <div class="custom_images">
+      <ul class="social-share-sidebar__list">
+        <li class="social-share-sidebar__list-item">
+          <a class="addthis_button_twitter social-share-sidebar__link">
+            <img src="/themes/custom/ccny_theme/dist/assets/icon-twitter-purple-hollow.svg" width="64" height="64" border="0" alt="Share to Twitter">
+          </a>
+        </li>
+        <li class="social-share-sidebar__list-item">
+          <a class="addthis_button_facebook social-share-sidebar__link">
+            <img src="/themes/custom/ccny_theme/dist/assets/icon-facebook-purple-hollow.svg" width="64" height="64" border="0" alt="Share to Facebook">
+          </a>
+        </li>
+        <li class="social-share-sidebar__list-item">
+          <a class="addthis_button_linkedin social-share-sidebar__link">
+            <img src="/themes/custom/ccny_theme/dist/assets/icon-linkedin-purple-hollow.svg" width="64" height="64" border="0" alt="Share to LinkedIn">
+          </a>
+        </li>
+        <li class="social-share-sidebar__list-item">
+          <a class="addthis_button_email social-share-sidebar__link">
+            <img src="/themes/custom/ccny_theme/dist/assets/icon-mail-purple-hollow.svg" width="64" height="64" border="0" alt="Share to Email">
+          </a>
+        </li>
+        <li class="social-share-sidebar__list-item">
+          <a class="addthis_button_more social-share-sidebar__link">
+            <img src="/themes/custom/ccny_theme/dist/assets/icon-plus-purple-hollow.svg" width="64" height="64" border="0" alt="More...">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+    </div>
+</div>
+
+          </div>
+        
+        <div class="sub-footer--container">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+	
+						<!-- No Benny Bot -->
+		  
+</article>
+
+  </div>
+
+  </div>
+
+        </div>
+  </div>
+
+    <div class="layout-content-bottom full-width"></div>
+</main>
+
+
+      <footer role="contentinfo">
+      
+
+
+
+<footer class="footer full-width" id="footer">
+  <div class="footer__inner inner-container">
+    <div class="footer__seal-logo-and-contact-container">
+      <div class="footer__seal-and-contact-container">
+        <img src="/themes/custom/ccny_theme/dist/assets/seal.svg" title="The City College of New York" alt="The City College of New York" class="footer__seal" />
+        <div class="footer__contact-info">
+          The City College of New York<br/>
+          160 Convent Avenue New York, NY 10031<br /><br/>
+          p: <a href="tel:212.650.7000" title="212.650.700">212.650.7000</a>
+        </div>
+      </div>
+      <a href="https://www2.cuny.edu/" target="_blank">
+		<img src="/themes/custom/ccny_theme/dist/assets/footer-logo.svg" title="The City University of New York" alt="The City University of New York" class="footer__logo" />
+	  </a>
+    </div>
+
+    <div class="footer__menu-container desktop">
+                    <div class="footer__link-section">
+          <h6 class="footer__links-list-heading">Students</h6>
+          <ul class="footer__links-list">
+          <li class="footer__link-list-item">
+              <a href="" class="footer__link" title="">
+                
+              </a>
+            </li>
+		              <li class="footer__link-list-item">
+              <a href="https://citymail.ccny.cuny.edu/" class="footer__link" title="Email">
+                Email
+              </a>
+            </li>
+                      <li class="footer__link-list-item">
+              <a href="/registrar/academic-calendar" class="footer__link" title="Academic Calendar">
+                Academic Calendar
+              </a>
+            </li>
+                      <li class="footer__link-list-item">
+              <a href="https://www.ccny.cuny.edu/registrar/bulletins" class="footer__link" title="Courses - CCNY Bulletin">
+                Courses - CCNY Bulletin
+              </a>
+            </li>
+                      <li class="footer__link-list-item">
+              <a href="https://home.cunyfirst.cuny.edu/psp/cnyepprd/GUEST/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?FolderPath=PORTAL_ROOT_OBJECT.HC_CLASS_SEARCH_GBL&amp;IsFolder=false&amp;IgnoreParamTempl=FolderPath%2CIsFolder" class="footer__link" title="Courses - CUNY list">
+                Courses - CUNY list
+              </a>
+            </li>
+                      <li class="footer__link-list-item">
+              <a href="http://www2.cuny.edu/admissions/undergraduate/apply/" class="footer__link" title="Apply Now - Undergraduate">
+                Apply Now - Undergraduate
+              </a>
+            </li>
+                      <li class="footer__link-list-item">
+              <a href="https://app.applyyourself.com/AYApplicantLogin/fl_ApplicantConnectLogin.asp?id=CUNYCCNYG" class="footer__link" title="Apply Now - Graduate">
+                Apply Now - Graduate
+              </a>
+            </li>
+                      <li class="footer__link-list-item">
+              <a href="https://www.ccny.cuny.edu/library" class="footer__link" title="Libraries">
+                Libraries
+              </a>
+            </li>
+                      <li class="footer__link-list-item">
+              <a href="/bennys" class="footer__link" title="Benny&#039;s Campus Store">
+                Benny&#039;s Campus Store
+              </a>
+            </li>
+                      <li class="footer__link-list-item">
+              <a href="/registrar" class="footer__link" title="Registrar">
+                Registrar
+              </a>
+            </li>
+                      <li class="footer__link-list-item">
+              <a href="/financialaid/federal-work-study-at-ccny" class="footer__link" title="Student Employment">
+                Student Employment
+              </a>
+            </li>
+                    </ul>
+                  </div>
+              <div class="footer__link-section">
+          <h6 class="footer__links-list-heading">Faculty &amp; Staff</h6>
+          <ul class="footer__links-list">
+          <li class="footer__link-list-item">
+              <a href="" class="footer__link" title="">
+                
+              </a>
+            </li>
+		              <li class="footer__link-list-item">
+              <a href="https://webmail.ccny.cuny.edu/owa/auth/logon.aspx?replaceCurrent=1&amp;url=https%3A//webmail.ccny.cuny.edu/owa/" class="footer__link" title="Webmail">
+                Webmail
+              </a>
+            </li>
+                      <li class="footer__link-list-item">
+              <a href="/people" class="footer__link" title="Directory">
+                Directory
+              </a>
+            </li>
+                      <li class="footer__link-list-item">
+              <a href="/affirmativeaction" class="footer__link" title="Diversity &amp; Compliance">
+                Diversity &amp; Compliance
+              </a>
+            </li>
+                      <li class="footer__link-list-item">
+              <a href="/hr/resources-for-employees" class="footer__link" title="Employee Resources">
+                Employee Resources
+              </a>
+            </li>
+                      <li class="footer__link-list-item">
+              <a href="/academicaffairs/faculty-resources" class="footer__link" title="Faculty Resources">
+                Faculty Resources
+              </a>
+            </li>
+                      <li class="footer__link-list-item">
+              <a href="/hr" class="footer__link" title="Human Resources">
+                Human Resources
+              </a>
+            </li>
+                      <li class="footer__link-list-item">
+              <a href="/about/offices-services" class="footer__link" title="Offices and Services">
+                Offices and Services
+              </a>
+            </li>
+                    </ul>
+                  </div>
+              <div class="footer__link-section">
+          <h6 class="footer__links-list-heading">Resources</h6>
+          <ul class="footer__links-list">
+          <li class="footer__link-list-item">
+              <a href="" class="footer__link" title="">
+                
+              </a>
+            </li>
+		              <li class="footer__link-list-item">
+              <a href="/admissions/campus-tours" class="footer__link" title="Schedule a tour - Undergraduate">
+                Schedule a tour - Undergraduate
+              </a>
+            </li>
+                      <li class="footer__link-list-item">
+              <a href="/about/contact" class="footer__link" title="Contact Us">
+                Contact Us
+              </a>
+            </li>
+                      <li class="footer__link-list-item">
+              <a href="/giving" class="footer__link" title="Giving">
+                Giving
+              </a>
+            </li>
+                      <li class="footer__link-list-item">
+              <a href="/CPDI/employer-services" class="footer__link" title="Employer Services">
+                Employer Services
+              </a>
+            </li>
+                      <li class="footer__link-list-item">
+              <a href="/safety" class="footer__link" title="Safety">
+                Safety
+              </a>
+            </li>
+                      <li class="footer__link-list-item">
+              <a href="/about/policies" class="footer__link" title="CCNY and CUNY Policies">
+                CCNY and CUNY Policies
+              </a>
+            </li>
+                      <li class="footer__link-list-item">
+              <a href="/about/websiteprivacy" class="footer__link" title="Privacy Policy">
+                Privacy Policy
+              </a>
+            </li>
+                      <li class="footer__link-list-item">
+              <a href="https://www2.cuny.edu/employment/" class="footer__link" title="Work at CCNY">
+                Work at CCNY
+              </a>
+            </li>
+                      <li class="footer__link-list-item">
+              <a href="/it" class="footer__link" title="Information Technology">
+                Information Technology
+              </a>
+            </li>
+                      <li class="footer__link-list-item">
+              <a href="https://portal.ccny.cuny.edu/depts/oit/cuny_loaner/login.php" class="footer__link" title="Loaner Devices">
+                Loaner Devices
+              </a>
+            </li>
+                    </ul>
+                  </div>
+              <div class="footer__link-section">
+          <h6 class="footer__links-list-heading">Accessibility</h6>
+          <ul class="footer__links-list">
+          <li class="footer__link-list-item">
+              <a href="" class="footer__link" title="">
+                
+              </a>
+            </li>
+		              <li class="footer__link-list-item">
+              <a href="/about/accessible-digital-content-policy" class="footer__link" title="Accessibility Statement">
+                Accessibility Statement
+              </a>
+            </li>
+                    </ul>
+          			<ul class="footer__links-list">
+			<li class="footer__link-list-item">
+              <a href="" class="footer__link" title="">
+                
+              </a>
+            </li>
+			<li class="footer__link-list-item" id="browsealoud">
+				<div id="__ba_panel"></div>
+			</li>
+			<li class="footer__link-list-item" id="textonly">
+			<script type="text/javascript">
+             document.write("<a class=\"footer__link\" href=\"https://www.w3.org/services/html2txt?url=" + encodeURIComponent(window.location.href) + "\" title=\"Text Only Version\" id=\"textonly\">Text Only Version</a></li>");
+            </script>
+			</ul>
+            <div class="footer__script-tag google desktop">
+                <div>
+  
+    
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar,en,es,fr,pt,id,zh-CN,zh-TW', gaTrack: true, gaId: 'UA-1802734-1'}, 'google_translate_element');
+    setTimeout(function(){
+      if ($( window ).width() < 880){
+          m = true;
+          $('#google_translate_element').detach().appendTo('.footer__script-tag.google.mobile');                            
+      }
+  }, 1000);
+  }
+  </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+          setTimeout(function(){
+            $("#gsc-i-id1").attr("placeholder", "Search . . .");
+            $("#gsc-i-id1").attr("aria-label", "Search Query");
+            $("#gsc-i-id1").before("<label for=\"gsc-i-id1\" class=\"visuallyhidden\">Search Query</label>");
+            $("input.gsc-input").css({ "margin": "none !important" });
+              $("input[type='image']").attr("alt","Search");
+        $("div#google_translate_element select.goog-te-combo").attr("id", "googleTranslateDropdown");
+        $("#googleTranslateDropdown").attr("aria-label", "Select Language");
+        $("#googleTranslateDropdown").before("<label for=\"googleTranslateDropdown\" class=\"visuallyhidden\">Select Language</label>");
+      }, 2000);
+        });
+</script>
+  </div>
+
+              </div>
+
+                          <p class="footer__link-list-item">
+                <a class="footer__link" href="https://mixpanel.com/f/partner" rel="nofollow" target="_blank"><img alt="Mixpanel Mobile Analytics" title="Mixpanel Mobile Analytics"src="//cdn.mxpnl.com/site_media/images/partner/badge_light.png" /></a>
+              </p>
+              <script type="text/javascript">var _baTheme=0, _baMode='Make This Website Talk', _baUseCookies=true, _baHideOnLoad=true;</script>
+              <script type="text/javascript" src="//www.browsealoud.com/plus/scripts/ba.js"></script>
+                              </div>
+      
+            <div class="footer__social-container">
+        <ul class="footer__social-list">
+                    <li class="footer__social-icons">
+            <a href="https://twitter.com/citycollegeny">
+              <img src="/themes/custom/ccny_theme/dist/assets/icon-twitter.svg" data-icon-prefix="icon-twitter" title="Twitter" alt="Twitter">
+            </a>
+          </li>
+          
+                    <li class="footer__social-icons">
+            <a href="https://instagram.com/ccnycitycollege/">
+              <img src="/themes/custom/ccny_theme/dist/assets/icon-instagram.svg" data-icon-prefix="icon-instagram" alt="Instagram" title="Instagram">
+            </a>
+          </li>
+          
+                    <li class="footer__social-icons">
+            <a href="https://www.facebook.com/pages/The-City-College-of-New-York/170858093839">
+              <img src="/themes/custom/ccny_theme/dist/assets/icon-facebook.svg" data-icon-prefix="icon-facebook" title="Facebook" alt="Facebook">
+            </a>
+          </li>
+          
+                    <li class="footer__social-icons">
+            <a href="https://www.linkedin.com/school/city-college-of-new-york/">
+              <img src="/themes/custom/ccny_theme/dist/assets/icon-linkedin.svg" data-icon-prefix="icon-linkedin" alt="LinkedIn" title="LinkedIn">
+            </a>
+          </li>
+          
+                    <li class="footer__social-icons">
+            <a href="https://www.youtube.com/user/citycollegeofny">
+              <img src="/themes/custom/ccny_theme/dist/assets/icon-youtube.svg" data-icon-prefix="icon-youtube" title="YouTube" alt="YouTube">
+            </a>
+          </li>
+                  </ul>
+      </div>
+          </div>
+  </div>
+
+    <div class="footer__menu-container mobile">
+            
+
+<div id="accordion" class="accordion">
+                        
+						
+
+<div class="accordion__section">
+    <h3 class="accordion__heading">Students</h3>
+  
+  <div class="accordion__content">
+                      <div class="footer__link-section">
+                    <ul class="footer__links-list">
+                                          <li class="footer__link-list-item">
+                        <a href="https://citymail.ccny.cuny.edu/" class="footer__link" title="Email">
+                          Email
+                        </a>
+                      </li>
+                                          <li class="footer__link-list-item">
+                        <a href="/registrar/academic-calendar" class="footer__link" title="Academic Calendar">
+                          Academic Calendar
+                        </a>
+                      </li>
+                                          <li class="footer__link-list-item">
+                        <a href="https://www.ccny.cuny.edu/registrar/bulletins" class="footer__link" title="Courses - CCNY Bulletin">
+                          Courses - CCNY Bulletin
+                        </a>
+                      </li>
+                                          <li class="footer__link-list-item">
+                        <a href="https://home.cunyfirst.cuny.edu/psp/cnyepprd/GUEST/HRMS/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?FolderPath=PORTAL_ROOT_OBJECT.HC_CLASS_SEARCH_GBL&amp;IsFolder=false&amp;IgnoreParamTempl=FolderPath%2CIsFolder" class="footer__link" title="Courses - CUNY list">
+                          Courses - CUNY list
+                        </a>
+                      </li>
+                                          <li class="footer__link-list-item">
+                        <a href="http://www2.cuny.edu/admissions/undergraduate/apply/" class="footer__link" title="Apply Now - Undergraduate">
+                          Apply Now - Undergraduate
+                        </a>
+                      </li>
+                                          <li class="footer__link-list-item">
+                        <a href="https://app.applyyourself.com/AYApplicantLogin/fl_ApplicantConnectLogin.asp?id=CUNYCCNYG" class="footer__link" title="Apply Now - Graduate">
+                          Apply Now - Graduate
+                        </a>
+                      </li>
+                                          <li class="footer__link-list-item">
+                        <a href="https://www.ccny.cuny.edu/library" class="footer__link" title="Libraries">
+                          Libraries
+                        </a>
+                      </li>
+                                          <li class="footer__link-list-item">
+                        <a href="/bennys" class="footer__link" title="Benny&#039;s Campus Store">
+                          Benny&#039;s Campus Store
+                        </a>
+                      </li>
+                                          <li class="footer__link-list-item">
+                        <a href="/registrar" class="footer__link" title="Registrar">
+                          Registrar
+                        </a>
+                      </li>
+                                          <li class="footer__link-list-item">
+                        <a href="/financialaid/federal-work-study-at-ccny" class="footer__link" title="Student Employment">
+                          Student Employment
+                        </a>
+                      </li>
+                                        </ul>
+                  </div>
+                  </div>
+</div>
+			 
+                        
+						
+
+<div class="accordion__section">
+    <h3 class="accordion__heading">Faculty &amp; Staff</h3>
+  
+  <div class="accordion__content">
+                      <div class="footer__link-section">
+                    <ul class="footer__links-list">
+                                          <li class="footer__link-list-item">
+                        <a href="https://webmail.ccny.cuny.edu/owa/auth/logon.aspx?replaceCurrent=1&amp;url=https%3A//webmail.ccny.cuny.edu/owa/" class="footer__link" title="Webmail">
+                          Webmail
+                        </a>
+                      </li>
+                                          <li class="footer__link-list-item">
+                        <a href="/people" class="footer__link" title="Directory">
+                          Directory
+                        </a>
+                      </li>
+                                          <li class="footer__link-list-item">
+                        <a href="/affirmativeaction" class="footer__link" title="Diversity &amp; Compliance">
+                          Diversity &amp; Compliance
+                        </a>
+                      </li>
+                                          <li class="footer__link-list-item">
+                        <a href="/hr/resources-for-employees" class="footer__link" title="Employee Resources">
+                          Employee Resources
+                        </a>
+                      </li>
+                                          <li class="footer__link-list-item">
+                        <a href="/academicaffairs/faculty-resources" class="footer__link" title="Faculty Resources">
+                          Faculty Resources
+                        </a>
+                      </li>
+                                          <li class="footer__link-list-item">
+                        <a href="/hr" class="footer__link" title="Human Resources">
+                          Human Resources
+                        </a>
+                      </li>
+                                          <li class="footer__link-list-item">
+                        <a href="/about/offices-services" class="footer__link" title="Offices and Services">
+                          Offices and Services
+                        </a>
+                      </li>
+                                        </ul>
+                  </div>
+                  </div>
+</div>
+			 
+                        
+						
+
+<div class="accordion__section">
+    <h3 class="accordion__heading">Resources</h3>
+  
+  <div class="accordion__content">
+                      <div class="footer__link-section">
+                    <ul class="footer__links-list">
+                                          <li class="footer__link-list-item">
+                        <a href="/admissions/campus-tours" class="footer__link" title="Schedule a tour - Undergraduate">
+                          Schedule a tour - Undergraduate
+                        </a>
+                      </li>
+                                          <li class="footer__link-list-item">
+                        <a href="/about/contact" class="footer__link" title="Contact Us">
+                          Contact Us
+                        </a>
+                      </li>
+                                          <li class="footer__link-list-item">
+                        <a href="/giving" class="footer__link" title="Giving">
+                          Giving
+                        </a>
+                      </li>
+                                          <li class="footer__link-list-item">
+                        <a href="/CPDI/employer-services" class="footer__link" title="Employer Services">
+                          Employer Services
+                        </a>
+                      </li>
+                                          <li class="footer__link-list-item">
+                        <a href="/safety" class="footer__link" title="Safety">
+                          Safety
+                        </a>
+                      </li>
+                                          <li class="footer__link-list-item">
+                        <a href="/about/policies" class="footer__link" title="CCNY and CUNY Policies">
+                          CCNY and CUNY Policies
+                        </a>
+                      </li>
+                                          <li class="footer__link-list-item">
+                        <a href="/about/websiteprivacy" class="footer__link" title="Privacy Policy">
+                          Privacy Policy
+                        </a>
+                      </li>
+                                          <li class="footer__link-list-item">
+                        <a href="https://www2.cuny.edu/employment/" class="footer__link" title="Work at CCNY">
+                          Work at CCNY
+                        </a>
+                      </li>
+                                          <li class="footer__link-list-item">
+                        <a href="/it" class="footer__link" title="Information Technology">
+                          Information Technology
+                        </a>
+                      </li>
+                                          <li class="footer__link-list-item">
+                        <a href="https://portal.ccny.cuny.edu/depts/oit/cuny_loaner/login.php" class="footer__link" title="Loaner Devices">
+                          Loaner Devices
+                        </a>
+                      </li>
+                                        </ul>
+                  </div>
+                  </div>
+</div>
+			 
+                        
+						  
+
+<div class="accordion__section">
+    <h3 class="accordion__heading">Accessibility</h3>
+  
+  <div class="accordion__content">
+                      <div class="footer__link-section">
+                    <ul class="footer__links-list">
+                                          <li class="footer__link-list-item">
+                        <a href="/about/accessible-digital-content-policy" class="footer__link" title="Accessibility Statement">
+                          Accessibility Statement
+                        </a>
+                      </li>
+					  <li class="footer__link-list-item" id="browsealoudmobile">
+						<div id="__ba_panel"></div>
+					</li>
+					<li class="footer__link-list-item" id="textonlymobile">
+					<script type="text/javascript">
+						  var currPageURL = window.location.href;
+						  currPageURL = encodeURIComponent(currPageURL);
+						  document.write("<a class=\"footer__link\" href=\"https://www.w3.org/services/html2txt?url=" + currPageURL + "\" title=\"Text Only Version\" id=\"textonly\">Text Only Version</a></li>");
+					</script>
+                                        </ul>
+                  </div>
+                  </div>
+</div>
+			 
+                    </div>
+      <div class="footer__script-tag google mobile">
+      </div>
+
+      <div class="footer__script-tag mobile">
+                      <p class="footer__link-list-item">
+                <a class="footer__link" href="https://mixpanel.com/f/partner" rel="nofollow" target="_blank"><img alt="Mixpanel Mobile Analytics" title="Mixpanel Mobile Analytics"src="//cdn.mxpnl.com/site_media/images/partner/badge_light.png" /></a>
+              </p>
+              <script type="text/javascript">var _baTheme=0, _baMode='Make This Website Talk', _baUseCookies=true, _baHideOnLoad=true;</script>
+              <script type="text/javascript" src="//www.browsealoud.com/plus/scripts/ba.js"></script>
+            
+      </div>
+
+            <div class="footer__social-container">
+        <ul class="footer__social-list">
+                    <li class="footer__social-icons">
+            <a href="https://twitter.com/citycollegeny">
+              <img src="/themes/custom/ccny_theme/dist/assets/icon-twitter.svg" data-icon-prefix="icon-twitter" title="Twitter" alt="Twitter">
+            </a>
+          </li>
+          
+                    <li class="footer__social-icons">
+            <a href="https://instagram.com/ccnycitycollege/">
+              <img src="/themes/custom/ccny_theme/dist/assets/icon-instagram.svg" data-icon-prefix="icon-instagram" alt="Instagram" title="Instagram">
+            </a>
+          </li>
+          
+                    <li class="footer__social-icons">
+            <a href="https://www.facebook.com/pages/The-City-College-of-New-York/170858093839">
+              <img src="/themes/custom/ccny_theme/dist/assets/icon-facebook.svg" data-icon-prefix="icon-facebook" title="Facebook" alt="Facebook">
+            </a>
+          </li>
+          
+                    <li class="footer__social-icons">
+            <a href="https://www.linkedin.com/school/city-college-of-new-york/">
+              <img src="/themes/custom/ccny_theme/dist/assets/icon-linkedin.svg" data-icon-prefix="icon-linkedin" alt="LinkedIn" title="LinkedIn">
+            </a>
+          </li>
+          
+                    <li class="footer__social-icons">
+            <a href="https://www.youtube.com/user/citycollegeofny">
+              <img src="/themes/custom/ccny_theme/dist/assets/icon-youtube.svg" data-icon-prefix="icon-youtube" title="YouTube" alt="YouTube">
+            </a>
+          </li>
+                  </ul>
+      </div>
+      
+
+    </div>
+    <div class="footer__copyright">© The City College of New York. All rights reserved.</div>
+  </div>
+</footer>
+
+    </footer>
+  
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/1888","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":true},"user":{"uid":0,"permissionsHash":"895ca8915a34cd67c5b0e82794323d120fe5c1b14ed7db53c0cdcf952b436191"}}</script>
+<script src="/sites/default/files/js/js_AC0uGQHhwv0Z8MXj_fczesG_M04bMU3fmInDGllEi5Q.js"></script>
+<script src="/sites/default/files/asset_injector/js/hide_delete_button-fa5f01dd48e11e95941a52ac02055d85.js?r1p2qc"></script>
+<script src="/sites/default/files/js/js_MPktIb67TkAc7FPoJkNfhaU2BvxXWEIeFCYu7_nicGY.js"></script>
+<script src="//s7.addthis.com/js/250/addthis_widget.js#pubid=ra-5004d33f4bf6be10"></script>
+<script src="/sites/default/files/js/js_Ufgou8Ogm45HUJGOv4zk3drL1BUgGzdYjgNycFRj-V4.js"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-83581f4fb59b51cbeb7","applicationID":"254978615","transactionName":"NFZWNRBXWxVUBRcNCQ0cdQIWX1oIGiIRERYCX2gPDVJQOnYJDRAUDF9YBBBqewlRAzUNAxRwWw8WRFoKWQMRSVgVWlEW","queueTime":0,"applicationTime":955,"atts":"GBFVQ1hNSBs=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

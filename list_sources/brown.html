@@ -1,0 +1,3028 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="no-js" itemscope="" itemtype="http://schema.org/WebPage">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KX5NV9');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"426a48472e",applicationID:"292599664"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<link rel="canonical" href="https://medical.brown.edu/about/departments" />
+<meta name="description" content="The Warren Alpert Medical School seeks to inspire and cultivate physician scholars and leaders who positively impact the health of people and society." />
+<meta property="og:site_name" content="The Warren Alpert Medical School of Brown University" />
+<meta property="og:url" content="https://medical.brown.edu/about/departments" />
+<meta property="og:title" content="Departments" />
+<meta property="og:description" content="The Warren Alpert Medical School seeks to inspire and cultivate physician scholars and leaders who positively impact the health of people and society." />
+<meta property="og:image" content="https://medical.brown.edu/sites/g/files/dprerj426/files/styles/wide_lrg/public/2020-02/white-coat-group_0.jpg?h=0a664f16&amp;itok=PN6JmP_p" />
+<meta property="og:image" content="https://medical.brown.edu/sites/g/files/dprerj426/files/styles/wide_xlrg/public/2020-02/white-coat-group_0.jpg?h=0a664f16&amp;itok=6QIGVkLu" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="The Warren Alpert Medical School seeks to inspire and cultivate physician scholars and leaders who positively impact the health of people and society." />
+<meta name="twitter:title" content="Departments" />
+<meta name="twitter:url" content="https://medical.brown.edu/about/departments" />
+<meta name="twitter:image" content="https://medical.brown.edu/sites/g/files/dprerj426/files/styles/classic_xsml/public/2020-02/white-coat-group_0.jpg?h=ee60ca2c&amp;itok=eFkNLBfe" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="shortcut icon" href="/themes/custom/brown_medical/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="https://medical.brown.edu/about/departments" />
+
+    <title>Departments | The Warren Alpert Medical School of Brown University</title>
+    
+<link rel="apple-touch-icon" sizes="180x180" href="/themes/custom/brown/static/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/themes/custom/brown/static/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/themes/custom/brown/static/favicon-16x16.png">
+<link rel="manifest" href="/themes/custom/brown/static/site.webmanifest">
+<link rel="mask-icon" href="/themes/custom/brown/static/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" media="all" href="/sites/g/files/dprerj426/files/css/css_JQyZ9StD4-4I5jikYtL8icbvn1b-f6xMTWUzpXDhKlc.css" />
+<link rel="stylesheet" media="all" href="/sites/g/files/dprerj426/files/css/css_1WKNN5HKjC0XQTfAuAELrl_Y3Y-M9Qi2M7pi5Zrr_Cc.css" />
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/g/files/dprerj426/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+
+    <link rel="stylesheet" href="/themes/custom/brown/static/css/fonts.css" onload="document.body.className+=' fonts_loaded';">
+
+  </head>
+  <body class="preload fs-grid page_layout_default page_theme_default page_theme_overflow page_theme_med path-node page-node-type-basic-page">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX5NV9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+    
+  
+
+
+
+
+
+<div class="page_wrapper">
+  <header class="header header_med" id="header" itemscope itemtype="http://schema.org/WPHeader" style="background: #004B60;">
+    
+    <a class="skip_link" id="skip_to_content" href="#page_main_content">Skip to Main Content</a>
+        <div class="header_overflow" style="background: #004B60;">
+          <div class="fs-row">
+            <div class="fs-cell">
+              <div class="header_overflow_inner header_overflow_inner_med">
+                  <div class="header_brown_link">
+                    <a href="https://www.brown.edu/" itemprop="url">
+                      <span class="header_brown_label" itemprop="name">brown.edu</span>
+                    </a>
+                  </div>
+                  <div class="header_tools_med header_tools_alternate">
+                      
+
+<nav class="secondary_nav secondary_nav_lg" aria-label="Secondary Navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+  <div class="secondary_nav_header">
+    <h2 class="secondary_nav_title">Secondary Navigation Navigation</h2>
+  </div>
+  <ul class="secondary_nav_list" aria-label="Secondary Navigation Navigation">
+        <li class="secondary_nav_item ">
+            <a class="secondary_nav_link " href="/news" itemprop="url">
+        <span class="secondary_nav_link_label" itemprop="name">News</span>
+      </a>
+          </li>
+        <li class="secondary_nav_item ">
+            <a class="secondary_nav_link " href="/about/events" itemprop="url">
+        <span class="secondary_nav_link_label" itemprop="name">Events</span>
+      </a>
+          </li>
+        <li class="secondary_nav_item util_for_you">
+            <div class="handle flyout_for_you_handle util_for_you">
+        <span class="handle_label flyout_for_you_handle_label">For You</span>
+        <span class="handle_icon handle_icon_default flyout_for_you_handle_icon flyout_for_you_handle_icon_default" aria-hidden="true">
+          <svg class="icon icon_chevron_down">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#chevron_down"></use>
+</svg>
+
+        </span>
+        
+<nav class="flyout_for_your_dropdown">
+  <div class="flyout_for_your_dropdown_body">
+          <a class="flyout_for_your_dropdown_link" href="/information-future-students">
+        <span class="flyout_for_your_dropdown_link_label">Future Students</span>
+      </a>
+        <a class="flyout_for_your_dropdown_link" href="/information-current-students">
+        <span class="flyout_for_your_dropdown_link_label">Current Students</span>
+      </a>
+        <a class="flyout_for_your_dropdown_link" href="/information-plme-students">
+        <span class="flyout_for_your_dropdown_link_label">PLME Students</span>
+      </a>
+        <a class="flyout_for_your_dropdown_link" href="/information-faculty-and-staff">
+        <span class="flyout_for_your_dropdown_link_label">Faculty &amp; Staff</span>
+      </a>
+        <a class="flyout_for_your_dropdown_link" href="/information-residents-and-fellows">
+        <span class="flyout_for_your_dropdown_link_label">Residents &amp; Fellows</span>
+      </a>
+        <a class="flyout_for_your_dropdown_link" href="https://www.brown.edu/academics/biomed/offices/community/">
+        <span class="flyout_for_your_dropdown_link_label">Alumni</span>
+      </a>
+        <a class="flyout_for_your_dropdown_link" href="/information-parents">
+        <span class="flyout_for_your_dropdown_link_label">Parents</span>
+      </a>
+      </div>
+</nav>
+
+      </div>
+          </li>
+        <li class="secondary_nav_item special">
+            <a class="secondary_nav_link special" href="https://brunonia.brown.edu/giving/warren-alpert-medical-school" itemprop="url">
+        <span class="secondary_nav_link_label" itemprop="name">Give</span>
+      </a>
+          </li>
+      </ul>
+
+</nav>
+
+
+
+                  </div>
+              </div>
+            </div>
+          </div>
+      </div>
+        <div class="header_ribbon">
+      <div class="fs-row">
+        <div class="fs-cell">
+          <div class="header_ribbon_inner">
+                          
+   
+<div class="logo logo_header logo_icon" itemscope itemtype="http://schema.org/Organization">
+  <a class="logo_link" itemprop="url" href="/">
+    <span class="logo_link_label">Warren Alpert Medical School Brown University</span>
+        <span class="logo_link_icon"><svg class="icon icon_logo_med">
+  <use xlink:href="/themes/custom/brown/static/images/logo_med.svg#logo_med"></use>
+</svg>
+</span>
+      </a>
+  <meta content="https://medical.brown.edu/themes/custom/brown/static/images/logo_med.png" itemprop="logo">     </div>
+              
+   
+<div class="logo logo_header logo_icon logo_icon_school" itemscope itemtype="http://schema.org/Organization">
+  <a class="logo_link" itemprop="url" href="/">
+    <span class="logo_link_label">Warren Alpert Medical School Brown University</span>
+        <span class="logo_link_icon"><svg class="icon icon_logo_med_white">
+  <use xlink:href="/themes/custom/brown/static/images/logo_med.svg#logo_med_white"></use>
+</svg>
+</span>
+      </a>
+  <meta content="https://medical.brown.edu/themes/custom/brown/static/images/logo_med.png" itemprop="logo">     </div>
+                        <div class="header_group_aside">
+                                  
+
+<nav class="js-main-nav js-main-nav-lg main_nav main_nav_lg" aria-label="Site Navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+  <div class="main_nav_header">
+    <h2 class="main_nav_title">Site Navigation</h2>
+  </div>
+  <ul class="main_nav_list" aria-label="Site Navigation">
+            <li class="js-main-nav-item-1  main_nav_item">
+      <div class="main_nav_item_wrapper">
+        <a class="main_nav_link" href="/about" itemprop="url" aria-haspopup="true" aria-current="page">
+          <span class="main_nav_link_label" itemprop="name">About</span>
+        </a>
+                <button class="js-swap js-main-nav-toggle main_nav_toggle" data-swap-target=".js-main-nav-item-1" data-swap-group="main_nav" aria-label=" Submenu">
+          <span class="main_nav_toggle_icon"><svg class="icon icon_chevron_down">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#chevron_down"></use>
+</svg>
+</span>
+        </button>
+              </div>
+            <div class="js-main-nav-children main_nav_children">
+        <ul class="main_nav_children_list" aria-label="submenu">
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/about/alpert-medical-school-reopening-plan" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Alpert Medical School Operations</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/about/mission-vision-and-values" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Mission, Vision and Values</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/about/departments" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Departments</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/about/strategic-plan" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Strategic Plan</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/about/leadership" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Leadership and Governance</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/about/affiliated-hospitals" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Affiliated Hospitals</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/about/history" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">History</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/about/accreditation" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Accreditation</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/about/clery-act" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Clery Act</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/about/maps-and-directions" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Maps and Directions</span>
+            </a>
+          </li>
+                  </ul>
+      </div>
+          </li>
+                <li class="js-main-nav-item-2  main_nav_item">
+      <div class="main_nav_item_wrapper">
+        <a class="main_nav_link" href="/education" itemprop="url" aria-haspopup="true" aria-current="page">
+          <span class="main_nav_link_label" itemprop="name">Education</span>
+        </a>
+                <button class="js-swap js-main-nav-toggle main_nav_toggle" data-swap-target=".js-main-nav-item-2" data-swap-group="main_nav" aria-label=" Submenu">
+          <span class="main_nav_toggle_icon"><svg class="icon icon_chevron_down">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#chevron_down"></use>
+</svg>
+</span>
+        </button>
+              </div>
+            <div class="js-main-nav-children main_nav_children">
+        <ul class="main_nav_children_list" aria-label="submenu">
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/education/degree-programs" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Degree Programs</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/education/residency-programs" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Residency Programs</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/education/fellowship-programs" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Fellowship Programs</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/education/faculty-development" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Faculty Development</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/education/continuing-medical-education" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Continuing Medical Education</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/education/visiting-medical-student-programs" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Visiting Medical Student Programs</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/education/international-exchange-programs" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">International Exchange Programs</span>
+            </a>
+          </li>
+                  </ul>
+      </div>
+          </li>
+                <li class="js-main-nav-item-3  main_nav_item">
+      <div class="main_nav_item_wrapper">
+        <a class="main_nav_link" href="/research" itemprop="url" aria-haspopup="true" aria-current="page">
+          <span class="main_nav_link_label" itemprop="name">Research</span>
+        </a>
+                <button class="js-swap js-main-nav-toggle main_nav_toggle" data-swap-target=".js-main-nav-item-3" data-swap-group="main_nav" aria-label=" Submenu">
+          <span class="main_nav_toggle_icon"><svg class="icon icon_chevron_down">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#chevron_down"></use>
+</svg>
+</span>
+        </button>
+              </div>
+            <div class="js-main-nav-children main_nav_children">
+        <ul class="main_nav_children_list" aria-label="submenu">
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/research/brown-institute-translational-science" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Brown Institute for Translational Science</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/research/centers-institutes-and-programs" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Centers, Institutes, and Programs</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/research/doing-research-brown" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Doing Research at Brown</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="https://vivo.brown.edu/" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Find a Researcher</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/research/industry-engagement" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Industry Engagement</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/research/library-resources" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Library Resources</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/research/decoding-disparities-lecture-series" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Decoding Disparities Lecture Series</span>
+            </a>
+          </li>
+                  </ul>
+      </div>
+          </li>
+                <li class="js-main-nav-item-4  main_nav_item">
+      <div class="main_nav_item_wrapper">
+        <a class="main_nav_link" href="/admission-aid" itemprop="url" aria-haspopup="true" aria-current="page">
+          <span class="main_nav_link_label" itemprop="name">Admission &amp; Aid</span>
+        </a>
+                <button class="js-swap js-main-nav-toggle main_nav_toggle" data-swap-target=".js-main-nav-item-4" data-swap-group="main_nav" aria-label=" Submenu">
+          <span class="main_nav_toggle_icon"><svg class="icon icon_chevron_down">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#chevron_down"></use>
+</svg>
+</span>
+        </button>
+              </div>
+            <div class="js-main-nav-children main_nav_children">
+        <ul class="main_nav_children_list" aria-label="submenu">
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/admission-aid/medical-and-graduate-admissions" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Medical and Graduate Admissions</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/admission-aid/financial-aid" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Financial Aid</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/admission-aid/notice-nondiscrimination" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Notice of Nondiscrimination</span>
+            </a>
+          </li>
+                  </ul>
+      </div>
+          </li>
+                <li class="js-main-nav-item-5  main_nav_item">
+      <div class="main_nav_item_wrapper">
+        <a class="main_nav_link" href="/student-life" itemprop="url" aria-haspopup="true" aria-current="page">
+          <span class="main_nav_link_label" itemprop="name">Student Life</span>
+        </a>
+                <button class="js-swap js-main-nav-toggle main_nav_toggle" data-swap-target=".js-main-nav-item-5" data-swap-group="main_nav" aria-label=" Submenu">
+          <span class="main_nav_toggle_icon"><svg class="icon icon_chevron_down">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#chevron_down"></use>
+</svg>
+</span>
+        </button>
+              </div>
+            <div class="js-main-nav-children main_nav_children">
+        <ul class="main_nav_children_list" aria-label="submenu">
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/student-life/student-services" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Student Services</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/student-life/life-providence" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Life in Providence</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/student-life/student-groups" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Student Groups</span>
+            </a>
+          </li>
+                  </ul>
+      </div>
+          </li>
+                <li class="js-main-nav-item-6  main_nav_item">
+      <div class="main_nav_item_wrapper">
+        <a class="main_nav_link" href="/diversity" itemprop="url" aria-haspopup="true" aria-current="page">
+          <span class="main_nav_link_label" itemprop="name">Diversity</span>
+        </a>
+                <button class="js-swap js-main-nav-toggle main_nav_toggle" data-swap-target=".js-main-nav-item-6" data-swap-group="main_nav" aria-label=" Submenu">
+          <span class="main_nav_toggle_icon"><svg class="icon icon_chevron_down">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#chevron_down"></use>
+</svg>
+</span>
+        </button>
+              </div>
+            <div class="js-main-nav-children main_nav_children">
+        <ul class="main_nav_children_list" aria-label="submenu">
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/diversity/diversity-and-inclusion-action-plan" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Diversity and Inclusion Action Plan</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/diversity/office-diversity-and-multicultural-affairs" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Diversity and Multicultural Affairs</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/diversity/programs-and-initiatives" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Programs and Initiatives</span>
+            </a>
+          </li>
+                  </ul>
+      </div>
+          </li>
+          </ul>
+</nav>
+
+
+
+
+                
+<a class="js-swap js-flyout-search-handle handle flyout_search_handle" href="#flyout_search" data-swap-target=".flyout_search" data-swap-linked="flyout_search">
+    <span class="handle_icon handle_icon_default flyout_search_handle_icon flyout_search_handle_icon_default" aria-hidden="true"><svg class="icon icon_search">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#search"></use>
+</svg>
+</span>
+    <span class="handle_icon handle_icon_action flyout_search_handle_icon flyout_search_handle_icon_action" aria-hidden="true"><svg class="icon icon_close">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+</svg>
+</span>
+  <span class="handle_label flyout_search_handle_label">Search</span>
+</a>
+              
+              <div class="header_group">
+                                
+<div class="header_tools header_tools_default">
+  
+  
+<a class="js-swap js-flyout-search-handle handle flyout_search_handle" href="#flyout_search" data-swap-target=".flyout_search" data-swap-linked="flyout_search">
+    <span class="handle_icon handle_icon_default flyout_search_handle_icon flyout_search_handle_icon_default" aria-hidden="true"><svg class="icon icon_search">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#search"></use>
+</svg>
+</span>
+    <span class="handle_icon handle_icon_action flyout_search_handle_icon flyout_search_handle_icon_action" aria-hidden="true"><svg class="icon icon_close">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+</svg>
+</span>
+  <span class="handle_label flyout_search_handle_label">Search</span>
+</a>
+
+    
+<a class="js-swap js-menu-handle  menu_handle menu_handle_primary" href="#menu" data-swap-target=".menu" data-swap-linked="menu">
+    <span class=" menu_handle_icon menu_handle_icon_default menu_handle_icon_primary" aria-hidden="true"><svg class="icon icon_menu">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#menu"></use>
+</svg>
+</span>
+    <span class=" menu_handle_icon menu_handle_icon_action menu_handle_icon_primary" aria-hidden="true"><svg class="icon icon_close">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+</svg>
+</span>
+  <span class=" menu_handle_label menu_handle_label_primary">Menu</span>
+</a>
+  </div>
+                              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+          </div>
+      </header>
+  <main class="page_inner ">
+          
+                  <div class="js-cover page_header page_header_media page_header_medium">
+                           
+    
+    
+    
+
+
+
+
+
+
+
+<div class="js-background photo_img_med page_header_medium_background" data-background-options='{"source": {
+"500px": "/sites/g/files/dprerj426/files/styles/ultrawide_med/public/2019-10/white-coat-group-1.jpg?itok=fMMVm-iG", "740px": "/sites/g/files/dprerj426/files/styles/medium_med/public/2019-10/white-coat-group-1.jpg?h=04a7cc01&amp;itok=ZiCuwTCf", "980px": "/sites/g/files/dprerj426/files/styles/medium_lrg/public/2019-10/white-coat-group-1.jpg?h=04a7cc01&amp;itok=Mkm9uNJ3", "1220px": "/sites/g/files/dprerj426/files/styles/medium_xlrg/public/2019-10/white-coat-group-1.jpg?h=04a7cc01&amp;itok=XDnKqxgc"}, "lazy": true, "lazyEdge": "100", "alt": "large group of tudents in white coats"}'></div>
+
+
+
+
+
+            
+                  
+          <div class="js-cover-body page_header_body dynamic_header_no_mobile">
+        <div class="fs-row">
+          <div class="fs-cell">
+            <div class="page_header_inner">
+              <div class="page_header_set">
+                <div class="page_header_group  ">
+                  <h1 class="page_title">Departments</h1>
+                                    <p class="page_intro">The Warren Alpert Medical School seeks to inspire and cultivate physician scholars and leaders who positively impact the health of people and society.</p>
+                                  </div>
+                              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="breadcrumb_wrapper">
+      <div class="fs-row">
+        <div class="fs-cell">
+          
+
+  <div class="breadcrumb_nav">
+    <div class="breadcrumb_header">
+      <h2 class="breadcrumb_title">Breadcrumb</h2>
+    </div>
+    <ul class="breadcrumb_list" itemscope itemtype="http://schema.org/BreadcrumbList" aria-label="Breadcrumb">
+                  <li class="breadcrumb_item" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+        <a class="breadcrumb_pill breadcrumb_pill_link" href="/" itemprop="item">
+          <span class="breadcrumb_name">
+            <span class="breadcrumb_name_label" itemprop="name">Home</span>
+          </span>
+        </a>
+        <meta itemprop="position" content="1">
+      </li>
+                        <li class="breadcrumb_item" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+        <a class="breadcrumb_pill breadcrumb_pill_link" href="/about" itemprop="item">
+          <span class="breadcrumb_name">
+            <span class="breadcrumb_name_label" itemprop="name">About</span>
+          </span>
+        </a>
+        <meta itemprop="position" content="2">
+      </li>
+                            </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+          
+  <div class="page_content">
+                              <div class="fs-row">
+                
+                <div class="fs-cell-right fs-lg-3 page_aside page_sub_nav">
+          <div class="page_aside_inner">
+              
+<nav class="sub_nav" aria-labelledby="subnav_heading_block-brown-medical-sidebar-navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+  <div class="sub_nav_header">
+    <h2 id="subnav_heading_block-brown-medical-sidebar-navigation" class="sub_nav_title">Sub Navigation</h2>
+    <button class="js-swap js-sub-nav-handle sub_nav_handle" data-swap-target=".sub_nav_list" data-swap-title="In This Section">
+      <span class="sub_nav_handle_icon"><svg class="icon icon_chevron_down">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#chevron_down"></use>
+</svg>
+</span>
+      <span class="sub_nav_handle_label">In This Section</span>
+    </button>
+  </div>
+  <ul class="js-sub-nav-list sub_nav_list" aria-labelledby="subnav_heading_block-brown-medical-sidebar-navigation">
+    
+<li class="sub_nav_item">
+  <a class="sub_nav_link " href="/about/alpert-medical-school-reopening-plan" itemprop="url">
+    <span class="sub_nav_link_label" itemprop="name">Alpert Medical School Operations</span>
+  </a>
+  </li>
+<li class="sub_nav_item">
+  <a class="sub_nav_link " href="/about/mission-vision-and-values" itemprop="url">
+    <span class="sub_nav_link_label" itemprop="name">Mission, Vision and Values</span>
+  </a>
+  </li>
+<li class="sub_nav_item">
+  <a class="sub_nav_link  active" href="/about/departments" itemprop="url">
+    <span class="sub_nav_link_label" itemprop="name">Departments</span>
+  </a>
+  </li>
+<li class="sub_nav_item">
+  <a class="sub_nav_link " href="/about/strategic-plan" itemprop="url">
+    <span class="sub_nav_link_label" itemprop="name">Strategic Plan</span>
+  </a>
+  </li>
+<li class="sub_nav_item">
+  <a class="sub_nav_link " href="/about/leadership" itemprop="url">
+    <span class="sub_nav_link_label" itemprop="name">Leadership and Governance</span>
+  </a>
+  </li>
+<li class="sub_nav_item">
+  <a class="sub_nav_link " href="/about/affiliated-hospitals" itemprop="url">
+    <span class="sub_nav_link_label" itemprop="name">Affiliated Hospitals</span>
+  </a>
+  </li>
+<li class="sub_nav_item">
+  <a class="sub_nav_link " href="/about/history" itemprop="url">
+    <span class="sub_nav_link_label" itemprop="name">History</span>
+  </a>
+  </li>
+<li class="sub_nav_item">
+  <a class="sub_nav_link " href="/about/accreditation" itemprop="url">
+    <span class="sub_nav_link_label" itemprop="name">Accreditation</span>
+  </a>
+  </li>
+<li class="sub_nav_item">
+  <a class="sub_nav_link " href="/about/clery-act" itemprop="url">
+    <span class="sub_nav_link_label" itemprop="name">Clery Act</span>
+  </a>
+  </li>
+<li class="sub_nav_item">
+  <a class="sub_nav_link " href="/about/maps-and-directions" itemprop="url">
+    <span class="sub_nav_link_label" itemprop="name">Maps and Directions</span>
+  </a>
+  </li>
+
+  </ul>
+</nav>
+
+
+            <div class="page_details">
+
+                                                        
+              
+              
+              
+              <div class="sidebar_callouts">
+              
+<div class="page_discovery">
+  <div class="page_discovery_header">
+        <figure class="page_discovery_figure">
+      <a class="page_discovery_title_link" href="/about/facts-and-figures/match-lists/md-2021-match-list"><img class="page_discovery_image" src="/sites/g/files/dprerj426/files/styles/classic_xxsml/public/2019-09/20150320-BMED-Match-Day-2015-Courtney-Mannino.jpg?h=57193c5d&amp;itok=9e2yuxsE" alt="Match Day"></a>
+    </figure>
+        <h2 class="page_discovery_title">
+      <a class="page_discovery_title_link" href="/about/facts-and-figures/match-lists/md-2021-match-list">  Residency Placements
+</a>
+    </h2>
+  </div>
+  <p class="page_discovery_caption">  Graduates of The Warren Alpert Medical School are accepted into the nation&#039;s most competitive residency programs and leading medical centers.
+</p>
+  <footer class="page_discovery_footer">
+    <a class="page_discovery_link" href="/about/facts-and-figures/match-lists/md-2021-match-list">
+  <span class="page_discovery_link_label">See the 2021 match list</span>
+    <span class="page_discovery_link_icon" aria-hidden="true">
+          <span class="page_discovery_link_icon_default">
+        <svg class="icon icon_arrow_right">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+        </svg>
+      </span>
+      <span class="page_discovery_link_icon_action">
+        <svg class="icon icon_link">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+        </svg>
+      </span>
+      </span>
+  </a>
+
+
+          <a class="page_discovery_link" href="/about/facts-and-figures/match-lists">
+  <span class="page_discovery_link_label">More Match Lists</span>
+    <span class="page_discovery_link_icon" aria-hidden="true">
+          <span class="page_discovery_link_icon_default">
+        <svg class="icon icon_arrow_right">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+        </svg>
+      </span>
+      <span class="page_discovery_link_icon_action">
+        <svg class="icon icon_link">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+        </svg>
+      </span>
+      </span>
+  </a>
+
+        
+  </footer>
+</div>
+
+              </div>
+
+              
+            </div>
+
+          </div>
+        </div>
+        
+                                <div class="fs-cell fs-lg-9 page_main_content" id="page_main_content" itemprop="mainContentOfPage">
+        
+            <div data-drupal-messages-fallback class="hidden"></div>
+
+
+
+                                            <div class="dynamic_placement_inpage dynamic_header_mobile">
+                            <div class="typography">
+                  <h1>Departments</h1>
+                                        <p class="page_intro">The Warren Alpert Medical School seeks to inspire and cultivate physician scholars and leaders who positively impact the health of people and society.</p>
+                                    </div>
+            </div>
+                      
+          
+          
+          <div class="wysiwyg_block">
+            <div class="wysiwyg_block_inner">
+              <div class="typography">
+                  <div id="block-brown-medical-content">
+  
+    
+      <article role="article" about="/about/departments" class="node--type-basic-page">
+
+  
+    
+
+  
+  <div>
+    
+  </div>
+
+</article>
+
+  </div>
+
+
+              </div>
+            </div>
+          </div>
+
+          <div class="in_content_callouts">
+            
+<div class="section_break">
+    <header class="section_break_header">
+      <h2 class="section_break_header_title">  Basic Science Departments
+</h2>
+
+      </header>
+</div>
+
+
+
+
+
+
+
+    
+  
+    <div class="component_block columns_3 layout_in_content">
+    
+    <div class="component_items " data-carousel-options='{
+      "pagination": false,
+      "show": {
+        "500px": 2,
+        "1220px": 3
+      }
+    }'>
+
+        
+<div class="component_item page card">
+  <article class="js-component component component_ext_1591" data-id="ext_1591" data-type="page">
+    <span class="component_peak_background"></span>
+        <div class="component_figure" aria-hidden="true">
+      <a class="component_figure_link" href="https://www.brown.edu/academics/ecology-and-evolutionary-biology/" aria-hidden="true">
+        <div class="js-background component_card_background" data-background-options='{"source": {
+"0px": "/sites/g/files/dprerj426/files/styles/classic_xsml/public/2019-10/EEB.jpg?h=add8ac39&amp;itok=BvsK0uCK"}, "lazy": true, "lazyEdge": "100", "alt": "Framed bat skeleton"}'></div>
+      </a>
+    </div>
+    
+    <div class="component_body">
+      <div class="component_content">
+        <div class="component_content_group">
+          <h3 class="component_title">
+            <a class="component_title_link" href="https://www.brown.edu/academics/ecology-and-evolutionary-biology/">Ecology and Evolutionary Biology</a>
+          </h3>
+        </div>
+      </div>
+      <div class="component_peak_details">
+        <div class="component_peak_details_inner">
+          <div class="peak_details_caption"></div>
+        </div>
+        <a class="peak_details_simple_link" href="https://www.brown.edu/academics/ecology-and-evolutionary-biology/">
+  <span class="peak_details_simple_link_label">Visit Page</span>
+    <span class="peak_details_simple_link_icon" aria-hidden="true">
+          <span class="peak_details_simple_link_icon_default">
+        <svg class="icon icon_arrow_right">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+        </svg>
+      </span>
+      <span class="peak_details_simple_link_icon_action">
+        <svg class="icon icon_link">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+        </svg>
+      </span>
+      </span>
+  </a>
+
+      </div>
+      <div class="component_peak_tools">
+  <button class="js-swap component_peak_trigger" data-swap-target=".component_ext_1591" data-swap-group="peaks" data-swap-linked="component_peak_ext_1591" title="Open details for Ecology and Evolutionary Biology" aria-expanded="false">
+    <span class="component_peak_trigger_label">Open details for Ecology and Evolutionary Biology</span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_default">
+      <svg class="icon icon_dots">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#dots"></use>
+      </svg>
+    </span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_action">
+      <svg class="icon icon_close">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+      </svg>
+    </span>
+  </button>
+  </div>
+
+    </div>
+  </article>
+</div>
+
+  
+<div class="component_item page card">
+  <article class="js-component component component_ext_1756" data-id="ext_1756" data-type="page">
+    <span class="component_peak_background"></span>
+        <div class="component_figure" aria-hidden="true">
+      <a class="component_figure_link" href="https://www.brown.edu/academics/biomed/molecular-cell-biochemistry/" aria-hidden="true">
+        <div class="js-background component_card_background" data-background-options='{"source": {
+"0px": "/sites/g/files/dprerj426/files/styles/classic_xsml/public/2019-10/aging_image-card.jpg?h=e1323adf&amp;itok=oHCpdhZ7"}, "lazy": true, "lazyEdge": "100", "alt": "Microscope"}'></div>
+      </a>
+    </div>
+    
+    <div class="component_body">
+      <div class="component_content">
+        <div class="component_content_group">
+          <h3 class="component_title">
+            <a class="component_title_link" href="https://www.brown.edu/academics/biomed/molecular-cell-biochemistry/">Molecular Biology, Cell Biology, &amp; Biochemistry</a>
+          </h3>
+        </div>
+      </div>
+      <div class="component_peak_details">
+        <div class="component_peak_details_inner">
+          <div class="peak_details_caption"></div>
+        </div>
+        <a class="peak_details_simple_link" href="https://www.brown.edu/academics/biomed/molecular-cell-biochemistry/">
+  <span class="peak_details_simple_link_label">Visit Page</span>
+    <span class="peak_details_simple_link_icon" aria-hidden="true">
+          <span class="peak_details_simple_link_icon_default">
+        <svg class="icon icon_arrow_right">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+        </svg>
+      </span>
+      <span class="peak_details_simple_link_icon_action">
+        <svg class="icon icon_link">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+        </svg>
+      </span>
+      </span>
+  </a>
+
+      </div>
+      <div class="component_peak_tools">
+  <button class="js-swap component_peak_trigger" data-swap-target=".component_ext_1756" data-swap-group="peaks" data-swap-linked="component_peak_ext_1756" title="Open details for Molecular Biology, Cell Biology, &amp; Biochemistry" aria-expanded="false">
+    <span class="component_peak_trigger_label">Open details for Molecular Biology, Cell Biology, &amp; Biochemistry</span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_default">
+      <svg class="icon icon_dots">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#dots"></use>
+      </svg>
+    </span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_action">
+      <svg class="icon icon_close">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+      </svg>
+    </span>
+  </button>
+  </div>
+
+    </div>
+  </article>
+</div>
+
+  
+<div class="component_item page card">
+  <article class="js-component component component_ext_1596" data-id="ext_1596" data-type="page">
+    <span class="component_peak_background"></span>
+        <div class="component_figure" aria-hidden="true">
+      <a class="component_figure_link" href="https://www.brown.edu/academics/medical/molecular-microbiology-and-immunology/" aria-hidden="true">
+        <div class="js-background component_card_background" data-background-options='{"source": {
+"0px": "/sites/g/files/dprerj426/files/styles/classic_xsml/public/2019-10/20160812_COMM_shiplab09.jpg?h=ef831319&amp;itok=kiyDjLx1"}, "lazy": true, "lazyEdge": "100", "alt": "Microscope in a lab"}'></div>
+      </a>
+    </div>
+    
+    <div class="component_body">
+      <div class="component_content">
+        <div class="component_content_group">
+          <h3 class="component_title">
+            <a class="component_title_link" href="https://www.brown.edu/academics/medical/molecular-microbiology-and-immunology/">Molecular Microbiology and Immunology</a>
+          </h3>
+        </div>
+      </div>
+      <div class="component_peak_details">
+        <div class="component_peak_details_inner">
+          <div class="peak_details_caption"></div>
+        </div>
+        <a class="peak_details_simple_link" href="https://www.brown.edu/academics/medical/molecular-microbiology-and-immunology/">
+  <span class="peak_details_simple_link_label">Visit Page</span>
+    <span class="peak_details_simple_link_icon" aria-hidden="true">
+          <span class="peak_details_simple_link_icon_default">
+        <svg class="icon icon_arrow_right">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+        </svg>
+      </span>
+      <span class="peak_details_simple_link_icon_action">
+        <svg class="icon icon_link">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+        </svg>
+      </span>
+      </span>
+  </a>
+
+      </div>
+      <div class="component_peak_tools">
+  <button class="js-swap component_peak_trigger" data-swap-target=".component_ext_1596" data-swap-group="peaks" data-swap-linked="component_peak_ext_1596" title="Open details for Molecular Microbiology and Immunology" aria-expanded="false">
+    <span class="component_peak_trigger_label">Open details for Molecular Microbiology and Immunology</span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_default">
+      <svg class="icon icon_dots">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#dots"></use>
+      </svg>
+    </span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_action">
+      <svg class="icon icon_close">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+      </svg>
+    </span>
+  </button>
+  </div>
+
+    </div>
+  </article>
+</div>
+
+  
+<div class="component_item page card">
+  <article class="js-component component component_ext_1601" data-id="ext_1601" data-type="page">
+    <span class="component_peak_background"></span>
+        <div class="component_figure" aria-hidden="true">
+      <a class="component_figure_link" href="https://www.brown.edu/academics/molecular-pharmacology-physiology-and-biotechnology/" aria-hidden="true">
+        <div class="js-background component_card_background" data-background-options='{"source": {
+"0px": "/sites/g/files/dprerj426/files/styles/classic_xsml/public/2019-10/nmr1.jpg?h=23687497&amp;itok=qciU0l69"}, "lazy": true, "lazyEdge": "100", "alt": "Computer image of proteins"}'></div>
+      </a>
+    </div>
+    
+    <div class="component_body">
+      <div class="component_content">
+        <div class="component_content_group">
+          <h3 class="component_title">
+            <a class="component_title_link" href="https://www.brown.edu/academics/molecular-pharmacology-physiology-and-biotechnology/">Molecular Pharmacology, Physiology, and Biotechnology</a>
+          </h3>
+        </div>
+      </div>
+      <div class="component_peak_details">
+        <div class="component_peak_details_inner">
+          <div class="peak_details_caption"></div>
+        </div>
+        <a class="peak_details_simple_link" href="https://www.brown.edu/academics/molecular-pharmacology-physiology-and-biotechnology/">
+  <span class="peak_details_simple_link_label">Visit Page</span>
+    <span class="peak_details_simple_link_icon" aria-hidden="true">
+          <span class="peak_details_simple_link_icon_default">
+        <svg class="icon icon_arrow_right">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+        </svg>
+      </span>
+      <span class="peak_details_simple_link_icon_action">
+        <svg class="icon icon_link">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+        </svg>
+      </span>
+      </span>
+  </a>
+
+      </div>
+      <div class="component_peak_tools">
+  <button class="js-swap component_peak_trigger" data-swap-target=".component_ext_1601" data-swap-group="peaks" data-swap-linked="component_peak_ext_1601" title="Open details for Molecular Pharmacology, Physiology, and Biotechnology" aria-expanded="false">
+    <span class="component_peak_trigger_label">Open details for Molecular Pharmacology, Physiology, and Biotechnology</span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_default">
+      <svg class="icon icon_dots">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#dots"></use>
+      </svg>
+    </span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_action">
+      <svg class="icon icon_close">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+      </svg>
+    </span>
+  </button>
+  </div>
+
+    </div>
+  </article>
+</div>
+
+  
+<div class="component_item page card">
+  <article class="js-component component component_ext_1606" data-id="ext_1606" data-type="page">
+    <span class="component_peak_background"></span>
+        <div class="component_figure" aria-hidden="true">
+      <a class="component_figure_link" href="https://www.brown.edu/academics/neuroscience/" aria-hidden="true">
+        <div class="js-background component_card_background" data-background-options='{"source": {
+"0px": "/sites/g/files/dprerj426/files/styles/classic_xsml/public/2019-10/pawtucket_robust_banner_image.png?h=7f107fb1&amp;itok=Cu_YsoGZ"}, "lazy": true, "lazyEdge": "100", "alt": "Neuroscience banner image"}'></div>
+      </a>
+    </div>
+    
+    <div class="component_body">
+      <div class="component_content">
+        <div class="component_content_group">
+          <h3 class="component_title">
+            <a class="component_title_link" href="https://www.brown.edu/academics/neuroscience/">Neuroscience</a>
+          </h3>
+        </div>
+      </div>
+      <div class="component_peak_details">
+        <div class="component_peak_details_inner">
+          <div class="peak_details_caption"></div>
+        </div>
+        <a class="peak_details_simple_link" href="https://www.brown.edu/academics/neuroscience/">
+  <span class="peak_details_simple_link_label">Visit Page</span>
+    <span class="peak_details_simple_link_icon" aria-hidden="true">
+          <span class="peak_details_simple_link_icon_default">
+        <svg class="icon icon_arrow_right">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+        </svg>
+      </span>
+      <span class="peak_details_simple_link_icon_action">
+        <svg class="icon icon_link">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+        </svg>
+      </span>
+      </span>
+  </a>
+
+      </div>
+      <div class="component_peak_tools">
+  <button class="js-swap component_peak_trigger" data-swap-target=".component_ext_1606" data-swap-group="peaks" data-swap-linked="component_peak_ext_1606" title="Open details for Neuroscience" aria-expanded="false">
+    <span class="component_peak_trigger_label">Open details for Neuroscience</span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_default">
+      <svg class="icon icon_dots">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#dots"></use>
+      </svg>
+    </span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_action">
+      <svg class="icon icon_close">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+      </svg>
+    </span>
+  </button>
+  </div>
+
+    </div>
+  </article>
+</div>
+
+
+    </div>
+
+  </div>
+
+
+
+
+<div class="section_break">
+    <header class="section_break_header">
+      <h2 class="section_break_header_title">  Clinical Departments
+</h2>
+
+      </header>
+</div>
+
+
+
+
+
+
+
+    
+  
+    <div class="component_block columns_3 layout_in_content">
+    
+    <div class="component_items " data-carousel-options='{
+      "pagination": false,
+      "show": {
+        "500px": 2,
+        "1220px": 3
+      }
+    }'>
+
+        
+<div class="component_item page card">
+  <article class="js-component component component_ext_1616" data-id="ext_1616" data-type="page">
+    <span class="component_peak_background"></span>
+        <div class="component_figure" aria-hidden="true">
+      <a class="component_figure_link" href="https://www.brown.edu/academics/medical/anesthesiology/" aria-hidden="true">
+        <div class="js-background component_card_background" data-background-options='{"source": {
+"0px": "/sites/g/files/dprerj426/files/styles/classic_xsml/public/2019-10/critical-care-cardiothoracic.jpg?h=745471e5&amp;itok=Y_o7bT5O"}, "lazy": true, "lazyEdge": "100", "alt": "patient receiving anesthesia"}'></div>
+      </a>
+    </div>
+    
+    <div class="component_body">
+      <div class="component_content">
+        <div class="component_content_group">
+          <h3 class="component_title">
+            <a class="component_title_link" href="https://www.brown.edu/academics/medical/anesthesiology/">Anesthesiology</a>
+          </h3>
+        </div>
+      </div>
+      <div class="component_peak_details">
+        <div class="component_peak_details_inner">
+          <div class="peak_details_caption"></div>
+        </div>
+        <a class="peak_details_simple_link" href="https://www.brown.edu/academics/medical/anesthesiology/">
+  <span class="peak_details_simple_link_label">Visit Page</span>
+    <span class="peak_details_simple_link_icon" aria-hidden="true">
+          <span class="peak_details_simple_link_icon_default">
+        <svg class="icon icon_arrow_right">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+        </svg>
+      </span>
+      <span class="peak_details_simple_link_icon_action">
+        <svg class="icon icon_link">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+        </svg>
+      </span>
+      </span>
+  </a>
+
+      </div>
+      <div class="component_peak_tools">
+  <button class="js-swap component_peak_trigger" data-swap-target=".component_ext_1616" data-swap-group="peaks" data-swap-linked="component_peak_ext_1616" title="Open details for Anesthesiology" aria-expanded="false">
+    <span class="component_peak_trigger_label">Open details for Anesthesiology</span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_default">
+      <svg class="icon icon_dots">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#dots"></use>
+      </svg>
+    </span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_action">
+      <svg class="icon icon_close">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+      </svg>
+    </span>
+  </button>
+  </div>
+
+    </div>
+  </article>
+</div>
+
+  
+<div class="component_item page card">
+  <article class="js-component component component_ext_1641" data-id="ext_1641" data-type="page">
+    <span class="component_peak_background"></span>
+        <div class="component_figure" aria-hidden="true">
+      <a class="component_figure_link" href="https://www.brown.edu/academics/medical/about/departments/dermatology/" aria-hidden="true">
+        <div class="js-background component_card_background" data-background-options='{"source": {
+"0px": "/sites/g/files/dprerj426/files/styles/classic_xsml/public/2019-10/derm.jpg?h=4058ad88&amp;itok=nZkAplmM"}, "lazy": true, "lazyEdge": "100", "alt": "Dermatologist treating patient"}'></div>
+      </a>
+    </div>
+    
+    <div class="component_body">
+      <div class="component_content">
+        <div class="component_content_group">
+          <h3 class="component_title">
+            <a class="component_title_link" href="https://www.brown.edu/academics/medical/about/departments/dermatology/">Dermatology</a>
+          </h3>
+        </div>
+      </div>
+      <div class="component_peak_details">
+        <div class="component_peak_details_inner">
+          <div class="peak_details_caption"></div>
+        </div>
+        <a class="peak_details_simple_link" href="https://www.brown.edu/academics/medical/about/departments/dermatology/">
+  <span class="peak_details_simple_link_label">Visit Page</span>
+    <span class="peak_details_simple_link_icon" aria-hidden="true">
+          <span class="peak_details_simple_link_icon_default">
+        <svg class="icon icon_arrow_right">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+        </svg>
+      </span>
+      <span class="peak_details_simple_link_icon_action">
+        <svg class="icon icon_link">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+        </svg>
+      </span>
+      </span>
+  </a>
+
+      </div>
+      <div class="component_peak_tools">
+  <button class="js-swap component_peak_trigger" data-swap-target=".component_ext_1641" data-swap-group="peaks" data-swap-linked="component_peak_ext_1641" title="Open details for Dermatology" aria-expanded="false">
+    <span class="component_peak_trigger_label">Open details for Dermatology</span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_default">
+      <svg class="icon icon_dots">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#dots"></use>
+      </svg>
+    </span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_action">
+      <svg class="icon icon_close">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+      </svg>
+    </span>
+  </button>
+  </div>
+
+    </div>
+  </article>
+</div>
+
+  
+<div class="component_item page card">
+  <article class="js-component component component_ext_1636" data-id="ext_1636" data-type="page">
+    <span class="component_peak_background"></span>
+        <div class="component_figure" aria-hidden="true">
+      <a class="component_figure_link" href="http://www.brownradiology.com/" aria-hidden="true">
+        <div class="js-background component_card_background" data-background-options='{"source": {
+"0px": "/sites/g/files/dprerj426/files/styles/classic_xsml/public/2019-10/diagonstic%20imaging.jpg?h=83284e23&amp;itok=DVyWkeJY"}, "lazy": true, "lazyEdge": "100", "alt": "photos of X-rays"}'></div>
+      </a>
+    </div>
+    
+    <div class="component_body">
+      <div class="component_content">
+        <div class="component_content_group">
+          <h3 class="component_title">
+            <a class="component_title_link" href="http://www.brownradiology.com/">Diagnostic Imaging</a>
+          </h3>
+        </div>
+      </div>
+      <div class="component_peak_details">
+        <div class="component_peak_details_inner">
+          <div class="peak_details_caption"></div>
+        </div>
+        <a class="peak_details_simple_link" href="http://www.brownradiology.com/">
+  <span class="peak_details_simple_link_label">Visit Page</span>
+    <span class="peak_details_simple_link_icon" aria-hidden="true">
+          <span class="peak_details_simple_link_icon_default">
+        <svg class="icon icon_arrow_right">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+        </svg>
+      </span>
+      <span class="peak_details_simple_link_icon_action">
+        <svg class="icon icon_link">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+        </svg>
+      </span>
+      </span>
+  </a>
+
+      </div>
+      <div class="component_peak_tools">
+  <button class="js-swap component_peak_trigger" data-swap-target=".component_ext_1636" data-swap-group="peaks" data-swap-linked="component_peak_ext_1636" title="Open details for Diagnostic Imaging" aria-expanded="false">
+    <span class="component_peak_trigger_label">Open details for Diagnostic Imaging</span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_default">
+      <svg class="icon icon_dots">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#dots"></use>
+      </svg>
+    </span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_action">
+      <svg class="icon icon_close">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+      </svg>
+    </span>
+  </button>
+  </div>
+
+    </div>
+  </article>
+</div>
+
+  
+<div class="component_item page card">
+  <article class="js-component component component_ext_4101" data-id="ext_4101" data-type="page">
+    <span class="component_peak_background"></span>
+        <div class="component_figure" aria-hidden="true">
+      <a class="component_figure_link" href="https://www.brown.edu/academics/medical/about/departments/emergency-medicine/" aria-hidden="true">
+        <div class="js-background component_card_background" data-background-options='{"source": {
+"0px": "/sites/g/files/dprerj426/files/styles/classic_xsml/public/2019-11/emergency-room-3326156_1920_0.jpg?h=6f334a5f&amp;itok=cDUp7s3x"}, "lazy": true, "lazyEdge": "100", "alt": "ambulance outside emergency room"}'></div>
+      </a>
+    </div>
+    
+    <div class="component_body">
+      <div class="component_content">
+        <div class="component_content_group">
+          <h3 class="component_title">
+            <a class="component_title_link" href="https://www.brown.edu/academics/medical/about/departments/emergency-medicine/">Emergency Medicine</a>
+          </h3>
+        </div>
+      </div>
+      <div class="component_peak_details">
+        <div class="component_peak_details_inner">
+          <div class="peak_details_caption"></div>
+        </div>
+        <a class="peak_details_simple_link" href="https://www.brown.edu/academics/medical/about/departments/emergency-medicine/">
+  <span class="peak_details_simple_link_label">Visit Page</span>
+    <span class="peak_details_simple_link_icon" aria-hidden="true">
+          <span class="peak_details_simple_link_icon_default">
+        <svg class="icon icon_arrow_right">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+        </svg>
+      </span>
+      <span class="peak_details_simple_link_icon_action">
+        <svg class="icon icon_link">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+        </svg>
+      </span>
+      </span>
+  </a>
+
+      </div>
+      <div class="component_peak_tools">
+  <button class="js-swap component_peak_trigger" data-swap-target=".component_ext_4101" data-swap-group="peaks" data-swap-linked="component_peak_ext_4101" title="Open details for Emergency Medicine" aria-expanded="false">
+    <span class="component_peak_trigger_label">Open details for Emergency Medicine</span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_default">
+      <svg class="icon icon_dots">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#dots"></use>
+      </svg>
+    </span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_action">
+      <svg class="icon icon_close">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+      </svg>
+    </span>
+  </button>
+  </div>
+
+    </div>
+  </article>
+</div>
+
+  
+<div class="component_item page card">
+  <article class="js-component component component_ext_1621" data-id="ext_1621" data-type="page">
+    <span class="component_peak_background"></span>
+        <div class="component_figure" aria-hidden="true">
+      <a class="component_figure_link" href="http://familymedicine.med.brown.edu" aria-hidden="true">
+        <div class="js-background component_card_background" data-background-options='{"source": {
+"0px": "/sites/g/files/dprerj426/files/styles/classic_xsml/public/2019-11/Dr_Aris-7.jpg?h=e12b9132&amp;itok=N8AWmMX7"}, "lazy": true, "lazyEdge": "100", "alt": "Doctor holding hands with child"}'></div>
+      </a>
+    </div>
+    
+    <div class="component_body">
+      <div class="component_content">
+        <div class="component_content_group">
+          <h3 class="component_title">
+            <a class="component_title_link" href="http://familymedicine.med.brown.edu">Family Medicine</a>
+          </h3>
+        </div>
+      </div>
+      <div class="component_peak_details">
+        <div class="component_peak_details_inner">
+          <div class="peak_details_caption"></div>
+        </div>
+        <a class="peak_details_simple_link" href="http://familymedicine.med.brown.edu">
+  <span class="peak_details_simple_link_label">Visit Page</span>
+    <span class="peak_details_simple_link_icon" aria-hidden="true">
+          <span class="peak_details_simple_link_icon_default">
+        <svg class="icon icon_arrow_right">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+        </svg>
+      </span>
+      <span class="peak_details_simple_link_icon_action">
+        <svg class="icon icon_link">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+        </svg>
+      </span>
+      </span>
+  </a>
+
+      </div>
+      <div class="component_peak_tools">
+  <button class="js-swap component_peak_trigger" data-swap-target=".component_ext_1621" data-swap-group="peaks" data-swap-linked="component_peak_ext_1621" title="Open details for Family Medicine" aria-expanded="false">
+    <span class="component_peak_trigger_label">Open details for Family Medicine</span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_default">
+      <svg class="icon icon_dots">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#dots"></use>
+      </svg>
+    </span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_action">
+      <svg class="icon icon_close">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+      </svg>
+    </span>
+  </button>
+  </div>
+
+    </div>
+  </article>
+</div>
+
+  
+<div class="component_item page card">
+  <article class="js-component component component_ext_1646" data-id="ext_1646" data-type="page">
+    <span class="component_peak_background"></span>
+        <div class="component_figure" aria-hidden="true">
+      <a class="component_figure_link" href="http://www.brownmedicine.org/2/welcome/index.htm" aria-hidden="true">
+        <div class="js-background component_card_background" data-background-options='{"source": {
+"0px": "/sites/g/files/dprerj426/files/styles/classic_xsml/public/2019-11/Standardized%20Patients_2019-18.jpg?h=d4ad0725&amp;itok=iEYez97H"}, "lazy": true, "lazyEdge": "100", "alt": "reflex hammer"}'></div>
+      </a>
+    </div>
+    
+    <div class="component_body">
+      <div class="component_content">
+        <div class="component_content_group">
+          <h3 class="component_title">
+            <a class="component_title_link" href="http://www.brownmedicine.org/2/welcome/index.htm">Medicine</a>
+          </h3>
+        </div>
+      </div>
+      <div class="component_peak_details">
+        <div class="component_peak_details_inner">
+          <div class="peak_details_caption"></div>
+        </div>
+        <a class="peak_details_simple_link" href="http://www.brownmedicine.org/2/welcome/index.htm">
+  <span class="peak_details_simple_link_label">Visit Page</span>
+    <span class="peak_details_simple_link_icon" aria-hidden="true">
+          <span class="peak_details_simple_link_icon_default">
+        <svg class="icon icon_arrow_right">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+        </svg>
+      </span>
+      <span class="peak_details_simple_link_icon_action">
+        <svg class="icon icon_link">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+        </svg>
+      </span>
+      </span>
+  </a>
+
+      </div>
+      <div class="component_peak_tools">
+  <button class="js-swap component_peak_trigger" data-swap-target=".component_ext_1646" data-swap-group="peaks" data-swap-linked="component_peak_ext_1646" title="Open details for Medicine" aria-expanded="false">
+    <span class="component_peak_trigger_label">Open details for Medicine</span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_default">
+      <svg class="icon icon_dots">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#dots"></use>
+      </svg>
+    </span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_action">
+      <svg class="icon icon_close">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+      </svg>
+    </span>
+  </button>
+  </div>
+
+    </div>
+  </article>
+</div>
+
+  
+<div class="component_item page card">
+  <article class="js-component component component_ext_1766" data-id="ext_1766" data-type="page">
+    <span class="component_peak_background"></span>
+        <div class="component_figure" aria-hidden="true">
+      <a class="component_figure_link" href="https://www.brown.edu/academics/medical/about/departments/neurology/" aria-hidden="true">
+        <div class="js-background component_card_background" data-background-options='{"source": {
+"0px": "/sites/g/files/dprerj426/files/styles/classic_xsml/public/2019-10/neuro-slider.jpg?h=2a87ad06&amp;itok=eZZ09cH_"}, "lazy": true, "lazyEdge": "100", "alt": "multiple brain scan images"}'></div>
+      </a>
+    </div>
+    
+    <div class="component_body">
+      <div class="component_content">
+        <div class="component_content_group">
+          <h3 class="component_title">
+            <a class="component_title_link" href="https://www.brown.edu/academics/medical/about/departments/neurology/">Neurology</a>
+          </h3>
+        </div>
+      </div>
+      <div class="component_peak_details">
+        <div class="component_peak_details_inner">
+          <div class="peak_details_caption"></div>
+        </div>
+        <a class="peak_details_simple_link" href="https://www.brown.edu/academics/medical/about/departments/neurology/">
+  <span class="peak_details_simple_link_label">Visit Page</span>
+    <span class="peak_details_simple_link_icon" aria-hidden="true">
+          <span class="peak_details_simple_link_icon_default">
+        <svg class="icon icon_arrow_right">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+        </svg>
+      </span>
+      <span class="peak_details_simple_link_icon_action">
+        <svg class="icon icon_link">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+        </svg>
+      </span>
+      </span>
+  </a>
+
+      </div>
+      <div class="component_peak_tools">
+  <button class="js-swap component_peak_trigger" data-swap-target=".component_ext_1766" data-swap-group="peaks" data-swap-linked="component_peak_ext_1766" title="Open details for Neurology" aria-expanded="false">
+    <span class="component_peak_trigger_label">Open details for Neurology</span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_default">
+      <svg class="icon icon_dots">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#dots"></use>
+      </svg>
+    </span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_action">
+      <svg class="icon icon_close">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+      </svg>
+    </span>
+  </button>
+  </div>
+
+    </div>
+  </article>
+</div>
+
+  
+<div class="component_item page card">
+  <article class="js-component component component_ext_1771" data-id="ext_1771" data-type="page">
+    <span class="component_peak_background"></span>
+        <div class="component_figure" aria-hidden="true">
+      <a class="component_figure_link" href="https://brownneurosurgery.com/" aria-hidden="true">
+        <div class="js-background component_card_background" data-background-options='{"source": {
+"0px": "/sites/g/files/dprerj426/files/styles/classic_xsml/public/2019-11/brain%20%2838%20of%2056%29.jpg?h=64252adc&amp;itok=yiQcuaK2"}, "lazy": true, "lazyEdge": "100", "alt": "doctor performing brain surgery"}'></div>
+      </a>
+    </div>
+    
+    <div class="component_body">
+      <div class="component_content">
+        <div class="component_content_group">
+          <h3 class="component_title">
+            <a class="component_title_link" href="https://brownneurosurgery.com/">Neurosurgery</a>
+          </h3>
+        </div>
+      </div>
+      <div class="component_peak_details">
+        <div class="component_peak_details_inner">
+          <div class="peak_details_caption"></div>
+        </div>
+        <a class="peak_details_simple_link" href="https://brownneurosurgery.com/">
+  <span class="peak_details_simple_link_label">Visit Page</span>
+    <span class="peak_details_simple_link_icon" aria-hidden="true">
+          <span class="peak_details_simple_link_icon_default">
+        <svg class="icon icon_arrow_right">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+        </svg>
+      </span>
+      <span class="peak_details_simple_link_icon_action">
+        <svg class="icon icon_link">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+        </svg>
+      </span>
+      </span>
+  </a>
+
+      </div>
+      <div class="component_peak_tools">
+  <button class="js-swap component_peak_trigger" data-swap-target=".component_ext_1771" data-swap-group="peaks" data-swap-linked="component_peak_ext_1771" title="Open details for Neurosurgery" aria-expanded="false">
+    <span class="component_peak_trigger_label">Open details for Neurosurgery</span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_default">
+      <svg class="icon icon_dots">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#dots"></use>
+      </svg>
+    </span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_action">
+      <svg class="icon icon_close">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+      </svg>
+    </span>
+  </button>
+  </div>
+
+    </div>
+  </article>
+</div>
+
+  
+<div class="component_item page card">
+  <article class="js-component component component_ext_1626" data-id="ext_1626" data-type="page">
+    <span class="component_peak_background"></span>
+        <div class="component_figure" aria-hidden="true">
+      <a class="component_figure_link" href="https://www.brown.edu/Departments/Obstetrics_Gynecology/" aria-hidden="true">
+        <div class="js-background component_card_background" data-background-options='{"source": {
+"0px": "/sites/g/files/dprerj426/files/styles/classic_xsml/public/2019-10/Day%20in%20the%20Life%20of%20a%20Resident%20004.jpg?h=fd8ddfdf&amp;itok=VOxtePM6"}, "lazy": true, "lazyEdge": "100", "alt": "Doctor examining pregnant woman"}'></div>
+      </a>
+    </div>
+    
+    <div class="component_body">
+      <div class="component_content">
+        <div class="component_content_group">
+          <h3 class="component_title">
+            <a class="component_title_link" href="https://www.brown.edu/Departments/Obstetrics_Gynecology/">Obstetrics and Gynecology</a>
+          </h3>
+        </div>
+      </div>
+      <div class="component_peak_details">
+        <div class="component_peak_details_inner">
+          <div class="peak_details_caption"></div>
+        </div>
+        <a class="peak_details_simple_link" href="https://www.brown.edu/Departments/Obstetrics_Gynecology/">
+  <span class="peak_details_simple_link_label">Visit Page</span>
+    <span class="peak_details_simple_link_icon" aria-hidden="true">
+          <span class="peak_details_simple_link_icon_default">
+        <svg class="icon icon_arrow_right">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+        </svg>
+      </span>
+      <span class="peak_details_simple_link_icon_action">
+        <svg class="icon icon_link">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+        </svg>
+      </span>
+      </span>
+  </a>
+
+      </div>
+      <div class="component_peak_tools">
+  <button class="js-swap component_peak_trigger" data-swap-target=".component_ext_1626" data-swap-group="peaks" data-swap-linked="component_peak_ext_1626" title="Open details for Obstetrics and Gynecology" aria-expanded="false">
+    <span class="component_peak_trigger_label">Open details for Obstetrics and Gynecology</span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_default">
+      <svg class="icon icon_dots">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#dots"></use>
+      </svg>
+    </span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_action">
+      <svg class="icon icon_close">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+      </svg>
+    </span>
+  </button>
+  </div>
+
+    </div>
+  </article>
+</div>
+
+  
+<div class="component_item page card">
+  <article class="js-component component component_ext_1776" data-id="ext_1776" data-type="page">
+    <span class="component_peak_background"></span>
+        <div class="component_figure" aria-hidden="true">
+      <a class="component_figure_link" href="https://www.brown.edu/academics/medical/about/departments/orthopaedics/" aria-hidden="true">
+        <div class="js-background component_card_background" data-background-options='{"source": {
+"0px": "/sites/g/files/dprerj426/files/styles/classic_xsml/public/2019-10/Home_2_Faculty.jpg?h=c8781fb6&amp;itok=B72rHbFc"}, "lazy": true, "lazyEdge": "100", "alt": "doctor pointing at x-ray screen"}'></div>
+      </a>
+    </div>
+    
+    <div class="component_body">
+      <div class="component_content">
+        <div class="component_content_group">
+          <h3 class="component_title">
+            <a class="component_title_link" href="https://www.brown.edu/academics/medical/about/departments/orthopaedics/">Orthopaedics</a>
+          </h3>
+        </div>
+      </div>
+      <div class="component_peak_details">
+        <div class="component_peak_details_inner">
+          <div class="peak_details_caption"></div>
+        </div>
+        <a class="peak_details_simple_link" href="https://www.brown.edu/academics/medical/about/departments/orthopaedics/">
+  <span class="peak_details_simple_link_label">Visit Page</span>
+    <span class="peak_details_simple_link_icon" aria-hidden="true">
+          <span class="peak_details_simple_link_icon_default">
+        <svg class="icon icon_arrow_right">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+        </svg>
+      </span>
+      <span class="peak_details_simple_link_icon_action">
+        <svg class="icon icon_link">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+        </svg>
+      </span>
+      </span>
+  </a>
+
+      </div>
+      <div class="component_peak_tools">
+  <button class="js-swap component_peak_trigger" data-swap-target=".component_ext_1776" data-swap-group="peaks" data-swap-linked="component_peak_ext_1776" title="Open details for Orthopaedics" aria-expanded="false">
+    <span class="component_peak_trigger_label">Open details for Orthopaedics</span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_default">
+      <svg class="icon icon_dots">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#dots"></use>
+      </svg>
+    </span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_action">
+      <svg class="icon icon_close">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+      </svg>
+    </span>
+  </button>
+  </div>
+
+    </div>
+  </article>
+</div>
+
+  
+<div class="component_item page card">
+  <article class="js-component component component_ext_1781" data-id="ext_1781" data-type="page">
+    <span class="component_peak_background"></span>
+        <div class="component_figure" aria-hidden="true">
+      <a class="component_figure_link" href="https://www.brown.edu/academics/medical/about/departments/pediatrics/" aria-hidden="true">
+        <div class="js-background component_card_background" data-background-options='{"source": {
+"0px": "/sites/g/files/dprerj426/files/styles/classic_xsml/public/2019-11/Dr_Aris-6.jpg?h=d1c4f1fb&amp;itok=Xc-kLXpY"}, "lazy": true, "lazyEdge": "100", "alt": "Child being examined by doctor"}'></div>
+      </a>
+    </div>
+    
+    <div class="component_body">
+      <div class="component_content">
+        <div class="component_content_group">
+          <h3 class="component_title">
+            <a class="component_title_link" href="https://www.brown.edu/academics/medical/about/departments/pediatrics/">Pediatrics</a>
+          </h3>
+        </div>
+      </div>
+      <div class="component_peak_details">
+        <div class="component_peak_details_inner">
+          <div class="peak_details_caption"></div>
+        </div>
+        <a class="peak_details_simple_link" href="https://www.brown.edu/academics/medical/about/departments/pediatrics/">
+  <span class="peak_details_simple_link_label">Visit Page</span>
+    <span class="peak_details_simple_link_icon" aria-hidden="true">
+          <span class="peak_details_simple_link_icon_default">
+        <svg class="icon icon_arrow_right">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+        </svg>
+      </span>
+      <span class="peak_details_simple_link_icon_action">
+        <svg class="icon icon_link">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+        </svg>
+      </span>
+      </span>
+  </a>
+
+      </div>
+      <div class="component_peak_tools">
+  <button class="js-swap component_peak_trigger" data-swap-target=".component_ext_1781" data-swap-group="peaks" data-swap-linked="component_peak_ext_1781" title="Open details for Pediatrics" aria-expanded="false">
+    <span class="component_peak_trigger_label">Open details for Pediatrics</span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_default">
+      <svg class="icon icon_dots">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#dots"></use>
+      </svg>
+    </span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_action">
+      <svg class="icon icon_close">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+      </svg>
+    </span>
+  </button>
+  </div>
+
+    </div>
+  </article>
+</div>
+
+  
+<div class="component_item page card">
+  <article class="js-component component component_ext_1631" data-id="ext_1631" data-type="page">
+    <span class="component_peak_background"></span>
+        <div class="component_figure" aria-hidden="true">
+      <a class="component_figure_link" href="https://www.brown.edu/academics/medical/about/departments/psychiatry-and-human-behavior/" aria-hidden="true">
+        <div class="js-background component_card_background" data-background-options='{"source": {
+"0px": "/sites/g/files/dprerj426/files/styles/classic_xsml/public/2019-10/npni.jpg?h=dcdf47eb&amp;itok=W7O0sFCc"}, "lazy": true, "lazyEdge": "100", "alt": "artistic graphic of human brain"}'></div>
+      </a>
+    </div>
+    
+    <div class="component_body">
+      <div class="component_content">
+        <div class="component_content_group">
+          <h3 class="component_title">
+            <a class="component_title_link" href="https://www.brown.edu/academics/medical/about/departments/psychiatry-and-human-behavior/">Psychiatry and Human Behavior</a>
+          </h3>
+        </div>
+      </div>
+      <div class="component_peak_details">
+        <div class="component_peak_details_inner">
+          <div class="peak_details_caption"></div>
+        </div>
+        <a class="peak_details_simple_link" href="https://www.brown.edu/academics/medical/about/departments/psychiatry-and-human-behavior/">
+  <span class="peak_details_simple_link_label">Visit Page</span>
+    <span class="peak_details_simple_link_icon" aria-hidden="true">
+          <span class="peak_details_simple_link_icon_default">
+        <svg class="icon icon_arrow_right">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+        </svg>
+      </span>
+      <span class="peak_details_simple_link_icon_action">
+        <svg class="icon icon_link">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+        </svg>
+      </span>
+      </span>
+  </a>
+
+      </div>
+      <div class="component_peak_tools">
+  <button class="js-swap component_peak_trigger" data-swap-target=".component_ext_1631" data-swap-group="peaks" data-swap-linked="component_peak_ext_1631" title="Open details for Psychiatry and Human Behavior" aria-expanded="false">
+    <span class="component_peak_trigger_label">Open details for Psychiatry and Human Behavior</span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_default">
+      <svg class="icon icon_dots">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#dots"></use>
+      </svg>
+    </span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_action">
+      <svg class="icon icon_close">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+      </svg>
+    </span>
+  </button>
+  </div>
+
+    </div>
+  </article>
+</div>
+
+    
+<div class="component_item page card">
+  <article class="js-component component component_page_281" data-id="page_281" data-type="page">
+    <span class="component_peak_background"></span>
+        <div class="component_figure" aria-hidden="true">
+      <a class="component_figure_link" href="/about/facts-and-figures/Radiation-Oncology" aria-hidden="true">
+        <div class="js-background component_card_background" data-background-options='{"source": {
+"0px": "/sites/g/files/dprerj426/files/styles/classic_xsml/public/2019-10/20181212_%23338.jpg?itok=-KakLwZI"}, "lazy": true, "lazyEdge": "100", "alt": "slide under a microscope"}'></div>
+      </a>
+    </div>
+        <div class="component_body">
+      <div class="component_content">
+        <div class="component_content_group">
+          <h3 class="component_title">
+            <a class="component_title_link" href="/about/facts-and-figures/Radiation-Oncology">Radiation Oncology</a>
+          </h3>
+        </div>
+      </div>
+      <div class="component_peak_details">
+        <div class="component_peak_details_inner">
+          <div class="peak_details_caption"></div>
+        </div>
+        <a class="peak_details_simple_link" href="/about/facts-and-figures/Radiation-Oncology">
+  <span class="peak_details_simple_link_label">Visit Page</span>
+    <span class="peak_details_simple_link_icon" aria-hidden="true">
+          <span class="peak_details_simple_link_icon_default">
+        <svg class="icon icon_arrow_right">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+        </svg>
+      </span>
+      <span class="peak_details_simple_link_icon_action">
+        <svg class="icon icon_link">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+        </svg>
+      </span>
+      </span>
+  </a>
+
+      </div>
+      <div class="component_peak_tools">
+  <button class="js-swap component_peak_trigger" data-swap-target=".component_page_281" data-swap-group="peaks" data-swap-linked="component_peak_page_281" title="Open details for Radiation Oncology" aria-expanded="false">
+    <span class="component_peak_trigger_label">Open details for Radiation Oncology</span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_default">
+      <svg class="icon icon_dots">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#dots"></use>
+      </svg>
+    </span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_action">
+      <svg class="icon icon_close">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+      </svg>
+    </span>
+  </button>
+  </div>
+
+    </div>
+  </article>
+</div>
+
+
+
+  
+<div class="component_item page card">
+  <article class="js-component component component_ext_1791" data-id="ext_1791" data-type="page">
+    <span class="component_peak_background"></span>
+        <div class="component_figure" aria-hidden="true">
+      <a class="component_figure_link" href="https://www.brown.edu/academics/medical/about/departments/surgery/" aria-hidden="true">
+        <div class="js-background component_card_background" data-background-options='{"source": {
+"0px": "/sites/g/files/dprerj426/files/styles/classic_xsml/public/2019-10/20140421-BMED-Clinical-Skills-Clerkship-007.jpg?h=4db86855&amp;itok=H525SYfT"}, "lazy": true, "lazyEdge": "100", "alt": "Surgeon putting on gloves"}'></div>
+      </a>
+    </div>
+    
+    <div class="component_body">
+      <div class="component_content">
+        <div class="component_content_group">
+          <h3 class="component_title">
+            <a class="component_title_link" href="https://www.brown.edu/academics/medical/about/departments/surgery/">Surgery</a>
+          </h3>
+        </div>
+      </div>
+      <div class="component_peak_details">
+        <div class="component_peak_details_inner">
+          <div class="peak_details_caption"></div>
+        </div>
+        <a class="peak_details_simple_link" href="https://www.brown.edu/academics/medical/about/departments/surgery/">
+  <span class="peak_details_simple_link_label">Visit Page</span>
+    <span class="peak_details_simple_link_icon" aria-hidden="true">
+          <span class="peak_details_simple_link_icon_default">
+        <svg class="icon icon_arrow_right">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+        </svg>
+      </span>
+      <span class="peak_details_simple_link_icon_action">
+        <svg class="icon icon_link">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+        </svg>
+      </span>
+      </span>
+  </a>
+
+      </div>
+      <div class="component_peak_tools">
+  <button class="js-swap component_peak_trigger" data-swap-target=".component_ext_1791" data-swap-group="peaks" data-swap-linked="component_peak_ext_1791" title="Open details for Surgery" aria-expanded="false">
+    <span class="component_peak_trigger_label">Open details for Surgery</span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_default">
+      <svg class="icon icon_dots">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#dots"></use>
+      </svg>
+    </span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_action">
+      <svg class="icon icon_close">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+      </svg>
+    </span>
+  </button>
+  </div>
+
+    </div>
+  </article>
+</div>
+
+
+    </div>
+
+  </div>
+
+
+
+
+<div class="section_break">
+    <header class="section_break_header">
+      <h2 class="section_break_header_title">  Hybrid Departments
+</h2>
+
+      </header>
+</div>
+
+
+
+
+
+
+
+    
+  
+    <div class="component_block columns_3 layout_in_content">
+    
+    <div class="component_items " data-carousel-options='{
+      "pagination": false,
+      "show": {
+        "500px": 2,
+        "1220px": 3
+      }
+    }'>
+
+        
+<div class="component_item page card">
+  <article class="js-component component component_ext_4476" data-id="ext_4476" data-type="page">
+    <span class="component_peak_background"></span>
+        <div class="component_figure" aria-hidden="true">
+      <a class="component_figure_link" href="https://medical.brown.edu/about/departments/department-medical-science" aria-hidden="true">
+        <div class="js-background component_card_background" data-background-options='{"source": {
+"0px": "/sites/g/files/dprerj426/files/styles/classic_xsml/public/2020-02/20140421-BMED-Clinical-Skills-Clerkship-018_0.jpg?h=9aea882e&amp;itok=EVIBS7Ba"}, "lazy": true, "lazyEdge": "100", "alt": "Clinical skills workshop"}'></div>
+      </a>
+    </div>
+    
+    <div class="component_body">
+      <div class="component_content">
+        <div class="component_content_group">
+          <h3 class="component_title">
+            <a class="component_title_link" href="https://medical.brown.edu/about/departments/department-medical-science">Medical Science</a>
+          </h3>
+        </div>
+      </div>
+      <div class="component_peak_details">
+        <div class="component_peak_details_inner">
+          <div class="peak_details_caption"></div>
+        </div>
+        <a class="peak_details_simple_link" href="https://medical.brown.edu/about/departments/department-medical-science">
+  <span class="peak_details_simple_link_label">Visit Page</span>
+    <span class="peak_details_simple_link_icon" aria-hidden="true">
+          <span class="peak_details_simple_link_icon_default">
+        <svg class="icon icon_arrow_right">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+        </svg>
+      </span>
+      <span class="peak_details_simple_link_icon_action">
+        <svg class="icon icon_link">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+        </svg>
+      </span>
+      </span>
+  </a>
+
+      </div>
+      <div class="component_peak_tools">
+  <button class="js-swap component_peak_trigger" data-swap-target=".component_ext_4476" data-swap-group="peaks" data-swap-linked="component_peak_ext_4476" title="Open details for Medical Science" aria-expanded="false">
+    <span class="component_peak_trigger_label">Open details for Medical Science</span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_default">
+      <svg class="icon icon_dots">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#dots"></use>
+      </svg>
+    </span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_action">
+      <svg class="icon icon_close">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+      </svg>
+    </span>
+  </button>
+  </div>
+
+    </div>
+  </article>
+</div>
+
+  
+<div class="component_item page card">
+  <article class="js-component component component_ext_1796" data-id="ext_1796" data-type="page">
+    <span class="component_peak_background"></span>
+        <div class="component_figure" aria-hidden="true">
+      <a class="component_figure_link" href="https://www.brown.edu/academics/biomed/departments/pathology/" aria-hidden="true">
+        <div class="js-background component_card_background" data-background-options='{"source": {
+"0px": "/sites/g/files/dprerj426/files/styles/classic_xsml/public/2019-10/Pathology.jpg?h=b992a4d5&amp;itok=xGGTkcUb"}, "lazy": true, "lazyEdge": "100", "alt": "Researcher using a test tube"}'></div>
+      </a>
+    </div>
+    
+    <div class="component_body">
+      <div class="component_content">
+        <div class="component_content_group">
+          <h3 class="component_title">
+            <a class="component_title_link" href="https://www.brown.edu/academics/biomed/departments/pathology/">Pathology and Laboratory Medicine</a>
+          </h3>
+        </div>
+      </div>
+      <div class="component_peak_details">
+        <div class="component_peak_details_inner">
+          <div class="peak_details_caption"></div>
+        </div>
+        <a class="peak_details_simple_link" href="https://www.brown.edu/academics/biomed/departments/pathology/">
+  <span class="peak_details_simple_link_label">Visit Page</span>
+    <span class="peak_details_simple_link_icon" aria-hidden="true">
+          <span class="peak_details_simple_link_icon_default">
+        <svg class="icon icon_arrow_right">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+        </svg>
+      </span>
+      <span class="peak_details_simple_link_icon_action">
+        <svg class="icon icon_link">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+        </svg>
+      </span>
+      </span>
+  </a>
+
+      </div>
+      <div class="component_peak_tools">
+  <button class="js-swap component_peak_trigger" data-swap-target=".component_ext_1796" data-swap-group="peaks" data-swap-linked="component_peak_ext_1796" title="Open details for Pathology and Laboratory Medicine" aria-expanded="false">
+    <span class="component_peak_trigger_label">Open details for Pathology and Laboratory Medicine</span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_default">
+      <svg class="icon icon_dots">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#dots"></use>
+      </svg>
+    </span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_action">
+      <svg class="icon icon_close">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+      </svg>
+    </span>
+  </button>
+  </div>
+
+    </div>
+  </article>
+</div>
+
+
+    </div>
+
+  </div>
+
+
+
+
+            
+
+            
+            
+                        
+                                  </div>
+
+        </div>
+        <div class="sidebar_callouts_mobile">
+        
+<div class="page_discovery">
+  <div class="page_discovery_header">
+        <figure class="page_discovery_figure">
+      <a class="page_discovery_title_link" href="/about/facts-and-figures/match-lists/md-2021-match-list"><img class="page_discovery_image" src="/sites/g/files/dprerj426/files/styles/classic_xxsml/public/2019-09/20150320-BMED-Match-Day-2015-Courtney-Mannino.jpg?h=57193c5d&amp;itok=9e2yuxsE" alt="Match Day"></a>
+    </figure>
+        <h2 class="page_discovery_title">
+      <a class="page_discovery_title_link" href="/about/facts-and-figures/match-lists/md-2021-match-list">  Residency Placements
+</a>
+    </h2>
+  </div>
+  <p class="page_discovery_caption">  Graduates of The Warren Alpert Medical School are accepted into the nation&#039;s most competitive residency programs and leading medical centers.
+</p>
+  <footer class="page_discovery_footer">
+    <a class="page_discovery_link" href="/about/facts-and-figures/match-lists/md-2021-match-list">
+  <span class="page_discovery_link_label">See the 2021 match list</span>
+    <span class="page_discovery_link_icon" aria-hidden="true">
+          <span class="page_discovery_link_icon_default">
+        <svg class="icon icon_arrow_right">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+        </svg>
+      </span>
+      <span class="page_discovery_link_icon_action">
+        <svg class="icon icon_link">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+        </svg>
+      </span>
+      </span>
+  </a>
+
+
+          <a class="page_discovery_link" href="/about/facts-and-figures/match-lists">
+  <span class="page_discovery_link_label">More Match Lists</span>
+    <span class="page_discovery_link_icon" aria-hidden="true">
+          <span class="page_discovery_link_icon_default">
+        <svg class="icon icon_arrow_right">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+        </svg>
+      </span>
+      <span class="page_discovery_link_icon_action">
+        <svg class="icon icon_link">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+        </svg>
+      </span>
+      </span>
+  </a>
+
+        
+  </footer>
+</div>
+
+        </div>
+      </div>
+          </div>
+
+            <div class="full_width_callouts">
+              
+        
+            </div>
+          </div>
+
+  </main>
+
+    <footer class="footer footer_med" id="footer" itemscope itemtype="http://schema.org/WPFooter">
+    <div class="footer_ribbon">
+      <div class="fs-row">
+        <div class="fs-cell">
+          <div class="footer_ribbon_inner">
+            <div class="footer_ribbon_group">
+                
+
+
+
+            
+
+<div class="address" itemscope itemtype="http://schema.org/PostalAddress">
+	<span class="address_name" itemprop="name">Brown University</span>
+	<div class="address_items">
+            <a class="address_item address_base address_details" href="https://www.google.com/maps/dir/?api=1&amp;destination=Warren%20Alpert%20Medical%20School%20of%20Brown%20University%20222%20Richmond%20St%20Providence%20RI%2002903" target="_blank">
+          <span class="address_details_icon"><svg class="icon icon_marker">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#marker"></use>
+</svg>
+</span>
+			<span class="address_details_info">
+				<span class="address_city" itemprop="addressLocality">Providence</span>
+				<span class="address_state" itemprop="addressRegion">RI</span>
+				<span class="address_zip" itemprop="postalCode">02903</span>
+			</span>
+		</a>
+				<a class="address_item address_phone" itemprop="telephone" href="tel:4018631000">
+			<span class="address_details">
+				<span class="address_details_icon"><svg class="icon icon_phone">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#phone"></use>
+</svg>
+</span>
+				<span class="address_details_info">401-863-1000</span>
+			</span>
+		</a>
+		    	</div>
+</div>
+
+
+
+
+
+                              <nav class="quick_nav" aria-label="Quick Navigation" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+  <div class="quick_nav_header">
+    <h2 class="quick_nav_title">Quick Navigation</h2>
+  </div>
+  <ul class="quick_nav_list" aria-label="Quick Navigation">
+
+  <li class="quick_nav_item">
+    <a class="quick_nav_link arrow_right" href="https://www.brown.edu/academics/biomed" itemprop="url">
+      <span class="quick_nav_link_label" itemprop="name">Division of Biology and Medicine</span>
+      <span class="quick_nav_link_icon" aria-hidden="true">
+        <span class="quick_nav_link_icon_default">
+          <svg class="icon icon_arrow_right">
+            <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+          </svg>
+        </span>
+        <span class="quick_nav_link_icon_action">
+          <svg class="icon icon_link">
+            <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+          </svg>
+        </span>
+      </span>
+    </a>
+  </li>
+
+  <li class="quick_nav_item">
+    <a class="quick_nav_link arrow_right" href="http://biology.brown.edu" itemprop="url">
+      <span class="quick_nav_link_label" itemprop="name">Program in Biology</span>
+      <span class="quick_nav_link_icon" aria-hidden="true">
+        <span class="quick_nav_link_icon_default">
+          <svg class="icon icon_arrow_right">
+            <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+          </svg>
+        </span>
+        <span class="quick_nav_link_icon_action">
+          <svg class="icon icon_link">
+            <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+          </svg>
+        </span>
+      </span>
+    </a>
+  </li>
+
+    <li class="quick_nav_item">
+      <a class="quick_nav_link arrow_right" href="https://medical.brown.edu/about/affiliated-hospitals" itemprop="url">
+        <span class="quick_nav_link_label" itemprop="name">Affiliated Hospitals</span>
+        <span class="quick_nav_link_icon" aria-hidden="true">
+          <span class="quick_nav_link_icon_default">
+            <svg class="icon icon_arrow_right">
+              <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+            </svg>
+          </span>
+          <span class="quick_nav_link_icon_action">
+            <svg class="icon icon_link">
+              <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+            </svg>
+          </span>
+        </span>
+      </a>
+    </li>
+
+  </ul>
+</nav>
+                <nav class="footer_nav" aria-label="Footer Navigation" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+  <div class="footer_nav_header">
+    <h2 class="footer_nav_title">Footer Navigation</h2>
+  </div>
+  <ul class="footer_nav_list" aria-label="Footer Navigation">
+
+  <li class="footer_nav_item">
+    <a class="footer_nav_link arrow_right" href="https://medical.brown.edu/events" itemprop="url">
+      <span class="footer_nav_link_label" itemprop="name">Events</span>
+      <span class="footer_nav_link_icon" aria-hidden="true">
+        <span class="footer_nav_link_icon_default">
+          <svg class="icon icon_arrow_right">
+            <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+          </svg>
+          </span>
+        <span class="footer_nav_link_icon_action">
+          <svg class="icon icon_link">
+            <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+          </svg>
+        </span>
+      </span>
+    </a>
+  </li>
+
+  <li class="footer_nav_item">
+    <a class="footer_nav_link arrow_right" href="https://medical.brown.edu/maps-and-directions" itemprop="url">
+      <span class="footer_nav_link_label" itemprop="name">Maps and Directions</span>
+      <span class="footer_nav_link_icon" aria-hidden="true">
+        <span class="footer_nav_link_icon_default">
+          <svg class="icon icon_arrow_right">
+            <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+          </svg>
+          </span>
+        <span class="footer_nav_link_icon_action">
+          <svg class="icon icon_link">
+            <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+          </svg>
+        </span>
+      </span>
+    </a>
+  </li>
+
+  <li class="footer_nav_item">
+    <a class="footer_nav_link arrow_right" href="https://medical.brown.edu/contact-us" itemprop="url">
+      <span class="footer_nav_link_label" itemprop="name">Contact Us</span>
+      <span class="footer_nav_link_icon" aria-hidden="true">
+        <span class="footer_nav_link_icon_default">
+          <svg class="icon icon_arrow_right">
+            <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+          </svg>
+          </span>
+        <span class="footer_nav_link_icon_action">
+          <svg class="icon icon_link">
+            <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+          </svg>
+        </span>
+      </span>
+    </a>
+  </li>
+
+    <li class="footer_nav_item">
+      <a class="footer_nav_link arrow_right" href="https://www.brown.edu/website-accessibility" itemprop="url">
+        <span class="footer_nav_link_label" itemprop="name">Accessibility</span>
+        <span class="footer_nav_link_icon" aria-hidden="true">
+          <span class="footer_nav_link_icon_default">
+            <svg class="icon icon_arrow_right">
+              <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+            </svg>
+            </span>
+          <span class="footer_nav_link_icon_action">
+            <svg class="icon icon_link">
+              <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+            </svg>
+          </span>
+        </span>
+      </a>
+    </li>
+
+  </ul>
+</nav>
+                          </div>
+            <div class="footer_ribbon_aside">
+                
+<div class="footer_give">
+  <img class="footer_give_logo" src="/themes/custom/brown/static/images/logo_together.png" alt="Brown Together" />
+  <p class="footer_give_caption">The campaign for building on distinction</p>
+  <a class="footer_give_link" href="http://alumni-friends.brown.edu/giving/">
+  <span class="footer_give_link_label">Give To Brown</span>
+    <span class="footer_give_link_icon" aria-hidden="true">
+          <span class="footer_give_link_icon_default">
+        <svg class="icon icon_arrow_right">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+        </svg>
+      </span>
+      <span class="footer_give_link_icon_action">
+        <svg class="icon icon_link">
+          <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+        </svg>
+      </span>
+      </span>
+  </a>
+
+</div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer_sole">
+      <div class="fs-row">
+        <div class="fs-cell">
+          <div class="footer_sole_inner">
+              
+<div class="social_nav" itemscope itemtype="http://schema.org/Organization">
+  <link itemprop="url" href="//brown.edu">
+  <div class="social_nav_header">
+    <h2 class="social_nav_title">Social Navigation</h2>
+  </div>
+  <ul class="social_nav_list" aria-label="Social Navigation">
+        <li class="social_nav_item facebook">
+      <a class="social_nav_link" href="https://www.facebook.com/BrownMedicine/" target="_blank" itemprop="sameAs">
+        <span class="social_nav_icon"><svg class="icon icon_facebook">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#facebook"></use>
+</svg>
+</span>
+        <span class="social_nav_label">Facebook</span>
+      </a>
+    </li>
+        <li class="social_nav_item flickr">
+      <a class="social_nav_link" href="https://www.flickr.com/photos/alpertmedicalschool/" target="_blank" itemprop="sameAs">
+        <span class="social_nav_icon"><svg class="icon icon_flickr">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#flickr"></use>
+</svg>
+</span>
+        <span class="social_nav_label">Flickr</span>
+      </a>
+    </li>
+        <li class="social_nav_item instagram">
+      <a class="social_nav_link" href="https://www.instagram.com/alpertmedicalschool/" target="_blank" itemprop="sameAs">
+        <span class="social_nav_icon"><svg class="icon icon_instagram">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#instagram"></use>
+</svg>
+</span>
+        <span class="social_nav_label">Instagram</span>
+      </a>
+    </li>
+        <li class="social_nav_item linkedin">
+      <a class="social_nav_link" href="https://www.linkedin.com/school/the-warren-alpert-medical-school-of-brown-universi/" target="_blank" itemprop="sameAs">
+        <span class="social_nav_icon"><svg class="icon icon_linkedin">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#linkedin"></use>
+</svg>
+</span>
+        <span class="social_nav_label">LinkedIn</span>
+      </a>
+    </li>
+        <li class="social_nav_item twitter">
+      <a class="social_nav_link" href="https://twitter.com/BrownMedicine" target="_blank" itemprop="sameAs">
+        <span class="social_nav_icon"><svg class="icon icon_twitter">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#twitter"></use>
+</svg>
+</span>
+        <span class="social_nav_label">Twitter</span>
+      </a>
+    </li>
+        <li class="social_nav_item youtube">
+      <a class="social_nav_link" href="https://www.youtube.com/user/AlpertMed" target="_blank" itemprop="sameAs">
+        <span class="social_nav_icon"><svg class="icon icon_youtube">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#youtube"></use>
+</svg>
+</span>
+        <span class="social_nav_label">YouTube</span>
+      </a>
+    </li>
+          </ul>
+</div>
+
+
+
+            <p class="footer_copyright">&copy; Brown University </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="js-menu menu" id="menu">
+      <div class="menu_header">
+                
+   
+<div class="logo logo_menu logo_icon" itemscope itemtype="http://schema.org/Organization">
+  <a class="logo_link" itemprop="url" href="/">
+    <span class="logo_link_label">Warren Alpert Medical School Brown University</span>
+        <span class="logo_link_icon"><svg class="icon icon_logo_med">
+  <use xlink:href="/themes/custom/brown/static/images/logo_med.svg#logo_med"></use>
+</svg>
+</span>
+      </a>
+  <meta content="https://medical.brown.edu/themes/custom/brown/static/images/logo_med.png" itemprop="logo">     </div>
+
+          
+<div class="header_tools header_tools_default">
+    <div class="handle flyout_for_you_handle">
+    <span class="handle_label flyout_for_you_handle_label">For You</span>
+    <span class="handle_icon handle_icon_default flyout_for_you_handle_icon flyout_for_you_handle_icon_default" aria-hidden="true"><svg class="icon icon_chevron_down">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#chevron_down"></use>
+</svg>
+</span>
+    
+<nav class="flyout_for_your_dropdown">
+  <div class="flyout_for_your_dropdown_body">
+          <a class="flyout_for_your_dropdown_link" href="/information-future-students">
+        <span class="flyout_for_your_dropdown_link_label">Future Students</span>
+      </a>
+        <a class="flyout_for_your_dropdown_link" href="/information-current-students">
+        <span class="flyout_for_your_dropdown_link_label">Current Students</span>
+      </a>
+        <a class="flyout_for_your_dropdown_link" href="/information-plme-students">
+        <span class="flyout_for_your_dropdown_link_label">PLME Students</span>
+      </a>
+        <a class="flyout_for_your_dropdown_link" href="/information-faculty-and-staff">
+        <span class="flyout_for_your_dropdown_link_label">Faculty &amp; Staff</span>
+      </a>
+        <a class="flyout_for_your_dropdown_link" href="/information-residents-and-fellows">
+        <span class="flyout_for_your_dropdown_link_label">Residents &amp; Fellows</span>
+      </a>
+        <a class="flyout_for_your_dropdown_link" href="https://www.brown.edu/academics/biomed/offices/community/">
+        <span class="flyout_for_your_dropdown_link_label">Alumni</span>
+      </a>
+        <a class="flyout_for_your_dropdown_link" href="/information-parents">
+        <span class="flyout_for_your_dropdown_link_label">Parents</span>
+      </a>
+      </div>
+</nav>
+
+  </div>
+  
+  
+<a class="js-swap js-flyout-search-handle handle flyout_search_handle" href="#flyout_search" data-swap-target=".flyout_search" data-swap-linked="flyout_search">
+    <span class="handle_icon handle_icon_default flyout_search_handle_icon flyout_search_handle_icon_default" aria-hidden="true"><svg class="icon icon_search">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#search"></use>
+</svg>
+</span>
+    <span class="handle_icon handle_icon_action flyout_search_handle_icon flyout_search_handle_icon_action" aria-hidden="true"><svg class="icon icon_close">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+</svg>
+</span>
+  <span class="handle_label flyout_search_handle_label">Search</span>
+</a>
+
+    
+<a class="js-swap js-menu-handle  menu_handle menu_handle_primary" href="#menu" data-swap-target=".menu" data-swap-linked="menu">
+    <span class=" menu_handle_icon menu_handle_icon_default menu_handle_icon_primary" aria-hidden="true"><svg class="icon icon_menu">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#menu"></use>
+</svg>
+</span>
+    <span class=" menu_handle_icon menu_handle_icon_action menu_handle_icon_primary" aria-hidden="true"><svg class="icon icon_close">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+</svg>
+</span>
+  <span class=" menu_handle_label menu_handle_label_primary">Menu</span>
+</a>
+  </div>
+            </div>
+      <div class="menu_body">
+          
+<nav class="js-main-nav js-main-nav-sm main_nav main_nav_sm" aria-label="Mobile Site Navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+  <div class="main_nav_header">
+    <h2 class="main_nav_title">Mobile Site Navigation</h2>
+  </div>
+  <ul class="main_nav_list" aria-label="Mobile Site Navigation">
+    
+<nav class="js-main-nav js-main-nav-sm main_nav main_nav_sm" aria-label="Mobile Site Navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+  <div class="main_nav_header">
+    <h2 class="main_nav_title">Mobile Site Navigation</h2>
+  </div>
+  <ul class="main_nav_list" aria-label="Mobile Site Navigation">
+        <li class="js-main-nav-item-1 main_nav_item">
+      <div class="main_nav_item_wrapper">
+        <a class="main_nav_link" href="/about" itemprop="url" aria-haspopup="true" aria-current="page">
+          <span class="main_nav_link_label" itemprop="name">About</span>
+        </a>
+                <button class="js-swap js-main-nav-toggle main_nav_toggle" data-swap-target=".js-main-nav-item-1" data-swap-group="main_nav" aria-label=" Submenu">
+          <span class="main_nav_toggle_icon"><svg class="icon icon_chevron_down">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#chevron_down"></use>
+</svg>
+</span>
+        </button>
+              </div>
+            <div class="js-main-nav-children main_nav_children">
+        <ul class="main_nav_children_list" aria-label="submenu">
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/about/alpert-medical-school-reopening-plan" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Alpert Medical School Operations</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/about/mission-vision-and-values" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Mission, Vision and Values</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/about/departments" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Departments</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/about/strategic-plan" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Strategic Plan</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/about/leadership" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Leadership and Governance</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/about/affiliated-hospitals" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Affiliated Hospitals</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/about/history" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">History</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/about/accreditation" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Accreditation</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/about/clery-act" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Clery Act</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/about/maps-and-directions" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Maps and Directions</span>
+            </a>
+          </li>
+                  </ul>
+      </div>
+          </li>
+        <li class="js-main-nav-item-2 main_nav_item">
+      <div class="main_nav_item_wrapper">
+        <a class="main_nav_link" href="/education" itemprop="url" aria-haspopup="true" aria-current="page">
+          <span class="main_nav_link_label" itemprop="name">Education</span>
+        </a>
+                <button class="js-swap js-main-nav-toggle main_nav_toggle" data-swap-target=".js-main-nav-item-2" data-swap-group="main_nav" aria-label=" Submenu">
+          <span class="main_nav_toggle_icon"><svg class="icon icon_chevron_down">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#chevron_down"></use>
+</svg>
+</span>
+        </button>
+              </div>
+            <div class="js-main-nav-children main_nav_children">
+        <ul class="main_nav_children_list" aria-label="submenu">
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/education/degree-programs" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Degree Programs</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/education/residency-programs" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Residency Programs</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/education/fellowship-programs" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Fellowship Programs</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/education/faculty-development" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Faculty Development</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/education/continuing-medical-education" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Continuing Medical Education</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/education/visiting-medical-student-programs" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Visiting Medical Student Programs</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/education/international-exchange-programs" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">International Exchange Programs</span>
+            </a>
+          </li>
+                  </ul>
+      </div>
+          </li>
+        <li class="js-main-nav-item-3 main_nav_item">
+      <div class="main_nav_item_wrapper">
+        <a class="main_nav_link" href="/research" itemprop="url" aria-haspopup="true" aria-current="page">
+          <span class="main_nav_link_label" itemprop="name">Research</span>
+        </a>
+                <button class="js-swap js-main-nav-toggle main_nav_toggle" data-swap-target=".js-main-nav-item-3" data-swap-group="main_nav" aria-label=" Submenu">
+          <span class="main_nav_toggle_icon"><svg class="icon icon_chevron_down">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#chevron_down"></use>
+</svg>
+</span>
+        </button>
+              </div>
+            <div class="js-main-nav-children main_nav_children">
+        <ul class="main_nav_children_list" aria-label="submenu">
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/research/brown-institute-translational-science" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Brown Institute for Translational Science</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/research/centers-institutes-and-programs" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Centers, Institutes, and Programs</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/research/doing-research-brown" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Doing Research at Brown</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="https://vivo.brown.edu/" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Find a Researcher</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/research/industry-engagement" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Industry Engagement</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/research/library-resources" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Library Resources</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/research/decoding-disparities-lecture-series" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Decoding Disparities Lecture Series</span>
+            </a>
+          </li>
+                  </ul>
+      </div>
+          </li>
+        <li class="js-main-nav-item-4 main_nav_item">
+      <div class="main_nav_item_wrapper">
+        <a class="main_nav_link" href="/admission-aid" itemprop="url" aria-haspopup="true" aria-current="page">
+          <span class="main_nav_link_label" itemprop="name">Admission &amp; Aid</span>
+        </a>
+                <button class="js-swap js-main-nav-toggle main_nav_toggle" data-swap-target=".js-main-nav-item-4" data-swap-group="main_nav" aria-label=" Submenu">
+          <span class="main_nav_toggle_icon"><svg class="icon icon_chevron_down">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#chevron_down"></use>
+</svg>
+</span>
+        </button>
+              </div>
+            <div class="js-main-nav-children main_nav_children">
+        <ul class="main_nav_children_list" aria-label="submenu">
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/admission-aid/medical-and-graduate-admissions" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Medical and Graduate Admissions</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/admission-aid/financial-aid" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Financial Aid</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/admission-aid/notice-nondiscrimination" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Notice of Nondiscrimination</span>
+            </a>
+          </li>
+                  </ul>
+      </div>
+          </li>
+        <li class="js-main-nav-item-5 main_nav_item">
+      <div class="main_nav_item_wrapper">
+        <a class="main_nav_link" href="/student-life" itemprop="url" aria-haspopup="true" aria-current="page">
+          <span class="main_nav_link_label" itemprop="name">Student Life</span>
+        </a>
+                <button class="js-swap js-main-nav-toggle main_nav_toggle" data-swap-target=".js-main-nav-item-5" data-swap-group="main_nav" aria-label=" Submenu">
+          <span class="main_nav_toggle_icon"><svg class="icon icon_chevron_down">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#chevron_down"></use>
+</svg>
+</span>
+        </button>
+              </div>
+            <div class="js-main-nav-children main_nav_children">
+        <ul class="main_nav_children_list" aria-label="submenu">
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/student-life/student-services" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Student Services</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/student-life/life-providence" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Life in Providence</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/student-life/student-groups" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Student Groups</span>
+            </a>
+          </li>
+                  </ul>
+      </div>
+          </li>
+        <li class="js-main-nav-item-6 main_nav_item">
+      <div class="main_nav_item_wrapper">
+        <a class="main_nav_link" href="/diversity" itemprop="url" aria-haspopup="true" aria-current="page">
+          <span class="main_nav_link_label" itemprop="name">Diversity</span>
+        </a>
+                <button class="js-swap js-main-nav-toggle main_nav_toggle" data-swap-target=".js-main-nav-item-6" data-swap-group="main_nav" aria-label=" Submenu">
+          <span class="main_nav_toggle_icon"><svg class="icon icon_chevron_down">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#chevron_down"></use>
+</svg>
+</span>
+        </button>
+              </div>
+            <div class="js-main-nav-children main_nav_children">
+        <ul class="main_nav_children_list" aria-label="submenu">
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/diversity/diversity-and-inclusion-action-plan" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Diversity and Inclusion Action Plan</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/diversity/office-diversity-and-multicultural-affairs" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Diversity and Multicultural Affairs</span>
+            </a>
+          </li>
+                    <li class="main_nav_child_item">
+            <a class="main_nav_child_link" href="/diversity/programs-and-initiatives" itemprop="url">
+              <span class="main_nav_child_link_label" itemprop="name">Programs and Initiatives</span>
+            </a>
+          </li>
+                  </ul>
+      </div>
+          </li>
+      </ul>
+</nav>
+
+  </ul>
+</nav>
+
+
+                    <nav class="secondary_nav secondary_nav_sm" aria-label="Mobile Secondary Navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+  <div class="secondary_nav_header">
+    <h2 class="secondary_nav_title">Mobile Secondary Navigation Navigation</h2>
+  </div>
+  <ul class="secondary_nav_list" aria-label="Mobile Secondary Navigation Navigation">
+        <li class="secondary_nav_item ">
+      <a class="secondary_nav_link " href="/news" itemprop="url">
+        <span class="secondary_nav_link_label" itemprop="name">News</span>
+      </a>
+    </li>
+        <li class="secondary_nav_item ">
+      <a class="secondary_nav_link " href="/about/events" itemprop="url">
+        <span class="secondary_nav_link_label" itemprop="name">Events</span>
+      </a>
+    </li>
+        <li class="secondary_nav_item util_for_you">
+      <a class="secondary_nav_link util_for_you" href="" itemprop="url">
+        <span class="secondary_nav_link_label" itemprop="name">For You</span>
+      </a>
+    </li>
+        <li class="secondary_nav_item special">
+      <a class="secondary_nav_link special" href="https://brunonia.brown.edu/giving/warren-alpert-medical-school" itemprop="url">
+        <span class="secondary_nav_link_label" itemprop="name">Give</span>
+      </a>
+    </li>
+      </ul>
+</nav>
+
+
+
+      </div>
+    </div>
+
+
+    <div class="flyout flyout_search" id="flyout_search">
+      <div class="fs-row">
+        <div class="fs-cell">
+          <div class="flyout_search_inner">
+                                                  
+<div class="site_search_results_switcher">
+                  <button class="js-swap site_search_results_switch site_search_results_switch_link" data-swap-target=".flyout_search_field_1" data-swap-options='{"collapse": false}' data-swap-group="flyout_search_fields" data-swap-active="true" aria-label="toggle This Site Only search">
+      <span class="site_search_results_switch_icon"><svg class="icon icon_star">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#star"></use>
+</svg>
+</span>
+      <span class="site_search_results_switch_label">This Site Only</span>
+    </button>
+                      <a class="site_search_results_switch site_search_results_switch_link" href="https://www.brown.edu/search">
+      <span class="site_search_results_switch_icon"><svg class="icon icon_world">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#world"></use>
+</svg>
+</span>
+      <span class="site_search_results_switch_label">All of Brown.edu</span>
+    </a>
+                      <a class="site_search_results_switch site_search_results_switch_link" href="https://www.brown.edu/search/people">
+      <span class="site_search_results_switch_icon"><svg class="icon icon_user">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#user"></use>
+</svg>
+</span>
+      <span class="site_search_results_switch_label">People</span>
+    </a>
+      </div>
+                        <div class="flyout_search_fields">
+              <form class="flyout_search_field flyout_search_field_1" action="/search" method="get">
+                <input class="flyout_search_input" type="text" name="q" value="" placeholder="Search keywords" aria-label="Search keywords" />
+                <button class="flyout_search_link" type="submit">
+                  <span class="flyout_search_link_label">Search</span>
+                  <span class="flyout_search_link_icon"><svg class="icon icon_arrow_right">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+</svg>
+</span>
+                </button>
+              </form>
+              <form class="flyout_search_field flyout_search_field_2" action="/search/people" method="get">
+                <input class="flyout_search_input" type="text" name="q" value="" placeholder="Search people" aria-label="Search people" />
+                <button class="flyout_search_link" type="submit">
+                  <span class="flyout_search_link_label">Search people</span>
+                  <span class="flyout_search_link_icon"><svg class="icon icon_arrow_right">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+</svg>
+</span>
+                </button>
+                <div class="flyout_advanced">
+                  <a class="directory_info_title_link" href="https://directory.brown.edu/">
+                    <span class="directory_info_title_link_label">Advanced Search</span>
+                      <span class="directory_info_title_link_icon" aria-hidden="true">
+                          <span class="directory_info_title_link_icon_default">
+                        <svg class="icon icon_arrow_right">
+                          <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+                        </svg>
+                      </span>
+                        <span class="directory_info_title_link_icon_action">
+                          <svg class="icon icon_link">
+                            <use xlink:href="/themes/custom/brown/static/images/icons.svg#link"></use>
+                          </svg>
+                        </span>
+                      </span>
+                  </a>
+                </div>
+              </form>
+              <form class="flyout_search_field flyout_search_field_3" action="/search/news" method="get">
+                <input class="flyout_search_input" type="text" name="q" value="" placeholder="News Search keywords" aria-label="Search keywords" />
+                <button class="flyout_search_link" type="submit">
+                  <span class="flyout_search_link_label">Search</span>
+                  <span class="flyout_search_link_icon"><svg class="icon icon_arrow_right">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#arrow_right"></use>
+</svg>
+</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="js-swap flyout_close_trigger" href="#header" data-swap-target=".flyout_search" data-swap-linked="flyout_search">
+        <span class="flyout_close_trigger_icon" aria-hidden="true"><svg class="icon icon_close">
+  <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+</svg>
+</span>
+        <span class="flyout_close_trigger_label">Close Search</span>
+      </a>
+    </div>
+
+        <div class="page_component">
+      <div class="component_block component_block_page_76 layout_in_content">
+        <div class="component_items">
+          <div class="component_item page card">
+            <article class="js-component component component_page_76" data-id="page_76" data-type="page">
+                            <div class="component_body">
+                <div class="component_content">
+                  <div class="component_content_group">
+                                        <h3 class="component_title">
+                      <a class="component_title_link" href="https://medical.brown.edu/about/departments">Departments</a>
+                    </h3>
+                                                          </div>
+                </div>
+                <div class="component_peak_tools">
+  <button class="js-swap component_peak_trigger" data-swap-target=".component_" data-swap-group="peaks" data-swap-linked="component_peak_" title="Open details for Departments" aria-expanded="false">
+    <span class="component_peak_trigger_label">Open details for Departments</span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_default">
+      <svg class="icon icon_dots">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#dots"></use>
+      </svg>
+    </span>
+    <span class="component_peak_trigger_icon component_peak_trigger_icon_action">
+      <svg class="icon icon_close">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#close"></use>
+      </svg>
+    </span>
+  </button>
+    <button class="component_peak_bookmark">
+    <span class="component_peak_bookmark_icon">
+      <svg class="icon icon_bookmark">
+        <use xlink:href="/themes/custom/brown/static/images/icons.svg#bookmark"></use>
+      </svg>
+    </span>
+    <span class="component_peak_bookmark_label">Bookmark this Page</span>
+  </button>
+  </div>
+
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </footer>
+  </div>
+
+  </div>
+
+    
+    <script>
+      var WWW_ROOT = "/";
+      var STATIC_ROOT = "/themes/custom/brown/static/";
+    </script>
+    <script src="/sites/g/files/dprerj426/files/js/js_iYXRicEUpxwblWSBpM_KvC62BYZb6gSpp2UEBaddgfw.js"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"426a48472e","applicationID":"292599664","transactionName":"YFBRMkcCV0VZUEQLW1kaZhRcTFBYXFZITERfRQ==","queueTime":0,"applicationTime":151,"atts":"TBdSRA8YREs=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>

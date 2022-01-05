@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+<head>
+    <meta charset="utf-8"><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"b87f1acefc","applicationID":"424036846","transactionName":"YldUNxQCWkMHU0ZQDFsdezUlTGdZElVRVhFQcVkNEhFbXApVQBYqW1ZTGw==","queueTime":0,"applicationTime":177,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"b87f1acefc",applicationID:"424036846"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/millerschool.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Basic Science Research  Miller School of Medicine </title>
+
+
+<meta property="name" content="Basic Science Research">
+<meta property="og:title" content="Basic Science Research">
+<meta property="description" content="Basic research is about curiosity and discovery –it’s not about solving a particular problem or focused on a specific disease.">
+<meta property="og:description" content="Basic research is about curiosity and discovery –it’s not about solving a particular problem or focused on a specific disease.">
+<meta property="og:image" content="">
+<link rel="apple-touch-icon" sizes="180x180" href="/-/media/project/millerschool/favicons/apple-icon-180x180.ashx?h=180&amp;w=180">
+<link rel="icon" type="image/png" href="/-/media/project/millerschool/favicons/favicon-32x32.ashx?h=32&amp;w=32" sizes="32x32">
+<link rel="icon" type="image/png" href="/-/media/project/millerschool/favicons/favicon-16x16.ashx?h=16&amp;w=16" sizes="16x16">
+
+    <!-- js graceful degradation -->
+    <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js");</script>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TRLP4CG');</script>
+<!-- End Google Tag Manager -->
+
+
+</head>
+<body class="">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TRLP4CG"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <div class="page page--miller">
+            <div class="global-alert-bar">
+        <div class="global-alert-bar__banner1">
+            <span>COVID-19</span>
+        </div>
+        <div class="global-alert-bar__banner2">
+            Critical COVID-19 information and resources. <a rel="noopener noreferrer" href="https://my.med.miami.edu/" target="_blank">Read More</a>
+        </div>
+    </div>
+
+        <a class="element-focusable" href="#main-content">Skip to Main Content</a>
+<section class="top-bar top-bar--full">
+    <ul class="top-bar__ul">
+        <li class="top-bar__link--font">
+    Font Size
+    <a class="font-smaller" href="#" id="_smallify">
+        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+            <title>Smaller</title>
+            <g fill="none" fill-rule="evenodd"><circle fill="#FFF" cx="9" cy="9" r="8"></circle><path d="M9 0a9 9 0 1 0 0 18A9 9 0 0 0 9 0zm4.5 9.75h-9v-1.5h9v1.5z" fill="#434343" fill-rule="nonzero"></path></g>
+        </svg>
+    </a>
+    <a class="font-larger" href="#" id="_biggify">
+        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+            <title>Bigger</title>
+            <g fill="none" fill-rule="evenodd"><circle fill="#FFF" cx="9" cy="9" r="8"></circle><path d="M9 0a9 9 0 1 0 0 18A9 9 0 0 0 9 0zm4.5 9.75H9.75v3.75h-1.5V9.75H4.5v-1.5h3.75V4.5h1.5v3.75h3.75v1.5z" fill="#434343" fill-rule="nonzero"></path></g>
+        </svg>
+    </a>
+</li><li class="top-bar__link--contrast">
+    Contrast <a class="contrast-normal" href="#">
+        <svg width="20" height="19" viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Light</title><defs><path id="b" d="M0 1h20v19H0z" /></defs><g fill="none" fill-rule="evenodd"><g transform="translate(0 -1)"><use fill="#FFF" xlink:href="#b" /><path stroke="#CDCDCD" d="M.5 1.5h19v18H.5z" /></g><text font-family="OpenSans-Semibold, Open Sans" font-size="15" font-weight="500" fill="#000" transform="translate(0 -1)"><tspan x="5.327" y="16">b</tspan></text></g></svg>
+    </a> <a class="contrast-black" href="#">
+        <svg width="20" height="19" viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Dark</title><defs><path id="a" d="M0 1h20v19H0z" /></defs><g fill="none" fill-rule="evenodd"><g transform="translate(0 -1)"><use fill="#000" xlink:href="#a" /><path stroke="#000" d="M.5 1.5h19v18H.5z" /></g><text font-family="OpenSans-Semibold, Open Sans" font-size="15" font-weight="500" fill="#F8E81C" transform="translate(0 -1)"><tspan x="5.327" y="16">b</tspan></text></g></svg>
+    </a>
+</li>
+    </ul>
+</section>
+
+<header class="global-header global-header--miller global-header--full ">
+    <span class="global-header__logo">
+            <a class="global-header__logo-link" title="Miller School of Medicine" href="/">
+        <picture>
+            <source srcset="/-/media/millerschool/global-items/logos/miller-school-website-green-mobile-logo-ver2.ashx" media="(max-width: 1200px)" alt="Logo for the University of Miami Miller School of Meidicne" />
+            <img srcset="/-/media/project/millerschool/19-106-miller-school-website-green.ashx 1x, /-/media/project/millerschool/19-106-miller-school-website-green.ashx 2x" src="/-/media/project/millerschool/19-106-miller-school-website-green.ashx" alt="Miller School of Medicine QA" />
+        </picture>
+    </a>
+
+    </span>
+
+    <button class="global-header__miller-menu" type="button" name="button">
+        <span class="icon-search-button"></span>
+        <span class="miller-menu__label">Menu</span>
+    </button>
+
+    <section class="global-header__navs">
+        
+<nav class="global-header__main-nav">
+    <div class="global-header__search">
+    <label for="global-search" class="element-invisible">Search University of Miami Health System</label>
+    <form action="/en/search" method="get">
+        <input id="global-search" class="global-search-input" type="search" name="text" value="" placeholder="How can we help you?">
+        <input class="global-search-submit button" type="submit" value="Search">
+    </form>
+    <button type="button" class="global-search-close tooltip" aria-label="Close Search"><span class="element-invisible">Close Search</span></button>
+</div>
+    <ul class="main-nav">
+            <li class="main-nav__item">
+                <a class="main-nav__link" href="#">Education &amp; Admission <button class="mobile-nav__arrow" type="button" name="button"><svg width="25" height="7" viewBox="0 0 25 7" xmlns="http://www.w3.org/2000/svg"><title>Page 1</title><path fill="#555" d="M9.8 0L5.6 4.2 1.399 0 0 1.427 5.6 7l5.6-5.573z" fill-rule="evenodd" /></svg></button></a>
+                <div class="main-nav__dropdown main-nav__dropdown--miller">
+                    <div class="container">
+                        <div class="container__inner">
+                            <h2 class="main-nav__parent">
+<a class="main-nav__parent-link" href="/education-and-admissions">Education and Admissions <svg width="27" height="10" viewBox="0 0 27 10" xmlns="http://www.w3.org/2000/svg"><title>arrow--button</title><path d="M21 4H0v2h21v4l6.016-5L21 0v4z" fill="#FFF" fill-rule="evenodd" /></svg></a>                            </h2>
+                            
+                            <div class="main-nav__dropdown-container">
+                                    <div class="main-nav__dropdown-container__primary">
+                                        <ul class="main-nav__children--primary">
+                                                <li class="main-nav__child"><a class="main-nav__child-link" href="/medical-programs">Medical Programs</a></li>
+                                                <li class="main-nav__child"><a class="main-nav__child-link" href="/graduate-studies">Graduate Studies</a></li>
+                                                <li class="main-nav__child"><a class="main-nav__child-link" href="https://postdoc.miami.edu/">Postdoctoral Programs</a></li>
+                                                <li class="main-nav__child"><a class="main-nav__child-link" href="/education-and-admissions/professional-training">Professional Training</a></li>
+                                                <li class="main-nav__child"><a class="main-nav__child-link" href="/education-and-admissions/professional-training/continuing-medical-education">Continuing Medical Education</a></li>
+                                                <li class="main-nav__child"><a class="main-nav__child-link" href="/medical-education/divisions/student-affairs/externships-services">Externships</a></li>
+                                                <li class="main-nav__child"><a class="main-nav__child-link" href="/education-and-admissions/professional-training/observerships">Observerships</a></li>
+                                                <li class="main-nav__child"><a class="main-nav__child-link" href="/education-and-admissions/professional-training/certifications">Certifications</a></li>
+                                        </ul>
+                                    </div>
+                                                                    <div class="main-nav__dropdown-container__secondary">
+                                            <ul class="main-nav__children--secondary">
+                                                    <li class="main-nav__child"><a class="main-nav__child-link" rel="noopener noreferrer" href="http://calder.med.miami.edu/" target="_blank">Library</a></li>
+                                                    <li class="main-nav__child"><a class="main-nav__child-link" href="/offices">Administrative Offices</a></li>
+                                                    <li class="main-nav__child"><a class="main-nav__child-link" href="/miami">Student Life</a></li>
+                                            </ul>
+                                                                            </div>
+                            </div>
+                            <button class="main-nav__close-drawer button--small element-focusable" type="button" name="button">Close Drawer</button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="main-nav__item">
+                <a class="main-nav__link active" href="#">Research <button class="mobile-nav__arrow" type="button" name="button"><svg width="25" height="7" viewBox="0 0 25 7" xmlns="http://www.w3.org/2000/svg"><title>Page 1</title><path fill="#555" d="M9.8 0L5.6 4.2 1.399 0 0 1.427 5.6 7l5.6-5.573z" fill-rule="evenodd" /></svg></button></a>
+                <div class="main-nav__dropdown main-nav__dropdown--miller">
+                    <div class="container">
+                        <div class="container__inner">
+                            <h2 class="main-nav__parent">
+<a class="main-nav__parent-link" href="/research">Research <svg width="27" height="10" viewBox="0 0 27 10" xmlns="http://www.w3.org/2000/svg"><title>arrow--button</title><path d="M21 4H0v2h21v4l6.016-5L21 0v4z" fill="#FFF" fill-rule="evenodd" /></svg></a>                            </h2>
+                            
+                            <div class="main-nav__dropdown-container">
+                                    <div class="main-nav__dropdown-container__primary">
+                                        <ul class="main-nav__children--primary">
+                                                <li class="main-nav__child"><a class="main-nav__child-link" href="/research/basic-science-research">Basic Science Research</a></li>
+                                                <li class="main-nav__child"><a class="main-nav__child-link" href="/research/clinical-,-a-,-translational-research">Clinical & Translational Research</a></li>
+                                                <li class="main-nav__child"><a class="main-nav__child-link" rel="noopener noreferrer" href="http://americas.ccs.miami.edu/" target="_blank">Data Science & IT</a></li>
+                                                <li class="main-nav__child"><a class="main-nav__child-link" href="/departments">Departments</a></li>
+                                                <li class="main-nav__child"><a class="main-nav__child-link" href="/centers-,-a-,-institutes">Centers & Institutes</a></li>
+                                                <li class="main-nav__child"><a class="main-nav__child-link" href="/offices">Administrative Offices</a></li>
+                                        </ul>
+                                    </div>
+                                                                    <div class="main-nav__dropdown-container__secondary">
+                                            <ul class="main-nav__children--secondary">
+                                                    <li class="main-nav__child"><a class="main-nav__child-link" href="/research/funding-opportunities">Funding Opportunities</a></li>
+                                                    <li class="main-nav__child"><a class="main-nav__child-link" href="/research/research-resources">Research Resources</a></li>
+                                                    <li class="main-nav__child"><a class="main-nav__child-link" href="/research/cores">Find a Core Facility</a></li>
+                                                    <li class="main-nav__child"><a class="main-nav__child-link" href="https://umiamihealth.org:443/clinical-trials" target="_blank">Find Clinical Trials</a></li>
+                                            </ul>
+                                                                                    <ul class="main-nav__children--cta">
+                                                    <li class="main-nav__child"></li>
+                                                    <li class="main-nav__child"></li>
+                                            </ul>
+                                    </div>
+                            </div>
+                            <button class="main-nav__close-drawer button--small element-focusable" type="button" name="button">Close Drawer</button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="main-nav__item">
+                <a class="main-nav__link" href="#">Departments <button class="mobile-nav__arrow" type="button" name="button"><svg width="25" height="7" viewBox="0 0 25 7" xmlns="http://www.w3.org/2000/svg"><title>Page 1</title><path fill="#555" d="M9.8 0L5.6 4.2 1.399 0 0 1.427 5.6 7l5.6-5.573z" fill-rule="evenodd" /></svg></button></a>
+                <div class="main-nav__dropdown main-nav__dropdown--miller">
+                    <div class="container">
+                        <div class="container__inner">
+                            <h2 class="main-nav__parent">
+<a class="main-nav__parent-link" href="/departments">Departments <svg width="27" height="10" viewBox="0 0 27 10" xmlns="http://www.w3.org/2000/svg"><title>arrow--button</title><path d="M21 4H0v2h21v4l6.016-5L21 0v4z" fill="#FFF" fill-rule="evenodd" /></svg></a>                            </h2>
+                            
+                            <div class="main-nav__dropdown-container">
+                                    <div class="main-nav__dropdown-container__primary">
+                                        <ul class="main-nav__children--primary">
+                                                <li class="main-nav__child"><a class="main-nav__child-link" href="/departments#clinical-science">Clinical Departments</a></li>
+                                                <li class="main-nav__child"><a class="main-nav__child-link" href="/departments">Basic Science Departments</a></li>
+                                                <li class="main-nav__child"><a class="main-nav__child-link" href="/centers-,-a-,-institutes">Centers & Institutes</a></li>
+                                                <li class="main-nav__child"><a class="main-nav__child-link" href="/offices">Administrative Offices</a></li>
+                                        </ul>
+                                    </div>
+                                                                    <div class="main-nav__dropdown-container__secondary">
+                                            <ul class="main-nav__children--secondary">
+                                                    <li class="main-nav__child"><a class="main-nav__child-link" rel="noopener noreferrer" href="http://calder.med.miami.edu/" target="_blank">Library</a></li>
+                                                    <li class="main-nav__child"><a class="main-nav__child-link" href="/miami">Student Life</a></li>
+                                            </ul>
+                                                                                    <ul class="main-nav__children--cta">
+                                                    <li class="main-nav__child"></li>
+                                                    <li class="main-nav__child"></li>
+                                            </ul>
+                                    </div>
+                            </div>
+                            <button class="main-nav__close-drawer button--small element-focusable" type="button" name="button">Close Drawer</button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="main-nav__item">
+                <a class="main-nav__link" href="#">About Us <button class="mobile-nav__arrow" type="button" name="button"><svg width="25" height="7" viewBox="0 0 25 7" xmlns="http://www.w3.org/2000/svg"><title>Page 1</title><path fill="#555" d="M9.8 0L5.6 4.2 1.399 0 0 1.427 5.6 7l5.6-5.573z" fill-rule="evenodd" /></svg></button></a>
+                <div class="main-nav__dropdown main-nav__dropdown--miller">
+                    <div class="container">
+                        <div class="container__inner">
+                            <h2 class="main-nav__parent">
+<a class="main-nav__parent-link" href="/about-us">About Us <svg width="27" height="10" viewBox="0 0 27 10" xmlns="http://www.w3.org/2000/svg"><title>arrow--button</title><path d="M21 4H0v2h21v4l6.016-5L21 0v4z" fill="#FFF" fill-rule="evenodd" /></svg></a>                            </h2>
+                            
+                            <div class="main-nav__dropdown-container">
+                                    <div class="main-nav__dropdown-container__primary">
+                                        <ul class="main-nav__children--primary">
+                                                <li class="main-nav__child"><a class="main-nav__child-link" href="/about-us/leadership">Leadership</a></li>
+                                                <li class="main-nav__child"><a class="main-nav__child-link" href="/about-us/culture-change">Culture Change</a></li>
+                                                <li class="main-nav__child"><a class="main-nav__child-link" href="/about-us/history">History</a></li>
+                                                <li class="main-nav__child"><a class="main-nav__child-link" href="/offices">Administrative Offices</a></li>
+                                                <li class="main-nav__child"><a class="main-nav__child-link" href="/about-us/community-outreach">Community Outreach</a></li>
+                                                <li class="main-nav__child"><a class="main-nav__child-link" href="/offices/diversity">Diversity & Inclusion</a></li>
+                                        </ul>
+                                    </div>
+                                                            </div>
+                            <button class="main-nav__close-drawer button--small element-focusable" type="button" name="button">Close Drawer</button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        <li class="main-nav__item--search"><button class="main-nav__search-trigger" type="button" name="button"><span class="icon-search"></span> Search</button></li>
+    </ul>
+</nav><ul class="global-header__utility">
+        <li class="utility__item"><a href="https://umiamihealth.org/">Seeking Patient Care?</a></li>
+        <li class="utility__item"><a href="/alumni">Alumni</a></li>
+        <li class="utility__item"><a href="/giving">Giving</a></li>
+</ul>
+    </section>
+</header>
+        <div id="main-content"></div>
+        
+<div class="bleed-container" style="">
+    <div class="secondary-hero-wrap">
+
+    <div class="secondary-hero-wrap__breadcrumbs">
+        <div class="breadcrumbs-wrap" style="">
+    <div class="container">
+        <ul class="breadcrumbs">
+                <li class="crumb"><a href="/en">Home</a></li>
+                <li class="crumb"><a href="/en/research">Research</a></li>
+                <li class="crumb last-crumb"><a href="/en/research/basic-science-research">Basic Science Research</a></li>
+        </ul>
+    </div>
+</div>
+    </div>
+    <div class="secondary-hero has-image" style="background-image: url('/-/media/millerschool/research/headers/basic-science-research.ashx'); ">
+        <div class="container">
+            <div class="secondary-hero__content">
+                <h1 class="secondary-hero__title" >Basic Science Research</h1>
+                    <span class="secondary-hero__subheader" >Improving our understanding through basic research</span>
+                            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container page-content">
+        <div class="l-1up">
+            <div class="simple-text">
+    <p>Basic science research sounds simple. It is chiefly a curiosity-driven field, where researchers work to fill in gaps of scientific knowledge. But it is the bedrock to all understanding of the human body, advancements in scientific discovery, and innovations in medical technology and treatments.</p>
+<p>In basic science and clinical departments across the Miller School of Medicine, researchers are studying cell biology, immunology, biochemistry, pharmacology, microbiology, and genetics in all organisms, from bacteria to humans.</p>
+<p>Basic science research leads to scientific discovery, the process or product of successful scientific inquiry. It includes scientific activities from observation to laboratory experiments and data mining. Our discovery scientists work together to propel innovation and uncover the mysteries of biomedical science, which we later apply in a clinical setting.</p>
+<p>Here at the Miller School, we offer a dynamic learning environment, where scientists at all levels work together to address gaps in understanding across the spectrum of medical science specialties. </p>
+<p>We offer a variety of core and shared facilities, internal awards to facilitate externally funded grants, research education and training, career development, and grant writing assistance, among many other services to foster the success of our investigators.</p>
+</div>
+        </div>
+</div>
+<div class="container page-content">
+        <div class="l-1up">
+            <article class="overlap-card overlap-card--full-width">
+    <div class="overlap-card__img" style="background: url('/-/media/millerschool/research/decorative-images/lab-technician-and-tablet.ashx'); background-size: cover; background-repeat: no-repeat; background-position: center;"></div>
+    <div class="container">
+        <div class="overlap-card__content">
+            <h2 class="overlap-card__title">Basic Science Departments</h2>
+            <div class="overlap-card__desc"></div>
+                <div class="overlap-card__links overlap-card__links--multiple">
+<a rel="noopener noreferrer" href="http://bm.med.miami.edu/" target="_blank">Biochemistry & Molecular Biology</a><a rel="noopener noreferrer" href="http://cellbiology.med.miami.edu/" target="_blank">Cell Biology</a><a rel="noopener noreferrer" href="http://micro.med.miami.edu/" target="_blank">Microbiology and Immunology</a><a href="/departments/molecular-and-cellular-pharmacology">Molecular and Cellular Pharmacology</a><a href="/departments/physiology-and-biophysics">Physiology and Biophysics</a><a rel="noopener noreferrer" href="https://www.publichealth.med.miami.edu/" target="_blank">Public Health Sciences</a>                </div>
+        </div>
+    </div>
+</article><div class="img-text container img-text--full-width">
+	<div class="img-text__img">
+		<a href="/research/research-development-and-support">
+			<img src="/-/media/millerschool/research/decorative-images/research-development-support.ashx?h=450&amp;la=en&amp;w=700&amp;hash=A2BA34935C2433DD19887638E96355C848265D9F" alt="Research Development and Support" />
+		</a>
+	</div>
+	<div class="img-text__block">
+		<h2 class="img-text__title">Research Development &amp; Support</h2>
+		<div class="img-text__desc">
+			RDS is a shared-services unit, which provides support on sponsored projects to assigned departments and faculty at the Miller School of Medicine. RDS is based in the Office of the Executive Dean for Research (EDR).
+		</div>
+
+		<a class="button" href="/research/research-development-and-support">Visit RDS Office</a>
+	</div>
+</div>
+
+  <div class="divider">
+    <hr class="divider-line" />
+  </div>
+<div class="img-text container img-text--full-width img-text--right">
+	<div class="img-text__img">
+		<a href="http://miamictsi.org/education/grant-writing">
+			<img src="/-/media/millerschool/research/decorative-images/grant-writing-support-services.ashx?h=450&amp;la=en&amp;w=700&amp;hash=1CF5225D7115235A347AF508EFF6C800EF8DBC2D" alt="Grant Writing Support Services" />
+		</a>
+	</div>
+	<div class="img-text__block">
+		<h2 class="img-text__title">Grant Writing Support</h2>
+		<div class="img-text__desc">
+			A range of writing services is available to help Miller School of Medicine faculty researchers, post-doctoral fellows, and graduate students get more grants, publish more peer-reviewed articles and make compelling presentations.
+		</div>
+
+		<a class="button" rel="noopener noreferrer" href="http://miamictsi.org/education/grant-writing" target="_blank">Grant Writing Support</a>
+	</div>
+</div>
+
+  <div class="divider">
+    <hr class="divider-line" />
+  </div>
+<div class="img-text container img-text--full-width">
+	<div class="img-text__img">
+		<a href="/graduate-studies">
+			<img src="/-/media/millerschool/research/decorative-images/lab-technician-examines-microscope.ashx?h=644&amp;la=en&amp;w=1006&amp;hash=576057BCB4198D50C15316DBC3F0CD9A417E5C9F" alt="A lab technician in a white lab coat examines a microscope" />
+		</a>
+	</div>
+	<div class="img-text__block">
+		<h2 class="img-text__title">Graduate Programs</h2>
+		<div class="img-text__desc">
+			Providing a learner-centered, humane, and contemporary curriculum that prepares our graduates to pursue successful careers in biomedical research.<br/>
+		</div>
+
+		<a class="button" href="/graduate-studies">Graduate Studies</a>
+	</div>
+</div>
+
+  <div class="divider">
+    <hr class="divider-line" />
+  </div>
+<div class="img-text container img-text--full-width img-text--right">
+	<div class="img-text__img">
+		<a href="http://#">
+			<img src="/-/media/millerschool/research/decorative-images/female-chemist-at-work-in-a-lab.ashx?h=644&amp;la=en&amp;w=1006&amp;hash=B23F8864D8DE3A51A9229DC995C0D0A9A7B3F95D" alt="Female chemist at work in laboratory" />
+		</a>
+	</div>
+	<div class="img-text__block">
+		<h2 class="img-text__title">Postdoctoral Programs</h2>
+		<div class="img-text__desc">
+			Supporting a dynamic postdoctoral community of more than 275 associates, scholars, and fellows who contribute to the transformational research being conducted at each of the three University of Miami campuses.<br/>
+		</div>
+
+		<a class="button" href="http://#">Visit Postdoctoral Website</a>
+	</div>
+</div>
+
+  <div class="divider">
+    <hr class="divider-line" />
+  </div>
+<div class="img-text container img-text--full-width">
+	<div class="img-text__img">
+		<a href="/research/basic-science-research/research-plan-for-preeminence">
+			<img src="/-/media/millerschool/research/decorative-images/pre-eminence-hi_resolution-750.ashx?h=546&amp;la=en&amp;w=750&amp;hash=56140AE2BA6881DD8C5697BC669D6C88645DEA17" alt="Vision for Research graphic" />
+		</a>
+	</div>
+	<div class="img-text__block">
+		<h2 class="img-text__title">A Research Plan for Pre-eminence</h2>
+		<div class="img-text__desc">
+			Research is the lifeblood of our academic medical system, the foundation on which our clinical care stands.
+		</div>
+
+		<a class="button" href="/research/basic-science-research/research-plan-for-preeminence" target="_blank">Our Plan for Research</a>
+	</div>
+</div>
+
+        </div>
+</div>
+</div>
+        <footer class="footer">
+    <div class="container">
+        <hr class="breaker-top">
+        <nav class="footer__nav">
+            <div class="footer__logo">
+                <div class="footer__logo__wrap">
+                    <a class="footer__logo-link" title="Logo for University Of Miami" href="/">
+                        <img src="/-/media/millerschool/global-items/logos/um-infor-rgb.ashx?h=73&amp;la=en&amp;w=95&amp;hash=B8E438DD31918E76F5CC9C9B4B5691BD8C4129A6" alt="University of Miami Logo" width="95" height="73" />
+                    </a>
+                </div>
+                <div class="footer__logo__wrap">
+                    <a href="https://www.facebook.com/UMiamiMedicine/"><img src="/-/media/project/millerschool/socialicons/facebook.ashx?la=en&amp;hash=EA605377CBAF2452B1410045E708204A946C8F1D" alt="Facebook" />    <span class="element-invisible">facebook</span>
+</a><a href="https://twitter.com/umiamimedicine" rel="noopener noreferrer" title="Facebook" target="_blank"><img src="/-/media/project/millerschool/socialicons/twitter.ashx?la=en&amp;hash=F678D996B2A7F9F4A08EFE16A4E9CFAB748A6F2D" alt="Twitter" />    <span class="element-invisible">Twitter</span>
+</a><a href="https://www.youtube.com/user/UMiamiMedicine" rel="noopener noreferrer" title="Facebook" target="_blank"><img src="/-/media/project/millerschool/socialicons/youtube.ashx?la=en&amp;hash=03FEE95242A10936A0375FCA39FDBB79A8D9AD9D" alt="YouTube" />    <span class="element-invisible">YouTube</span>
+</a><a href="https://www.linkedin.com/school/university-of-miami-miller-school-of-medicine/" rel="noopener noreferrer" title="Facebook" target="_blank"><img src="/-/media/project/millerschool/socialicons/linkedin.ashx?la=en&amp;hash=C3B7AA204CD845AE84783F58026F188AD433DA8F" alt="LinkedIn" />    <span class="element-invisible">LinkedIn</span>
+</a><a href="https://www.researchgate.net/institution/University_of_Miami_Miller_School_of_Medicine" rel="noopener noreferrer" title="Facebook" target="_blank"><img src="/-/media/project/millerschool/socialicons/researchgate.ashx?la=en&amp;hash=73037E7B7BBEC376C95C5078979EA0CE659D2485" alt="Research Gate" />    <span class="element-invisible">Research Gate</span>
+</a>
+                </div>
+                <div class="footer__logo__wrap">
+                    
+                </div>
+            </div>
+                <div class="footer__links col-links">
+        <strong class="col-links__strong">Resources</strong>
+        <ul class="col-links__ul">
+                <li><a rel="noopener noreferrer" href="https://physician-news.umiamihealth.org/" target="_blank">News</a></li>
+                <li><a href="/education-and-admissions">Education and Admissions</a></li>
+                <li><a href="/research">Research</a></li>
+                <li><a href="/admissions">Admissions</a></li>
+                <li><a rel="noopener noreferrer" href="https://caneid.miami.edu/cas/login?service=https://myum.miami.edu/idcheck.asp" target="_blank">MyUM</a></li>
+        </ul>
+    </div>
+    <div class="footer__links col-links">
+        <strong class="col-links__strong">UM Network</strong>
+        <ul class="col-links__ul">
+                <li><a href="https://med.miami.edu/alumni">Alumni Association</a></li>
+                <li><a href="/giving">Giving</a></li>
+                <li><a rel="noopener noreferrer" href="https://wellness.studentaffairs.miami.edu/" target="_blank">Wellness Center</a></li>
+                <li><a rel="noopener noreferrer" href="https://www.hr.miami.edu/careers/index.html" target="_blank">Employment</a></li>
+                <li><a rel="noopener noreferrer" href="https://welcome.miami.edu/" target="_blank">University of Miami</a></li>
+        </ul>
+    </div>
+    <div class="footer__links col-links">
+        <strong class="col-links__strong">Visit</strong>
+        <ul class="col-links__ul">
+                <li><a href="/miami/campus-highlights">Campus Highlights</a></li>
+                <li><a href="/miami/transportation-,-a-,-parking">Transportation & Parking</a></li>
+        </ul>
+    </div>
+
+        </nav>
+        <div class="footer__copyright-info">
+            <ul class="footer__site-links">
+    <li><a rel="noopener noreferrer" href="https://umiamihealth.org/" target="_blank">UHealth</a></li>
+    <li><a href="https://umiamihealth.org:443/bascom-palmer-eye-institute" target="_blank">Bascom Palmer Eye Institute</a></li>
+    <li><a href="https://umiamihealth.org:443/sylvester-comprehensive-cancer-center" target="_blank">Sylvester Comprehensive Cancer Center</a></li>
+</ul>
+<a rel="noopener noreferrer" href="https://prepare.miami.edu/" target="_blank">Emergency Information</a> | <a rel="noopener noreferrer" href="https://welcome.miami.edu/privacy-and-legal/index.html" target="_blank">Privacy Statement & Legal Notices</a>
+            <br />
+            &#169; 2021 University of Miami. All Rights Reserved
+        </div>
+    </div>
+</footer>
+    </div>
+    <div class="overlay"></div>
+    <button id="back-to-top">
+        <img src="/assets/imgs/img--back-to-top.png"/>
+    </button>
+    <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/assets/libraries/styleguide.js"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="/assets/js/vendor/chosen.jquery.js"></script>
+    <script src="/assets/js/vendor/jquery.matchHeight.js"></script>
+    <script src="/assets/js/vendor/slick.js"></script>
+    <script src="/assets/js/vendor/parallax.js"></script>
+    <script src="/assets/js/vendor/progressbar.min.js"></script>
+    <script src="/assets/js/back-to-top.js"></script>
+    <script src="/assets/js/main-nav.js"></script>
+    <script src="/assets/js/dept-nav.js"></script>
+    <script src="/assets/js/select.js"></script>
+    <script src="/assets/js/equalize-height.js"></script>
+    <script src="/assets/js/toggle.js"></script>
+    <script src="/assets/js/map.js"></script>
+    <script src="/assets/js/accordion.js"></script>
+    <script src="/assets/js/side-nav.js"></script>
+    <script src="/assets/js/vendor/jquery.fitvids.js"></script>
+    <script src="/assets/js/embedded-video.js"></script>
+    <script src="/assets/js/form.js"></script>
+    <script src="/assets/js/vendor/jquery.validate.js"></script>
+    <script src="/assets/js/vendor/additional-methods.js"></script>
+    <script src="/assets/js/contrast.js"></script>
+    <script src="/assets/js/slideshow.js"></script>
+    <script src="/assets/js/simple-accordion.js"></script>
+    <script src="/assets/js/dept-accordion.js"></script>
+    <script src="/assets/js/tabbed-interface.js"></script>
+    <script src="/assets/js/social-proof-carousel.js"></script>
+    <script src="/assets/js/small-image-slideshow.js"></script>
+    <script src="/assets/js/hero-news-carousel.js"></script>
+    <script src="/assets/js/ambient-video.js"></script>
+    <script src="/assets/js/sidebar-navigation.js"></script>
+    <script src="/assets/js/anim-scroll.js"></script>
+    <script src="/assets/js/counters.js"></script>
+    <script src="/assets/js/progress-bar.js"></script>
+    <script src="/assets/js/card-flip.js"></script>
+    <script src="/assets/js/font-size-adjust.js"></script>
+    <script src="/assets/js/classes-events.js"></script>
+    <script src="/assets/js/vendor/moment.min.js"></script>
+    <script src="/assets/js/vendor/fullcalendar.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,753 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr" prefix="og: http://ogp.me/ns# content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#">
+
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"4a5cfeed34",applicationID:"48726890"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<link rel="apple-touch-icon" sizes="57x57" href="/sites/default/files/favicons/apple-touch-icon-57x57.png"/>
+<link rel="apple-touch-icon" sizes="60x60" href="/sites/default/files/favicons/apple-touch-icon-60x60.png"/>
+<link rel="apple-touch-icon" sizes="72x72" href="/sites/default/files/favicons/apple-touch-icon-72x72.png"/>
+<link rel="apple-touch-icon" sizes="76x76" href="/sites/default/files/favicons/apple-touch-icon-76x76.png"/>
+<link rel="apple-touch-icon" sizes="114x114" href="/sites/default/files/favicons/apple-touch-icon-114x114.png"/>
+<link rel="apple-touch-icon" sizes="120x120" href="/sites/default/files/favicons/apple-touch-icon-120x120.png"/>
+<link rel="apple-touch-icon" sizes="144x144" href="/sites/default/files/favicons/apple-touch-icon-144x144.png"/>
+<link rel="apple-touch-icon" sizes="152x152" href="/sites/default/files/favicons/apple-touch-icon-152x152.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/sites/default/files/favicons/apple-touch-icon-180x180.png"/>
+<link rel="icon" type="image/png" href="/sites/default/files/favicons/favicon-32x32.png" sizes="32x32"/>
+<link rel="icon" type="image/png" href="/sites/default/files/favicons/android-chrome-192x192.png" sizes="192x192"/>
+<link rel="icon" type="image/png" href="/sites/default/files/favicons/favicon-96x96.png" sizes="96x96"/>
+<link rel="icon" type="image/png" href="/sites/default/files/favicons/favicon-16x16.png" sizes="16x16"/>
+<link rel="manifest" href="/sites/default/files/favicons/manifest.json"/>
+<link rel="mask-icon" href="/sites/default/files/favicons/safari-pinned-tab.svg" color="#436092"/>
+<meta name="msapplication-TileColor" content="#436092"/>
+<meta name="msapplication-TileImage" content="/sites/default/files/favicons/mstile-144x144.png"/>
+<meta name="theme-color" content="#ffffff"/>
+<link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />
+<meta property="fb:pages" content="109635276440" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="MobileOptimized" content="width" />
+<meta http-equiv="cleartype" content="on" />
+<link rel="apple-touch-icon-precomposed" href="https://www.rushu.rush.edu/sites/all/themes/omega/omega/apple-touch-icon-precomposed-114x114.png" sizes="114x114" />
+<link rel="apple-touch-icon-precomposed" href="https://www.rushu.rush.edu/sites/all/themes/omega/omega/apple-touch-icon-precomposed-144x144.png" sizes="144x144" />
+<link rel="apple-touch-icon-precomposed" href="https://www.rushu.rush.edu/sites/all/themes/omega/omega/apple-touch-icon-precomposed-72x72.png" sizes="72x72" />
+<link rel="apple-touch-icon-precomposed" href="https://www.rushu.rush.edu/sites/all/themes/omega/omega/apple-touch-icon-precomposed.png" />
+<meta name="description" content="The mission of the Department of Preventive Medicine is to improve public health and reduce the burden of chronic disease, especially in underserved populations, through high-quality research, service and education. Our physicians see thousands of patients each year in the Rush Prevention Center, providing medical students with ample experience caring for patients from a" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="https://www.rushu.rush.edu/rush-medical-college/departments/department-preventive-medicine" />
+<link rel="shortlink" href="https://www.rushu.rush.edu/node/749" />
+  <title>Preventive Medicine | Departments | Rush University</title>
+  <link type="text/css" rel="stylesheet" href="https://www.rushu.rush.edu/sites/default/files/css/css_bmUkrXaT0QvNqt0v-L21X_AVwdTOGT4B-5ONaLyubFE.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.rushu.rush.edu/sites/default/files/css/css_-nm2BISWRbcjO6liXCI_ieZgp_mlghPxwto8J1ZZzRQ.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,300" media="all" />
+<link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.rushu.rush.edu/sites/default/files/css/css_JacaZoc_J3E3L8fN_8favVw0J25vm7Bw7YlW7ieM-Js.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.rushu.rush.edu/sites/default/files/css/css_BdIHuuB_YRRXaINZg-IeIHbI0v_GKc_CbCytIKB7BzI.css" media="all" />
+
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="https://www.rushu.rush.edu/sites/default/files/css/css_aBqCnvPp2GkYEqyyrewkgLsTU8FeTzs_--ZqzFXEW5s.css" media="all" />
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="https://www.rushu.rush.edu/sites/default/files/css/css_SfyE0CHSFs16AeSalhAVM_NVsq1OObxP4dlhsCxVk8U.css" media="all" />
+    <script src="https://www.rushu.rush.edu/sites/default/files/js/js_wC7EgHgJx83dQfE-YVNR7OJTaVQ7IpyRxSiLp-vkPRA.js"></script>
+<script src="https://www.rushu.rush.edu/sites/default/files/js/js_uRCjUH1nf-b0kvBB1NZD5NFhEC1sf4b1IZSqjeXedX4.js"></script>
+
+<!--[if (gte IE 6)&(lte IE 8)]>
+<script src="https://www.rushu.rush.edu/sites/default/files/js/js_l1iEl-hY65c79QTBBcl2tmNsnQFuMrbhOOFZUO_dkyw.js"></script>
+<![endif]-->
+<script src="https://www.rushu.rush.edu/sites/default/files/js/js_d5KoAmG6W7_mTJdZD2rc0rNYmA4Ow_57otiD04M9jcU.js"></script>
+<script src="https://www.rushu.rush.edu/sites/default/files/js/js_9UZFGnn59mWs-l8Mu5J0fNq8f6LpBgtvWK5kvGuxljQ.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","rush_emergency":{"base_url":"https:\/\/www.rushu.rush.edu","enabled":0,"title":"Test Message","content":"\u003Cp\u003ETest Message\u003C\/p\u003E\r\n"}});</script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.0/slick-theme.css" rel="stylesheet"/>
+
+
+	<!-- Optimize Page Hiding Snippet -->
+  <style>.async-hide { opacity: 0 !important} </style>
+	<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+            h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+            (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document.documentElement,'async-hide','dataLayer',4000,
+            {'GTM-56PX43N':true});</script>
+  <!-- end Optimize Page Hiding Snippet -->
+  <script type="text/javascript" defer src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+  <script type="text/javascript" defer src="/sites/all/themes/rushu/js/objectfit.min.js"></script>
+  <!-- <script type="text/javascript" defer src="/sites/all/themes/rushu/js/global.js"></script> -->
+
+	<!-- Analytics-Optimize Snippet -->
+	<script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-219565-14', 'auto', {allowLinker:true});
+        ga('require', 'GTM-56PX43N');
+  </script>
+	<!-- end Analytics-Optimize Snippet -->
+
+	<!-- Flowplayer -->
+	<script type="text/javascript" src="/sites/all/themes/rushu/js/flowplayer/flowplayer-3.2.11.min.js"></script>
+	<script type="text/javascript" src="/sites/all/themes/rushu/js/flowplayer/flowplayer.ipad-3.2.9.js"></script>
+  </head>
+<body class="html not-front not-logged-in page-node page-node- page-node-749 node-type-academics   section-rush-medical-college"  class="html not-front not-logged-in page-node page-node- page-node-749 node-type-academics   section-rush-medical-college">
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+  <noscript aria-hidden="true"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WL9ZW8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>  <div id="main-content"></div>
+<div class="drawer"></div>
+	<div class="alert" role="alert" aria-live="assertive">
+		<div class="wrap">
+            <div class="l-region l-region--alert">
+    <!--  -->
+  <!-- <h2 ></h2> -->
+<!--  -->
+<div class="view view-home-page-alert view-id-home_page_alert view-display-id-block_1 view-dom-id-8436ca31b0bd0a59f6271f62aaca3dbf">
+        
+  
+  
+      <div class="view-content">
+      <div class="alert__container">
+  <span class="alert__icon">
+    <span class="svgstore svgstore--exclamation-triangle">
+      <svg>
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sites/all/themes/rushu/images/svgstore.svg#exclamation-triangle"></use>
+      </svg>
+    </span>
+  </span>
+  <div class="alert__text">
+  <span class="alert__label">Alert</span>: <div class="field field--name-field-alert-text field--type-text-long field--label-hidden"><div class="field__items"><div class="field__item even"><!--googleoff: all-->
+<p>COVID-19 <a href="/about/novel-coronavirus-covid-19-information">Campus Re-entry Plan, Health, Testing, and Other Resources </a></p>
+<!--googleon: all--></div></div></div></div>
+  <a aria-label="Alert Close" class="alert__close" href="#">
+    <span class="svgstore svgstore--x">
+      <svg>
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sites/all/themes/rushu/images/svgstore.svg#x"></use>
+      </svg>
+    </span>
+  </a>
+</div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+		</div>
+	</div>
+<header class=header>
+  <div class="header__wrap wrap">
+    <div class=header__small>
+      <a aria-label="Logo" class=header__small__logo href="/">
+        <span class="svgstore svgstore--logo-ru">
+          <svg>
+            <use xlink:href="/sites/all/themes/rushu/images/svgstore.svg#logo-ru"></use>
+          </svg>
+        </span>
+      </a>
+      <a aria-label="Menu Toggle" class=header__small__menu-toggle href=#>
+        <span aria-label="Menu Open" class=header__small__menu-toggle__open>
+          <span class="svgstore svgstore--bars">
+            <svg>
+              <use xlink:href="/sites/all/themes/rushu/images/svgstore.svg#bars"></use>
+            </svg>
+          </span>
+        </span>
+        <span aria-label="Menu Close" class=header__small__menu-toggle__close>
+          <span class="svgstore svgstore--x">
+            <svg>
+              <use xlink:href="/sites/all/themes/rushu/images/svgstore.svg#x"></use>
+            </svg>
+          </span>
+        </span>
+      </a>
+      <a class=header__small__back href=#>
+        <span aria-label="Go Back" class=header__small__back__icon>
+          <span class="svgstore svgstore--angle-left">
+            <svg>
+              <use xlink:href="/sites/all/themes/rushu/images/svgstore.svg#angle-left"></use>
+            </svg>
+          </span>
+        </span>
+        <span class=header__small__back__text></span>
+      </a>
+    </div>
+    <div class=header__menu>
+      <div class=header__scroll>
+        <div class=header__secondary>
+          <div class=header__secondary__container>
+            <button aria-label="Our System: Chicago, Oak Park, Aurora. Press enter to open system locations menu" class="tactical-nav--toggle">Our System: Chicago, Oak Park, Aurora
+              <a href="#" aria-hidden="true" class="tactical-nav--toggle-icon">+</a></button>
+              <div class="l-region l-region--tactical-nav">
+    <!--  -->
+  <!-- <h2 ></h2> -->
+<!--  -->
+<ul class="menu"><li class="first leaf"><a href="https://www.rush.edu/?utm_campaign=Header%20Link&amp;utm_source=Rushu.rush.edu&amp;utm_medium=referral" target="_blank">Rush University Medical Center</a></li>
+<li class="leaf"><a href="https://www.roph.org/" target="_blank">Rush Oak Park Hospital</a></li>
+<li class="leaf"><a href="https://www.rushcopley.com/" target="_blank">Rush Copley Medical Center</a></li>
+<li class="last leaf"><a href="https://www.rush.edu/kids" target="_blank">Rush University Children&#039;s Hospital</a></li>
+</ul>  </div>
+<a href="#" aria-label="Press enter to close system locations menu" class="tactical-nav--close-icon hidden"></a>
+            <span class=header__secondary__mask>
+              <span class="svgstore svgstore--stripe-mask">
+                <svg>
+                  <use xlink:href="/sites/all/themes/rushu/images/svgstore.svg#stripe-mask"></use>
+                </svg>
+              </span>
+            </span>
+          </div>
+        </div>
+        <a aria-label="Link. Return to Rush University homepage" class=header__logo href="/">
+          <span class="svgstore svgstore--logo-ru-color">
+            <svg>
+              <use xlink:href="/sites/all/themes/rushu/images/svgstore.svg#logo-ru-color"></use>
+            </svg>
+          </span>
+        </a>
+          <div class="l-region l-region--mobile-search">
+    <!--  -->
+  <!-- <h2 ></h2> -->
+<!--  -->
+<form class="header__search" action="/search-results" method="get">
+  <input title="Website Search" class="header__search__input" name="gse" type="search" placeholder="Search">
+  <button aria-label="Website search button" type="submit" class="header__search__button">
+    <span class="svgstore svgstore--search">
+      <svg>
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sites/all/themes/rushu/images/svgstore.svg#search"></use>
+      </svg>
+    </span>
+  </button>
+</form>
+  </div>
+        <div class="header__scroll--utility">
+          <div class=header__audience>
+            <button class="header__audience__open" aria-label="Links to pages with more info">My RushU</button>
+            <div class="header__audience__dropdown_menu">
+              <button class="header__audience__dropdown_menu__close">My RushU</button>
+              <ul class="menu"><li class="menu-9921 first"><a href="/alumni">For Alumni</a></li>
+<li class="menu-9906"><a href="/current-students">For Current Students</a></li>
+<li class="menu-9916"><a href="/faculty-and-staff">For Faculty/Staff</a></li>
+<li class="menu-9911 last"><a href="/residents-and-fellows">For Resident/Fellow</a></li>
+</ul>            </div>
+          </div>
+          <div class=header__audience-mobile>
+          <ul class="menu"><li class="menu-9921 first"><a href="/alumni">For Alumni</a></li>
+<li class="menu-9906"><a href="/current-students">For Current Students</a></li>
+<li class="menu-9916"><a href="/faculty-and-staff">For Faculty/Staff</a></li>
+<li class="menu-9911 last"><a href="/residents-and-fellows">For Resident/Fellow</a></li>
+</ul>          </div>
+          <div class=header__util>
+            <a class=header__util__link__faculty href="/faculty">
+              Find Faculty
+            </a>
+            <div class=header__util__search>
+              <div class="header__util__search__form-wrap">
+                  <div class="l-region l-region--util-search">
+    <!--  -->
+  <!-- <h2 ></h2> -->
+<!--  -->
+<form class="header__util__search__form" action="/search-results" method="get">
+  <input aria-label="Enter in some keywords to search the Rush University" title="Search" class="header__util__search__input" name="gse" type="search" placeholder="Search">
+</form>
+  </div>
+              </div>
+              <a class=header__util__link href=# aria-label="Press enter to open text field to search Rush University">
+                <span class=header__util__icon>
+                  <span class="svgstore svgstore--search">
+                    <svg>
+                      <use xlink:href="/sites/all/themes/rushu/images/svgstore.svg#search"></use>
+                    </svg>
+                  </span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class=header__nav>
+          <div class=wrap>
+            <a class=header__nav__logo href=#>
+              <span class="svgstore svgstore--logo-ru">
+                <svg>
+                  <use xlink:href="/sites/all/themes/rushu/images/svgstore.svg#logo-ru"></use>
+                </svg>
+              </span>
+            </a>
+            <div class="desktop">
+                <div class="l-region l-region--primary-nav">
+    <!--  -->
+  <!-- <h2 ></h2> -->
+<!--  -->
+<div class="menu-block-wrapper menu-block-2 menu-name-menu-primary-navigation parent-mlid-0 menu-level-1">
+  <ul class="menu"><li class="first expanded menu-mlid-585"><a href="/education-and-training">Education and Training</a><ul class="menu"><li class="first leaf menu-mlid-1956 disabled"><a href="/rush-medical-college">Rush Medical College</a></li>
+<li class="leaf menu-mlid-1957 disabled"><a href="/college-nursing">College of Nursing</a></li>
+<li class="leaf has-children menu-mlid-1958 disabled"><a href="/college-health-sciences">College of Health Sciences</a></li>
+<li class="leaf menu-mlid-1959 disabled"><a href="/graduate-college">The Graduate College</a></li>
+<li class="leaf has-children menu-mlid-1128 disabled"><a href="/education-and-training/graduate-medical-education">Graduate Medical Education</a></li>
+<li class="leaf has-children menu-mlid-3541 disabled"><a href="/education-and-training/center-innovative-lifelong-learning">Center for Innovative and Lifelong Learning</a></li>
+<li class="last leaf has-children menu-mlid-11476"><a href="/education-and-training/academic-affairs">Academic Affairs</a></li>
+</ul></li>
+<li class="leaf menu-mlid-586"><a href="/admissions" title="">Admissions</a></li>
+<li class="expanded menu-mlid-587"><a href="/rush-experience">The Rush Experience</a><ul class="menu"><li class="first leaf menu-mlid-810 disabled"><a href="/rush-experience/practicing-and-learning">Practicing and Learning</a></li>
+<li class="leaf menu-mlid-811 disabled"><a href="/rush-experience/our-location">Our Location</a></li>
+<li class="leaf has-children menu-mlid-802 disabled"><a href="/rush-experience/rush-community-service-initiatives-program">Rush Community Service Initiatives Program</a></li>
+<li class="leaf has-children menu-mlid-806 disabled"><a href="/rush-experience/division-student-affairs">Student Affairs</a></li>
+<li class="leaf has-children menu-mlid-1690 disabled"><a href="/rush-experience/interprofessional-education-rush">Interprofessional Education at Rush</a></li>
+<li class="leaf menu-mlid-2274 disabled"><a href="/office-student-accessibility-services">Accessibility and Accommodations</a></li>
+<li class="leaf has-children menu-mlid-1688 disabled"><a href="/rush-experience/safety-and-security">Safety and Security</a></li>
+<li class="leaf has-children menu-mlid-4776 disabled"><a href="/rush-experience/student-diversity-and-community-engagement">Student Diversity and Community Engagement</a></li>
+<li class="last leaf menu-mlid-4826"><a href="/student-disclosure-information">Student Disclosure Information</a></li>
+</ul></li>
+<li class="expanded menu-mlid-588"><a href="/research-rush-university">Research</a><ul class="menu"><li class="first leaf has-children menu-mlid-861 disabled"><a href="/research/departmental-research">Departmental Research</a></li>
+<li class="leaf has-children menu-mlid-833 disabled"><a href="/research/office-vice-provost-research" title="The office supports the basic, clinical and population studies underway at Rush and in collaboration with other institutions.">Office of the Vice Provost for Research</a></li>
+<li class="leaf has-children menu-mlid-3281"><a href="/research/office-research-compliance">Office of Research Compliance</a></li>
+<li class="leaf has-children menu-mlid-813 disabled"><a href="/research/office-research-affairs" title="The office supports faculty and staff in their research endeavors.">Office of Research Affairs</a></li>
+<li class="leaf has-children menu-mlid-2649 disabled"><a href="/research/rush-core-laboratories-0">Rush Core Laboratories</a></li>
+<li class="leaf menu-mlid-3226 disabled"><a href="/research/institute-translational-medicine-rush">Institute for Translational Medicine at Rush</a></li>
+<li class="leaf has-children menu-mlid-10036"><a href="/research/covid-19-science">COVID-19 Science</a></li>
+<li class="leaf menu-mlid-10706"><a href="https://insiderush.rush.edu/rushsystem/covid19/Pages/PageCards/COVID19_Research.aspx">COVID-19 for Investigators and Research Coordinators</a></li>
+<li class="last leaf menu-mlid-12456"><a href="/research/meet-our-rush-researchers">Meet Our Rush Researchers</a></li>
+</ul></li>
+<li class="expanded menu-mlid-2336"><a href="/news-events">News and Events</a><ul class="menu"><li class="first last leaf menu-mlid-6441 disabled"><a href="/news-and-events/health-care-education-info-and-tips">Health Care Education Info and Tips</a></li>
+</ul></li>
+<li class="expanded menu-mlid-927"><a href="/about-rush-university">About</a><ul class="menu"><li class="first leaf has-children menu-mlid-941 disabled"><a href="/about/rush-university-mission-vision-and-values">Rush University Mission, Vision and Values</a></li>
+<li class="leaf has-children menu-mlid-929 disabled"><a href="/about/history-rush-university">History of Rush University</a></li>
+<li class="leaf menu-mlid-928 disabled"><a href="/about/fast-facts">Fast Facts</a></li>
+<li class="leaf has-children menu-mlid-930 disabled"><a href="/about/leadership-and-administration">Leadership and Administration</a></li>
+<li class="leaf menu-mlid-939 disabled"><a href="/about/university-contacts">University Contacts</a></li>
+<li class="leaf menu-mlid-940 disabled"><a href="/about/visitor-information">Visitor Information</a></li>
+<li class="leaf has-children menu-mlid-12366 disabled"><a href="/about/faculty-affairs-0">Faculty Affairs</a></li>
+<li class="leaf has-children menu-mlid-10851 disabled"><a href="/about/information-services">Information Services</a></li>
+<li class="leaf has-children menu-mlid-12661 disabled"><a href="/about/university-compliance">University Compliance</a></li>
+<li class="last leaf has-children menu-mlid-9866 disabled"><a href="/about/novel-coronavirus-covid-19-information">Novel Coronavirus (COVID-19) Information</a></li>
+</ul></li>
+<li class="last expanded menu-mlid-1655"><a href="/support-rush-university">Support Rush</a><ul class="menu"><li class="first leaf menu-mlid-1795"><a href="http://rush.convio.net/rushugiveonline">Make a Gift</a></li>
+<li class="leaf menu-mlid-1796"><a href="https://www.rush.edu/giving/ways-give">Ways to Give</a></li>
+<li class="leaf menu-mlid-1800"><a href="https://rush.giftplans.org/" target="_blank">Gift Planning</a></li>
+<li class="leaf menu-mlid-1802"><a href="https://www.rush.edu/giving/about/giving-societies">Donor Recognition</a></li>
+<li class="leaf menu-mlid-1807"><a href="https://www.rushu.rush.edu/alumni/support-rush/your-participation-matters">Your Participation Matters</a></li>
+<li class="last leaf menu-mlid-1808"><a href="https://www.rushu.rush.edu/alumni/support-rush/why-give">Why Give?</a></li>
+</ul></li>
+</ul></div>
+  </div>
+            </div>
+            <div class="mobile">
+                <div class="l-region l-region--primary-nav">
+      <div class="l-region l-region--primary-nav">
+    <!--  -->
+  <!-- <h2 ></h2> -->
+<!--  -->
+<div class="menu-block-wrapper menu-block-2 menu-name-menu-primary-navigation parent-mlid-0 menu-level-1">
+  <ul class="menu"><li class="first expanded menu-mlid-585"><a href="/education-and-training">Education and Training</a><ul class="menu"><li class="first leaf menu-mlid-1956 disabled"><a href="/rush-medical-college">Rush Medical College</a></li>
+<li class="leaf menu-mlid-1957 disabled"><a href="/college-nursing">College of Nursing</a></li>
+<li class="leaf has-children menu-mlid-1958 disabled"><a href="/college-health-sciences">College of Health Sciences</a></li>
+<li class="leaf menu-mlid-1959 disabled"><a href="/graduate-college">The Graduate College</a></li>
+<li class="leaf has-children menu-mlid-1128 disabled"><a href="/education-and-training/graduate-medical-education">Graduate Medical Education</a></li>
+<li class="leaf has-children menu-mlid-3541 disabled"><a href="/education-and-training/center-innovative-lifelong-learning">Center for Innovative and Lifelong Learning</a></li>
+<li class="last leaf has-children menu-mlid-11476"><a href="/education-and-training/academic-affairs">Academic Affairs</a></li>
+</ul></li>
+<li class="leaf menu-mlid-586"><a href="/admissions" title="">Admissions</a></li>
+<li class="expanded menu-mlid-587"><a href="/rush-experience">The Rush Experience</a><ul class="menu"><li class="first leaf menu-mlid-810 disabled"><a href="/rush-experience/practicing-and-learning">Practicing and Learning</a></li>
+<li class="leaf menu-mlid-811 disabled"><a href="/rush-experience/our-location">Our Location</a></li>
+<li class="leaf has-children menu-mlid-802 disabled"><a href="/rush-experience/rush-community-service-initiatives-program">Rush Community Service Initiatives Program</a></li>
+<li class="leaf has-children menu-mlid-806 disabled"><a href="/rush-experience/division-student-affairs">Student Affairs</a></li>
+<li class="leaf has-children menu-mlid-1690 disabled"><a href="/rush-experience/interprofessional-education-rush">Interprofessional Education at Rush</a></li>
+<li class="leaf menu-mlid-2274 disabled"><a href="/office-student-accessibility-services">Accessibility and Accommodations</a></li>
+<li class="leaf has-children menu-mlid-1688 disabled"><a href="/rush-experience/safety-and-security">Safety and Security</a></li>
+<li class="leaf has-children menu-mlid-4776 disabled"><a href="/rush-experience/student-diversity-and-community-engagement">Student Diversity and Community Engagement</a></li>
+<li class="last leaf menu-mlid-4826"><a href="/student-disclosure-information">Student Disclosure Information</a></li>
+</ul></li>
+<li class="expanded menu-mlid-588"><a href="/research-rush-university">Research</a><ul class="menu"><li class="first leaf has-children menu-mlid-861 disabled"><a href="/research/departmental-research">Departmental Research</a></li>
+<li class="leaf has-children menu-mlid-833 disabled"><a href="/research/office-vice-provost-research" title="The office supports the basic, clinical and population studies underway at Rush and in collaboration with other institutions.">Office of the Vice Provost for Research</a></li>
+<li class="leaf has-children menu-mlid-3281"><a href="/research/office-research-compliance">Office of Research Compliance</a></li>
+<li class="leaf has-children menu-mlid-813 disabled"><a href="/research/office-research-affairs" title="The office supports faculty and staff in their research endeavors.">Office of Research Affairs</a></li>
+<li class="leaf has-children menu-mlid-2649 disabled"><a href="/research/rush-core-laboratories-0">Rush Core Laboratories</a></li>
+<li class="leaf menu-mlid-3226 disabled"><a href="/research/institute-translational-medicine-rush">Institute for Translational Medicine at Rush</a></li>
+<li class="leaf has-children menu-mlid-10036"><a href="/research/covid-19-science">COVID-19 Science</a></li>
+<li class="leaf menu-mlid-10706"><a href="https://insiderush.rush.edu/rushsystem/covid19/Pages/PageCards/COVID19_Research.aspx">COVID-19 for Investigators and Research Coordinators</a></li>
+<li class="last leaf menu-mlid-12456"><a href="/research/meet-our-rush-researchers">Meet Our Rush Researchers</a></li>
+</ul></li>
+<li class="expanded menu-mlid-2336"><a href="/news-events">News and Events</a><ul class="menu"><li class="first last leaf menu-mlid-6441 disabled"><a href="/news-and-events/health-care-education-info-and-tips">Health Care Education Info and Tips</a></li>
+</ul></li>
+<li class="expanded menu-mlid-927"><a href="/about-rush-university">About</a><ul class="menu"><li class="first leaf has-children menu-mlid-941 disabled"><a href="/about/rush-university-mission-vision-and-values">Rush University Mission, Vision and Values</a></li>
+<li class="leaf has-children menu-mlid-929 disabled"><a href="/about/history-rush-university">History of Rush University</a></li>
+<li class="leaf menu-mlid-928 disabled"><a href="/about/fast-facts">Fast Facts</a></li>
+<li class="leaf has-children menu-mlid-930 disabled"><a href="/about/leadership-and-administration">Leadership and Administration</a></li>
+<li class="leaf menu-mlid-939 disabled"><a href="/about/university-contacts">University Contacts</a></li>
+<li class="leaf menu-mlid-940 disabled"><a href="/about/visitor-information">Visitor Information</a></li>
+<li class="leaf has-children menu-mlid-12366 disabled"><a href="/about/faculty-affairs-0">Faculty Affairs</a></li>
+<li class="leaf has-children menu-mlid-10851 disabled"><a href="/about/information-services">Information Services</a></li>
+<li class="leaf has-children menu-mlid-12661 disabled"><a href="/about/university-compliance">University Compliance</a></li>
+<li class="last leaf has-children menu-mlid-9866 disabled"><a href="/about/novel-coronavirus-covid-19-information">Novel Coronavirus (COVID-19) Information</a></li>
+</ul></li>
+<li class="last expanded menu-mlid-1655"><a href="/support-rush-university">Support Rush</a><ul class="menu"><li class="first leaf menu-mlid-1795"><a href="http://rush.convio.net/rushugiveonline">Make a Gift</a></li>
+<li class="leaf menu-mlid-1796"><a href="https://www.rush.edu/giving/ways-give">Ways to Give</a></li>
+<li class="leaf menu-mlid-1800"><a href="https://rush.giftplans.org/" target="_blank">Gift Planning</a></li>
+<li class="leaf menu-mlid-1802"><a href="https://www.rush.edu/giving/about/giving-societies">Donor Recognition</a></li>
+<li class="leaf menu-mlid-1807"><a href="https://www.rushu.rush.edu/alumni/support-rush/your-participation-matters">Your Participation Matters</a></li>
+<li class="last leaf menu-mlid-1808"><a href="https://www.rushu.rush.edu/alumni/support-rush/why-give">Why Give?</a></li>
+</ul></li>
+</ul></div>
+  </div>
+  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="breadcrumbs">
+  <div class=wrap>
+    <div class=breadcrumbs__container>
+        <div class="l-region l-region--breadcrumb">
+    <!--  -->
+  <!-- <h2 ></h2> -->
+<!--  -->
+<a href="/">Home</a><span class="breadcrumbs__divider">></span><a href="/rush-medical-college">Rush Medical College</a><span class="breadcrumbs__divider">></span><a href="/rush-medical-college/rush-medical-college-departments">Departments</a><span class="breadcrumbs__divider">></span><span class=breadcrumbs__current>Preventive Medicine</span>  </div>
+    </div>
+    <span class=breadcrumbs__prev>
+      <span class=breadcrumbs__icon>
+        <span class="svgstore svgstore--angle-left">
+          <svg>
+            <use xlink:href="/sites/all/themes/rushu/images/svgstore.svg#angle-left"></use>
+          </svg>
+        </span>
+      </span>
+    </span>
+    <span class=breadcrumbs__next>
+      <span class=breadcrumbs__icon>
+        <span class="svgstore svgstore--angle-right">
+          <svg>
+            <use xlink:href="/sites/all/themes/rushu/images/svgstore.svg#angle-right"></use>
+          </svg>
+        </span>
+      </span>
+    </span>
+  </div>
+</div>
+<div class=wrap>
+  <div class="ajax-progress" style="display:none;"></div>
+  <!--  -->
+  <!-- <h2 ></h2> -->
+<!--  -->
+      <div class="main full-width">
+      <h1>Department of Preventive Medicine</h1>
+    </div>
+    <div class="section section--narrow section--gray-light wide">
+	<div class="wrap">
+		<div class="section__container">
+			<div class="grid grid--narrow">
+				<div class="grid__item grid__item--4">
+					<div class="card">
+						<div class="card__image"><a href="https://www.rushu.rush.edu/rush-medical-college/doctor-medicine-md-program"><img alt="doctor-medicine-program" height="600" width="800" class="media-element file-default" data-delta="1" typeof="foaf:Image" src="https://www.rushu.rush.edu/sites/default/files/Rush%20Medical%20College/doctor-medicine-program-800-rmc.jpg" /></a></div>
+
+						<div class="card__detail">
+							<div class="card__title"><a href="https://www.rushu.rush.edu/rush-medical-college/doctor-medicine-md-program">Doctor of Medicine (MD) Program</a></div>
+
+							<p>Hands-on medical training under the guidance of acclaimed clinician educators.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="grid__item grid__item--4">
+					<div class="card">
+						<div class="card__image"><a href="https://www.rushu.rush.edu/rush-medical-college/departments/preventive-medicine/department-preventive-medicine-faculty-and-staff"><img alt="meet our faculty" title="meet our faculty" height="450" width="600" class="media-element file-default" data-delta="2" typeof="foaf:Image" src="https://www.rushu.rush.edu/sites/default/files/Rush%20Medical%20College/Medical%20Departments/faculty-general-med-depts.jpg" /></a></div>
+
+						<div class="card__detail">
+							<div class="card__title"><a href="https://www.rushu.rush.edu/rush-medical-college/departments/preventive-medicine/department-preventive-medicine-faculty-and-staff">Faculty and Staff</a></div>
+
+							<p>Meet our department’s faculty and staff.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="grid__item grid__item--4">
+					<div class="card">
+						<div class="card__image"><a href="https://www.rush.edu/services/prevention-center"><img alt="Learn about our clinical services" title="Learn about our clinical services" height="450" width="600" class="media-element file-default" data-delta="3" typeof="foaf:Image" src="https://www.rushu.rush.edu/sites/default/files/Rush%20Medical%20College/Medical%20Departments/clinical-services-general-med-depts.jpg" /></a></div>
+
+						<div class="card__detail">
+							<div class="card__title"><a href="https://www.rush.edu/services/prevention-center" target="_blank">Clinical Services</a></div>
+
+							<p>Find out what services our department provides at Rush University Medical Center.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="grid__item grid__item--4">
+					<div class="card">
+						<div class="card__image"><img alt="A health care worker takes notes beside a patient on a scale" class="media-element file-default" data-delta="4" typeof="foaf:Image" src="https://www.rushu.rush.edu/sites/default/files/Rush%20Medical%20College/scale-weight-clipboard%20%281%29.jpg" width="800" height="600" /></div>
+
+						<div class="card__detail">
+							<div class="card__title"><a href="/research/departmental-research/preventative-medicine-research" target="_blank">Research</a></div>
+
+							<p>Learn about current and past research projects within the department.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<p> </p>
+	<div class="academics-region academics-region--sidebar sidebar">
+      <!--  -->
+  <!-- <h2 ></h2> -->
+<!--  -->
+<div class="subnav"><a class="subnav__toggle" href="#">Menu<span class="subnav__toggle__icon"><span class="subnav__toggle__icon__open"><span class="svgstore svgstore--bars"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sites/all/themes/rushu/images/svgstore.svg#bars"></use></svg></span></span> <span class="subnav__toggle__icon__close"><span class="svgstore svgstore--x"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/sites/all/themes/rushu/images/svgstore.svg#x"></use></svg></span></span></span></a><ul class="menu parent"><li class="active"><a class="active" href="/rush-medical-college/rush-medical-college-departments">Departments</a></li></ul><ul class="menu"><li class="first collapsed menu-mlid-10836 disabled"><a href="/rush-medical-college/departments/anesthesiology">Department of Anesthesiology</a></li>
+<li class="collapsed menu-mlid-1607 disabled"><a href="/rush-medical-college/departments/cardiovascular-thoracic-surgery">Cardiovascular and Thoracic Surgery</a></li>
+<li class="collapsed menu-mlid-1406 disabled"><a href="/rush-medical-college/departments/department-anatomy-cell-biology">Anatomy &amp; Cell Biology</a></li>
+<li class="collapsed menu-mlid-1645 disabled"><a href="/rush-medical-college/departments/department-diagnostic-radiology-and-nuclear-medicine">Diagnostic Radiology and Nuclear Medicine</a></li>
+<li class="collapsed menu-mlid-1647 disabled"><a href="/rush-medical-college/departments/department-emergency-medicine">Emergency Medicine</a></li>
+<li class="collapsed menu-mlid-1400 disabled"><a href="/rush-medical-college/departments/department-family-medicine">Family Medicine</a></li>
+<li class="collapsed menu-mlid-1398 disabled"><a href="/rush-medical-college/departments/department-microbial-pathogens-and-immunity">Microbial Pathogens and Immunity</a></li>
+<li class="collapsed menu-mlid-1381 disabled"><a href="/rush-medical-college/departments/department-internal-medicine">Internal Medicine</a></li>
+<li class="collapsed menu-mlid-1576 disabled"><a href="/rush-medical-college/departments/department-neurological-sciences">Neurological Sciences</a></li>
+<li class="collapsed menu-mlid-1561 disabled"><a href="/rush-medical-college/departments/department-neurological-surgery">Neurological Surgery</a></li>
+<li class="collapsed menu-mlid-1610 disabled"><a href="/rush-medical-college/departments/department-obstetrics-and-gynecology">Obstetrics and Gynecology</a></li>
+<li class="leaf menu-mlid-1640 disabled"><a href="/rush-medical-college/departments/department-ophthalmology">Ophthalmology</a></li>
+<li class="collapsed menu-mlid-1617 disabled"><a href="/rush-medical-college/departments/department-orthopedic-surgery">Orthopedic Surgery</a></li>
+<li class="collapsed menu-mlid-1396 disabled"><a href="/rush-medical-college/about-college/departments/otorhinolaryngology-head-and-neck-surgery">Otorhinolaryngology</a></li>
+<li class="collapsed menu-mlid-1646 disabled"><a href="/rush-medical-college/departments/department-pathology">Pathology</a></li>
+<li class="collapsed menu-mlid-1624 disabled"><a href="/rush-medical-college/departments/department-pediatrics">Pediatrics</a></li>
+<li class="leaf menu-mlid-1616 disabled"><a href="/rush-medical-college/departments/department-physical-medicine-and-rehabilitation">Physical Medicine and Rehabilitation</a></li>
+<li class="collapsed menu-mlid-1397 disabled"><a href="/rush-medical-college/departments/department-physiology-biophysics">Physiology &amp; Biophysics</a></li>
+<li class="expanded active-trail active menu-mlid-1399 disabled"><a href="/rush-medical-college/departments/department-preventive-medicine" class="active-trail active">Preventive Medicine</a><ul class="menu"><li class="first leaf menu-mlid-1057"><a href="/rush-medical-college/departments/preventive-medicine/department-preventive-medicine-areas-expertise">Areas of Expertise</a></li>
+<li class="leaf menu-mlid-1058"><a href="/rush-medical-college/departments/preventive-medicine/department-preventive-medicine-faculty-and-staff">Faculty and Staff</a></li>
+<li class="last leaf menu-mlid-12181"><a href="/rush-medical-college/departments/preventive-medicine/grand-rounds-schedule-preventive-medicine">Grand Rounds Schedule</a></li>
+</ul></li>
+<li class="collapsed menu-mlid-1615 disabled"><a href="/rush-medical-college/departments/department-psychiatry-and-behavioral-sciences">Psychiatry and Behavioral Sciences</a></li>
+<li class="collapsed menu-mlid-1608 disabled"><a href="/rush-medical-college/departments/department-radiation-oncology">Radiation Oncology</a></li>
+<li class="last collapsed menu-mlid-1614 disabled"><a href="/rush-medical-college/departments/surgery">Surgery</a></li>
+</ul></div><!--  -->
+  <!-- <h2 ></h2> -->
+<!--  -->
+
+  <div class="widget">
+	<div class="widget__title">Contact Us</div>
+
+	<div class="widget__detail">
+		<p>1700 W. Van Buren St., Suite 470<br />
+			Chicago, IL 60612<br />
+			Phone: (312) 942-2013<br />
+			Email: <a href="mailto:joyce_mack@rush.edu">joyce_mack@rush.edu</a></p>
+	</div>
+</div>
+
+<p> </p>
+	</div>
+<div class="academics panel-academics panel-display--academics">
+  <!--  -->
+  <!-- <h2 ></h2> -->
+<!--  -->
+<div class="main">
+    
+  <p>The mission of the Department of Preventive Medicine is to improve public health and reduce the burden of chronic disease, especially in underserved populations, through high-quality research, service and education. Our physicians see thousands of patients each year in the Rush Prevention Center, providing medical students with ample experience caring for patients from a variety of socioeconomic and ethnic backgrounds. Typically, these patients are at high risk for cardiovascular disease and/or diabetes, or have had difficulty controlling blood pressure.</p>
+
+<p>We have a long track record of research success, including clinical trials, longitudinal studies and multicenter drug trials. Thanks to a $10 million grant from the National Institutes of Health, our Center for Urban Health Equity is investigating how various lifestyle and behavioral interventions can alleviate health inequities in heart and lung diseases.</p>
+
+<p>Our department also provides healthy lifestyle programs — from weight management and fitness to mindfulness training — to patients, nearby residents, students, residents and staff.</p>
+
+<h3>Learn more about the Department of Preventive Medicine</h3>
+
+<ul><li><a href="https://www.rushu.rush.edu/rush-medical-college/departments/preventive-medicine/department-preventive-medicine-areas-expertise">Areas of Expertise</a></li>
+	<li><a href="https://www.rushu.rush.edu/rush-medical-college/departments/preventive-medicine/department-preventive-medicine-faculty-and-staff">Faculty and Staff</a></li>
+	<li><a href="https://www.rush.edu/services/prevention-center" target="_blank">Clinical Services</a></li>
+	<li><a href="/rush-medical-college/departments/preventive-medicine/grand-rounds-schedule-preventive-medicine">Grand Rounds</a></li>
+</ul><p> </p>
+  
+	    </div>
+
+
+      </div>
+</div>
+
+<!-- <div class="facts-wrap section section--gray-light">
+    </div> -->
+
+<footer class=footer>
+  <div class=footer__top>
+    <div class=wrap>
+      <div class=footer__section>
+        <a aria-label="Logo" class=footer__logo href="/">
+          <span class="svgstore svgstore--logo-ru-color">
+            <svg>
+              <use xlink:href="/sites/all/themes/rushu/images/svgstore.svg#logo-ru-color"></use>
+            </svg>
+          </span>
+        </a>
+          <div class="l-region l-region--footer-left1">
+    <!--  -->
+  <!-- <h2 ></h2> -->
+<!--  -->
+<div id="node-6" class="node node--rich-text-widget node--full node--rich-text-widget--full clearfix" about="/widgets/footer-contact-information" typeof="sioc:Item foaf:Document" role="article" class="node node--rich-text-widget node--full node--rich-text-widget--full">
+
+        <span property="dc:title" content="Footer Contact Information" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+  
+  <div class="content" class="node__content">
+    
+  <div class="footer__contact">
+	<p>(312) 942-7100</p>
+	<p>Rush University<br />
+		600 S. Paulina St.<br />
+		Chicago, Illinois 60612</p>
+</div>
+<p> </p>
+  </div>
+
+  
+  
+</div>
+  </div>
+          <div class="l-region l-region--footer-left2">
+    <!--  -->
+  <!-- <h2 ></h2> -->
+<!--  -->
+<div id="node-9" class="node node--rich-text-widget node--full node--rich-text-widget--full clearfix" about="/widgets/footer-button" typeof="sioc:Item foaf:Document" role="article" class="node node--rich-text-widget node--full node--rich-text-widget--full">
+
+        <span property="dc:title" content="Footer Button" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+  
+  <div class="content" class="node__content">
+    
+  <p><a class="footer__button button" href="http://rush.convio.net/rushugiveonline" target="_blank">Make a Gift</a></p>
+  </div>
+
+  
+  
+</div>
+  </div>
+      </div>
+      <div class=footer__section>
+          <div class="l-region l-region--footer-middle">
+    <!--  -->
+  <!-- <h2 ></h2> -->
+<!--  -->
+<div id="node-8" class="node node--rich-text-widget node--full node--rich-text-widget--full clearfix" about="/widgets/footer-links-middle-column" typeof="sioc:Item foaf:Document" role="article" class="node node--rich-text-widget node--full node--rich-text-widget--full">
+
+        <span property="dc:title" content="Footer Links - Middle Column" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+  
+  <div class="content" class="node__content">
+    
+  <div class="footer__nav">
+<!-- IMOD SCRAPE FOOTER NAV START -->
+	<ul class="menu">
+		<li><a href="/about/university-contacts">Contact Us</a></li>
+		<li><a href="/education-and-training/colleges-rush-university">Colleges</a>
+			<ul class="menu">
+				<li><a href="/rush-medical-college">Rush Medical College</a></li>
+				<li><a href="/college-nursing">College of Nursing</a></li>
+				<li><a href="/college-health-sciences">College of Health Sciences</a></li>
+				<li><a href="/graduate-college">The Graduate College</a></li>
+			</ul>
+		</li>
+		<li><a href="http://www.joinrush.org" target="_blank">Faculty Recruitment</a></li>
+		<li><a href="/student-disclosure-information">Student Disclosure Information</a></li>
+		<li><a href="https://rushu.libguides.com/libraryhomepage" target="_blank">Library of Rush University Medical Center</a></li>
+	</ul>
+<!-- IMOD SCRAPE FOOTER NAV END -->
+</div>
+<p>&nbsp;</p>
+  </div>
+
+  
+  
+</div>
+  </div>
+      </div>
+      <div class=footer__section>
+          <div class="l-region l-region--footer-right">
+    <!--  -->
+  <!-- <h2 ></h2> -->
+<!--  -->
+<div id="node-7" class="node node--rich-text-widget node--full node--rich-text-widget--full clearfix" about="/widgets/footer-map" typeof="sioc:Item foaf:Document" role="article" class="node node--rich-text-widget node--full node--rich-text-widget--full">
+
+        <span property="dc:title" content="Footer Map" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+  
+  <div class="content" class="node__content">
+    
+  <div class="footer__nav">
+	<ul class="menu">
+<li> <a target="_blank" href="https://www.google.com/maps/place/Rush+University/@41.8734157,-87.6717567,17z/data=!3m1!4b1!4m5!3m4!1s0x880e2d1774f334cd:0x99412ee989a12531!8m2!3d41.8734157!4d-87.669568">Maps and Directions</a></li>
+<li class="map"> <p> <a target="_blank" href="https://www.google.com/maps/dir//Rush+University/"><img src="https://maps.googleapis.com/maps/api/staticmap?center=Rush+University&zoom=17&scale=2&size=640x500&maptype=roadmap&key=AIzaSyBavkczxXquYcORzXfFzNlpMnLcJjSDV94&format=png&visual_refresh=true&markers=icon:https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png%7Cshadow:true%7CRush+University" alt="Google Map of Rush University"></a></p> </li>
+      </ul>
+</div>
+  </div>
+
+  
+  
+</div>
+  </div>
+      </div>
+    </div>
+  </div>
+  <div class=footer__bottom>
+    <div class=wrap>
+      <div class=footer__legal>
+          <div class="l-region l-region--footer-bottom">
+    <!--  -->
+  <!-- <h2 ></h2> -->
+<!--  -->
+<ul class="menu"><li class="first leaf disabled"><a href="/ada-compliance">ADA Compliance</a></li>
+<li class="leaf"><a href="/office-student-accessibility-services">Accessibility and Accommodations</a></li>
+<li class="leaf"><a href="/equal-opportunity-disability-rights-and-accessibility">Equal Opportunity</a></li>
+<li class="leaf"><a href="/student-disclosure-information/health-and-safety/sexual-harassment-and-assault-prevention">Harassment Prevention</a></li>
+<li class="last leaf"><a href="/website-privacy-policy-rush-university">Privacy Policy</a></li>
+</ul>  </div>
+      </div>
+      <ul class=footer__social>
+        <li class=footer__social__item>
+          <a aria-label="LinkedIn" class=footer__social__link target="_blank" href="https://www.linkedin.com/edu/rush-university-18300">
+            <span class="svgstore svgstore--linkedin">
+              <svg>
+                <use xlink:href="/sites/all/themes/rushu/images/svgstore.svg#linkedin"></use>
+              </svg>
+            </span>
+          </a>
+        </li>
+        <li class=footer__social__item>
+          <a aria-label="Youtube" class=footer__social__link target="_blank" href=https://www.youtube.com/user/rushuniversity>
+            <span class="svgstore svgstore--youtube-play">
+              <svg>
+                <use xlink:href="/sites/all/themes/rushu/images/svgstore.svg#youtube-play"></use>
+              </svg>
+            </span>
+          </a>
+        </li>
+        <li class=footer__social__item>
+          <a aria-label="Instagram" class=footer__social__link target="_blank" href="http://www.instagram.com/rushuniversity">
+            <span class="svgstore svgstore--instagram">
+              <svg>
+                <use xlink:href="/sites/all/themes/rushu/images/svgstore.svg#instagram"></use>
+              </svg>
+            </span>
+          </a>
+        </li>
+        <li class=footer__social__item>
+          <a aria-label="Facebook" class=footer__social__link target="_blank" href="http://www.facebook.com/RushUniversity">
+            <span class="svgstore svgstore--facebook">
+              <svg>
+                <use xlink:href="/sites/all/themes/rushu/images/svgstore.svg#facebook"></use>
+              </svg>
+            </span>
+          </a>
+        </li>
+        <li class=footer__social__item>
+          <a aria-label="Twitter" class=footer__social__link target="_blank" href="http://www.twitter.com/RushUniversity">
+            <span class="svgstore svgstore--twitter">
+              <svg>
+                <use xlink:href="/sites/all/themes/rushu/images/svgstore.svg#twitter">
+                </use>
+              </svg>
+            </span>
+          </a>
+        </li>
+      </ul>
+      <div class=footer__copyright>&copy 2021 Rush University</div>
+    </div>
+  </div>
+</footer>
+  <script src="https://www.rushu.rush.edu/sites/default/files/js/js_UFIb-0V4yV_IPM_DuC-La4ZXZyFTA0UIWb-b47_rNo4.js"></script>
+<script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="https://www.rushu.rush.edu/sites/default/files/js/js_InZgo8YzeMxClx-BXLmEsMHB17z68QRCizfDUDiLtw0.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"4a5cfeed34","applicationID":"48726890","transactionName":"MwMGbURVDBcFWhYMXwpJJVpCXQ0KS0kDAlU7CwVXV1MHFjtXDQFVOxANXEFrEgUDXA==","queueTime":0,"applicationTime":301,"atts":"H0QFGwxPHxk=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>

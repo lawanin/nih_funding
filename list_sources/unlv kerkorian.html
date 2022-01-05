@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />
+  <meta charset="utf-8"><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"49746aa591",applicationID:"29937636"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?p("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&p("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;p("lcp",[r])}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||p("cls",[t])})}function a(t){if(t instanceof g&&!y){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),y=!0,p("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=l.now(),p("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d,p=t("handle"),l=t("loader"),v=t(9),m=t(3),g=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(h){}s=new PerformanceObserver(i);try{s.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}d=new PerformanceObserver(o);try{d.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var y=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(t){document.addEventListener(t,a,m(!1))})}v(c)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){y[t]=m(t).concat(e)}function v(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:h,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!T++){var t=P.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+P.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+P.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,h="addEventListener",y="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1212.min.js"},M=w&&b&&b[h]&&!/CriOS/.test(navigator.userAgent),P=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:M,userAgent:s,disabled:E};if(!E){t(1),t(7),g[h]?(g[h]("DOMContentLoaded",o,l(!1)),m[h]("load",r,l(!1))):(g[y]("onreadystatechange",i),m[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var T=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Chrome, Firefox OS, Opera and Vivaldi -->
+  <meta name="theme-color" content="#6b7178">
+  <!-- Windows Phone -->
+  <meta name="msapplication-TileColor" content="#b10202">
+  <meta name="msapplication-TileImage" content="/sites/all/themes/unlv_internal_2015/global/logos/start-screen-tile.png">
+  <meta name="format-detection" content="telephone=no">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#6b7178">
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="/sites/all/themes/unlv_internal_2015/global/logos/apple-touch-icon.png">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="https://www.unlv.edu/sites/default/files/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="generator" content="Drupal 7 (https://www.drupal.org)" />
+<link rel="canonical" href="https://www.unlv.edu/medicine" />
+<link rel="shortlink" href="https://www.unlv.edu/node/238813" />
+<script src="https://kit.fontawesome.com/9f8f8475fe.js"></script><meta name="google-site-verification" content="OA77oRkY8Nl1DmtEgtXbO01AKGSH2h4PImvBxCiRgdc" /><meta property="fb:pages" content="324378595057" /><!-- Begin Inspectlet JS Code -->
+    <script type="text/javascript" id="inspectletjs">
+    (function() {
+    var insp_ab_loader = true; // set this boolean to false to disable the A/B testing loader
+    window.__insp = window.__insp || [];
+    __insp.push(['wid', 527406690]);
+    var ldinsp = function(){
+    if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js?wid=527406690&r=' + Math.floor(new Date().getTime()/3600000); var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x);if(typeof insp_ab_loader != "undefined" && insp_ab_loader){ var adlt = function(){ var e = document.getElementById('insp_abl'); if(e){ e.parentNode.removeChild(e); __insp.push(['ab_timeout']); }}; var adlc = "body{ visibility: hidden !important; }"; var adln = typeof insp_ab_loader_t != "undefined" ? insp_ab_loader_t : 1200; insp.onerror = adlt; var abti = setTimeout(adlt, adln); window.__insp_abt = abti; var abl = document.createElement('style'); abl.id = "insp_abl"; abl.type = "text/css"; if(abl.styleSheet) abl.styleSheet.cssText = adlc; else abl.appendChild(document.createTextNode(adlc)); document.head.appendChild(abl); } };
+    setTimeout(ldinsp, 0);
+    })();
+    </script>
+    <!-- End Inspectlet JS Code --> 
+  <title>Kirk Kerkorian School of Medicine at UNLV | University of Nevada, Las Vegas</title>
+  <link type="text/css" rel="stylesheet" href="https://www.unlv.edu/sites/default/files/css/css_lQaZfjVpwP_oGNqdtWCSpJT1EMqXdMiU84ekLLxQnc4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.unlv.edu/sites/default/files/css/css_9KkQ01o2yEebuZ04kxcFdgiUdcBtxo0ju3PNutWOkC4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.unlv.edu/sites/default/files/css/css_JKOKMg1kxY-4xtWCpsZdZqcQiRFKEW4mG_9tCG2J9Ps.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.unlv.edu/sites/default/files/css/css_sa0E2O8tXHpyHO-yXKM78FYg9GcQdbMBJpZKOqWZC0Q.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700|Roboto+Condensed:400,100,300,700|Roboto+Mono|Roboto+Slab:400,100,300,400,700" media="all" />
+<link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.2/css/bootstrap.min.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.unlv.edu/sites/default/files/css/css_UBJsR5Dj-5ovMQ1nNEXzBZwNx4smDPirScON3_J-_90.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.unlv.edu/sites/default/files/css/css_HJ0q3GHG5irvElQyMea6DDnJ8M2IA19tZfhEY0mFmi0.css" media="all" />
+  <!-- HTML5 element support for IE6-8 -->
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script src="https://www.unlv.edu/sites/default/files/js/js_jGVQAd6ncss9ZunImQO9XQBCVZFe6O2Lq-U94LjxXGs.js"></script>
+<script src="https://www.unlv.edu/sites/default/files/js/js_4rck9RkHEK_Q2thEWNS_Do_PlGWkTbGuI-J0fNRUnso.js"></script>
+<script src="//cdn.jsdelivr.net/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script>document.createElement( "picture" );</script>
+<script src="https://www.unlv.edu/sites/default/files/js/js_cyf2pdfIAmR3aiv7YVv9EfaWuPzaF5WP-yPH4QSDJ-E.js"></script>
+<script>
+    (function(w,d,s,u,g,a,b){w['GetFeedbackObject']=g;w[g]=w[g]||function(){ 
+    (w[g].q=w[g].q||[]).push(arguments)};a=d.createElement(s), 
+    b=d.getElementsByTagName(s)[0];a.async=1;a.src=u;b.parentNode.insertBefore(a,b) 
+    })(window,document,'script','//websites.cdn.getfeedback.com/embed/tagaq0DMsB/gf.js','gf') 
+    </script>
+<script src="https://www.unlv.edu/sites/default/files/js/js_RVFQqtWXGbPuV0TLeyw-39sxHnWjfcFswtmI5bcGebY.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/balance-text/3.1.1/balancetext.min.js"></script>
+<script src="https://www.unlv.edu/sites/default/files/js/js_r7HWoW1s5321pJF40Hnb7BgukxvAcxQAH310Hd-wwog.js"></script>
+<script src="https://www.unlv.edu/sites/default/files/js_injector/js_injector_1.js?r23zle"></script>
+<script src="https://www.unlv.edu/sites/default/files/js_injector/js_injector_2.js?r23zle"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"unlv_internal_2015","theme_token":"tpjLBklu4w-B1qECDbFuMo1nJu7WDqJQi-9y7NN8JHs","js":{"sites\/all\/modules\/picture\/picturefill2\/picturefill.min.js":1,"sites\/all\/modules\/picture\/picture.min.js":1,"sites\/all\/modules\/flickr_lightbox\/js\/flickr_lightbox.js":1,"sites\/all\/modules\/flexslider\/assets\/js\/flexslider.load.js":1,"0":1,"sites\/all\/modules\/important_messages\/js\/important_messages.js":1,"sites\/all\/themes\/bootstrap\/js\/bootstrap.js":1,"sites\/all\/modules\/jquery_update\/replace\/jquery\/1.10\/jquery.min.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.core.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.widget.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.datepicker.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.accordion.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.button.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.mouse.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.draggable.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.position.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.resizable.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.dialog.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.tabs.min.js":1,"\/\/cdn.jsdelivr.net\/bootstrap\/3.3.2\/js\/bootstrap.min.js":1,"1":1,"sites\/all\/modules\/global_includes\/js\/gen-functions.js":1,"sites\/all\/modules\/global_includes\/js\/views-reset-btn-fix.js":1,"sites\/all\/modules\/lazyloader\/jquery.lazyloader.js":1,"2":1,"sites\/all\/libraries\/lightbox2\/dist\/js\/lightbox.min.js":1,"sites\/all\/modules\/image_caption\/image_caption.js":1,"sites\/all\/modules\/jcarousel\/js\/jquery.jcarousel.min.js":1,"sites\/all\/modules\/jcarousel\/js\/jcarousel.js":1,"sites\/all\/libraries\/flexslider\/jquery.flexslider-min.js":1,"\/\/cdnjs.cloudflare.com\/ajax\/libs\/balance-text\/3.1.1\/balancetext.min.js":1,"sites\/all\/themes\/unlv_internal_2015\/js\/global.js":1,"sites\/default\/files\/js_injector\/js_injector_1.js":1,"sites\/default\/files\/js_injector\/js_injector_2.js":1},"css":{"modules\/system\/system.base.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.datepicker.css":1,"misc\/ui\/jquery.ui.accordion.css":1,"misc\/ui\/jquery.ui.button.css":1,"misc\/ui\/jquery.ui.resizable.css":1,"misc\/ui\/jquery.ui.dialog.css":1,"misc\/ui\/jquery.ui.tabs.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/modules\/date\/date_repeat_field\/date_repeat_field.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/picture\/picture_wysiwyg.css":1,"sites\/all\/modules\/siteimprove\/css\/siteimprove.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/lazyloader\/lazyloader.css":1,"sites\/all\/modules\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/libraries\/lightbox2\/dist\/css\/lightbox.min.css":1,"sites\/all\/modules\/page_section_restrictor\/css\/page_section_restrictor.css":1,"sites\/all\/modules\/jcarousel\/skins\/default\/jcarousel-default.css":1,"sites\/all\/modules\/flexslider\/assets\/css\/flexslider_img.css":1,"sites\/all\/libraries\/flexslider\/flexslider.css":1,"\/\/fonts.googleapis.com\/css?family=Roboto:400,100,300,500,700|Roboto+Condensed:400,100,300,700|Roboto+Mono|Roboto+Slab:400,100,300,400,700":1,"\/\/cdn.jsdelivr.net\/bootstrap\/3.3.2\/css\/bootstrap.min.css":1,"sites\/all\/themes\/bootstrap\/css\/3.3.2\/overrides.min.css":1,"sites\/all\/themes\/unlv_internal_2015\/css\/style.css":1,"sites\/all\/themes\/unlv_internal_2015\/css\/bootstrap-4-alpha.css":1,"sites\/all\/themes\/unlv_internal_2015\/css\/base.css":1,"sites\/all\/themes\/unlv_internal_2015\/css\/layout.css":1,"sites\/all\/themes\/unlv_internal_2015\/css\/content.css":1,"sites\/all\/themes\/unlv_internal_2015\/css\/legacy.css":1,"sites\/all\/modules\/global_includes\/css\/global-includes.css":1,"sites\/all\/modules\/flickr_lightbox\/css\/flickr_lightbox.css":1,"public:\/\/css_injector\/css_injector_2.css":1}},"jcarousel":{"ajaxPath":"\/jcarousel\/ajax\/views","carousels":{"jcarousel-dom-1":{"view_options":{"view_args":"81535\/81535\/81535\/81535","view_path":"node\/238813","view_base_path":null,"view_display_id":"unlv_tokens_news_center_mixed_units_carousel","view_name":"unlv_tokens_news_center_mixed","jcarousel_dom_id":1},"wrap":"circular","skin":"default","visible":3,"scroll":1,"autoPause":1,"start":1,"selector":".jcarousel-dom-1"}}},"better_exposed_filters":{"views":{"unlv_tokens_news_center_mixed":{"displays":{"unlv_tokens_news_center_mixed_units_carousel":{"filters":[]}}},"unlv_tokens_contact_us_":{"displays":{"embed_contact_socialmedia_large":{"filters":[]}}},"unlv_tokens_events":{"displays":{"embed_unit_home":{"filters":[]}}},"unlv_tokens_news_center_accomplishment":{"displays":{"unlv_tokens_news_center_accomplishment_units":{"filters":[]}}},"unlv_tokens_news_center_in_the_news":{"displays":{"unlv_tokens_news_center_in_the_news_units":{"filters":[]}}}}},"picture":{"mappings":[["CKEditor - Third Width","third_ckeditor"],["CKEditor - Full Width","full_size_ckeditor"],["CKEditor - Half Width","half_ckeditor"],["CKEditor - Don\u0027t Resize","default_image_ckeditor"],["Not Set","not_set"]],"label":"Image size (required)"},"flexslider":{"optionsets":{"hero_paragraph_component":{"namespace":"flex-","selector":".slides \u003E li","easing":"swing","direction":"horizontal","reverse":false,"smoothHeight":false,"startAt":0,"animationSpeed":1500,"initDelay":0,"useCSS":true,"touch":true,"video":false,"keyboard":true,"multipleKeyboard":false,"mousewheel":0,"controlsContainer":".flex-control-nav-container","sync":"","asNavFor":"","itemWidth":0,"itemMargin":0,"minItems":0,"maxItems":0,"move":0,"animation":"fade","slideshow":true,"slideshowSpeed":"5000","directionNav":false,"controlNav":false,"prevText":"Previous","nextText":"Next","pausePlay":false,"pauseText":"Pause","playText":"Play","randomize":false,"thumbCaptions":false,"thumbCaptionsBoth":false,"animationLoop":true,"pauseOnAction":true,"pauseOnHover":false,"manualControls":"","colorboxEnabled":false,"colorboxImageStyle":"news_center_slideshow","colorboxFallbackImageStyle":""}},"instances":{"flexslider-1":"hero_paragraph_component"}},"lazyloader":{"loadImageDelay":50},"bootstrap":{"anchorsFix":0,"anchorsSmoothScrolling":1,"formHasError":1,"popoverEnabled":1,"popoverOptions":{"animation":1,"html":0,"placement":"right","selector":"","trigger":"click","triggerAutoclose":1,"title":"","content":"","delay":0,"container":"body"},"tooltipEnabled":1,"tooltipOptions":{"animation":1,"html":0,"placement":"auto left","selector":"","trigger":"hover focus","delay":0,"container":"body"}}});</script>
+  <meta name="google-site-verification" content="LOxouRRShitc7WSh2YthMyraAcju-pTkxM0XKJHzPk4" /><!-- Custom Head -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N3KMGF');</script>
+<!-- Custom Head -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-189350368-1">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-189350368-1');
+</script></head>
+<body class="navbar-is-fixed-top html not-front not-logged-in no-sidebars page-node page-node- page-node-238813 node-type-secondary-page">
+  <section id="block-block-111" class="block block-block clearfix">
+
+      
+  <!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1820582868128182');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1820582868128182&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+
+
+
+
+<style>
+@media (min-width: 768px)
+section#block-block-111, section.padding-lg {
+    padding: 0px 0;
+}
+section#block-block-111, section.padding-lg {
+    padding: 0px 0;
+}
+</style>
+</section>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N3KMGF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable sr-only sr-only-focusable" tabindex="1">Skip to main content</a>
+  </div>
+    <header role="banner" aria-label="header">
+	<nav class="navbar navbar-fixed-top navbar-inverse">
+    <div class="navbar-top">
+      <div class="container">
+        <div class="row">
+          <div class="unlv-name col-xs-5">
+            <a href="/" tabindex="-1" role="presentation" aria-hidden="true">University of Nevada, Las Vegas</a>
+          </div><!--end .unlv-name-->
+    
+          <div id="audience-container" class="col-xs-7">
+						<ul id="audience" role="navigation" aria-label="audiences"><li class="menu-13034 first"><a href="/students" title="">Students</a></li>
+<li class="menu-13035"><a href="/facultystaff" title="">Faculty/Staff</a></li>
+<li class="menu-18657"><a href="/about-alumni" title="">Alumni</a></li>
+<li class="menu-13037"><a href="/donors" title="">Donors</a></li>
+<li class="menu-13038 last"><a href="/community" title="">Community</a></li>
+</ul>          </div><!--end #audience-container-->
+
+          <div id="dropdown-container" class="col-xs-7">
+            <div id="audience-dropdown-container" class="dropdown">
+              <a class="btn btn-default dropdown-toggle" role="button" id="audience-dropdown" data-toggle="dropdown" aria-haspopup="true" tabindex="7 ">Audiences <span class="caret"></span></a>
+              <ul class="dropdown-menu dropdown-menu-right" role="navigation" aria-label="audiences dropdown"><li class="menu-13034 first"><a href="/students" title="">Students</a></li>
+<li class="menu-13035"><a href="/facultystaff" title="">Faculty/Staff</a></li>
+<li class="menu-18657"><a href="/about-alumni" title="">Alumni</a></li>
+<li class="menu-13037"><a href="/donors" title="">Donors</a></li>
+<li class="menu-13038 last"><a href="/community" title="">Community</a></li>
+</ul>                        
+            </div><!--end #audience-dropdown-container-->
+                
+            <div id="topic-dropdown-container" class="dropdown">
+              <a class="btn btn-default dropdown-toggle" role="button" id="topic-dropdown" data-toggle="dropdown" aria-haspopup="true" tabindex="6">Topics <span class="caret"></span></a>
+              <ul class="dropdown-menu dropdown-menu-right" role="navigation" aria-label="topics dropdown"><li class="menu-21912 first"><a href="/about" title="">About</a></li>
+<li class="menu-13005"><a href="/academics" title="">Academics</a></li>
+<li class="menu-13032"><a href="/unlv-admissions" title="">Admissions</a></li>
+<li class="menu-13033"><a href="/athletics" title="">Athletics</a></li>
+<li class="menu-13006"><a href="/diversity" title="">Diversity</a></li>
+<li class="menu-13031 last"><a href="/about-research" title="">Research</a></li>
+</ul>                        
+            </div><!--end #topic-dropdown-container-->
+          </div><!--end #dropdown-container-->
+
+				</div><!--end .row-->
+			</div><!--end .container-->
+		</div><!--end .navbar-top-->
+
+    <div class="navbar-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="menu-button-container">
+            <a role="button" id="menu-button" href="#" tabindex="4" data-toggle="tooltip" data-placement="right" title="" data-original-title="Menu" onclick="void(0)">
+              <span class="sr-only" aria-label="open Medicine menu">Menu</span>
+            </a>
+          </div><!--end .menu-button-container-->
+                    
+          <div class="unlv-logo-container">
+            <h1 class="clear-margins clear-padding"><a class="transition" href="/" tabindex="2">U-N-L-V</a></h1>
+          </div><!--end .unlv-logo-container-->
+ 
+          <div class="website-title">
+            <h1>
+                                  <a href="/medicine" tabindex="3">
+                      <span class="short-title">Medicine</span>
+                      <span class="full-title">Kirk Kerkorian School of Medicine at UNLV</span>
+                    </a>
+                						</h1>
+          </div><!--end .website-title-->
+                    
+          <div id="topic-container">
+            <ul id="topics" role="navigation" aria-label="topics"><li class="menu-21912 first"><a href="/about" title="">About</a></li>
+<li class="menu-13005"><a href="/academics" title="">Academics</a></li>
+<li class="menu-13032"><a href="/unlv-admissions" title="">Admissions</a></li>
+<li class="menu-13033"><a href="/athletics" title="">Athletics</a></li>
+<li class="menu-13006"><a href="/diversity" title="">Diversity</a></li>
+<li class="menu-13031 last"><a href="/about-research" title="">Research</a></li>
+</ul>          </div><!--end #topic-container-->
+                    
+          <div class="search-button-container">
+            <a role="button" class="search-button transition pull-right text-hide" href="#" id="search-button" tabindex="5" data-toggle="tooltip" data-placement="left" title="" data-original-title="Find" onclick="void(0)" aria-label="open find region">Find</a>
+          </div><!--end .search-button-container-->
+                
+        </div><!--end .row-->
+			</div><!--end .container-->
+		</div><!--end .navbar-bottom-->  
+	</nav>
+</header>
+
+<div id="navigation" role="navigation" aria-label="Medicine navigation">
+
+  <div class="scroller" id="navigation-scroller" tabindex="-1">
+    <div class="nav-close"><a href="#" id="menu-close">close Medicine menu</a></div>
+                <h2>Medicine</h2>  <div class="region region-section-menu">
+    
+<div id="block-menu-block-1" class="block block-menu-block clearfix">
+      
+  <div class="menu-block-wrapper menu-block-1 menu-name-menu-medical-school parent-mlid-0 menu-level-1">
+  <ul class="menu-sections"><li class="first last expanded active-trail active menu-mlid-22528 active"><a href="/medicine" class="active-trail active">Medicine Home</a><ul class="menu-section-level-2"><li class="first leaf menu-mlid-21863"><a href="/medicine/about">About</a></li>
+<li class="leaf menu-mlid-14534"><a href="/medicine/md-program">MD Program</a></li>
+<li class="expanded menu-mlid-21582"><a href="/medicine/admissions">Admissions</a><ul class="menu-section-level-3" style="display:none;"><li class="first leaf menu-mlid-21584"><a href="/medicine/admissions/prospective-applicants">Prospective Applicants</a></li>
+<li class="leaf menu-mlid-13585"><a href="/medicine/admissions/applicants" title="Applicants">Applicants</a></li>
+<li class="leaf menu-mlid-13600"><a href="/medicine/admissions/selection-process">Admission Selection Process and Timeline</a></li>
+<li class="leaf menu-mlid-21589"><a href="/medicine/admissions/interview-days">Interview Days</a></li>
+<li class="last leaf menu-mlid-21583"><a href="/medicine/admissions/admitted-applicants">Admitted Applicants</a></li>
+</ul></li>
+<li class="leaf menu-mlid-13580"><a href="/medicine/studentaffairs">Student Affairs</a></li>
+<li class="leaf menu-mlid-14536"><a href="/medicine/gme" title="GME">Graduate Medical Education</a></li>
+<li class="expanded menu-mlid-18748"><a href="/medicine/academic-departments">Academic Departments</a><ul class="menu-section-level-3" style="display:none;"><li class="first leaf menu-mlid-16497"><a href="/medicine/emergency-medicine">Emergency Medicine</a></li>
+<li class="leaf menu-mlid-14544"><a href="/medicine/family-medicine" title="Department of Family and Community Medicine">Family and Community Medicine</a></li>
+<li class="leaf has-children menu-mlid-14977"><a href="/medicine/internal-medicine" title="Department of Internal Medicine">Internal Medicine</a></li>
+<li class="leaf menu-mlid-14980"><a href="/medicine/obgyn" title="Obstetrics and Gynecology">Obstetrics and Gynecology</a></li>
+<li class="leaf menu-mlid-14994"><a href="/medicine/orthopaedics">Orthopaedics</a></li>
+<li class="leaf menu-mlid-14997"><a href="/medicine/otolaryngology">Otolaryngology - Head &amp; Neck Surgery</a></li>
+<li class="leaf menu-mlid-14989"><a href="/medicine/pediatrics">Pediatrics</a></li>
+<li class="leaf menu-mlid-14637"><a href="/medicine/psychiatry-and-behavioral-health">Psychiatry and Behavioral Health</a></li>
+<li class="leaf menu-mlid-14990"><a href="/medicine/surgery">Surgery</a></li>
+<li class="last leaf menu-mlid-15000"><a href="/medicine/plastic-surgery">Plastic Surgery</a></li>
+</ul></li>
+<li class="expanded menu-mlid-22847"><a href="/medicine/administrative-departments">Administrative Departments</a><ul class="menu-section-level-3" style="display:none;"><li class="first leaf menu-mlid-23792"><a href="/medicine/community-faculty">Community Faculty</a></li>
+<li class="leaf menu-mlid-22064"><a href="/medicine/compliance">Compliance</a></li>
+<li class="leaf menu-mlid-13574"><a href="/medicine/diversity">Diversity, Equity, and Inclusion</a></li>
+<li class="leaf menu-mlid-19098"><a href="/medicine/faculty-affairs" title="Faculty Affairs">Faculty Affairs</a></li>
+<li class="leaf menu-mlid-23131"><a href="/medicine/hr">Human Resources</a></li>
+<li class="leaf menu-mlid-23975"><a href="/medicine/information-technology">Information Technology</a></li>
+<li class="leaf menu-mlid-23132"><a href="/medicine/marketing-and-communications">Marketing and Communications</a></li>
+<li class="last leaf menu-mlid-23900"><a href="/medicine/space-facilities-management">Space and Facilities Management</a></li>
+</ul></li>
+<li class="leaf menu-mlid-12649"><a href="/medicine/support" title="Support the Medical School">Support the School</a></li>
+<li class="leaf menu-mlid-22527"><a href="/medicine/newsletter">Newsletter</a></li>
+<li class="collapsed menu-mlid-14852"><a href="/medicine/directory">Faculty/Staff Directory</a></li>
+<li class="leaf menu-mlid-25789"><a href="/medicine/patient-services">Patient Services</a></li>
+<li class="leaf menu-mlid-26198"><a href="/medicine/policies-procedures">Policies and Procedures</a></li>
+<li class="last leaf menu-mlid-12639"><a href="/medicine/contact">Contact Us</a></li>
+</ul></li>
+</ul></div>
+
+</div>
+  </div>
+          </div> <!--end .scroller-->    
+</div> <!-- #navigation -->
+
+<div id="search" role="search">
+  <div class="scroller" id="search-scroller" tabindex="-1">
+    <div class="nav-close"><a href="#" id="search-close">close find region</a></div>
+         
+    <h2>Find</h2>
+
+    <div id="global-search-tabs">
+      <ul class="nav nav-tabs">
+        <li role="presentation"><a id="findtab-search" href="#search-tab">Search</a></li>
+        <li role="presentation"><a id="findtab-az-index" href="#a-z-tab" aria-label="eh to zee index">A-Z Index</a></li>
+        <li role="presentation"><a id="findtab-directories" href="#directories-tab">Directories</a></li>
+      </ul>
+    
+      <div id="search-tab">
+                      <div class="region region-search">
+    <section id="block-block-56" class="block block-block clearfix">
+
+      
+  <script>
+  (function() {
+    var cx = '002367027510554248077:krw4pudpzig';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+
+<!--
+<div class="alert alert-warning alert-dismissible fade in" role="alert">
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<span aria-hidden="true">×</span>
+</button>
+<a href="https://www.unlv.edu/outages">Important Notice:<br>Major IT service outages April 7-10</a>
+</div>
+-->
+
+<!-- QUICK LINKS-->
+
+<div id="quicklinks">
+<h3 class="label text-center">Quick Links</h3>
+<div class="flex-three-column">
+<div class="grid">
+
+<div class="cell text-center">
+<div class="click-region">
+<div class="click-region-link"><a href="/academics/books">Bookstore</a></div>
+<div><i class="fas fa-book fa-2x" aria-hidden="true"></i></div>
+<div class="text-xs">Bookstore</div>
+</div>
+</div><!--end .cell-->
+
+<div class="cell text-center">
+<div class="click-region">
+<div class="click-region-link"><a href="/calendar">Calendar</a></div>
+<div><i class="far fa-calendar-alt fa-2x" aria-hidden="true"></i></div>
+<div class="text-xs">Calendar</div>
+</div>
+</div><!--end .cell-->
+
+<div class="cell text-center">
+<div class="click-region">
+<div class="click-region-link"><a href="/maps">Campus Maps</a></div>
+<div><i class="fas fa-map-marker-alt fa-2x" aria-hidden="true"></i></div>
+<div class="text-xs">Campus&nbsp;Maps</div>
+</div>
+</div><!--end .cell-->
+
+<div class="cell text-center">
+<div class="click-region">
+<div class="click-region-link"><a href="/academics/degrees">Degrees</a></div>
+<div><i class="fas fa-graduation-cap fa-2x" aria-hidden="true"></i></div>
+<div class="text-xs">Degrees</div>
+</div>
+</div><!--end .cell-->
+
+<div class="cell text-center">
+<div class="click-region">
+<div class="click-region-link"><a href="https://www.library.unlv.edu">Libraries</a></div>
+<div><i class="far fa-book fa-2x" aria-hidden="true"></i></div>
+<div class="text-xs">Libraries</div>
+</div>
+</div><!--end .cell-->
+
+<div class="cell text-center">
+<div class="click-region">
+<div class="click-region-link"><a href="https://my.unlv.nevada.edu">MyUNLV</a></div>
+<div><i class="fas fa-feather-alt fa-2x" aria-hidden="true"></i></div>
+<div class="text-xs">MyUNLV</div>
+</div>
+</div><!--end .cell-->
+
+<div class="cell text-center">
+<div class="click-region">
+<div class="click-region-link"><a href="/news">News Center</a></div>
+<div><i class="far fa-newspaper fa-2x" aria-hidden="true"></i></div>
+<div class="text-xs">News Center</div>
+</div>
+</div><!--end .cell-->
+
+<div class="cell text-center">
+<div class="click-region">
+<div class="click-region-link"><a href="/rebelcard">RebelCard</a></div>
+<div><i class="far fa-id-card fa-2x" aria-hidden="true"></i></div>
+<div class="text-xs">RebelCard</div>
+</div>
+</div><!--end .cell-->
+
+<div class="cell text-center">
+<div class="click-region">
+<div class="click-region-link"><a href="https://www.it.unlv.edu/rebelmail">Rebelmail</a></div>
+<div><i class="far fa-envelope fa-2x" aria-hidden="true"></i></div>
+<div class="text-xs">Rebelmail</div>
+</div>
+</div><!--end .cell-->
+
+<div class="cell text-center">
+<div class="click-region">
+<div class="click-region-link"><a href="/directories/social-media">Social Media</a></div>
+<div><i class="fas fa-share-alt fa-2x" aria-hidden="true"></i></div>
+<div class="text-xs">Social Media</div>
+</div>
+</div><!--end .cell-->
+
+<div class="cell text-center">
+<div class="click-region">
+<div class="click-region-link"><a href="https://www.it.unlv.edu/unlvmail">UNLV Mail</a></div>
+<div><i class="far fa-envelope-open fa-2x" aria-hidden="true"></i></div>
+<div class="text-xs">UNLV Mail</div>
+</div>
+</div><!--end .cell-->
+
+<div class="cell text-center">
+<div class="click-region">
+<div class="click-region-link"><a href="https://www.it.unlv.edu/webcampus">WebCampus</a></div>
+<div><i class="fas fa-globe fa-2x" aria-hidden="true"></i></div>
+<div class="text-xs">WebCampus</div>
+</div>
+</div><!--end .cell-->
+
+</div><!--end .grid-->
+</div><!--end .flex-two-column-->
+</div><!--/#frequent-links-->
+</section>
+  </div>
+                 
+      </div>
+      
+      <div id="a-z-tab">
+                      <div class="region region-az-tab">
+    <section id="block-block-61" class="block block-block clearfix">
+
+      
+  <div class="text-center"><i class="fa fa-spinner fa-pulse fa-3x fa-fw margin-bottom"></i><br />
+<span class="text-xs">Loading</span></div>
+
+</section>
+  </div>
+                </div>
+      
+      <div id="directories-tab">
+                      <div class="region region-directories-tab">
+    <section id="block-block-55" class="block block-block clearfix">
+
+      
+  <ul class="list-group">
+<li><a class="list-group-item" href="/directories">Directories Home</a></li>
+<li><a class="list-group-item" href="/directories/a-z">A-Z Index</a></li>
+<li><a class="list-group-item" href="/directories/academic-units">Colleges, Schools, and Departments</a></li>
+<li><a class="list-group-item" href="/directories/admin-units">Administrative Units</a></li>
+<li><a class="list-group-item" href="/directories/research-centers-institutes">Research Centers and Institutes</a></li>
+<li><a class="list-group-item" href="/directories/resources-services">Resources and Services</a></li>
+<li><a class="list-group-item" href="https://web.oit.unlv.edu/eel">Employee Directory</a></li>
+<li><a class="list-group-item" href="/directories/contact">Contact UNLV</a></li>
+<li><a class="list-group-item" href="/directories/social-media">Social Media Directory</a></li>
+<li><a class="list-group-item" href="/directories/mobile">UNLV Mobile Apps</a></li>
+</ul>
+
+</section>
+  </div>
+                </div>
+      
+    </div><!--end #global-search-tabs-->
+  </div><!--end .scroller-->  
+</div><!--end #search-->
+
+<div class="system-container container">
+  <div class="row">
+    <div class="col-sm-12">
+            <div id="main-content"></div>
+                                                      </div>
+  </div>
+</div> <!-- /.system-container -->
+
+<div id="content" class="unlv-node-published">
+  <div id="content-main" role="main" aria-label="main content">
+
+     
+  
+        
+			  <!-- If there is primary or secondary content, then make this column smaller. -->
+                  
+          
+            <div class="region region-content">
+    <section id="block-system-main" class="block block-system clearfix">
+
+      
+  
+
+<article id="node-238813" class="node node-secondary-page clearfix" about="/medicine" typeof="sioc:Item foaf:Document">
+    <header>
+            <span property="dc:title" content="Kirk Kerkorian School of Medicine at UNLV Home" class="rdf-meta element-hidden"></span>      </header>
+      
+
+
+<section class="hero text-white ar-16-9" id="entity_209483" arial-label="Transforming Healthcare">
+
+<div><div  id="flexslider-1" class="flexslider optionset-hero-paragraph-component">
+  <ul class="slides"><li data-thumb="https://www.unlv.edu/sites/default/files/styles/1024_width/public/hero/image/Medicine-D73573_356.JPG?itok=RF2czuUA"><picture >
+<!--[if IE 9]><video style="display: none;"><![endif]-->
+<source srcset="https://www.unlv.edu/sites/default/files/styles/2000_width/public/hero/image/Medicine-D73573_356.JPG?itok=7Ruiu2ae 1x" media="(min-width : 1920px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/1920_width/public/hero/image/Medicine-D73573_356.JPG?itok=_7WgNc83 1x" media="(min-width : 1700px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/1520_width/public/hero/image/Medicine-D73573_356.JPG?itok=Z5STpswf 1x" media="(min-width : 1500px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/1500_width/public/hero/image/Medicine-D73573_356.JPG?itok=ZY6wU3BJ 1x" media="(min-width : 1280px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/1280_width/public/hero/image/Medicine-D73573_356.JPG?itok=ptTKOTOt 1x" media="(min-width : 1024px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/1024_width/public/hero/image/Medicine-D73573_356.JPG?itok=RF2czuUA 1x" media="(min-width : 960px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/960_width/public/hero/image/Medicine-D73573_356.JPG?itok=0jRoQdj2 1x" media="(min-width : 768px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/768_width/public/hero/image/Medicine-D73573_356.JPG?itok=zENbJncF 1x" media="(min-width : 640px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/640_width/public/hero/image/Medicine-D73573_356.JPG?itok=jz-LTICc 1x" media="(min-width : 480px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/480_width/public/hero/image/Medicine-D73573_356.JPG?itok=gtcdPZw- 1x" media="(min-width : 320px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/320_width/public/hero/image/Medicine-D73573_356.JPG?itok=i15q5nNe 1x" media="(min-width : 1px)" />
+<!--[if IE 9]></video><![endif]-->
+<!--[if lt IE 9]>
+<img  src="https://www.unlv.edu/sites/default/files/styles/1024_width/public/hero/image/Medicine-D73573_356.JPG?itok=RF2czuUA" alt="Medical students at their commencement ceremony walking" title="" />
+<![endif]-->
+<!--[if !lt IE 9]><!-->
+<img  srcset="https://www.unlv.edu/sites/default/files/styles/1024_width/public/hero/image/Medicine-D73573_356.JPG?itok=RF2czuUA 1024w" alt="Medical students at their commencement ceremony walking" title="" />
+<!-- <![endif]-->
+</picture></li>
+<li data-thumb="https://www.unlv.edu/sites/default/files/styles/1024_width/public/hero/image/Medicine-D73328_036.jpg?itok=REY5RKBc"><picture >
+<!--[if IE 9]><video style="display: none;"><![endif]-->
+<source srcset="https://www.unlv.edu/sites/default/files/styles/2000_width/public/hero/image/Medicine-D73328_036.jpg?itok=kmke0GwQ 1x" media="(min-width : 1920px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/1920_width/public/hero/image/Medicine-D73328_036.jpg?itok=gmfHcw1l 1x" media="(min-width : 1700px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/1520_width/public/hero/image/Medicine-D73328_036.jpg?itok=TVn7OtaH 1x" media="(min-width : 1500px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/1500_width/public/hero/image/Medicine-D73328_036.jpg?itok=qlX3ryME 1x" media="(min-width : 1280px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/1280_width/public/hero/image/Medicine-D73328_036.jpg?itok=pQ7KDocc 1x" media="(min-width : 1024px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/1024_width/public/hero/image/Medicine-D73328_036.jpg?itok=REY5RKBc 1x" media="(min-width : 960px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/960_width/public/hero/image/Medicine-D73328_036.jpg?itok=NSM9-rEN 1x" media="(min-width : 768px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/768_width/public/hero/image/Medicine-D73328_036.jpg?itok=545N1Vad 1x" media="(min-width : 640px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/640_width/public/hero/image/Medicine-D73328_036.jpg?itok=xZbjkYWu 1x" media="(min-width : 480px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/480_width/public/hero/image/Medicine-D73328_036.jpg?itok=awRB555K 1x" media="(min-width : 320px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/320_width/public/hero/image/Medicine-D73328_036.jpg?itok=vIZIflvn 1x" media="(min-width : 1px)" />
+<!--[if IE 9]></video><![endif]-->
+<!--[if lt IE 9]>
+<img  src="https://www.unlv.edu/sites/default/files/styles/1024_width/public/hero/image/Medicine-D73328_036.jpg?itok=REY5RKBc" alt="Clinical Simulation Center of Las Vegas located in the Shadow Lane Campus" title="" />
+<![endif]-->
+<!--[if !lt IE 9]><!-->
+<img  srcset="https://www.unlv.edu/sites/default/files/styles/1024_width/public/hero/image/Medicine-D73328_036.jpg?itok=REY5RKBc 1024w" alt="Clinical Simulation Center of Las Vegas located in the Shadow Lane Campus" title="" />
+<!-- <![endif]-->
+</picture></li>
+<li data-thumb="https://www.unlv.edu/sites/default/files/styles/1024_width/public/hero/image/Medicine-D73526_018.jpg?itok=TUCdY1Qc"><picture >
+<!--[if IE 9]><video style="display: none;"><![endif]-->
+<source srcset="https://www.unlv.edu/sites/default/files/styles/2000_width/public/hero/image/Medicine-D73526_018.jpg?itok=xM4kfIFJ 1x" media="(min-width : 1920px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/1920_width/public/hero/image/Medicine-D73526_018.jpg?itok=zKepU3kc 1x" media="(min-width : 1700px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/1520_width/public/hero/image/Medicine-D73526_018.jpg?itok=f0YcEsrB 1x" media="(min-width : 1500px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/1500_width/public/hero/image/Medicine-D73526_018.jpg?itok=Lvk_szhD 1x" media="(min-width : 1280px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/1280_width/public/hero/image/Medicine-D73526_018.jpg?itok=mJaIi0Hk 1x" media="(min-width : 1024px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/1024_width/public/hero/image/Medicine-D73526_018.jpg?itok=TUCdY1Qc 1x" media="(min-width : 960px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/960_width/public/hero/image/Medicine-D73526_018.jpg?itok=enHivTRN 1x" media="(min-width : 768px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/768_width/public/hero/image/Medicine-D73526_018.jpg?itok=ePrgDa9U 1x" media="(min-width : 640px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/640_width/public/hero/image/Medicine-D73526_018.jpg?itok=7ITdAt8y 1x" media="(min-width : 480px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/480_width/public/hero/image/Medicine-D73526_018.jpg?itok=7IRQZPfQ 1x" media="(min-width : 320px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/320_width/public/hero/image/Medicine-D73526_018.jpg?itok=tnEUWr8E 1x" media="(min-width : 1px)" />
+<!--[if IE 9]></video><![endif]-->
+<!--[if lt IE 9]>
+<img  src="https://www.unlv.edu/sites/default/files/styles/1024_width/public/hero/image/Medicine-D73526_018.jpg?itok=TUCdY1Qc" alt="Construction at the Medical Education Building in late March" title="" />
+<![endif]-->
+<!--[if !lt IE 9]><!-->
+<img  srcset="https://www.unlv.edu/sites/default/files/styles/1024_width/public/hero/image/Medicine-D73526_018.jpg?itok=TUCdY1Qc 1024w" alt="Construction at the Medical Education Building in late March" title="" />
+<!-- <![endif]-->
+</picture></li>
+<li data-thumb="https://www.unlv.edu/sites/default/files/styles/1024_width/public/hero/image/Medicine-D73566_074.JPG?itok=dmqSxt5w"><picture >
+<!--[if IE 9]><video style="display: none;"><![endif]-->
+<source srcset="https://www.unlv.edu/sites/default/files/styles/2000_width/public/hero/image/Medicine-D73566_074.JPG?itok=cIK4hznb 1x" media="(min-width : 1920px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/1920_width/public/hero/image/Medicine-D73566_074.JPG?itok=M24KRLDz 1x" media="(min-width : 1700px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/1520_width/public/hero/image/Medicine-D73566_074.JPG?itok=50dWT7G6 1x" media="(min-width : 1500px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/1500_width/public/hero/image/Medicine-D73566_074.JPG?itok=BCu6e9KS 1x" media="(min-width : 1280px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/1280_width/public/hero/image/Medicine-D73566_074.JPG?itok=tYeZyNRV 1x" media="(min-width : 1024px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/1024_width/public/hero/image/Medicine-D73566_074.JPG?itok=dmqSxt5w 1x" media="(min-width : 960px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/960_width/public/hero/image/Medicine-D73566_074.JPG?itok=GpwWtk_1 1x" media="(min-width : 768px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/768_width/public/hero/image/Medicine-D73566_074.JPG?itok=sOBqdecW 1x" media="(min-width : 640px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/640_width/public/hero/image/Medicine-D73566_074.JPG?itok=3cqDicyZ 1x" media="(min-width : 480px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/480_width/public/hero/image/Medicine-D73566_074.JPG?itok=cGwX2P4A 1x" media="(min-width : 320px)" />
+<source srcset="https://www.unlv.edu/sites/default/files/styles/320_width/public/hero/image/Medicine-D73566_074.JPG?itok=VF-mH0Ar 1x" media="(min-width : 1px)" />
+<!--[if IE 9]></video><![endif]-->
+<!--[if lt IE 9]>
+<img  src="https://www.unlv.edu/sites/default/files/styles/1024_width/public/hero/image/Medicine-D73566_074.JPG?itok=dmqSxt5w" alt="Dean Marc J. Kahn, Founding Dean Barbara Atkinson, and UNLV President Keith E. Whitfield" title="" />
+<![endif]-->
+<!--[if !lt IE 9]><!-->
+<img  srcset="https://www.unlv.edu/sites/default/files/styles/1024_width/public/hero/image/Medicine-D73566_074.JPG?itok=dmqSxt5w 1024w" alt="Dean Marc J. Kahn, Founding Dean Barbara Atkinson, and UNLV President Keith E. Whitfield" title="" />
+<!-- <![endif]-->
+</picture></li>
+</ul></div>
+</div><div class="overlay"></div>
+  <div class="hero-text">
+    <div class="hero-text-inner">
+    <h2>UNLV Transforming Healthcare</h2><p>Educating and training our future doctors...Providing research-driven, compassionate, routine, and specialty care…The Kirk Kerkorian School of Medicine at UNLV has been Transforming Healthcare in Southern Nevada since 2017.</p>
+
+<div class="text-uppercase margin-bottom-xs"><a class="btn btn-red" href="/medicine/admissions/prospective-applicants" role="button">Interested in Medical School?</a> <a class="btn btn-primary" href="/medicine/newsletter" role="button">Weekly Newsletter</a></div>
+    </div> <!--/.hero-text-inner-->
+  </div> <!--/.hero-text-->
+
+</section> <!-- /# id=entity_209483 -->
+  <!-- Section Hidden -->      <section  id="entity_209513" class="padding-top-lg padding-bottom-md" role="region" arial-label="Tiles">
+      <div class="container">
+              
+          
+<div class="row row-padding-top-none row-padding-bottom-none padding-lg" id="entity_209512">
+    
+<div  id="entity_209501" class="col-xs-12 col-sm-6 col-md-4">
+  
+
+<div id="entity_209500">
+  <div class="click-region">
+    <div class="click-region-link">
+            <a href="/medicine/about">About Us</a>
+            </div> <!-- /.click-region -->
+    <div class="tile ar-6-4">
+      
+              <div class="tile-image zoom">
+          <img typeof="foaf:Image" class="img-responsive" data-src="https://www.unlv.edu/sites/default/files/paragraphs/tiles/ShadowLane-%281%29.jpg" src="https://www.unlv.edu/sites/all/modules/lazyloader/image_placeholder.gif" width="768" height="513" alt="Woman standing in front of UNLV Shadow Lane Campus sign" /><noscript><img typeof="foaf:Image" class="img-responsive" src="https://www.unlv.edu/sites/default/files/paragraphs/tiles/ShadowLane-%281%29.jpg" width="768" height="513" alt="Woman standing in front of UNLV Shadow Lane Campus sign" /></noscript>                    </div> <!-- /.tile-image -->
+              
+      <div class="tile-text tile-footer light">
+        <div class="tile-overlay bg-dark-red"></div>
+        <div class="tile-text-inner">
+                    <div class="tile-title h4" aria-hidden="true">About Us</div>
+                </div><!--end .tile-text-inner-->
+      </div><!--end .tile-text-->
+     
+    </div> <!-- /.tile -->
+  </div> <!-- /.click-region -->
+</div> <!-- /#  id="entity_209500" (tile-v2) -->
+      
+</div> <!-- /# id="entity_209501" (column) -->
+
+<div  id="entity_209503" class="col-xs-12 col-sm-6 col-md-4">
+  
+
+<div id="entity_209502">
+  <div class="click-region">
+    <div class="click-region-link">
+            <a href="/medicine/md-program">MD Program</a>
+            </div> <!-- /.click-region -->
+    <div class="tile ar-6-4">
+      
+              <div class="tile-image zoom">
+          <img typeof="foaf:Image" class="img-responsive" data-src="https://www.unlv.edu/sites/default/files/paragraphs/tiles/Medicine-Innovative-curriculum.jpg" src="https://www.unlv.edu/sites/all/modules/lazyloader/image_placeholder.gif" width="768" height="512" alt="Innovative Curriculum" /><noscript><img typeof="foaf:Image" class="img-responsive" src="https://www.unlv.edu/sites/default/files/paragraphs/tiles/Medicine-Innovative-curriculum.jpg" width="768" height="512" alt="Innovative Curriculum" /></noscript>                    </div> <!-- /.tile-image -->
+              
+      <div class="tile-text tile-footer light">
+        <div class="tile-overlay bg-dark-red"></div>
+        <div class="tile-text-inner">
+                    <div class="tile-title h4" aria-hidden="true">MD Program</div>
+                </div><!--end .tile-text-inner-->
+      </div><!--end .tile-text-->
+     
+    </div> <!-- /.tile -->
+  </div> <!-- /.click-region -->
+</div> <!-- /#  id="entity_209502" (tile-v2) -->
+      
+</div> <!-- /# id="entity_209503" (column) -->
+
+<div  id="entity_209505" class="col-xs-12 col-sm-6 col-md-4">
+  
+
+<div id="entity_209504">
+  <div class="click-region">
+    <div class="click-region-link">
+            <a href="/medicine/studentaffairs">Student Affairs</a>
+            </div> <!-- /.click-region -->
+    <div class="tile ar-6-4">
+      
+              <div class="tile-image zoom">
+          <img typeof="foaf:Image" class="img-responsive" data-src="https://www.unlv.edu/sites/default/files/paragraphs/tiles/Parrish-D70863_10.jpg" src="https://www.unlv.edu/sites/all/modules/lazyloader/image_placeholder.gif" width="768" height="512" alt="Student Affairs &amp; Admissions" /><noscript><img typeof="foaf:Image" class="img-responsive" src="https://www.unlv.edu/sites/default/files/paragraphs/tiles/Parrish-D70863_10.jpg" width="768" height="512" alt="Student Affairs &amp; Admissions" /></noscript>                    </div> <!-- /.tile-image -->
+              
+      <div class="tile-text tile-footer light">
+        <div class="tile-overlay bg-dark-red"></div>
+        <div class="tile-text-inner">
+                    <div class="tile-title h4" aria-hidden="true">Student Affairs</div>
+                </div><!--end .tile-text-inner-->
+      </div><!--end .tile-text-->
+     
+    </div> <!-- /.tile -->
+  </div> <!-- /.click-region -->
+</div> <!-- /#  id="entity_209504" (tile-v2) -->
+      
+</div> <!-- /# id="entity_209505" (column) -->
+
+<div  id="entity_209507" class="col-xs-12 col-sm-6 col-md-4">
+  
+
+<div id="entity_209506">
+  <div class="click-region">
+    <div class="click-region-link">
+            <a href="/medicine/campus">Our Campus</a>
+            </div> <!-- /.click-region -->
+    <div class="tile ar-6-4">
+      
+              <div class="tile-image zoom">
+          <img typeof="foaf:Image" class="img-responsive" data-src="https://www.unlv.edu/sites/default/files/paragraphs/tiles/OurCampus_D71524_29.jpg" src="https://www.unlv.edu/sites/all/modules/lazyloader/image_placeholder.gif" width="768" height="512" alt="Classroom located at the Shadow Lane Campus" /><noscript><img typeof="foaf:Image" class="img-responsive" src="https://www.unlv.edu/sites/default/files/paragraphs/tiles/OurCampus_D71524_29.jpg" width="768" height="512" alt="Classroom located at the Shadow Lane Campus" /></noscript>                    </div> <!-- /.tile-image -->
+              
+      <div class="tile-text tile-footer light">
+        <div class="tile-overlay bg-dark-red"></div>
+        <div class="tile-text-inner">
+                    <div class="tile-title h4" aria-hidden="true">Our Campus</div>
+                </div><!--end .tile-text-inner-->
+      </div><!--end .tile-text-->
+     
+    </div> <!-- /.tile -->
+  </div> <!-- /.click-region -->
+</div> <!-- /#  id="entity_209506" (tile-v2) -->
+      
+</div> <!-- /# id="entity_209507" (column) -->
+
+<div  id="entity_209509" class="col-xs-12 col-sm-6 col-md-4">
+  
+
+<div id="entity_209508">
+  <div class="click-region">
+    <div class="click-region-link">
+            <a href="/medicine/gme">Graduate Medical Education</a>
+            </div> <!-- /.click-region -->
+    <div class="tile ar-6-4">
+      
+              <div class="tile-image zoom">
+          <img typeof="foaf:Image" class="img-responsive" data-src="https://www.unlv.edu/sites/default/files/paragraphs/tiles/Medicine-MatchDay-D73518_019.jpg" src="https://www.unlv.edu/sites/all/modules/lazyloader/image_placeholder.gif" width="768" height="512" alt="Baseball caps that were given on Match Day with different specialty names" /><noscript><img typeof="foaf:Image" class="img-responsive" src="https://www.unlv.edu/sites/default/files/paragraphs/tiles/Medicine-MatchDay-D73518_019.jpg" width="768" height="512" alt="Baseball caps that were given on Match Day with different specialty names" /></noscript>                    </div> <!-- /.tile-image -->
+              
+      <div class="tile-text tile-footer light">
+        <div class="tile-overlay bg-dark-red"></div>
+        <div class="tile-text-inner">
+                    <div class="tile-title h4" aria-hidden="true">Graduate Medical Education</div>
+                </div><!--end .tile-text-inner-->
+      </div><!--end .tile-text-->
+     
+    </div> <!-- /.tile -->
+  </div> <!-- /.click-region -->
+</div> <!-- /#  id="entity_209508" (tile-v2) -->
+      
+</div> <!-- /# id="entity_209509" (column) -->
+
+<div  id="entity_209511" class="col-xs-12 col-sm-6 col-md-4">
+  
+
+<div id="entity_209510">
+  <div class="click-region">
+    <div class="click-region-link">
+            <a href="/medicine/patient-services">Patient Services</a>
+            </div> <!-- /.click-region -->
+    <div class="tile ar-6-4">
+      
+              <div class="tile-image zoom">
+          <img typeof="foaf:Image" class="img-responsive" data-src="https://www.unlv.edu/sites/default/files/paragraphs/tiles/Medicine-PatientCare.jpg" src="https://www.unlv.edu/sites/all/modules/lazyloader/image_placeholder.gif" width="768" height="512" alt="A doctor smiling at her patient" /><noscript><img typeof="foaf:Image" class="img-responsive" src="https://www.unlv.edu/sites/default/files/paragraphs/tiles/Medicine-PatientCare.jpg" width="768" height="512" alt="A doctor smiling at her patient" /></noscript>                    </div> <!-- /.tile-image -->
+              
+      <div class="tile-text tile-footer light">
+        <div class="tile-overlay bg-dark-red"></div>
+        <div class="tile-text-inner">
+                    <div class="tile-title h4" aria-hidden="true">Patient Services</div>
+                </div><!--end .tile-text-inner-->
+      </div><!--end .tile-text-->
+     
+    </div> <!-- /.tile -->
+  </div> <!-- /.click-region -->
+</div> <!-- /#  id="entity_209510" (tile-v2) -->
+      
+</div> <!-- /# id="entity_209511" (column) -->
+      
+</div> <!-- /# id="entity_209512" (row) -->
+        
+           
+      </div> <!-- /.container -->
+    </section> <!-- /# id="entity_209513" (section) -->
+          <section  id="entity_209627" class="padding-top-lg padding-bottom-lg bg-blue-gray-100 text-default" role="region" arial-label="Our Stories">
+      <div class="container">
+              
+          
+<div class="row row-padding-top-none row-padding-bottom-sm padding-lg" id="entity_209762">
+    
+<div  id="entity_209758" class="col-xs-6">
+  
+<div class="content-area-start"></div><h3>Our Stories</h3>
+      
+</div> <!-- /# id="entity_209758" (column) -->
+
+<div  id="entity_209761" class="col-xs-6">
+  
+
+<div class="text-right" id="entity_209760">
+    
+<a role="button" role="region" arial-label="View All News" class="btn btn-link btn-sm clear-margin-bottom btn-block btn-inline-xs" href="https://www.unlv.edu/news/unit/academic/81535/more">View All</a>
+      
+</div> <!-- /# id="entity_209760" (button) -->
+      
+</div> <!-- /# id="entity_209761" (column) -->
+      
+</div> <!-- /# id="entity_209762" (row) -->
+
+<div class="row row-padding-top-none row-padding-bottom-none padding-lg" id="entity_209765">
+    
+<div  id="entity_209764" class="col-xs-12">
+  
+<div class="content-area-start"></div><p><div class="view view-unlv-tokens-news-center-mixed view-id-unlv_tokens_news_center_mixed view-display-id-unlv_tokens_news_center_mixed_units_carousel view-dom-id-bc1698216ec13d50744104293a07f7c3">
+        
+  
+  
+      <div class="view-content">
+      <ul class="jcarousel jcarousel-view--unlv-tokens-news-center-mixed--unlv-tokens-news-center-mixed-units-carousel jcarousel-dom-1 jcarousel-skin-default">
+      <li class="jcarousel-item-1 odd" style="display: none;">  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="click-region no-background">
+<div class="click-region-link"><a href="/news/article/budget-managers-family-inspires-her-work-harder-better-health-care">Budget Manager&#039;s Family Inspires Her to Work Harder for Better Health Care</a></div>
+<img typeof="foaf:Image" class="img-responsive" data-src="https://www.unlv.edu/sites/default/files/styles/360_width/public/articles/main-images/D%20Brandon%20Headshot.png?itok=-PJ9YBBd" src="https://www.unlv.edu/sites/all/modules/lazyloader/image_placeholder.gif" width="360" height="240" alt="" /><noscript><img typeof="foaf:Image" class="img-responsive" src="https://www.unlv.edu/sites/default/files/styles/360_width/public/articles/main-images/D%20Brandon%20Headshot.png?itok=-PJ9YBBd" width="360" height="240" alt="" /></noscript>
+<div class="h5 margin-top-xs clear-margin-bottom" aria-hidden="true">Budget Manager&#039;s Family Inspires Her to Work Harder for Better Health Care</div>
+</div><!--end .click-region--></span>  </div></li>
+      <li class="jcarousel-item-2 even" style="display: none;">  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="click-region no-background">
+<div class="click-region-link"><a href="/news/release/unlv-newsmakers-2021-october">UNLV Newsmakers 2021: October</a></div>
+<img typeof="foaf:Image" class="img-responsive" data-src="https://www.unlv.edu/sites/default/files/styles/360_width/public/releases/main-images/D73794_046%20Family%20Brunch%202021.JPG?itok=S-7acBbc" src="https://www.unlv.edu/sites/all/modules/lazyloader/image_placeholder.gif" width="360" height="240" alt="" /><noscript><img typeof="foaf:Image" class="img-responsive" src="https://www.unlv.edu/sites/default/files/styles/360_width/public/releases/main-images/D73794_046%20Family%20Brunch%202021.JPG?itok=S-7acBbc" width="360" height="240" alt="" /></noscript>
+<div class="h5 margin-top-xs clear-margin-bottom" aria-hidden="true">UNLV Newsmakers 2021: October</div>
+</div><!--end .click-region--></span>  </div></li>
+      <li class="jcarousel-item-3 odd" style="display: none;">  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="click-region no-background">
+<div class="click-region-link"><a href="/news/article/unlv-health-audiologist-relief-and-joy-hearing-restoration">UNLV Health Audiologist on the Relief and Joy of Hearing Restoration</a></div>
+<img typeof="foaf:Image" class="img-responsive" data-src="https://www.unlv.edu/sites/default/files/styles/360_width/public/articles/main-images/JenniferCornejo.jpeg?itok=BZjI0mOH" src="https://www.unlv.edu/sites/all/modules/lazyloader/image_placeholder.gif" width="360" height="240" alt="A woman wearing a white labcoat stands in front of a bookshelf loaded with books and a model of an ear." /><noscript><img typeof="foaf:Image" class="img-responsive" src="https://www.unlv.edu/sites/default/files/styles/360_width/public/articles/main-images/JenniferCornejo.jpeg?itok=BZjI0mOH" width="360" height="240" alt="A woman wearing a white labcoat stands in front of a bookshelf loaded with books and a model of an ear." /></noscript>
+<div class="h5 margin-top-xs clear-margin-bottom" aria-hidden="true">UNLV Health Audiologist on the Relief and Joy of Hearing Restoration</div>
+</div><!--end .click-region--></span>  </div></li>
+      <li class="jcarousel-item-4 even" style="display: none;">  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="click-region no-background">
+<div class="click-region-link"><a href="/news/article/possessed-rebel-spirit">Possessed by Rebel Spirit</a></div>
+<img typeof="foaf:Image" class="img-responsive" data-src="https://www.unlv.edu/sites/default/files/styles/360_width/public/articles/main-images/alyssa-hill.jpg?itok=tdxp1cjU" src="https://www.unlv.edu/sites/all/modules/lazyloader/image_placeholder.gif" width="360" height="240" alt="A woman stands in her office surrounded by UNLV memorabilia" /><noscript><img typeof="foaf:Image" class="img-responsive" src="https://www.unlv.edu/sites/default/files/styles/360_width/public/articles/main-images/alyssa-hill.jpg?itok=tdxp1cjU" width="360" height="240" alt="A woman stands in her office surrounded by UNLV memorabilia" /></noscript>
+<div class="h5 margin-top-xs clear-margin-bottom" aria-hidden="true">Possessed by Rebel Spirit</div>
+</div><!--end .click-region--></span>  </div></li>
+      <li class="jcarousel-item-5 odd" style="display: none;">  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="click-region no-background">
+<div class="click-region-link"><a href="/news/article/virtue-well-rounded-doctors">The Virtue of Well-Rounded Doctors</a></div>
+<img typeof="foaf:Image" class="img-responsive" data-src="https://www.unlv.edu/sites/default/files/styles/360_width/public/articles/main-images/AOA%20Speaker%20D73774_074.jpeg?itok=EuL6dv7l" src="https://www.unlv.edu/sites/all/modules/lazyloader/image_placeholder.gif" width="360" height="240" alt="" /><noscript><img typeof="foaf:Image" class="img-responsive" src="https://www.unlv.edu/sites/default/files/styles/360_width/public/articles/main-images/AOA%20Speaker%20D73774_074.jpeg?itok=EuL6dv7l" width="360" height="240" alt="" /></noscript>
+<div class="h5 margin-top-xs clear-margin-bottom" aria-hidden="true">The Virtue of Well-Rounded Doctors</div>
+</div><!--end .click-region--></span>  </div></li>
+      <li class="jcarousel-item-6 even" style="display: none;">  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="click-region no-background">
+<div class="click-region-link"><a href="/news/article/reflection-crisis">Reflection of a Crisis</a></div>
+<img typeof="foaf:Image" class="img-responsive" data-src="https://www.unlv.edu/sites/default/files/styles/360_width/public/articles/main-images/afghan-refugees.jpg?itok=Lsxho45i" src="https://www.unlv.edu/sites/all/modules/lazyloader/image_placeholder.gif" width="360" height="240" alt="A group of Afghan refugees" /><noscript><img typeof="foaf:Image" class="img-responsive" src="https://www.unlv.edu/sites/default/files/styles/360_width/public/articles/main-images/afghan-refugees.jpg?itok=Lsxho45i" width="360" height="240" alt="A group of Afghan refugees" /></noscript>
+<div class="h5 margin-top-xs clear-margin-bottom" aria-hidden="true">Reflection of a Crisis</div>
+</div><!--end .click-region--></span>  </div></li>
+      <li class="jcarousel-item-7 odd" style="display: none;">  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="click-region no-background">
+<div class="click-region-link"><a href="/news/release/unlv-newsmakers-2021-september">UNLV Newsmakers 2021: September</a></div>
+<img typeof="foaf:Image" class="img-responsive" data-src="https://www.unlv.edu/sites/default/files/styles/360_width/public/releases/main-images/D73760_054%20Kinney%20Lab-Chambers%20Grundy.JPG?itok=iR3lr8mc" src="https://www.unlv.edu/sites/all/modules/lazyloader/image_placeholder.gif" width="360" height="240" alt="" /><noscript><img typeof="foaf:Image" class="img-responsive" src="https://www.unlv.edu/sites/default/files/styles/360_width/public/releases/main-images/D73760_054%20Kinney%20Lab-Chambers%20Grundy.JPG?itok=iR3lr8mc" width="360" height="240" alt="" /></noscript>
+<div class="h5 margin-top-xs clear-margin-bottom" aria-hidden="true">UNLV Newsmakers 2021: September</div>
+</div><!--end .click-region--></span>  </div></li>
+      <li class="jcarousel-item-8 even" style="display: none;">  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="click-region no-background">
+<div class="click-region-link"><a href="/news/article/enhancing-empathy-students-gain-insight-poverty-simulation">Enhancing Empathy: Students Gain Insight in Poverty Simulation</a></div>
+<img typeof="foaf:Image" class="img-responsive" data-src="https://www.unlv.edu/sites/default/files/styles/360_width/public/articles/main-images/D73764_008.jpg?itok=unzsYqwp" src="https://www.unlv.edu/sites/all/modules/lazyloader/image_placeholder.gif" width="360" height="240" alt="" /><noscript><img typeof="foaf:Image" class="img-responsive" src="https://www.unlv.edu/sites/default/files/styles/360_width/public/articles/main-images/D73764_008.jpg?itok=unzsYqwp" width="360" height="240" alt="" /></noscript>
+<div class="h5 margin-top-xs clear-margin-bottom" aria-hidden="true">Enhancing Empathy: Students Gain Insight in Poverty Simulation</div>
+</div><!--end .click-region--></span>  </div></li>
+  </ul>
+    </div>
+  
+  
+  
+  
+  
+  
+</div></p>
+      
+</div> <!-- /# id="entity_209764" (column) -->
+      
+</div> <!-- /# id="entity_209765" (row) -->
+        
+           
+      </div> <!-- /.container -->
+    </section> <!-- /# id="entity_209627" (section) -->
+          <section  id="entity_209519" class="padding-top-lg padding-bottom-lg" role="region" arial-label="Top Doctors">
+      <div class="container">
+              
+          
+<div class="row row-padding-top-none row-padding-bottom-none padding-lg" id="entity_209518">
+    
+<div  id="entity_209515" class="col-xs-12 col-sm-6">
+  
+
+<div id="entity_209514">
+
+
+<figure>
+  <img class="pg-image-field img-responsive" src="https://www.unlv.edu/sites/default/files/pg_images/2861/D72838_084.jpg" alt="UMC and UNLV School of Medicine badges on shoulders of doctors and students">
+  </figure>
+<div class="clearfix"></div>
+
+
+</div> <!-- /#  id="entity_209514" (photo_container) -->
+      
+</div> <!-- /# id="entity_209515" (column) -->
+
+<div  id="entity_209517" class="col-xs-12 col-sm-6">
+  
+<div class="content-area-start"></div><h3>UNLV, Home of Las Vegas' Top Doctors</h3>
+
+<p>The Kirk Kerkorian School of Medicine at UNLV, in addition to educating future medical providers, is focused on making Southern Nevada a healthier place to live and work. This is seen in the education, community service, research, and patient care that are integral to our mission. These efforts have resulted in many of our faculty being recognized as top doctors in their fields.</p>
+
+<p><a class="btn btn-gray" href="/medicine/top-doctors" role="button">View Top Doctors</a></p>
+      
+</div> <!-- /# id="entity_209517" (column) -->
+      
+</div> <!-- /# id="entity_209518" (row) -->
+        
+           
+      </div> <!-- /.container -->
+    </section> <!-- /# id="entity_209519" (section) -->
+          <section  id="entity_209531" class="padding-top-lg padding-bottom-lg bg-blue-gray-100 text-default" role="region" arial-label="What's Happening">
+      <div class="container">
+       <header><div class="content-area-start"></div><h3>What's Happening</h3>
+</header>       
+          
+<div class="row row-padding-top-sm row-padding-bottom-none padding-lg" id="entity_209607">
+    
+<div  id="entity_209617" class="col-xs-12">
+  
+
+<div id="entity_209616">
+
+    <div class="card text-default">
+      <div class="card-header bg-gray-dark text-light"><h4 class="label">Events</h4>
+</div>      
+        
+      <div class="card-block padding-sm">
+        <div class="content-area-start"></div>        
+        <p><div class="view view-unlv-tokens-events view-id-unlv_tokens_events view-display-id-embed_unit_home event-list view-dom-id-5434bd15128d5fc2ab857175ef8609d5">
+        
+  
+  
+      <div class="view-content">
+      <div class="item-list">    <ul class="clearfix clear-margin-bottom">          <li class="col-sm-4">  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="click-region ">
+<div class="click-region-link"><a href="/event/med-school-101-how-it-started-vs-how-it-going?delta=0&delta=0"> <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2021-11-10T14:30:00-08:00">Nov</span> <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2021-11-10T14:30:00-08:00">10</span>: Med School 101: How It Started vs How It Is Going</a></div>
+<div class="event-date" aria-hidden="true" role="presentation">
+<span class="event-month"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2021-11-10T14:30:00-08:00">Nov</span></span>
+<span class="event-day"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2021-11-10T14:30:00-08:00">10</span></span>
+</div>
+<div class="description">
+<div class="event-title" aria-hidden="true" role="presentation">
+<div class="title-text">Med School 101: How It Started vs How It Is Going</div>
+</div>
+<div class="clearfix"></div>
+</div><!--end .click-region--> 
+</span>  </div></li>
+          <li class="col-sm-4">  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="click-region ">
+<div class="click-region-link"><a href="/event/nipm-fall-seminar-series-virtual?delta=7&delta=7"> <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2021-11-11T12:00:00-08:00">Nov</span> <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2021-11-11T12:00:00-08:00">11</span>: NIPM Fall Seminar Series (Virtual)</a></div>
+<div class="event-date" aria-hidden="true" role="presentation">
+<span class="event-month"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2021-11-11T12:00:00-08:00">Nov</span></span>
+<span class="event-day"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2021-11-11T12:00:00-08:00">11</span></span>
+</div>
+<div class="description">
+<div class="event-title" aria-hidden="true" role="presentation">
+<div class="title-text">NIPM Fall Seminar Series (Virtual)</div>
+</div>
+<div class="clearfix"></div>
+</div><!--end .click-region--> 
+</span>  </div></li>
+          <li class="col-sm-4">  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="click-region ">
+<div class="click-region-link"><a href="/event/pre-med-freshman-cohort-program-unlv-0?delta=0&delta=0"> <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2021-11-12T09:00:00-08:00">Nov</span> <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2021-11-12T09:00:00-08:00">12</span>: Pre-Med Freshman Cohort Program at UNLV</a></div>
+<div class="event-date" aria-hidden="true" role="presentation">
+<span class="event-month"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2021-11-12T09:00:00-08:00">Nov</span></span>
+<span class="event-day"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2021-11-12T09:00:00-08:00">12</span></span>
+</div>
+<div class="description">
+<div class="event-title" aria-hidden="true" role="presentation">
+<div class="title-text">Pre-Med Freshman Cohort Program at UNLV</div>
+</div>
+<div class="clearfix"></div>
+</div><!--end .click-region--> 
+</span>  </div></li>
+      </ul></div>    </div>
+  
+  
+  
+  
+  
+  
+</div></p>
+                        
+        <div class="clearfix"></div>  
+      </div><!--end .card-block-->
+
+       
+
+      <div class="card-footer">
+<div class="text-right" id="entity_209615">
+    
+<a role="button" role="region" arial-label="More Events" class="btn btn-link btn-sm clear-margin-bottom btn-block btn-inline-xs" href="https://www.unlv.edu/medicine/events">More Events</a>
+      
+</div> <!-- /# id="entity_209615" (button) -->
+</div> <!--end .card-footer-->    </div><!--end .card-->
+
+
+</div> <!-- /#  id="entity_209616" (card-v2) -->
+      
+</div> <!-- /# id="entity_209617" (column) -->
+
+<div  id="entity_209604" class="col-xs-12 col-sm-6">
+  
+
+<div id="entity_209603">
+
+    <div class="card text-default">
+      <div class="card-header bg-gray-dark text-light"><h4 class="label">Accomplishments</h4>
+</div>      
+        
+      <div class="card-block padding-sm">
+        <div class="content-area-start"></div>        
+        <p><div class="view view-unlv-tokens-news-center-accomplishment view-id-unlv_tokens_news_center_accomplishment view-display-id-unlv_tokens_news_center_accomplishment_units view-dom-id-13137f9e14f048fb6846529903ea0bb7">
+        
+  
+  
+      <div class="view-content">
+      <div class="item-list">    <ul class="list-unstyled">          <li class="views-row views-row-1 views-row-odd views-row-first">  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="click-region padding-small">
+<div class="click-region-link"><a href="/news/accomplishments/marc-j-kahn-2">Presentation: Marc J. Kahn</a></div>
+<div class="details">Nov. 10, 2021</div>
+<div class="h6 clear-margin-top clear-margin-bottom" aria-hidden="true">Presentation: Marc J. Kahn</div>
+</div><!--end .click-region--></span>  </div></li>
+          <li class="views-row views-row-2 views-row-even">  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="click-region padding-small">
+<div class="click-region-link"><a href="/news/accomplishments/kavita-batra-6">Presentation: Kavita Batra</a></div>
+<div class="details">Nov. 3, 2021</div>
+<div class="h6 clear-margin-top clear-margin-bottom" aria-hidden="true">Presentation: Kavita Batra</div>
+</div><!--end .click-region--></span>  </div></li>
+          <li class="views-row views-row-3 views-row-odd">  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="click-region padding-small">
+<div class="click-region-link"><a href="/news/accomplishments/colleagues-school-medicine-2">Published: Colleagues from the School of Medicine</a></div>
+<div class="details">Nov. 3, 2021</div>
+<div class="h6 clear-margin-top clear-margin-bottom" aria-hidden="true">Published: Colleagues from the School of Medicine</div>
+</div><!--end .click-region--></span>  </div></li>
+          <li class="views-row views-row-4 views-row-even views-row-last">  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="click-region padding-small">
+<div class="click-region-link"><a href="/news/accomplishments/ross-berkeley-2">Notable: Ross Berkeley</a></div>
+<div class="details">Nov. 2, 2021</div>
+<div class="h6 clear-margin-top clear-margin-bottom" aria-hidden="true">Notable: Ross Berkeley</div>
+</div><!--end .click-region--></span>  </div></li>
+      </ul></div>    </div>
+  
+  
+  
+  
+  
+  
+</div></p>
+                        
+        <div class="clearfix"></div>  
+      </div><!--end .card-block-->
+
+       
+
+      <div class="card-footer">
+<div class="text-right" id="entity_209611">
+    
+<a role="button" role="region" arial-label="More Accomplishments" class="btn btn-link btn-sm clear-margin-bottom btn-block btn-inline-xs" href="https://www.unlv.edu/news/unit/academic/81535/accomplishments">More Accomplishments</a>
+      
+</div> <!-- /# id="entity_209611" (button) -->
+</div> <!--end .card-footer-->    </div><!--end .card-->
+
+
+</div> <!-- /#  id="entity_209603" (card-v2) -->
+      
+</div> <!-- /# id="entity_209604" (column) -->
+
+<div  id="entity_209602" class="col-xs-12 col-sm-6">
+  
+
+<div id="entity_209601">
+
+    <div class="card text-default">
+      <div class="card-header bg-gray-dark text-light"><h4 class="label">In The News</h4>
+</div>      
+        
+      <div class="card-block padding-sm">
+        <div class="content-area-start"></div>        
+        <p class="text-sm">The Kirk Kerkorian School of Medicine at UNLV is also in other news! Below are more stories about the school from other media outlets.<br />
+<div class="view view-unlv-tokens-news-center-in-the-news view-id-unlv_tokens_news_center_in_the_news view-display-id-unlv_tokens_news_center_in_the_news_units view-dom-id-e6186e6f024d9087fb64e385cb99ac93">
+        
+  
+  
+      <div class="view-content">
+      <div class="item-list">    <ul class="list-unstyled">          <li class="views-row views-row-1 views-row-odd views-row-first click-region padding-small">  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="click-region-link"><a href="https://eltiempolv.com/noticias/el-accidente-de-ruggs-destaca-el-creciente-numero-de-victimas-de-la-conduccion-peligrosa-en-nevada-161153/">Ruggs accident highlights growing toll of dangerous driving victims in Nevada</a></div>
+<div class="details">Nov. 5, 2021 | El Tiempo</div>
+<div class="h6 clear-margin-top clear-margin-bottom" aria-hidden="true">Ruggs accident highlights growing toll of dangerous driving victims in Nevada</div>
+<div class="clearfix"></div></span>  </div></li>
+          <li class="views-row views-row-2 views-row-even click-region padding-small">  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="click-region-link"><a href="https://thenevadaindependent.com/article/disagreement-prevails-at-clark-county-school-boards-first-meeting-since-firing-jara">Clark County School Board fails to adopt process for selecting an interim superintendent</a></div>
+<div class="details">Nov. 5, 2021 | The Nevada Independent</div>
+<div class="h6 clear-margin-top clear-margin-bottom" aria-hidden="true">Clark County School Board fails to adopt process for selecting an interim superintendent</div>
+<div class="clearfix"></div></span>  </div></li>
+          <li class="views-row views-row-3 views-row-odd views-row-last click-region padding-small">  
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="click-region-link"><a href="https://www.reviewjournal.com/investigations/speeding-tickets-for-nevada-drivers-going-over-100-mph-have-jumped-26-2471933/">Speeding tickets for Nevada drivers going over 100 mph have jumped 26%</a></div>
+<div class="details">Nov. 4, 2021 | Las Vegas Review Journal</div>
+<div class="h6 clear-margin-top clear-margin-bottom" aria-hidden="true">Speeding tickets for Nevada drivers going over 100 mph have jumped 26%</div>
+<div class="clearfix"></div></span>  </div></li>
+      </ul></div>    </div>
+  
+  
+  
+  
+  
+  
+</div></p>
+                        
+        <div class="clearfix"></div>  
+      </div><!--end .card-block-->
+
+       
+
+      <div class="card-footer">
+<div class="text-right" id="entity_209613">
+    
+<a role="button" role="region" arial-label="More In The News" class="btn btn-link btn-sm clear-margin-bottom btn-block btn-inline-xs" href="https://www.unlv.edu/news/unit/academic/81535/in-the-news">More In The News</a>
+      
+</div> <!-- /# id="entity_209613" (button) -->
+</div> <!--end .card-footer-->    </div><!--end .card-->
+
+
+</div> <!-- /#  id="entity_209601" (card-v2) -->
+      
+</div> <!-- /# id="entity_209602" (column) -->
+      
+</div> <!-- /# id="entity_209607" (row) -->
+        
+           
+      </div> <!-- /.container -->
+    </section> <!-- /# id="entity_209531" (section) -->
+          <section  id="entity_209524" class="padding-top-lg padding-bottom-lg bg-white text-default" role="region" arial-label="Follow Us">
+      <div class="container">
+              
+          
+<div class="row row-padding-top-none row-padding-bottom-none padding-lg" id="entity_209523">
+    
+<div  id="entity_209522" class="col-xs-12">
+  
+<div class="content-area-start"></div><h3 class="text-center">Follow Us</h3>
+<div class="content-area-start"></div><p class="text-center margin-top-sm">Sign up for our weekly newsletter, Making the <a href="/medicine/newsletter">Rounds</a>.</p>
+
+<div class="text-center"><div class="view view-unlv-tokens-contact-us- view-id-unlv_tokens_contact_us_ view-display-id-embed_contact_socialmedia_large contact-info view-dom-id-2595810b26d2fabdb8244c4b9f4f2f15">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-nothing">        <span class="field-content"><ul class="list-inline inline">
+<li><a class="social-facebook" href="https://www.facebook.com/UNLVmedicine" role="button">Facebook</a></li>
+
+<li><a class="social-instagram" href="https://www.instagram.com/unlvmedicine/" role="button">Instagram</a></li>
+<li><a class="social-linkedin" href="https://www.linkedin.com/school/kirk-kerkorian-school-of-medicine-unlv" role="button">LinkedIn</a></li>
+<li><a class="social-twitter" href="https://twitter.com/UNLVmedicine" role="button">Twitter</a></li>
+<li><a class="social-youtube" href="https://www.youtube.com/channel/UCgYT80euz54TjjbfgoY2j5A" role="button">YouTube</a></li>
+</ul></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div></div>
+
+<p class="text-center margin-top-sm"><a class="btn btn-red" href="/medicine/compliance#entity_210242" role="button">Report a Concern</a></p>
+
+<center>
+<h6>Kirk Kerkorian School of Medicine at UNLV - 2040 W. Charleston Blvd. 3rd Floor, Las Vegas, NV 89102</h6>
+</center>
+      
+</div> <!-- /# id="entity_209522" (column) -->
+      
+</div> <!-- /# id="entity_209523" (row) -->
+        
+           
+      </div> <!-- /.container -->
+    </section> <!-- /# id="entity_209524" (section) -->
+        <footer>
+          </footer>
+    </article>
+
+</section>
+  </div>
+      
+                          
+         
+ 
+        
+  </div><!-- /#content-main-->
+
+        
+</div><!--end #content-->
+
+  <footer id="footer" role="contentinfo">
+      <div class="region region-footer">
+    <section id="block-block-54" class="block block-block clearfix">
+
+      
+  <nav arial-label="footer links and copyright">
+<div class="container">
+<div class="row">
+
+<div class="col-sm-4">
+<ul class="list-unstyled">
+<li><a href="/campuslife/wellness">Wellness</a></li>
+<li><a href="/coronavirus">Coronavirus Information</a></li>
+<li><a href="/safety">Safety and Emergency</a></li>
+<li><a href="/about/statements-compliance">University Statements and Compliance</a></li>
+<li><a href="/web/accessibility">Web Accessibility</a></li>
+<li><a href="/toptier">Top Tier</a></li>
+</ul>
+</div><!--/.col-sm-4-->
+
+<div class="col-sm-4">
+<ul class="list-unstyled">
+<li><a href="/jobs">Employment</a></li>
+<li><a href="/campuslife/our-campus">Visit UNLV</a></li>
+<li><a href="/maps">Campus Maps</a></li>
+<li><a href="/parking">Parking Information</a></li>
+<li><a href="/news">News Center</a></li>
+</ul>
+</div><!--/.col-sm-4-->
+
+<div class="col-sm-4">
+<ul class="list-unstyled">
+<li><a href="/directories/contact">Contact UNLV</a></li>
+<li><address><a href="/maps/campus" title="View Campus Map">University of Nevada, Las Vegas<br />
+4505 S. Maryland Pkwy.<br />
+Las Vegas, NV 89154</a></address></li>
+<li><a href="tel:+17028953011">Phone: 702-895-3011</a></li>
+<li><a href="/info">Campus Notifications</a></li>
+
+</ul>
+</div><!--/.col-sm-4-->
+
+<div class="col-xs-12 text-center">
+<div class="row produced-copy margin-top-sm clear-padding-top">
+<div class="col-sm-8 text-sm-left text-xs-center">
+<ul class="list-inline text-xs"><li><a class="padding-left-xs" href="/about/copyright">©&nbsp;2021&nbsp;UNLV</a></li><li>Produced&nbsp;by&nbsp;<a href="/web">UNLV&nbsp;Web&nbsp;&amp;&nbsp;Digital Strategy</a></li><li><a href="/about/website-privacy">UNLV.edu&nbsp;Privacy&nbsp;Statement</a></li><li><a href="/web/feedback">Website&nbsp;Feedback</a></li></ul>
+</div><!--/.col-sm-8-->
+<div class="col-sm-4 text-sm-right text-xs-center social-media-links">
+<ul class="list-inline clear-margin-bottom"><li class="clear-margin-bottom"><a href="https://www.facebook.com/OfficialUNLV" title="Find us on Facebook" aria-label="Find us on Facebook"><span class="sm-footer-facebook"></span></a></li><li class="clear-margin-bottom"><a href="https://www.instagram.com/unlv" title="Find us on Instagram" aria-label="Find us on Instagram"><span class="sm-footer-instagram"></span></a></li><li class="clear-margin-bottom"><a href="https://www.snapchat.com/add/officialunlv" title="Follow us on Snapchat" aria-label="Follow us on Snapchat"><span class="sm-footer-snapchat"></span></a></li><li class="clear-margin-bottom"><a href="https://twitter.com/UNLV" title="Follow us on Twitter" aria-label="Follow us on Twitter"><span class="sm-footer-twitter"></span></a></li><li class="clear-margin-bottom"><a href="https://www.youtube.com/user/UNLV" title="Watch us on YouTube" aria-label="Watch us on YouTube"><span class="sm-footer-youtube"></span></a></li></ul>
+<div class="text-xs padding-right-xs"><a href="/directories/social-media">Social Media at UNLV</a></div>
+</div><!--/.col-sm-4-->
+</div><!--/.row-->
+</div><!--/.col-sm-12-->
+
+</div><!--/.row-->
+</div><!--/.container-->
+</nav>
+</section>
+  </div>
+  </footer>
+
+<div id="modal-menu-overlay"></div>
+        <noscript>
+        <style type="text/css" media="all">
+          img[data-src] { display: none !important; }
+        </style>
+      </noscript><script src="https://www.unlv.edu/sites/default/files/js/js_7Ukqb3ierdBEL0eowfOKzTkNu-Le97OPm-UqTS5NENU.js"></script>
+<script src="https://www.unlv.edu/sites/default/files/js/js_aDpgZ0QrWnM6il48ZPmqRiQzGjfDhPEUVMqjQm2DX0M.js"></script>
+<script>      (function ($) {
+        Drupal.behaviors.lazyloader = {
+          attach: function (context, settings) {
+            $("img[data-src]").lazyloader({distance: 0, icon: "" });
+          }
+        };
+      }(jQuery));</script>
+<script src="https://www.unlv.edu/sites/default/files/js/js_aKzDdsNbXvqxFqMkF4FAck1krUQ77927cKp7wsUZtY0.js"></script>
+<script src="https://www.unlv.edu/sites/default/files/js/js_MRdvkC2u4oGsp5wVxBG1pGV5NrCPW3mssHxIn6G9tGE.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"49746aa591","applicationID":"29937636","transactionName":"MlJaNUdWWUIAVE1dCwsYeQJBXlhfTllWUAE6R1kGUGhBWARA","queueTime":0,"applicationTime":1512,"atts":"HhVZQw9MSkw=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>
