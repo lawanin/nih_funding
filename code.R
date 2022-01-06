@@ -4,14 +4,14 @@ library(tidyverse)
   # 1. departments_nih_funding.csv, a list of the basic science departments of all AAMC schools, 
   # their harvard_equivalents, and their total NIH funding for 2020
   # 2. full_nih_funding.csv, a list of the basic science departments of all AAMC schools, 
-  #their harvard equivalents, and data on every NIH grant awarded to these departments in 2020
+  # their Harvard equivalents, and data on every NIH grant awarded to these departments in 2020
   # 3. nih_aamc_names.csv, a list that converts between AAMC school names and NIH school names
 
 
 # department_list.csv is a file made by intern looking at department websites for 
-# AAMC schools and assesing harvard equivalents
-# during cleaning, some parentheses were added to department_list.csv. see Notes.
-# these are removed here. names with parentheses removed should match BRIMR NIH 2020
+# AAMC schools and assessing Harvard equivalents
+# during cleaning, some parentheses were added to department_list.csv. see notes in read_me.txt.
+# these are removed here. names with parentheses removed should match NIH table
 
 z <- read_delim("source_files/department_list.csv", delim = ",") %>% 
   mutate(department_name = toupper(department_name)) %>% 
@@ -19,14 +19,14 @@ z <- read_delim("source_files/department_list.csv", delim = ",") %>%
   mutate(department_name = str_replace_all(department_name, " \\(.*\\)|\\(.*\\)[ ]*", "")) %>% 
   mutate(department_name = str_replace_all(department_name, "\\*", "")) %>% 
   
-  # after parentheses are removed there are two medical education southern illinois, 
-  # one at (carbondale) another at springfield
+  # after parentheses are removed there are two Medical Education departments, Southern Illinois, 
+  # one at (Carbondale) another at (Springfield)
   
   distinct()
 
 y <- read_delim("source_files/Worldwide_2020.csv", skip = 1, delim = ";")
 
-# object x is NIH List with names that match AAMC nomenclature and so department_list.csv
+# object x is NIH table with names that match AAMC nomenclature and so department_list.csv
 
 y %>% 
   filter(`NIH MC COMBINING NAME` == "SCHOOLS OF MEDICINE") %>% 
@@ -181,8 +181,8 @@ nih_aamc_names <- y %>%
   rename(aamc = `ORGANIZATION NAME.y`) %>% 
   distinct()
 
-# correcting discrepancies in department names as found online and as in NIH List.
-# see notes. most discrepancies resolved through direct changes to department_list.csv. 
+# correcting discrepancies in department names as found online and as in NIH table.
+# see notes in read_me.txt. most discrepancies resolved through direct changes to department_list.csv. 
 # see above.
 
 x_cleaned <- x %>%  
