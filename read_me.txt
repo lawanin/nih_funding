@@ -1,7 +1,7 @@
 DESCRIPTION
-In Fall 2020, AAMC Intern made list of basic science departments for all AAMC schools,
-as in their websites or other official materials, and their equivalent departments at
-Harvard, as he determined them. This is source_files/department_list.csv. 
+In Fall 2020, IPP Intern made list of basic science departments for all AAMC schools
+and their equivalent departments at Harvard, as he determined them. 
+This list is source_files/department_list.csv
 
 He combined that list with 2020 NIH Funding data to produce two files:
 1. departments_nih_funding.csv, a list of the basic science departments of all AAMC schools, 
@@ -10,15 +10,17 @@ their harvard_equivalents, and their total NIH funding for 2020
 their harvard equivalents, and data on every NIH grant awarded to these departments in 2020
 
 As part of the combining process, he had to convert between abbreviated AAMC and NIH nomenclature. 
-He produced a table to facilitate future coversion between these two. This is nih_aamc_names.csv
+He produced a table to facilitate future coversion. This table is nih_aamc_names.csv
 
 CAVEATS
-The intern determined Harvard equivalents without little knowledge of the full scope
-of each Harvard department and even less knowledge of each competitor departments.
-He had purused the websites for each basic science department at Harvard and matched
-each competitor department usually only by looking at its name, at other times by a
-quick cursory look at the competitor department's website. At times, multiple 
-competitors were assigned. At times, none were assigned. 
+The intern determined Harvard equivalents with little knowledge of the full scope
+of each Harvard department and even less knowledge of each competitor department.
+He had perused the website for each basic science department at Harvard and matched
+each competitor department usually only by looking at its name, at other times also by a
+cursory look through the competitor department's website. Departments like Microbiology,
+Immunology, and Biomedical Informatics have names common to departments at many schools. 
+Departments like BCMP and SCRB have uncommon names. At times, multiple competitors were assigned. 
+At times, none were assigned. 
 
 The list, with few exceptions, only includes departments of medical schools:
   Other organizational units (e.g. centers, institutes) at medical schools that compete with Harvard departments 
@@ -29,6 +31,8 @@ The list, with few exceptions, only includes departments of medical schools:
   Other university departments that are not part of a medical school (e.g. FAS Molecular and Cellular Biology) 
   that compete with Harvard departments and that may recieve NIH funding are thus
   also not included in either department_list.csv or the non-source files with NIH funding. 
+  Harvard Medical School recieves much more NIH funding than FAS departments. 
+  
   If such departments or other organizational units recieved NIH funding, they are 
   included in source_files/Worldwide_2020.csv
 
@@ -37,6 +41,7 @@ PLANS
 more correction of manual discrepancies would be needed. 
 -Do similarly for NSF funding. 
 -Should other organizational units/departments outside of medical schools be added?
+Feedback on method from BCMP chair pointed out that these were also competitors.
 
 NOTES
 schools in AAMC, no Basic Science Departments, i.e. not in Department List:
@@ -75,7 +80,7 @@ no departments specified in NIH 2020:
 Einstein
 Mayo-Alix
 
-updates to NIH from recent name changes:
+updates to NIH Table from recent department name change:
 Arkansas: Physiology and Biophysics to Physiology and Cell Biology
 Cincinnati: ENVIRONMENTAL HEALTH to ENVIRONMENTAL AND PUBLIC HEALTH SCIENCES
 Columbia: Joint Centers for Systems Biology to Systems Biology
@@ -156,7 +161,7 @@ Wright State-Boonshoft: NEUROSCIENCE CELL BIOLOGY AND PHYSIOLOGY to BIOL
 other notes:
 Florida State: One Biomedical sciences Department  divided into three graduate programs, which have been listed as departments: BIOMEDICAL SCIENCES, NEUROSCIENCE, MOLECULAR BIOPHYSICS; unclear whether larger department or subdivision is in NIH 2020
 Rutgers: Note- after merging of two school there are two pathologies, both PATHOLOGY AND LABORATORY MEDICINE and PATHOLOGY IMMUNOLOGY AND LABORATORY MEDICINE, latter left unmatched
-UCF: School of Medicine treated as one department, NIH
+UCF: School of Medicine treated as one department in NIH
 Wayne State: Note- Opthamology department in NIH does not include Anatomy
 
 SOURCES
@@ -166,3 +171,6 @@ basic science departments in most but not all cases. Find these in list_sources/
 AAMC Names- downloadable report from AAMC Medical School Profile System with 2019 data
 
 NIH Funding- http://www.brimr.org/NIH_Awards/NIH_Awards.htm
+
+AUTHOR
+Nosa Lawani, IPP Intern 2021-22
