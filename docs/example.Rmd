@@ -1,0 +1,283 @@
+---
+title: "Neurobiology Examples"
+author: "Nosa Lawani"
+date: "03/11/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, warning = FALSE, message = FALSE}
+library(tidyverse)
+library(plotly)
+x <- read_csv("full_nih_funding.csv")
+y <- read_csv("departments_nih_funding.csv")
+
+read_csv("departments_nih_funding.csv") -> aa
+read_csv("departments_nih_2019.csv") -> bb
+read_csv("departments_nih_2018.csv") -> cc
+read_csv("departments_nih_2017.csv") -> dd
+read_csv("departments_nih_2016.csv") -> ee
+
+z <- aa %>% 
+  left_join(bb) %>% 
+  left_join(cc) %>% 
+  left_join(dd) %>% 
+  left_join(ee) 
+```
+
+```{r, warning = FALSE, message = FALSE}
+ggplotly(
+ x %>% 
+  filter(harvard_equivalent == "Nb") %>% 
+  group_by(department_name, school, harvard_equivalent) %>% 
+  mutate(project_number = n()) %>% 
+  group_by(department_name, school, harvard_equivalent, project_number) %>% 
+  summarize(nih_2020 = sum(FUNDING)) %>% 
+  arrange(desc(nih_2020)) %>% 
+   ungroup() %>% 
+  slice(1:10) %>% 
+   mutate(name_number = paste0(school, " (", project_number, ")")) %>% 
+  ggplot(aes(nih_2020, fct_reorder(name_number, nih_2020),
+             fill = if_else(school == "Harvard", "Crimson", "Not"),
+             text = paste("Department Name: ", department_name, "\n",
+                          "Total Funding: ", formatC(nih_2020, digits = 10, big.mark = ","), "\n",
+                          "Number of Grants: ", project_number, "\n",
+                          sep = ""))) +
+  geom_col() +
+  scale_x_continuous(label = scales::number_format()) +
+  scale_fill_manual(values = c("#990000", "grey50")) +
+  labs(title = "2020 NIH Funding of Top Ten Neurobiology\nCompetitor Departments", 
+       subtitle = "", 
+       x = "Dollars", 
+       y = "",
+       caption = "IPP (2021), NIH (2020)")+
+  theme(legend.position = "none"),
+  tooltip = "text") 
+
+ggplotly(
+z %>% 
+  rowwise() %>% 
+  mutate(harvard_equivalent = if_else(school == "Harvard" & str_detect(department_name, "MICROBIOLOGY|IMMUNO") == TRUE, "Mb;Imm", harvard_equivalent)) %>%   group_by(school, department_name) %>% 
+  mutate(department_name = if_else(school == "Harvard" & str_detect(department_name, "MICROBIOLOGY|IMMUNO") == TRUE, "MICROBIOLOGY + IMMUNOLOGY", department_name)) %>% 
+  group_by(school, department_name, harvard_equivalent) %>% 
+  summarize(across(contains("nih"), ~sum(., na.rm = TRUE))) %>% 
+  mutate(avg = sum(nih_2020 + nih_2019 + nih_2018 + nih_2017 + nih_2016)) %>% 
+  filter(harvard_equivalent == "Nb") %>% 
+  ungroup() %>% 
+  arrange(desc(avg))  %>% 
+  slice(1:10) %>% 
+  ggplot(aes(avg, fct_reorder(school, avg),
+             fill = if_else(school == "Harvard", "Crimson", "Not"),
+             text = paste("Department Name: ", department_name, "\n",
+                          "Total Funding: ", formatC(avg, digits = 10, big.mark = ","), "\n",
+                          sep = ""))) +
+  geom_col() +
+  scale_x_continuous(label = scales::number_format()) +
+  scale_fill_manual(values = c("#990000", "grey50")) +
+  labs(title = "2016-2020 NIH Funding of Top Ten Neurobiology\nCompetitor Departments", 
+       subtitle = "", 
+       x = "Dollars", 
+       y = "",
+       caption = "IPP (2021), NIH (2020)")+
+  theme(legend.position = "none"),
+  tooltip = "text") 
+```
+
+
+```{r, warning = FALSE, message = FALSE}
+ggplotly(
+x %>% 
+  filter(str_detect(harvard_equivalent, "Nb")) %>% 
+  group_by(`PI NAME`, school) %>% 
+  mutate(project_number = n())  %>% 
+  arrange(desc(project_number)) %>% 
+  group_by(`PI NAME`, school, department_name, project_number) %>% 
+  summarize(nih_2020 = sum(FUNDING)) %>% 
+  arrange(desc(nih_2020)) %>% 
+  ungroup() %>% 
+  mutate(name_number = paste0(`PI NAME`, " (", project_number, ")")) %>% 
+  slice(1:10) %>% 
+  ggplot(aes(nih_2020, fct_reorder(name_number, nih_2020),
+             fill = if_else(school == "Harvard", "Crimson", "Not"),
+             text = paste("PI NAME: ", `PI NAME`, "\n",
+                          "School: ", school, "\n",
+                          "Department Name: ", department_name, "\n",
+                          "Total Funding: ", formatC(nih_2020, digits = 10, big.mark = ","), "\n",
+                          "Number of Grants: ", project_number, "\n",
+                          sep = ""))) +
+  geom_col() +
+  scale_x_continuous(label = scales::number_format()) +
+  scale_fill_manual(values = c("#990000", "grey50")) +
+  theme(legend.position = "none") +
+  labs(title = "Top Ten Neurobiology PIs", 
+       subtitle = "Top 10 Recipients of 2020 NIH Funding", 
+       x = "Dollars", 
+       y = "",
+       caption = "IPP (2021), NIH (2020)"), 
+tooltip = "text")
+```
+
+```{r, warning = FALSE, message = FALSE}
+ggplotly(
+x %>% 
+ filter(str_detect(harvard_equivalent, "Nb")) %>% 
+  group_by(school, department_name) %>% 
+  mutate(project_number = n()) %>% 
+  group_by(school, department_name, project_number) %>%
+  summarize(median = median(`FUNDING`, na.rm = TRUE)) %>% 
+  arrange(desc(median)) %>% 
+  ungroup() %>% 
+  slice(1:10) %>% 
+  mutate(name_number = paste0(school, " (", project_number, ")")) %>%
+  ggplot(aes(median, fct_reorder(name_number, median),
+             fill = if_else(school == "Harvard", "Crimson", "Not"),
+             text = paste("School: ", school, "\n",
+                          "Department Name: ", department_name, "\n",
+                          "Total Funding: ", formatC(median, digits = 6, big.mark = ","), "\n",
+                          "Number of Grants: ", project_number, "\n",
+                          sep = ""))) +
+  geom_col() +
+  scale_x_continuous(labels = scales::number_format()) +
+  scale_fill_manual(values = c("#990000", "grey50")) +
+  labs(title = "Top 10 Mean 2020 Grant Amounts of Neurobiology\nCompetitior Departments", 
+       subtitle = "10 Highest Mean NIH Grant Amounts", 
+       x = "Dollars", 
+       y = "",
+       caption = "IPP (2021), NIH (2020)") +
+  theme(legend.position = "none"), 
+tooltip = "text")
+
+ggplotly(
+x %>% 
+ filter(str_detect(harvard_equivalent, "Nb")) %>% 
+  group_by(school, department_name) %>% 
+  mutate(project_number = n()) %>% 
+  group_by(school, department_name, project_number) %>%
+  summarize(mean = mean(`FUNDING`, na.rm = TRUE)) %>% 
+  arrange(desc(mean)) %>% 
+  ungroup() %>% 
+  slice(1:10) %>% 
+  mutate(name_number = paste0(school, " (", project_number, ")")) %>%
+  ggplot(aes(mean, fct_reorder(name_number, mean),
+             text = paste("School: ", school, "\n",
+                          "Department Name: ", department_name, "\n",
+                          "Total Funding: ", formatC(mean, digits = 6, big.mark = ","), "\n",
+                          "Number of Grants: ", project_number, "\n",
+                          sep = ""))) +
+  geom_col() +
+  scale_x_continuous(labels = scales::number_format()) +
+  labs(title = "Top 10 Mean 2020 Grant Amounts of Neurobiology\nCompetitior Departments", 
+       x = "Dollars", 
+       y = "",
+       caption = "IPP (2021), NIH (2020)"), 
+tooltip = "text")
+```
+
+
+```{r, warning = FALSE, message = FALSE}
+x %>% 
+  filter(str_detect(harvard_equivalent, "Nb")) %>% 
+  group_by(`PI NAME`, school, department_name) %>% 
+  summarize(pi_funding = sum(FUNDING)) %>% 
+  ggplot(aes(pi_funding,
+         fill = if_else(school == "Harvard", "Crimson", "Not"))) +
+  geom_histogram(boundary = 0, binwidth = 250000) +
+  scale_x_continuous(label = scales::number_format()) +
+  geom_vline(aes(xintercept = mean(pi_funding, na.rm = TRUE)), color = "red") +
+  geom_vline(aes(xintercept = median(pi_funding, na.rm = TRUE)), color = "blue") +
+  labs(title = " Histogram of 2020 NIH Funding for All Neurobiology PIs", 
+       x = "",
+       y = "") +
+  scale_fill_manual(values = c("#990000", "grey50")) +
+  theme(legend.position = "none")
+
+ggplotly(
+x %>% 
+  filter(str_detect(harvard_equivalent, "Nb")) %>% 
+  group_by(`PI NAME`, school, department_name) %>%
+  mutate(project_number = n()) %>% 
+  group_by(`PI NAME`, school, department_name, project_number) %>% 
+  summarize(pi_funding = sum(FUNDING)) %>% 
+  ggplot(aes(pi_funding,
+         fill = if_else(school == "Harvard", "Crimson", "Not"),
+         text = paste("PI NAME: ", `PI NAME`, "\n",
+                          "School: ", school, "\n",
+                          "Department Name: ", department_name, "\n",
+                          "Total Funding: ", formatC(pi_funding, digits = 10, big.mark = ","), "\n",
+                          "Number of Grants: ", project_number, "\n",
+                          sep = ""))) +
+  geom_histogram(boundary = 0, binwidth = 250000) +
+  geom_vline(aes(xintercept = mean(pi_funding, na.rm = TRUE)), color = "red") +
+  geom_vline(aes(xintercept = median(pi_funding, na.rm = TRUE)), color = "blue") +
+  scale_x_continuous(label = scales::number_format(), limits = c(0, 5000000)) +
+  labs(title = "Histogram of 2020 NIH Funding for Neurobiology PIs", 
+       x = "",
+       y = "") +
+  scale_fill_manual(values = c("#990000", "grey50")) +
+  theme(legend.position = "none"),
+tooltip = "text")
+```
+
+
+```{r, warning = FALSE, message = FALSE}
+read_csv("departments_nih_funding.csv") -> aa
+read_csv("departments_nih_2019.csv") -> bb
+read_csv("departments_nih_2018.csv") -> cc
+read_csv("departments_nih_2017.csv") -> dd
+read_csv("departments_nih_2016.csv") -> ee
+
+z %>% 
+  rowwise() %>% 
+  mutate(harvard_equivalent = if_else(school == "Harvard" & str_detect(department_name, "MICROBIOLOGY|IMMUNO") == TRUE, "Mb;Imm", harvard_equivalent)) %>%   group_by(school, department_name) %>% 
+  mutate(department_name = if_else(school == "Harvard" & str_detect(department_name, "MICROBIOLOGY|IMMUNO") == TRUE, "MICROBIOLOGY + IMMUNOLOGY", department_name)) %>% 
+  group_by(school, department_name, harvard_equivalent) %>% 
+  summarize(across(contains("nih"), ~sum(., na.rm = TRUE))) %>% 
+  mutate(avg = sum(nih_2020 + nih_2019 + nih_2018 + nih_2017 + nih_2016)) %>% 
+  filter(harvard_equivalent == "Nb") %>% 
+  arrange(desc(avg)) %>% 
+  ungroup() %>% 
+  slice(1:5) %>% 
+  pivot_longer(cols = contains("nih"),
+               names_to = c("funding_type", "year"),
+               names_sep = "_", 
+               values_to = "funding_amount") %>% 
+  mutate(year = as.numeric(year)) %>% 
+  ggplot(aes(year, funding_amount, color = fct_rev(fct_reorder(school, avg)))) +
+  geom_point() +
+  geom_line() +
+  scale_y_continuous(labels = scales::number_format()) +
+  labs(title = "2016-2020 NIH Funding for Top 5 Neurobiology Departments", 
+       x = "",
+       y = "",
+       color = "Department",
+       caption = "IPP (2021), BRIMR (2016-2020)")
+
+z %>% 
+  mutate(harvard_equivalent = if_else(school == "Harvard" & str_detect(department_name, "MICROBIOLOGY|IMMUNO") == TRUE, "Mb;Imm", harvard_equivalent)) %>%   group_by(school, department_name) %>% 
+  mutate(department_name = if_else(school == "Harvard" & str_detect(department_name, "MICROBIOLOGY|IMMUNO") == TRUE, "MICROBIOLOGY + IMMUNOLOGY", department_name)) %>%   
+    group_by(school, department_name, harvard_equivalent) %>% 
+  summarize(across(contains("nih"), ~sum(., na.rm = TRUE))) %>% 
+  filter(school == "Harvard") %>% 
+  pivot_longer(cols = contains("nih"),
+               names_to = c("funding_type", "year"),
+               names_sep = "_", 
+               values_to = "funding_amount") %>% 
+  mutate(year = as.numeric(year)) %>% 
+  left_join(aa %>% mutate(harvard_equivalent = if_else(school == "Harvard" & str_detect(department_name, "MICROBIOLOGY|IMMUNO") == TRUE, "Mb;Imm", harvard_equivalent)) %>%   group_by(school, department_name) %>% 
+  mutate(department_name = if_else(school == "Harvard" & str_detect(department_name, "MICROBIOLOGY|IMMUNO") == TRUE, "MICROBIOLOGY + IMMUNOLOGY", department_name)) %>% group_by(school, department_name, harvard_equivalent) %>% 
+  summarize(across(contains("nih"), ~sum(., na.rm = TRUE))), by = c("school", "department_name", "harvard_equivalent")) %>% 
+  ggplot(aes(year, funding_amount, color = fct_rev(fct_reorder(harvard_equivalent, nih_2020)))) +
+  geom_point() +
+  geom_line() +
+  scale_y_continuous(labels = scales::number_format()) +
+  labs(title = "2016-2020 NIH Funding for Harvard QUAD Departments", 
+       x = "",
+       y = "",
+       color = "Department",
+       caption = "IPP (2021), BRIMR (2016-2020)")
+```
+
+
