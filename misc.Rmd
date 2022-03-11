@@ -1,0 +1,208 @@
+---
+title: "Untitled"
+author: "Nosa Lawani"
+date: "1/13/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+read_csv("departments_nih_2016.csv") %>% 
+  filter(is.na(nih_2016) == FALSE) -> d
+
+read_csv("departments_nih_2017.csv") %>% 
+  filter(is.na(nih_2017) == FALSE) -> c
+
+read_csv("departments_nih_2018.csv") %>% 
+  filter(is.na(nih_2018) == FALSE) -> b
+
+read_csv("departments_nih_2019.csv") %>% 
+  filter(is.na(nih_2019) == FALSE) -> a
+
+test <- x %>% 
+   mutate(`DEPT NAME` = str_replace_all(`DEPT NAME`, ",", "")) %>% 
+  mutate(`DEPT NAME`  = str_replace_all(`DEPT NAME`, "&", "AND")) %>%
+  rename(school = `ORGANIZATION NAME`,
+         department_name = `DEPT NAME`) %>% 
+  group_by(school, department_name) %>% 
+  summarize(`TOTAL FUNDING` = sum(FUNDING)) %>% 
+  left_join(z, ., by = c("school", "department_name")) %>%
+  select(school, `department_name`, harvard_equivalent, `TOTAL FUNDING`) %>% 
+  rename(nih_2018 = `TOTAL FUNDING`)  %>% 
+  filter(is.na(nih_2018) == FALSE)
+
+y %>% 
+  rename_with(toupper) %>% 
+  mutate(`NIH MC COMBINING NAME` = if_else(`ORGANIZATION NAME` == "HARVARD UNIVERSITY" & `DEPT NAME` == "STEM CELL AND REGENERATIVE BIOLOGY","SCHOOLS OF MEDICINE",`NIH MC COMBINING NAME`)) %>% 
+  filter(str_detect(`ORGANIZATION NAME`, "HARVARD")) %>% 
+  select(`ORGANIZATION NAME`, `DEPT NAME`, `NIH MC COMBINING NAME`) %>% 
+  distinct()
+```
+
+
+```{r}
+a %>% 
+  select(school) %>% 
+  distinct()
+
+b %>% 
+  select(school) %>% 
+  distinct() 
+
+a %>% 
+  select(school) %>% 
+  distinct() %>% 
+  anti_join(b)
+
+b %>% 
+  select(school) %>% 
+  distinct() %>% 
+  anti_join(a)
+
+# rutgers has department listed as NONE, so no match
+# LSU New Orleans contains no city identification; pair could pose problems in future years
+# rowna university only med school grant is to emergency medicine 
+# CUNY only med school department is none
+# two total names that needed to be changed: see code_2018
+
+read_delim("source_files/Worldwide_2018.csv", delim = ";", skip = 1) %>% 
+  rename_with(toupper) %>% 
+  filter(`NIH MC COMBINING NAME` == "SCHOOLS OF MEDICINE") %>% 
+  select(`ORGANIZATION NAME`) %>% 
+  distinct() %>% 
+  filter(str_detect(`ORGANIZATION NAME`, "ROWAN"))
+
+
+
+read_delim("source_files/Worldwide_2020.csv", delim = ";", skip = 1) %>% 
+  filter(`NIH MC COMBINING NAME` == "SCHOOLS OF MEDICINE") %>% 
+  select(`ORGANIZATION NAME`) %>% 
+  distinct() %>% 
+  filter(str_detect(`ORGANIZATION NAME`, "CITY"))
+
+read_delim("source_files/Worldwide_2018.csv", delim = ";", skip = 1) %>% 
+  rename_with(toupper) %>% 
+  filter(`NIH MC COMBINING NAME` == "SCHOOLS OF MEDICINE") %>% 
+  select(`ORGANIZATION NAME`) %>% 
+  distinct() %>% 
+  filter(str_detect(`ORGANIZATION NAME`, "CITY"))
+
+c %>% 
+  anti_join(a)
+
+b %>% 
+  anti_join(c)
+
+x %>% 
+  filter(`ORGANIZATION NAME` == "Harvard") %>% 
+  select(`DEPT NAME`) %>% 
+  distinct()
+
+# NOTE: going to add microbiology and immunobiology legacy for Harvard
+# NOTE UNRESOLVED: Southern Cal-Keck has several dept name discrepancies, including inconsistent abbreviation
+# no location for Michigan in 2017, cannot use OF MICHIGAN as string consistently because in 2020 there is a UMICH at different location, MICHIGAN.*ANN|OF MICHIGAN$
+# Austin has none to basic science departments
+# no Mercer 2017
+# Add institute for molecular emdicine to TCU UNTHSC in department_list?
+# no Marshall 2017
+# 2017 SCRB listed in FAS
+
+
+b %>% 
+  select(school) %>% 
+  distinct() %>% 
+  anti_join(c)
+
+b %>% 
+  anti_join(c)
+
+c
+
+# no augusta university 2016 
+
+c %>% 
+  select(school) %>% 
+  distinct() %>% 
+  anti_join(d)
+``` 
+
+```{r}
+
+
+read_delim("source_files/Worldwide_2020.csv", delim = ";", skip = 1) %>% 
+  select(`ORGANIZATION NAME`) %>% 
+  distinct() %>%  
+  filter(str_detect(`ORGANIZATION NAME`, "AUGUSTA"))
+
+read_delim("source_files/Worldwide_2016.csv", delim = ";", skip = 1) %>% 
+  rename_with(toupper) %>% 
+  select(`ORGANIZATION NAME`) %>% 
+  distinct() %>% 
+  filter(str_detect(`ORGANIZATION NAME`, "AUGUSTA"))
+
+read_delim("source_files/Worldwide_2017.csv", delim = ";", skip = 1) %>% 
+  rename_with(toupper) %>%
+  filter(`NIH MC COMBINING NAME` == "SCHOOLS OF MEDICINE") %>% 
+  filter(str_detect(`ORGANIZATION NAME`, "OF SOUTHERN CALIFORNIA")) %>% 
+  select(`ORGANIZATION NAME`, `DEPT NAME`) %>% 
+  distinct()
+
+read_delim("source_files/Worldwide_2017.csv", delim = ";", skip = 1) %>% 
+  rename_with(toupper) %>%
+  filter(str_detect(`ORGANIZATION NAME`, "HARVARD")) %>% 
+  select(`ORGANIZATION NAME`, `DEPT NAME`) %>% 
+  distinct()
+
+x_cleaned %>% 
+  rename(school = `ORGANIZATION NAME`,
+         department_name = `DEPT NAME`) %>% 
+  filter(school == "Harvard") %>% 
+  filter(str_detect(department_name, "GLOBAL HEALTH AND SOCIAL MEDICINE "))
+
+z %>% 
+    filter(department_name == "GLOBAL HEALTH AND SOCIAL MEDICINE")
+
+
+```
+
+```{r}
+read_csv("departments_nih_funding.csv") -> aa
+read_csv("departments_nih_2019.csv") -> bb
+read_csv("departments_nih_2018.csv") -> cc
+read_csv("departments_nih_2017.csv") -> dd
+read_csv("departments_nih_2016.csv") -> ee
+
+aa %>% 
+  left_join(bb) %>% 
+  left_join(cc) %>% 
+  left_join(dd) %>% 
+  left_join(ee) %>% 
+  mutate(harvard_equivalent = if_else(school == "Harvard" & str_detect(department_name, "MICROBIOLOGY|IMMUNO") == TRUE, "Mb;Imm", harvard_equivalent)) %>%   group_by(school, department_name) %>% 
+  mutate(department_name = if_else(school == "Harvard" & str_detect(department_name, "MICROBIOLOGY|IMMUNO") == TRUE, "MICROBIOLOGY + IMMUNOLOGY", department_name)) %>%   
+    group_by(school, department_name, harvard_equivalent) %>% 
+  summarize(across(contains("nih"), ~sum(., na.rm = TRUE))) %>% 
+  filter(school == "Harvard") %>% 
+  pivot_longer(cols = contains("nih"),
+               names_to = c("funding_type", "year"),
+               names_sep = "_", 
+               values_to = "funding_amount") %>% 
+  mutate(year = as.numeric(year)) %>% 
+  #yuck, thank you preceptor
+  left_join(aa %>% mutate(harvard_equivalent = if_else(school == "Harvard" & str_detect(department_name, "MICROBIOLOGY|IMMUNO") == TRUE, "Mb;Imm", harvard_equivalent)) %>%   group_by(school, department_name) %>% 
+  mutate(department_name = if_else(school == "Harvard" & str_detect(department_name, "MICROBIOLOGY|IMMUNO") == TRUE, "MICROBIOLOGY + IMMUNOLOGY", department_name)) %>% group_by(school, department_name, harvard_equivalent) %>% 
+  summarize(across(contains("nih"), ~sum(., na.rm = TRUE))), by = c("school", "department_name", "harvard_equivalent")) %>% 
+  ggplot(aes(year, funding_amount, color = fct_rev(fct_reorder(harvard_equivalent, nih_2020)))) +
+  geom_point() +
+  geom_line() +
+  scale_y_continuous(labels = scales::number_format()) +
+  labs(title = "2016-2020 NIH Funding for Harvard QUAD Departments", 
+       subtitle = "Key arranged in order of 2020 NIH Funding (Highest to Lowest)",
+       x = "",
+       y = "",
+       color = "Department",
+       caption = "IPP (2021), BRIMR (2016-2020)")
+```
+

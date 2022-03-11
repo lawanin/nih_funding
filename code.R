@@ -29,11 +29,16 @@ y <- read_delim("source_files/Worldwide_2020.csv", skip = 1, delim = ";")
 # object x is NIH table with names that match AAMC nomenclature and so department_list.csv
 
 y %>% 
+  
+  # may be the case for other years
+  
+  mutate(`NIH MC COMBINING NAME` = if_else(`ORGANIZATION NAME` == "HARVARD UNIVERSITY" & `DEPT NAME` == "STEM CELL AND REGENERATIVE BIOLOGY","SCHOOLS OF MEDICINE",`NIH MC COMBINING NAME`)) %>% 
   filter(`NIH MC COMBINING NAME` == "SCHOOLS OF MEDICINE") %>% 
   mutate(FUNDING = as.numeric(str_replace_all(FUNDING, "\\.|\\$", ""))) %>% 
   arrange(`ORGANIZATION NAME`) %>% 
   mutate(`ORGANIZATION NAME` = str_replace_all(`ORGANIZATION NAME`, "UNIVERSITY OF SOUTHERN CALIFORNIA", "Southern Cal-Keck"),
-         `ORGANIZATION NAME` = str_replace_all(`ORGANIZATION NAME`, "HARVARD MEDICAL SCHOOL", "Harvard"),
+         # added HARVARD UNIVERSITY because of SCRB
+         `ORGANIZATION NAME` = str_replace_all(`ORGANIZATION NAME`, "HARVARD MEDICAL SCHOOL|HARVARD UNIVERSITY", "Harvard"),
          `ORGANIZATION NAME` = str_replace_all(`ORGANIZATION NAME`, "BOSTON UNIVERSITY MEDICAL CAMPUS", "Boston"),
          `ORGANIZATION NAME` = str_replace_all(`ORGANIZATION NAME`, "CASE WESTERN RESERVE UNIV/CLEVELAND CLINIC LERNER", "Case Western Reserve"),
          `ORGANIZATION NAME` = str_replace_all(`ORGANIZATION NAME`, "JOHNS HOPKINS UNIVERSITY", "Johns Hopkins"),
