@@ -36,9 +36,23 @@ e <- read_csv("full_nih_2016.csv")
 
 
 
-# bind_rows(x %>% 
-#             mutate(`AWARD NOTICE DATE` = as.character(`AWARD NOTICE DATE`)),
-#           b,c,d,e)
+full <- bind_rows(x %>% 
+             mutate(`AWARD NOTICE DATE` = as.character(`AWARD NOTICE DATE`)) %>% 
+              mutate(year = 2020),
+           b %>% 
+             mutate(year = 2019), 
+           c %>% 
+             mutate(`DIRECT COST` = as.character(`DIRECT COST`)) %>% 
+             mutate(`INDIRECT COST` = as.character(`INDIRECT COST`)) %>% 
+             mutate(year = 2018),
+           d %>% 
+             mutate(`DIRECT COST` = as.character(`DIRECT COST`)) %>% 
+             mutate(`INDIRECT COST` = as.character(`INDIRECT COST`)) %>% 
+             mutate(year = 2017),
+           e %>% 
+             mutate(year = 2016))
+ 
+ 
 
 nb_ranks <- x %>% 
   filter(school == "Harvard" & harvard_equivalent == "Nb") %>% 
@@ -56,7 +70,6 @@ nb_ranks <- x %>%
 # write_csv(nb_ranks, "nb_ranks.csv")
 full_faculty <- read_csv("nb_ranks.csv") %>% 
   mutate(faculty_rank = factor(faculty_rank, levels = c("PhD", "Postdoc", "Assistant Professor", "Associate Professor", "Professor", "Endowed Chair"))) 
-  
 ```
 
 ```{r, warning = FALSE, message = FALSE}
@@ -290,6 +303,34 @@ x %>%
        y = "",
        fill = "Rank"), 
 tooltip = "text")
+
+full %>% 
+  mutate(harvard_equivalent = if_else(school == "Harvard" & str_detect(department_name, "MICROBIOLOGY|IMMUNO") == TRUE, "Mb;Imm", harvard_equivalent)) %>%   group_by(school, department_name) %>% 
+  mutate(department_name = if_else(school == "Harvard" & str_detect(department_name, "MICROBIOLOGY|IMMUNO") == TRUE, "MICROBIOLOGY + IMMUNOLOGY", department_name)) %>% 
+  mutate(`PI NAME` = str_replace_all(`PI NAME`,"SEGAL, ROSALIND A.", "SEGAL, ROSALIND A")) %>% 
+  filter(school == "Harvard", harvard_equivalent == "Nb") %>% 
+  right_join(full_faculty) %>% 
+  group_by(school, department_name, harvard_equivalent, `PI NAME`) %>% 
+  group_by(`PI NAME`, school, department_name, harvard_equivalent, faculty_rank) %>% 
+  mutate(project_number = n()) %>%
+  group_by(`PI NAME`, school, department_name, harvard_equivalent, faculty_rank, project_number) %>% 
+  summarize(nih_total = sum(FUNDING)) %>% 
+   mutate(project_number = if_else(is.na(nih_total), 0, as.double(project_number))) %>% 
+  mutate(nih_total = if_else(is.na(nih_total), 0, nih_total)) %>% 
+  ggplot(aes(nih_total, fill = faculty_rank,
+             text = paste("PI NAME: ", `PI NAME`, "\n",
+                          "Total Funding: ", formatC(nih_total, digits = 10, big.mark = ","), "\n",
+                          "Number of Grants: ", project_number, "\n",
+                      "Faculty Rank: ", faculty_rank))) +
+  geom_histogram(boundary = 1, binwidth = 250000) +
+  geom_vline(aes(xintercept = mean(ad_hoc$pi_funding, na.rm = TRUE)), color = "red") +
+  geom_vline(aes(xintercept = median(ad_hoc$pi_funding, na.rm = TRUE)), color = "blue") +
+  scale_x_continuous(breaks = seq(0, 35*10^6, 5*10^6), labels = scales::number_format()) +
+  scale_fill_manual(values = c("#FEECEB", "#FAA19B", "#F66257", "#D63B2F", "#7A221B", "black")) +
+  labs(title = "Histogram of 2020 NIH Funding for Harvard Neurobiology PIs",
+       x = "Dollars", 
+       y = "",
+       fill = "Rank")
 ```
 
 
