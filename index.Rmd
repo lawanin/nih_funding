@@ -394,4 +394,91 @@ z %>%
        caption = "IPP (2021), BRIMR (2016-2020)")
 ```
 
+```{r, warning=FALSE, message=FALSE}
+
+x %>% 
+  select(school, department_name, harvard_equivalent, `PI NAME`, FUNDING, `FUNDING MECHANISM`, `PROJECT NUMBER`) %>% 
+  mutate(activity_code = substring(`PROJECT NUMBER`, 2, 4)) %>% 
+  mutate(application_type = substring(`PROJECT NUMBER`, 1, 1)) %>% 
+  filter(school == "Harvard" & harvard_equivalent == "Nb") %>%  
+  # LOOK INTO THIS, SEE BELOW
+  mutate(`PI NAME` = str_replace_all(`PI NAME`, "GREENBERG, MICHAEL ELDON", "GREENBERG, MICHAEL E")) %>% 
+  left_join(full_faculty) %>% 
+  ggplot(aes(y = fct_rev(fct_infreq(activity_code)))) +
+  geom_bar()  +
+  scale_fill_manual(values = c("#FEECEB", "#FAA19B", "#F66257", "#D63B2F", "#7A221B", "black")) +
+  labs(title = "2020 Harvard Neurobiology Grants by Activity Code",
+       y = "Activity Code",
+       x = "",
+       caption = "IPP 2021")
+
+x %>% 
+  select(school, department_name, harvard_equivalent, `PI NAME`, `FUNDING`, `FUNDING MECHANISM`, `PROJECT NUMBER`) %>% 
+  mutate(activity_code = substring(`PROJECT NUMBER`, 2, 4)) %>% 
+  mutate(application_type = substring(`PROJECT NUMBER`, 1, 1)) %>% 
+  filter(school == "Harvard" & harvard_equivalent == "Nb") %>% 
+  # LOOK INTO THIS, SEE BELOW
+  mutate(`PI NAME` = str_replace_all(`PI NAME`, "GREENBERG, MICHAEL ELDON", "GREENBERG, MICHAEL E")) %>% 
+  left_join(full_faculty) %>% 
+  arrange(FUNDING) %>% 
+  ggplot(aes(y = fct_rev(fct_infreq(application_type)))) +
+  geom_bar() +
+  labs(title = "2020 Harvard Neurobiology Grants by Application Type",
+       y = "Application Type",
+       x = "",
+       caption = "IPP 2021")
+
+
+ggplotly(
+x %>% 
+  select(school, department_name, harvard_equivalent, `PI NAME`, FUNDING, `FUNDING MECHANISM`, `PROJECT NUMBER`) %>% 
+  mutate(activity_code = substring(`PROJECT NUMBER`, 2, 4)) %>% 
+  mutate(application_type = substring(`PROJECT NUMBER`, 1, 1)) %>% 
+  filter(school == "Harvard" & harvard_equivalent == "Nb") %>%  
+  # LOOK INTO THIS, SEE BELOW
+  mutate(`PI NAME` = str_replace_all(`PI NAME`, "GREENBERG, MICHAEL ELDON", "GREENBERG, MICHAEL E")) %>% 
+  left_join(full_faculty) %>% 
+  ggplot(aes(y = fct_rev(fct_infreq(activity_code)),
+             fill = faculty_rank,
+             text = paste("PI Name: ", `PI NAME`, "\n",
+                          "Academic Rank: ", faculty_rank, "\n",
+                          "Department Name: ", department_name, "\n",
+                          "Award Amount: ", formatC(FUNDING, digits = 10, big.mark = ","), "\n",
+                          sep = ""))) +
+  geom_bar()  +
+  scale_fill_manual(values = c("#FEECEB", "#FAA19B", "#F66257", "#D63B2F", "#7A221B", "black")) +
+  labs(title = "2020 Harvard Neurobiology Grants by Activity Code",
+       y = "Activity Code",
+       x = "",
+       fill = "Rank",
+       caption = "IPP 2021"), 
+tooltip = "text")
+
+ggplotly(
+x %>% 
+  select(school, department_name, harvard_equivalent, `PI NAME`, `FUNDING`, `FUNDING MECHANISM`, `PROJECT NUMBER`) %>% 
+  mutate(activity_code = substring(`PROJECT NUMBER`, 2, 4)) %>% 
+  mutate(application_type = substring(`PROJECT NUMBER`, 1, 1)) %>% 
+  filter(school == "Harvard" & harvard_equivalent == "Nb") %>% 
+  # LOOK INTO THIS, SEE BELOW
+  mutate(`PI NAME` = str_replace_all(`PI NAME`, "GREENBERG, MICHAEL ELDON", "GREENBERG, MICHAEL E")) %>% 
+  left_join(full_faculty) %>% 
+  arrange(FUNDING) %>% 
+  ggplot(aes(y = fct_rev(fct_infreq(application_type)),
+             fill = faculty_rank,
+             text = paste("PI Name: ", `PI NAME`, "\n",
+                          "Academic Rank: ", faculty_rank, "\n",
+                          "Department Name: ", department_name, "\n",
+                          "Award Amount: ", formatC(FUNDING, digits = 10, big.mark = ","), "\n",
+                          sep = ""))) +
+  geom_bar() +
+  scale_fill_manual(values = c("#FEECEB", "#FAA19B", "#F66257", "#D63B2F", "#7A221B", "black")) +
+  labs(title = "2020 Harvard Neurobiology Grants by Application Type",
+       y = "Application Type",
+       x = "",
+       fill = "Rank",
+       caption = "IPP 2021"), 
+tooltip = "text")
+```
+
 
