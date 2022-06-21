@@ -11,7 +11,7 @@ z <- read_delim("source_files/department_list.csv", delim = ",") %>%
 
 names <- read_csv("nih_aamc_names.csv")
 
-y <- read_delim("source_files/Worldwide_2017.csv", skip = 1, delim = ";")
+y <- read_delim("source_files/Worldwide_2017.csv", skip = 1, delim = ";") 
 
 # This uses the conversion table generated in the 2020 file. Several of these schools
 # have variations in their name (e.g. "SCHOOL AT LOCATION" in 2019 vs "SCHOOL LOCATION" in 2020), 
@@ -23,7 +23,10 @@ y %>%
   rename_with(toupper) %>% 
   
   # 2017 SCRB listed under FAS not HMS
+  # some trailing spaces in pi_name; cause trouble in tableau but not R
   
+  mutate(across(.cols = everything(), ~str_replace_all(., " *$", ""))) %>% 
+  mutate(`PI NAME` = str_replace_all(`PI NAME`, "\\.$", "")) %>% 
   mutate(`NIH MC COMBINING NAME` = if_else(`ORGANIZATION NAME` == "HARVARD UNIVERSITY" & `DEPT NAME` == "STEM CELL AND REGENERATIVE BIOLOGY","SCHOOLS OF MEDICINE",`NIH MC COMBINING NAME`)) %>% 
   filter(`NIH MC COMBINING NAME` == "SCHOOLS OF MEDICINE") %>% 
   mutate(FUNDING = as.numeric(str_replace_all(FUNDING, "\\.|\\$", ""))) %>% 
@@ -106,7 +109,14 @@ x_cleaned <- x %>%
   mutate(`DEPT NAME` = if_else(`ORGANIZATION NAME` == "Iowa-Carver", str_replace_all(`DEPT NAME`, "PHARMACOLOGY", "NEUROSCIENCE AND PHARMACOLOGY"), `DEPT NAME`)) %>% 
   
   # trailing space in Harvard GHSM 2017
-  mutate(`DEPT NAME` = str_replace_all(`DEPT NAME`, " $", ""))
+  mutate(`DEPT NAME` = str_replace_all(`DEPT NAME`, " $", "")) %>% 
+
+  # NIH `PI NAME` sometimes differs for the same person, e.g. GREENBERG, MICHAEL E vs GREENBERG MICHAEL, ELDON; difficult to resolve this issue without looking at each case individually;
+  # took care of some cases by deleting periods (e.g. MICHAEL E vs MICHAEL E.); for now, will deal with cases of HARVARD PIs only
+
+  mutate(`PI NAME` = if_else(`ORGANIZATION NAME` == "Harvard" & str_detect(`PI NAME`, "GREENBERG, MICHAEL"), "GREENBERG, MICHAEL E", `PI NAME`)) %>% 
+  mutate(`PI NAME` = if_else(`ORGANIZATION NAME` == "Harvard" & str_detect(`PI NAME`, "CHOU, JAMES"), "CHOU, JAMES J", `PI NAME`)) %>% 
+  mutate(`PI NAME` = if_else(`ORGANIZATION NAME` == "Harvard" & str_detect(`PI NAME`, "PATEL, CHIRAG"), "PATEL, CHIRAG J", `PI NAME`)) 
 
 departments_funding_2017 <- x_cleaned %>% 
   rename(school = `ORGANIZATION NAME`,

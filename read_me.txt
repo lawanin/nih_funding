@@ -1,19 +1,30 @@
 DESCRIPTION
-In Fall 2020, IPP Intern made list of basic science departments for all AAMC schools
+In Fall 2021, IPP Intern made list of basic science departments for all AAMC schools
 and their equivalent departments at Harvard, as he determined them. 
 This list is source_files/department_list.csv
 
-He combined that list with 2020 NIH Funding data to produce two files:
-1. departments_nih_funding.csv, a list of the basic science departments of all AAMC schools, 
-their harvard_equivalents, and their total NIH funding for 2020
-2. full_nih_funding.csv, a list of the basic science departments of all AAMC schools, 
-their harvard equivalents, and data on every NIH grant awarded to these departments in 2020
+He combined that list with 2016-2020 NIH Funding data to produce two groups of files:
+1. departments_nih_funding.csv (2020, otherwise departments_nih_year.csv) , a list 
+of the basic science departments of all AAMC schools, their harvard_equivalents, 
+and their total NIH funding for the given year
+2. full_nih_funding.csv (2020, otherwise full_nih_funding_year.csv), a list of 
+the basic science departments of all AAMC schools, their harvard equivalents, 
+and data on every NIH grant awarded to these departments in the given year
 
 As part of the combining process, he had to convert between abbreviated AAMC and NIH nomenclature. 
 He produced a table to facilitate future coversion. This table is nih_aamc_names.csv
 
+When making the Tableau workbook, he used the combined departments_nih_funding to make 
+files for each harvard_equivalent that contains A) the fundings that those departments
+recieved each year and B) a new row containing the average funding recieved by those
+departments each year. Because some departments have multiple harvard_equivalents, 
+he found it easier to make a separate document for each harvard_equivalent. These
+are used to make the line graphs in the the nih_tableau.twb. For Microbiology and Immunology, 
+there is code that changes the usual handling of NA funding values in order to change 
+the look of the Harvard line (see code and the Tableau workbook).
+
 CAVEATS
-The intern determined Harvard equivalents with little knowledge of the full scope
+1. The intern determined Harvard equivalents with little knowledge of the full scope
 of each Harvard department and even less knowledge of each competitor department.
 He had perused the website for each basic science department at Harvard and matched
 each competitor department usually only by looking at its name, at other times also by a
@@ -22,7 +33,19 @@ Immunology, and Biomedical Informatics have names common to departments at many 
 Departments like BCMP and SCRB have uncommon names. At times, multiple competitors were assigned. 
 At times, none were assigned. 
 
-The list, with few exceptions, only includes departments of medical schools:
+The criteria for assigning Harvard equivalents are as follows:
+Neurobiology: Dept. name contains Neurobiology, Neuroscience, Brain, or the like
+DBMI: Name contains Informatics, (Bio)statistics, or the like
+Microbiology/Immunology: Name contains either Microbiology or Immunology
+Genetics: Name contains Genetics, Gene, or the like
+Cell Biology: Name contains cell or cellular, outside the context of stem cells
+BCMP: Name contains either Chemistry, (Bio)physics, Molecular, or Pharmacology
+Systems Biology: Name contains Systems Biology or Computational Biology, or the like
+SCRB: Name contains Stem or Regenerative
+GHSM: Non-stem department that does not contain the word policy
+HCP: Non-stem department that does contain the word policy
+
+2. The list, with few exceptions, only includes departments of medical schools:
   Other organizational units (e.g. centers, institutes) at medical schools that compete with Harvard departments 
   and that may recieve NIH funding are thus not included in either department_list.csv
   or the non-source files with NIH funding. Such organizational units are not in all schools and 
@@ -31,17 +54,33 @@ The list, with few exceptions, only includes departments of medical schools:
   Other university departments that are not part of a medical school (e.g. FAS Molecular and Cellular Biology) 
   that compete with Harvard departments and that may recieve NIH funding are thus
   also not included in either department_list.csv or the non-source files with NIH funding. 
-  Harvard Medical School recieves much more NIH funding than FAS departments. 
+  Harvard Medical School recieves much more NIH funding than FAS departments, for reference. 
   
   If such departments or other organizational units recieved NIH funding, they are 
   included in source_files/Worldwide_2020.csv
 
-PLANS
--Add NIH funding for past years. Intern has tried to use current code for 2019 and determined
-more correction of manual discrepancies would be needed. 
--Do similarly for NSF funding. 
--Should other organizational units/departments outside of medical schools be added?
-Feedback on method from BCMP chair pointed out that these were also competitors.
+3. The NIH data as obtained from BRIMR Report has some flaws in reporting PIs. 
+PI ID is not always assigned and is not always consistent. A few PI Names may be
+incosistent for the same PI. Regular errors, such as trailing spaces or the incosistent
+inclusion of a period after the middle initial, have been corrected in the code. 
+Less regular errors, such as a variant middle name (e.g. GREENBERG, MICHAEL E and GREENBERG, MICHAEL ELDON)
+have been corrected only for Harvard PIs. Such a variant middle name occurs for approximately
+200 PIs in the 2016-2020 data. Data at the PI level should be treated with caution.
+
+NEXT STEPS
+1. Prepare more years. Provided there are no changes to the format of the data, 
+the code should work for multiple years. However, manual checking for changes 
+in school and department names would be necessary. Choosing a small groups of competitor 
+schools, which would be prioritized in manual checking, could expedite this process. 
+
+2. Address the issue of the same PI with different (middle) names. This occurs 
+for about 200 of 12000 PIs. As above, choosing a small groups of competitor 
+schools, which would be prioritized in manual checking, could expedite this process.
+
+3. Better define competitors. Get input from HMS researchers on who competitors are. 
+Though medical school departments, typically earn more than both medical school centers
+and non-medical school departments, the data would be more complete if one were to  
+look through such grant recieving bodies and identify potential competitors. 
 
 NOTES
 schools in AAMC, no Basic Science Departments, i.e. not in Department List:

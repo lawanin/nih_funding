@@ -29,9 +29,13 @@ y <- read_delim("source_files/Worldwide_2020.csv", skip = 1, delim = ";")
 # object x is NIH table with names that match AAMC nomenclature and so department_list.csv
 
 y %>% 
-  
-  # may be the case for other years
-  
+  mutate(across(.cols = everything(), ~str_replace_all(., " *$", ""))) %>% 
+  mutate(`PI NAME` = str_replace_all(`PI NAME`, "\\.$", "")) %>% 
+  mutate(`ORGANIZATION ID (IPF)` = as.numeric(`ORGANIZATION ID (IPF)`)) %>% 
+
+# some trailing spaces in pi_name; cause trouble in tableau but not R
+# organization name changed to character string, messes up later joining
+
   mutate(`NIH MC COMBINING NAME` = if_else(`ORGANIZATION NAME` == "HARVARD UNIVERSITY" & `DEPT NAME` == "STEM CELL AND REGENERATIVE BIOLOGY","SCHOOLS OF MEDICINE",`NIH MC COMBINING NAME`)) %>% 
   filter(`NIH MC COMBINING NAME` == "SCHOOLS OF MEDICINE") %>% 
   mutate(FUNDING = as.numeric(str_replace_all(FUNDING, "\\.|\\$", ""))) %>% 
@@ -209,7 +213,16 @@ x_cleaned <- x %>%
   mutate(`DEPT NAME` = if_else(`ORGANIZATION NAME` == "Arkansas", str_replace_all(`DEPT NAME`, "PHYSIOLOGY AND BIOPHYSICS", "PHYSIOLOGY AND CELL BIOLOGY"), `DEPT NAME`)) %>% 
   mutate(`DEPT NAME` = if_else(`ORGANIZATION NAME` == "UC Riverside", str_replace_all(`DEPT NAME`, "CENTER FOR HEALTHY COMMUNITIES", "SOCIAL MEDICINE POPULATION AND PUBLIC HEALTH"), `DEPT NAME`)) %>% 
   mutate(`DEPT NAME` = if_else(`ORGANIZATION NAME` == "Kansas", str_replace_all(`DEPT NAME`, "PREVENTIVE MEDICINE AND PUBLIC HEALTH", "POPULATION HEALTH"), `DEPT NAME`)) %>% 
-  mutate(`DEPT NAME` = if_else(`ORGANIZATION NAME` == "Rochester", str_replace_all(`DEPT NAME`, "NEUROBIOLOGY AND ANATOMY", "NEUROSCIENCE"), `DEPT NAME`)) 
+  mutate(`DEPT NAME` = if_else(`ORGANIZATION NAME` == "Rochester", str_replace_all(`DEPT NAME`, "NEUROBIOLOGY AND ANATOMY", "NEUROSCIENCE"), `DEPT NAME`)) %>% 
+
+  # NIH `PI NAME` sometimes differs for the same person, e.g. GREENBERG, MICHAEL E vs GREENBERG MICHAEL, ELDON; difficult to resolve this issue without looking at each case individually;
+  # took care of some cases by deleting periods (e.g. MICHAEL E vs MICHAEL E.); for now, will deal with cases of HARVARD PIs only
+  
+  mutate(`PI NAME` = if_else(`ORGANIZATION NAME` == "Harvard" & str_detect(`PI NAME`, "GREENBERG, MICHAEL"), "GREENBERG, MICHAEL E", `PI NAME`)) %>% 
+  mutate(`PI NAME` = if_else(`ORGANIZATION NAME` == "Harvard" & str_detect(`PI NAME`, "CHOU, JAMES"), "CHOU, JAMES J", `PI NAME`)) %>% 
+  mutate(`PI NAME` = if_else(`ORGANIZATION NAME` == "Harvard" & str_detect(`PI NAME`, "PATEL, CHIRAG"), "PATEL, CHIRAG J", `PI NAME`)) 
+           
+
 
 # departments_nih_funding is every department in the department_list with its total
 # 2020 NIH funding. harvard_equivalents included.
