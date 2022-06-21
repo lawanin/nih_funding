@@ -18,7 +18,9 @@ When making the Tableau workbook, he used the combined departments_nih_funding t
 files for each harvard_equivalent that contains A) the fundings that those departments
 recieved each year and B) a new row containing the average funding recieved by those
 departments each year. Because some departments have multiple harvard_equivalents, 
-he found it easier to make a separate document for each harvard_equivalent. These
+he found it easier to make a separate document for each harvard_equivalent. These are named
+HARVARD_EQUIVALENT_departments_2016_2020.csv. There is a similar
+file for all departments, without averages, named school_departments_2016_2020.csv. These
 are used to make the line graphs in the the nih_tableau.twb. For Microbiology and Immunology, 
 there is code that changes the usual handling of NA funding values in order to change 
 the look of the Harvard line (see code and the Tableau workbook).
