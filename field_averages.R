@@ -21,7 +21,7 @@ x %>%
                names_to = c("funding_type", "year"),
                names_sep = "_", 
                values_to = "funding_amount") %>% 
-  write_csv("school_departments_2016.csv")
+  write_csv("school_departments_2016_2020.csv")
 
 #  Neurobiology
 
